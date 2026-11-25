@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//MUG São Paulo - MongoDB User Group//EN
+X-WR-CALNAME:MUG São Paulo - MongoDB User Group
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20261125T210000Z
+DTEND:20261126T000000Z
+DTSTAMP:20261125T160208Z
+ORGANIZER;CN="MongoDB Community":MAILTO:redigido@exemplo.invalid
+UID:evt-AXkUVWCxURYLxoT@events.lu.ma
+SUMMARY:MUG São Paulo NOV 2026 - Vector Search na Prática & mais
+DESCRIPTION:Get up-to-date information at: https://luma.com/afm6b12v\n\nAd
+ dress:\nFIAP - Paulista\nSão Paulo, SP\nBrazil\n\nHosted by MongoDB Commu
+ nity & 3 others
+LOCATION:FIAP - Paulista, Av. Paulista, 1106 - 7º andar - Bela Vista, Sã
+ o Paulo - SP, 01311-000, Brazil
+GEO:-23.564084299999998;-46.6523865
+SEQUENCE:217785728
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR

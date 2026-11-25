@@ -1,0 +1,294 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//What’s Happening in São Paulo//EN
+X-WR-CALNAME:What’s Happening in São Paulo
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20261125T163000Z
+DTEND:20261125T220000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Tito Ferraz":MAILTO:redigido@exemplo.invalid
+UID:evt-oJnGMDJ7aiuvsu9@events.lu.ma
+SUMMARY:Revenue Summit 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/ykvah3q3\n\nAd
+ dress:\nCubo Itaú\nSão Paulo, SP\nBrazil\n\nOnde o valor se acumula na e
+ conomia digital\nStartups costumam ser apresentadas pelo produto que vende
+ m. A pergunta que importa é outra: que parte da receita do seu cliente vo
+ cê controla hoje, e o que poderá controlar amanhã?\nAs empresas que mai
+ s geram valor na economia digital começam resolvendo um fluxo de trabalho
+  e, a partir dele, passam a ocupar novas etapas da jornada de receita dos 
+ mesmos clientes, da aquisição à oferta de soluções financeiras.\nNo R
+ evenue Summit, percorremos esse caminho estágio por estágio, o Revenue L
+ ifecycle, com founders, investidores e executivos que vivem cada…\n\nHos
+ ted by Tito Ferraz & 5 others
+LOCATION:Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paul
+ o - SP, 04547-130, Brazil
+GEO:-23.596645199999998;-46.6869082
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261125T210000Z
+DTEND:20261126T000000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-YEkDcmJq3cWyjK5@events.lu.ma
+SUMMARY:Devin Meetup São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/devin-sp-4\n\n
+ Address:\nCheck event page for more details.\n\nMeetup da Cognition em Sã
+ o Paulo\nUm encontro que começa do jeito certo: networking de qualidade, 
+ happy hour e uma imersão direta com a Cognition, que está redefinindo co
+ mo desenvolvemos código com IA.\n🤖 Esse é um meetup de Devin Bots: to
+ dos os participantes aprovados ganham um cupom para testar os Bots no plan
+ o Max (US$ 200 de valor), enquanto durarem os cupons.\n\nA Cognition criou
+  o Devin, uma ferramenta completa que propõe um novo jeito de usar modelo
+ s e fluxos de trabalho com IA ao longo de todo o ciclo de desenvolvimento.
+  Essas técnicas podem ser utilizadas por desenvolvedores e designers…\n
+ \nHosted by Matheus Pagani & 5 others
+LOCATION:https://luma.com/event/evt-YEkDcmJq3cWyjK5
+GEO:-23.599598324175613;-46.678163236002376
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261125T210000Z
+DTEND:20261126T000000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="MongoDB Community":MAILTO:redigido@exemplo.invalid
+UID:evt-AXkUVWCxURYLxoT@events.lu.ma
+SUMMARY:MUG São Paulo NOV 2026 - Vector Search na Prática & mais
+DESCRIPTION:Get up-to-date information at: https://luma.com/afm6b12v\n\nAd
+ dress:\nFIAP - Paulista\nSão Paulo, SP\nBrazil\n\nMongoDB User Group São
+  Paulo está de volta 🚀\nVenha encontrar desenvolvedores, pessoas de da
+ dos e curiosos por tecnologia para uma noite sobre como o MongoDB é usado
+  em aplicações reais. Vamos trazer as novidades anunciadas no MongoDB.lo
+ cal NYC e um case de Vector Search em um dos aplicativos mais usados do Br
+ asil.\nSeja no seu primeiro projeto ou operando para milhões de usuários
+ , você sai com ideias práticas e conhece a comunidade MongoDB de São Pa
+ ulo. Nos vemos lá!\nAgenda 📆\n18:00: Credenciamento e networking\n18:3
+ 0: Boas-vindas e novidades da comunidade\n18:45: Recap do MongoDB.local NY
+ C,…\n\nHosted by MongoDB Community & 3 others
+LOCATION:FIAP - Paulista, Av. Paulista, 1106 - 7º andar - Bela Vista, Sã
+ o Paulo - SP, 01311-000, Brazil
+GEO:-23.564084299999998;-46.6523865
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261125T220000Z
+DTEND:20261126T000000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Kaique Santana":MAILTO:redigido@exemplo.invalid
+UID:evt-L6KNoab9Q80j1Mm@events.lu.ma
+SUMMARY:Bora Trocar | Negritude, empreendedorismo e mercado de trabalho
+DESCRIPTION:Get up-to-date information at: https://luma.com/b8whaegx\n\nAd
+ dress:\nR. Itapeva, 432\nO melhor acesso é pela entrada da Rua Itapeva, 4
+ 32. Tanto para estacionamento quanto para desembarque por aplicativo.\n
+ 🚇 Estamos a aproximadamente 350 metros da estação Trianon-MASP.\n🚌
+  Para quem vem de ônibus, a Av. 9 de Julho é uma boa opção por conta d
+ o corredor norte-sul.\n📌 O evento acontecerá na Sala Ambev de Empreend
+ edorismo (térreo).\nSão Paulo, SP\nBrazil\n\nBORA Trocar | Negritude, me
+ rcado de trabalho e empreendedorismo\nComo transformar representatividade 
+ em oportunidades econômicas concretas para a população negra?\nNo próx
+ imo Bora Trocar, o Instituto Bora, em parceria com a FGV, FUNAFRO e Divers
+ idade.io, promove um encontro para discutir os desafios e as possibilidade
+ s de inclusão produtiva no mercado de trabalho e no empreendedorismo negr
+ o.\nO painel reunirá representantes da academia, de empresas e de organiz
+ ações que impulsionam o empreendedorismo negro, trazendo diferentes pers
+ pectivas e experiências para enriquecer essa discussão.\nMais do…\n\nH
+ osted by Kaique Santana
+LOCATION:R. Itapeva, 432 - Bela Vista, São Paulo - SP, 01332-000, Brazil
+GEO:-23.559789199999997;-46.6533071
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261126T170000Z
+DTEND:20261126T200000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Faulinhas USP":MAILTO:redigido@exemplo.invalid
+UID:evt-9kBpb6n7CQen7vt@events.lu.ma
+SUMMARY:Oficina - Cerâmica fria
+DESCRIPTION:Get up-to-date information at: https://luma.com/eb9h4t4i\n\nAd
+ dress:\nSchool of Architecture and Urbanism of the University of Sao Paulo
+ \nEstúdio 5\nSão Paulo, SP\nBrazil\n\nOficina de limpadores de cachimbo.
+ \nInfos adicionais: gratuita, presencial e não é necessário trazer nenh
+ um material.\nNo estúdio 5 da Faculdade de Arquitetura, Urbanismo e de De
+ sign da Universidade de São Paulo (FAU USP).\n\nHosted by Faulinhas USP
+LOCATION:School of Architecture and Urbanism of the University of Sao Paul
+ o, Universidade de São Paulo - R. do Lago, 876 - Butantã, São Paulo - S
+ P, 05508-080, Brazil
+GEO:-23.560191;-46.7299067
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261129T120000Z
+DTEND:20261129T150000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="TEMPO by Porsche":MAILTO:redigido@exemplo.invalid
+UID:evt-oy5YHy8BtOYbCbp@events.lu.ma
+SUMMARY:Brunch com Felipe Nasr
+DESCRIPTION:Get up-to-date information at: https://luma.com/qfrzgtbn\n\nAd
+ dress:\nTEMPO by Porsche\nSão Paulo, SP\nBrazil\n\nUm brunch especial ao 
+ lado de Felipe Nasr, em um encontro que reúne gastronomia, cultura automo
+ tiva e boas conversas, proporcionando uma oportunidade única de conhecer 
+ mais de perto a trajetória e as experiências do piloto\nEsperamos vocês
+ !\n\nHosted by TEMPO by Porsche
+LOCATION:TEMPO by Porsche, Rua Maria Carolina, 624 - Loja Térreo - Pinhei
+ ros, São Paulo - SP, 05402-500, Brazil
+GEO:-23.569252;-46.688374499999995
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261129T130000Z
+DTEND:20261129T140000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Casa NUA":MAILTO:redigido@exemplo.invalid
+UID:evt-dXFOQDsspqC1038@events.lu.ma
+SUMMARY:ENTRE GALERIAS: Roteiro Cultural no Centro Histórico
+DESCRIPTION:Get up-to-date information at: https://luma.com/f0c1qgcn\n\nAd
+ dress:\nFormosa Hi-Fi\nA entrada é pela escadaria que desce para o subsol
+ o do Viaduto do Chá, bem em frente ao Shopping Light.\nSão Paulo, SP\nBr
+ azil\n\n✨ ENTRE GALERIAS: Segunda Edição\n29 de novembro de 2026 | 10h
+  | Evento gratuito\nVocê sabe quantas histórias existem entre a Galeria 
+ Formosa e a Galeria Prestes Maia?\nO Entre Galerias está de volta para su
+ a segunda edição, convidando você a redescobrir o Centro Histórico de 
+ São Paulo por meio de uma experiência que reúne arte, história, arquit
+ etura, cultura e novas perspectivas sobre a cidade.\nMais do que uma camin
+ hada, o Entre Galerias é um convite para observar o Centro com outros olh
+ os, conhecer suas transformações e descobrir as histórias que fazem par
+ te de um dos territórios mais…\n\nHosted by Casa NUA & Alex Assunção
+LOCATION:Formosa Hi-Fi, Viaduto do Chá - Centro Histórico de São Paulo,
+  São Paulo - SP, 01048-100, Brazil
+GEO:-23.546149699999997;-46.6387697
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T113000Z
+DTEND:20261203T150000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Cynthia Zanoni":MAILTO:redigido@exemplo.invalid
+UID:evt-xlla7UIGWU7AR4n@events.lu.ma
+SUMMARY:Construindo IA em Escala: da Engenharia ao Impacto no Cliente
+DESCRIPTION:Get up-to-date information at: https://luma.com/gb0prlff\n\nAd
+ dress:\nCubo Itaú\nTeatro\nSão Paulo, SP\nBrazil\n\nUma manhã para expl
+ orar como construir soluções de inteligência artificial em escala, da e
+ ngenharia ao impacto na experiência do cliente! 👩🏻‍💻⚡\nPara 
+ preservar a proposta de troca, pertencimento e protagonismo feminino, este
+  encontro é direcionado exclusivamente para mulheres.\nNeste encontro no 
+ Cubo, em parceria com a WoMakersCode e a iniciativa IA Delas, reuniremos m
+ ulheres da tecnologia para sair do conceito e olhar para a IA acontecendo 
+ na prática. Vamos conhecer cases reais de inteligência artificial, discu
+ tir novos desafios de liderança, conferir demonstrações de produtividad
+ e e…\n\nHosted by Cynthia Zanoni, natalia de souza franca & Laura Damace
+ no De Almeida
+LOCATION:Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paul
+ o - SP, 04547-130, Brazil
+GEO:-23.596645199999998;-46.6869082
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261204T170000Z
+DTEND:20261204T210000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Emerson Delatorre":MAILTO:redigido@exemplo.invalid
+UID:evt-14lTTiq5UPNPpai@events.lu.ma
+SUMMARY:Grok Bot Workshop São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/7a3wkm3q\n\nAd
+ dress:\nZup IT Innovation\nSão Paulo, SP\nBrazil\n\nGrok Bot Workshop em 
+ São Paulo!\nOrganizado por um Build Ambassador da comunidade SpaceXSI.\nU
+ m Workshop presencial para aprender a contratar bots para fazer o trabalho
+  e aplicá-los nos seus próximos desafios.\n\nTraga um laptop. Técnicos 
+ e não técnicos são bem-vindos.\n\n14h-18h:\nBoas-Vindas (30 min)\nApres
+ entação (10 min)\nInspiração: 5 casos de uso do Grok Bot (30 min)\nCof
+ ee e Network (30 min)\nDefinição de caso de uso: cada participante defin
+ e pelo menos um desafio (20 min)\nColocando bots para trabalhar. (50 min)
+ \nFechamento (10 min)\n\nA sessão será em português.\n\nHosted by Emers
+ on Delatorre & Rodrigo Silva
+LOCATION:Zup IT Innovation, Rua Pascoal Pais, 525 - 3º e 4º andar - Broo
+ klin, São Paulo - SP, 04581-060, Brazil
+GEO:-23.617043799999998;-46.687362
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261205T170000Z
+DTEND:20261205T200000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Pedro Miranda":MAILTO:redigido@exemplo.invalid
+UID:evt-shVPNGPpyFiZ8kW@events.lu.ma
+SUMMARY:All people free
+DESCRIPTION:Get up-to-date information at: https://luma.com/6s937r3p\n\nAd
+ dress:\nMuseu da Imagem e do Som (MIS)\nSão Paulo, SP\nBrazil\n\nA escrav
+ idão não ficou no passado. Segundo o Global Slavery Index 2023, da Walk 
+ Free, aproximadamente 50 milhões de pessoas viviam em situação de escra
+ vidão moderna em todo o mundo. A organização sem fins lucrativos All Pe
+ ople Free estima que cerca de 20 milhões de pessoas estejam submetidas à
+  escravidão em comunidades produtoras de tijolos, quase metade delas cria
+ nças.\nDirigido por Duda Penteado e produzido pela Unshakeable Production
+ s, o documentário ALL PEOPLE FREE revela a escravidão moderna e a expl
+ oração infantil em olarias no Norte da África, no Oriente Médio e na 
+ Ásia. Por meio de…\n\nHosted by Pedro Miranda
+LOCATION:Museu da Imagem e do Som (MIS), Av. Europa, 158 - Jardim Europa, 
+ São Paulo - SP, 01449-000, Brazil
+GEO:-23.5728902;-46.676059699999996
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261208T200000Z
+DTEND:20261209T003000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Onçafari":MAILTO:redigido@exemplo.invalid
+UID:evt-80mojlBlXPSCCYI@events.lu.ma
+SUMMARY:Lançamento do Livro Alma Selvagem 2 e Reedição do Alma Selvagem
+  1
+DESCRIPTION:Get up-to-date information at: https://luma.com/mv3j3unn\n\nAd
+ dress:\nR. Gumercindo Saraiva, 54\nSão Paulo, SP\nBrazil\n\nOnçafari, Po
+ sitive Ventures, Fairfax, e Galeria Lume convidam você para o lançamento
+  de Alma Selvagem 2 e da reedição de Alma Selvagem 1.\nAlma Selvagem 2 r
+ eúne encontros com a vida selvagem que pouca gente teve a chance de viver
+  de perto. Todas as fotografias são de Mario Haberfeld, fundador do Onça
+ fari, e cada uma guarda uma experiência real: um animal livre, um instant
+ e que não se repete, uma história que merecia ser contada.\nPara que ess
+ as histórias saíssem do campo e chegassem às páginas, o livro contou c
+ om parceiros que acreditaram nele desde o início: Fairfax, Nattú, Sondot
+ écnica, Le…\n\nHosted by Onçafari & Positive Ventures
+LOCATION:R. Gumercindo Saraiva, 54 - Jardim Europa, São Paulo - SP, 01449
+ -070, Brazil
+GEO:-23.5790166;-46.682561899999996
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261209T113000Z
+DTEND:20261209T140000Z
+DTSTAMP:20261125T160211Z
+ORGANIZER;CN="Nana Sobral":MAILTO:redigido@exemplo.invalid
+UID:evt-s9CZALe4jFB4myS@events.lu.ma
+SUMMARY:FDE Talks
+DESCRIPTION:Get up-to-date information at: https://luma.com/b03254tk\n\nAd
+ dress:\nCheck event page for more details.\n\nFDE Talks\nUm café da manh
+ ã para quem atua como FDE ou quer entrar na área, com quem está constru
+ indo essa função na prática.\nQual o perfil ideal?\nComo montar e contr
+ atar um time?\nComo que as empresas tem superado os desafios das grandes e
+ nterprises?\nConvidados\nAndres Rosales, Founder & CEO Primero AI, trabalh
+ ou com Joe Lonsdale, co-fundador da Palantir, empresa que introduziu o con
+ ceito do FDE há mais de uma década.\nGinny Watsham, FDE na ElevenLabs, t
+ em uma trajetória que cruza IA, produto e negócios.\nPedro Dalla, FDE na
+  Cognition, tem mais de 10 anos construindo sistemas de IA e…\n\nHosted 
+ by Nana Sobral & 3 others
+LOCATION:https://luma.com/event/evt-s9CZALe4jFB4myS
+GEO:-23.565556423924637;-46.6831160254158
+SEQUENCE:217785731
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR

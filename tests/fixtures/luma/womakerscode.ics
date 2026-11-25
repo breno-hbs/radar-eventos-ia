@@ -1,0 +1,142 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//WoMakersCode//EN
+X-WR-CALNAME:WoMakersCode
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20251029T223000Z
+DTEND:20251030T000000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="WoMakers":MAILTO:redigido@exemplo.invalid
+UID:evt-zw9QXKGtbTeDlev@events.lu.ma
+SUMMARY:TECH TALKS - WoMakersCode
+DESCRIPTION:Get up-to-date information at: https://luma.com/m37dv3hg\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by WoMakers
+LOCATION:https://luma.com/event/evt-zw9QXKGtbTeDlev
+GEO:-23.558579263837412;-46.657180326392734
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251129T120000Z
+DTEND:20251129T150000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="Mayumi Shingaki":MAILTO:redigido@exemplo.invalid
+UID:evt-JvMXLz4TD6XJHKv@events.lu.ma
+SUMMARY:[WoMakers + FIAP] - Workshop de IA com Handson
+DESCRIPTION:Get up-to-date information at: https://luma.com/fx9cnm17\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Mayumi Shingaki
+LOCATION:https://luma.com/event/evt-JvMXLz4TD6XJHKv
+GEO:-23.564406815066572;-46.650673249252606
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260523T120000Z
+DTEND:20260523T153000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="Mayumi Shingaki":MAILTO:redigido@exemplo.invalid
+UID:evt-LYJDk4jOEadCy2q@events.lu.ma
+SUMMARY:[WoMakers + FIAP] - Capture The Flag! ♥
+DESCRIPTION:Get up-to-date information at: https://luma.com/zn0zld55\n\nAd
+ dress:\nFIAP - Paulista - 1° andar\n\nHosted by Mayumi Shingaki
+LOCATION:FIAP - Paulista - 1° andar
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260613T130000Z
+DTEND:20260613T200000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="Cynthia Zanoni":MAILTO:redigido@exemplo.invalid
+UID:evt-5Q4i3nTsHPUfZaR@events.lu.ma
+SUMMARY:AgentCon Rio de Janeiro
+DESCRIPTION:Get up-to-date information at: https://luma.com/dw01vkcq\n\nAd
+ dress:\nUnidade Ibmec\nRio de Janeiro, RJ\nBrazil\n\nHosted by Cynthia Zan
+ oni
+LOCATION:Unidade Ibmec, Av. Armando Lombardi, 940 - Barra da Tijuca, Rio d
+ e Janeiro - RJ, 22640-000, Brazil
+GEO:-23.005824099999998;-43.3135967
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260616T123000Z
+DTEND:20260616T163000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="Cynthia Zanoni":MAILTO:redigido@exemplo.invalid
+UID:evt-ChBWTnOUZlCwLHr@events.lu.ma
+SUMMARY:GitHub Copilot Dev Days São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/9yqnyeqz\n\nAd
+ dress:\nCubo Itaú\nSão Paulo, SP\nBrazil\n\nHosted by Cynthia Zanoni
+LOCATION:Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paul
+ o - SP, 04547-130, Brazil
+GEO:-23.596645199999998;-46.6869082
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260919T120000Z
+DTEND:20260919T213000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="WoMakersCode":MAILTO:redigido@exemplo.invalid
+UID:redigido@exemplo.invalid
+SUMMARY:Encontro de Mulheres e Carreira em Tecnologia
+DESCRIPTION:Find more information on https://luma.com/womakerscode
+LOCATION:https://www.womakerscode.org/encontro
+GEO:-23.5572348;-46.6369578
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261024T110000Z
+DTEND:20261024T170000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="Cynthia Zanoni":MAILTO:redigido@exemplo.invalid
+UID:evt-RCa3HNqJuXYOLDO@events.lu.ma
+SUMMARY:Por Dentro de um Data Center: Tour IBX São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/yph25pek\n\nAd
+ dress:\nEquinix Data Center - Tambore, Barueri, São Paulo\nBarueri, SP\nB
+ razil\n\nHosted by Cynthia Zanoni
+LOCATION:Equinix Data Center - Tambore, Barueri, São Paulo, Av. Ceci, 190
+ 0 - Res. Tambore, Barueri - SP, 06460-120, Brazil
+GEO:-23.4933448;-46.8093187
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261107T120000Z
+DTEND:20261107T160000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="Cynthia Zanoni":MAILTO:redigido@exemplo.invalid
+UID:evt-adJgGwc0E2oQzMB@events.lu.ma
+SUMMARY:IA na Prática
+DESCRIPTION:Get up-to-date information at: https://luma.com/sdyoch4x\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Cynthia Zanoni & M
+ ayumi Shingaki
+LOCATION:https://luma.com/event/evt-adJgGwc0E2oQzMB
+GEO:-23.56196382416101;-46.65226936047479
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T113000Z
+DTEND:20261203T150000Z
+DTSTAMP:20261125T160205Z
+ORGANIZER;CN="Cynthia Zanoni":MAILTO:redigido@exemplo.invalid
+UID:evt-xlla7UIGWU7AR4n@events.lu.ma
+SUMMARY:Construindo IA em Escala: da Engenharia ao Impacto no Cliente
+DESCRIPTION:Get up-to-date information at: https://luma.com/gb0prlff\n\nAd
+ dress:\nCubo Itaú\nTeatro\nSão Paulo, SP\nBrazil\n\nHosted by Cynthia Za
+ noni, natalia de souza franca & Laura Damaceno De Almeida
+LOCATION:Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paul
+ o - SP, 04547-130, Brazil
+GEO:-23.596645199999998;-46.6869082
+SEQUENCE:217785725
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR
