@@ -2023,3 +2023,444 @@ def test_pyproject_declara_httpx_fixado() -> None:
         dependencias = tomllib.load(arquivo)["project"]["dependencies"]
     httpx_deps = [d for d in dependencias if re.match(r"httpx\s*==", d)]
     assert httpx_deps, "httpx precisa estar em [project].dependencies com versão fixada (==)"
+
+
+# --- filtrar_eventos_ical: descarte por VEVENT --------------------------------------
+
+_BLOCO_VEVENT = re.compile(r"BEGIN:VEVENT\r\n.*?END:VEVENT\r\n", re.DOTALL)
+# Trechos originais suspeitos das fixtures; nunca podem aparecer em saídas. (Formas de
+# arroba como `&#64;` podem aparecer no `tipo` e na pontuação preservada do `padrao`.)
+TRECHOS_SUSPEITOS = (
+    "joao",
+    "maria",
+    "pedro",
+    "ana%",
+    "carla",
+    "souza",
+    "example",
+    "gmail",
+)
+
+
+def _sem_eventos_suspeitos(texto: str) -> str:
+    """O feed esperado: o original sem os blocos VEVENT cujo UID tem `SUSP`."""
+    return _BLOCO_VEVENT.sub(lambda m: "" if "SUSP" in m.group(0) else m.group(0), texto)
+
+
+def _assert_padrao_anonimo(padrao: str) -> None:
+    assert len(padrao) <= 40, padrao
+    alfanumericos = {c for c in padrao if c.isalnum()}
+    assert alfanumericos <= {"x", "9"}, padrao
+
+
+def test_filtrar_eventos_ical_tem_os_modelos_do_desenho() -> None:
+    from pydantic import BaseModel
+
+    modulo = _modulo()
+    assert issubclass(modulo.ResultadoFiltroIcal, BaseModel)
+    assert issubclass(modulo.Ocorrencia, BaseModel)
+    assert set(modulo.ResultadoFiltroIcal.model_fields) >= {
+        "texto",
+        "total_eventos",
+        "aprovados",
+        "descartados",
+        "motivo_arquivo",
+        "ocorrencias",
+    }
+    assert set(modulo.Ocorrencia.model_fields) >= {"tipo", "padrao"}
+
+
+# (1) feed todo válido
+
+
+@pytest.mark.parametrize("nome", ["feed_sem_links.ics", "feed_calev.ics", "feed_b.ics"])
+def test_filtrar_eventos_ical_feed_valido_sai_igual(nome: str) -> None:
+    modulo = _modulo()
+    texto = modulo.redigir_emails(_fixture(nome))
+    resultado = modulo.filtrar_eventos_ical(texto)
+    assert resultado.texto == texto
+    assert resultado.total_eventos == texto.count("BEGIN:VEVENT")
+    assert resultado.aprovados == resultado.total_eventos
+    assert resultado.descartados == 0
+    assert resultado.motivo_arquivo is None
+    assert resultado.ocorrencias == []
+
+
+def test_filtrar_eventos_ical_valarm_faz_parte_do_evento() -> None:
+    texto = _sem_eventos_suspeitos(_fixture("feed_misto.ics"))
+    resultado = _modulo().filtrar_eventos_ical(texto)
+    assert resultado.texto == texto
+    assert resultado.total_eventos == 3
+    assert resultado.aprovados == 3
+    assert "BEGIN:VALARM\r\nACTION:DISPLAY" in resultado.texto
+
+
+# (2) válidos + 1 suspeito
+
+
+def test_filtrar_eventos_ical_remove_so_o_evento_suspeito() -> None:
+    original = _fixture("feed_misto.ics")
+    resultado = _modulo().filtrar_eventos_ical(original)
+    assert resultado.texto == _sem_eventos_suspeitos(original)
+    assert resultado.total_eventos == 4
+    assert resultado.aprovados == 3
+    assert resultado.descartados == 1
+    assert resultado.motivo_arquivo is None
+    assert len(resultado.ocorrencias) >= 1
+    assert "evt-SUSP0001" not in resultado.texto
+    # Cabeçalho, VTIMEZONE e eventos aprovados (com VALARM e dobras) continuam.
+    assert "BEGIN:VTIMEZONE\r\nTZID:America/Sao_Paulo" in resultado.texto
+    assert "UID:calev-OK000002@events.lu.ma" in resultado.texto
+
+
+def test_filtrar_eventos_ical_tipo_da_ocorrencia_entidade_html() -> None:
+    resultado = _modulo().filtrar_eventos_ical(_fixture("feed_misto.ics"))
+    assert [o.tipo for o in resultado.ocorrencias] == ["&#64;"]
+
+
+# (3) vários suspeitos
+
+
+def test_filtrar_eventos_ical_varios_suspeitos() -> None:
+    original = _fixture("feed_varios_suspeitos.ics")
+    resultado = _modulo().filtrar_eventos_ical(original)
+    assert resultado.texto == _sem_eventos_suspeitos(original)
+    assert resultado.total_eventos == 6
+    assert resultado.aprovados == 2
+    assert resultado.descartados == 4
+    assert resultado.motivo_arquivo is None
+    tipos = {o.tipo for o in resultado.ocorrencias}
+    assert tipos >= {"&#64;", "arroba_fullwidth", "arroba_isolada_dominio", "%2540"}
+
+
+# (4) todos suspeitos
+
+
+@pytest.mark.parametrize("nome", ["feed_todos_suspeitos.ics", "feed_email_ofuscado.ics"])
+def test_filtrar_eventos_ical_todos_suspeitos_descarta_arquivo(nome: str) -> None:
+    texto = _fixture(nome)
+    resultado = _modulo().filtrar_eventos_ical(texto)
+    assert resultado.texto is None
+    assert resultado.motivo_arquivo == "todos_eventos_descartados"
+    assert resultado.total_eventos == texto.count("BEGIN:VEVENT")
+    assert resultado.aprovados == 0
+    assert resultado.descartados == resultado.total_eventos
+    assert resultado.ocorrencias
+
+
+# (5) estrutura inválida
+
+
+def _variacoes_invalidas() -> dict[str, str]:
+    base = _fixture("feed_sem_links.ics")
+    assert base.endswith("END:VCALENDAR\r\n")
+    return {
+        "nao_comeca_com_vcalendar": _fixture("nao_ical.html"),
+        "texto_antes_do_vcalendar": "lixo\r\n" + base,
+        "truncado_sem_end_vcalendar": base.removesuffix("END:VCALENDAR\r\n"),
+        "conteudo_depois_do_end_vcalendar": base + "BEGIN:VEVENT\r\nEND:VEVENT\r\n",
+        "vevent_aninhado": base.replace(
+            "BEGIN:VEVENT\r\n", "BEGIN:VEVENT\r\nBEGIN:VEVENT\r\n", 1
+        ).replace("END:VEVENT\r\n", "END:VEVENT\r\nEND:VEVENT\r\n", 1),
+        "begin_sem_end": base.replace("END:VEVENT\r\n", "", 1),
+        "end_sem_begin": base.replace("BEGIN:VEVENT\r\n", "", 1),
+        "end_vevent_sobrando": base.replace("END:VEVENT\r\n", "END:VEVENT\r\nEND:VEVENT\r\n", 1),
+        "end_vcalendar_dentro_do_evento": base.replace(
+            "END:VEVENT\r\n", "END:VCALENDAR\r\nEND:VEVENT\r\n", 1
+        ),
+    }
+
+
+@pytest.mark.parametrize(
+    "variacao",
+    [
+        "nao_comeca_com_vcalendar",
+        "texto_antes_do_vcalendar",
+        "truncado_sem_end_vcalendar",
+        "conteudo_depois_do_end_vcalendar",
+        "vevent_aninhado",
+        "begin_sem_end",
+        "end_sem_begin",
+        "end_vevent_sobrando",
+        "end_vcalendar_dentro_do_evento",
+    ],
+)
+def test_filtrar_eventos_ical_estrutura_invalida_descarta_arquivo(variacao: str) -> None:
+    resultado = _modulo().filtrar_eventos_ical(_variacoes_invalidas()[variacao])
+    assert resultado.texto is None
+    assert resultado.motivo_arquivo == "estrutura_invalida"
+    assert resultado.aprovados == 0
+
+
+# (6) suspeito fora de evento
+
+
+def test_filtrar_eventos_ical_suspeito_no_cabecalho_descarta_arquivo() -> None:
+    resultado = _modulo().filtrar_eventos_ical(_fixture("feed_suspeito_cabecalho.ics"))
+    assert resultado.texto is None
+    assert resultado.motivo_arquivo == "suspeito_fora_de_evento"
+    assert resultado.aprovados == 0
+    assert resultado.ocorrencias
+    for ocorrencia in resultado.ocorrencias:
+        _assert_padrao_anonimo(ocorrencia.padrao)
+
+
+def test_filtrar_eventos_ical_suspeito_no_vtimezone_descarta_arquivo() -> None:
+    texto = _sem_eventos_suspeitos(_fixture("feed_misto.ics")).replace(
+        "TZNAME:-03\r\n", "TZNAME:-03\r\nX-CONTATO:joao&#64;example.com\r\n"
+    )
+    resultado = _modulo().filtrar_eventos_ical(texto)
+    assert resultado.texto is None
+    assert resultado.motivo_arquivo == "suspeito_fora_de_evento"
+
+
+# (7) anonimização
+
+
+@pytest.mark.parametrize(
+    "nome", ["feed_misto.ics", "feed_varios_suspeitos.ics", "feed_email_dobrado.ics"]
+)
+def test_filtrar_eventos_ical_padrao_e_anonimo(nome: str) -> None:
+    resultado = _modulo().filtrar_eventos_ical(_fixture(nome))
+    assert resultado.ocorrencias
+    for ocorrencia in resultado.ocorrencias:
+        _assert_padrao_anonimo(ocorrencia.padrao)
+        for trecho in TRECHOS_SUSPEITOS:
+            assert trecho not in ocorrencia.padrao
+
+
+def test_filtrar_eventos_ical_padrao_limitado_a_40_caracteres() -> None:
+    longo = "contato_" + "muito_longo_" * 10 + "Ç&#64;exémplo.com.br" + "x" * 50
+    texto = _fixture("feed_sem_links.ics").replace(
+        "DESCRIPTION:Detalhes em breve.", f"DESCRIPTION:{longo}"
+    )
+    assert longo in texto
+    resultado = _modulo().filtrar_eventos_ical(texto)
+    assert resultado.texto is None  # único evento era suspeito
+    assert resultado.ocorrencias
+    for ocorrencia in resultado.ocorrencias:
+        _assert_padrao_anonimo(ocorrencia.padrao)
+        assert "Ç" not in ocorrencia.padrao
+        assert "é" not in ocorrencia.padrao
+
+
+# (8) linhas continuadas
+
+
+def test_filtrar_eventos_ical_email_partido_por_dobra_e_detectado() -> None:
+    original = _fixture("feed_email_dobrado.ics")
+    resultado = _modulo().filtrar_eventos_ical(original)
+    assert resultado.total_eventos == 3
+    assert resultado.aprovados == 2
+    assert resultado.descartados == 1
+    assert resultado.texto == _sem_eventos_suspeitos(original)
+    assert "carla" not in resultado.texto
+    assert [o.tipo for o in resultado.ocorrencias] == ["arroba"]
+
+
+def test_filtrar_eventos_ical_evento_aprovado_mantem_dobras_originais() -> None:
+    resultado = _modulo().filtrar_eventos_ical(_fixture("feed_email_dobrado.ics"))
+    assert resultado.texto is not None
+    assert (
+        "\\n\\nUma\r\n descricao longa o bastante para ser dobrada em varias linhas pelo gerado"
+        "\r\n r do iCal." in resultado.texto
+    )
+
+
+def test_filtrar_eventos_ical_redacao_antes_nao_esconde_email_dobrado() -> None:
+    """Em `capturar` a redação vem antes; a dobra impede a regex de redação de casar."""
+    modulo = _modulo()
+    resultado = modulo.filtrar_eventos_ical(
+        modulo.redigir_emails(_fixture("feed_email_dobrado.ics"))
+    )
+    assert resultado.descartados == 1
+    assert resultado.texto is not None
+    assert "carla" not in resultado.texto
+
+
+# Falha na checagem nunca vira aprovação
+
+
+def _checagem_que_explode(monkeypatch: pytest.MonkeyPatch, gatilho: str = "PROVOCA_ERRO") -> None:
+    modulo = _modulo()
+    original = modulo.encontrar_emails
+
+    def falsa(texto: str) -> list[str]:
+        if gatilho in texto:
+            raise RuntimeError("falha simulada na checagem")
+        return original(texto)
+
+    monkeypatch.setattr(modulo, "encontrar_emails", falsa)
+
+
+def test_filtrar_eventos_ical_excecao_no_evento_descarta_o_evento(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _checagem_que_explode(monkeypatch)
+    texto = _sem_eventos_suspeitos(_fixture("feed_misto.ics")).replace(
+        "SUMMARY:Workshop simples", "SUMMARY:PROVOCA_ERRO"
+    )
+    resultado = _modulo().filtrar_eventos_ical(texto)
+    assert resultado.texto is not None
+    assert "PROVOCA_ERRO" not in resultado.texto
+    assert resultado.total_eventos == 3
+    assert resultado.aprovados == 2
+    assert resultado.descartados == 1
+
+
+def test_filtrar_eventos_ical_excecao_fora_de_evento_descarta_arquivo(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _checagem_que_explode(monkeypatch)
+    texto = _fixture("feed_sem_links.ics").replace(
+        "X-WR-CALNAME:Calendario sintetico sem links", "X-WR-CALNAME:PROVOCA_ERRO"
+    )
+    assert "PROVOCA_ERRO" in texto
+    resultado = _modulo().filtrar_eventos_ical(texto)
+    assert resultado.texto is None
+    assert resultado.motivo_arquivo is not None
+    assert resultado.aprovados == 0
+
+
+def test_filtrar_eventos_ical_excecao_em_todos_os_eventos_descarta_arquivo(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _checagem_que_explode(monkeypatch, gatilho="BEGIN:VEVENT")
+    resultado = _modulo().filtrar_eventos_ical(_fixture("feed_b.ics"))
+    assert resultado.texto is None
+    assert resultado.aprovados == 0
+
+
+# capturar com descarte por evento
+
+
+def test_capturar_salva_feed_so_com_eventos_aprovados(tmp_path: Path, executar: Executar) -> None:
+    modulo = _modulo()
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_misto.ics")
+    relatorio, _ = executar(respostas)
+    salvo = (_pasta(tmp_path) / "vibe-space.ics").read_bytes().decode("utf-8")
+    esperado = _sem_eventos_suspeitos(modulo.redigir_emails(_fixture("feed_misto.ics")))
+    assert salvo == esperado
+    assert "vibe-space" in relatorio.feeds_ok
+    assert "vibe-space.ics" not in relatorio.descartados_por_dados_pessoais
+    detalhe = relatorio.feeds_detalhe["vibe-space"]
+    assert detalhe.total_eventos == 4
+    assert detalhe.aprovados == 3
+    assert detalhe.descartados == 1
+    assert detalhe.motivo_arquivo is None
+    assert [o.tipo for o in detalhe.ocorrencias] == ["&#64;"]
+    for ocorrencia in detalhe.ocorrencias:
+        _assert_padrao_anonimo(ocorrencia.padrao)
+
+
+def test_capturar_feed_todo_suspeito_vai_para_descartados(
+    tmp_path: Path, executar: Executar
+) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_todos_suspeitos.ics")
+    relatorio, _ = executar(respostas)
+    assert not (_pasta(tmp_path) / "vibe-space.ics").exists()
+    assert relatorio.descartados_por_dados_pessoais == ["vibe-space.ics"]
+    assert relatorio.feeds_detalhe["vibe-space"].motivo_arquivo == "todos_eventos_descartados"
+
+
+def test_capturar_feed_com_suspeito_no_cabecalho_vai_para_descartados(
+    tmp_path: Path, executar: Executar
+) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_suspeito_cabecalho.ics")
+    relatorio, _ = executar(respostas)
+    assert not (_pasta(tmp_path) / "vibe-space.ics").exists()
+    assert relatorio.descartados_por_dados_pessoais == ["vibe-space.ics"]
+    assert relatorio.feeds_detalhe["vibe-space"].motivo_arquivo == "suspeito_fora_de_evento"
+
+
+def test_capturar_feed_truncado_nao_e_salvo(tmp_path: Path, executar: Executar) -> None:
+    respostas = _respostas_base()
+    truncado = _fixture("feed_sem_links.ics").removesuffix("END:VCALENDAR\r\n")
+    respostas[_url_do_feed("vibe-space")] = httpx.Response(
+        200, text=truncado, headers={"content-type": "text/calendar"}
+    )
+    relatorio, _ = executar(respostas)
+    assert not (_pasta(tmp_path) / "vibe-space.ics").exists()
+    assert "vibe-space" not in relatorio.feeds_ok
+
+
+def test_capturar_feed_com_email_dobrado_salva_so_eventos_limpos(
+    tmp_path: Path, executar: Executar
+) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_email_dobrado.ics")
+    relatorio, _ = executar(respostas)
+    salvo = (_pasta(tmp_path) / "vibe-space.ics").read_bytes().decode("utf-8")
+    assert "carla" not in salvo
+    assert "evt-SUSP0005" not in salvo
+    assert "\r\n descricao longa" in salvo  # dobra original preservada
+    assert relatorio.feeds_detalhe["vibe-space"].descartados == 1
+
+
+def test_capturar_feeds_detalhe_vai_para_captura_json(tmp_path: Path, executar: Executar) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_varios_suspeitos.ics")
+    relatorio, _ = executar(respostas)
+    arquivo = _pasta(tmp_path) / "captura.json"
+    dados = json.loads(arquivo.read_text(encoding="utf-8"))
+    assert dados["feeds_detalhe"]["vibe-space"]["descartados"] == 4
+    lido = _modulo().RelatorioCaptura.model_validate_json(arquivo.read_text(encoding="utf-8"))
+    assert lido == relatorio
+
+
+@pytest.mark.parametrize(
+    "nome",
+    [
+        "feed_misto.ics",
+        "feed_varios_suspeitos.ics",
+        "feed_todos_suspeitos.ics",
+        "feed_suspeito_cabecalho.ics",
+        "feed_email_dobrado.ics",
+    ],
+)
+def test_capturar_captura_json_nao_contem_trecho_suspeito(
+    tmp_path: Path, executar: Executar, nome: str
+) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical(nome)
+    executar(respostas)
+    conteudo = (_pasta(tmp_path) / "captura.json").read_text(encoding="utf-8")
+    for trecho in TRECHOS_SUSPEITOS:
+        assert trecho not in conteudo, trecho
+    dados = json.loads(conteudo)
+    for detalhe in dados["feeds_detalhe"].values():
+        for ocorrencia in detalhe["ocorrencias"]:
+            _assert_padrao_anonimo(ocorrencia["padrao"])
+
+
+def test_main_stdout_nao_contem_trecho_suspeito(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    modulo = _modulo()
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_varios_suspeitos.ics")
+    respostas[_url_do_feed("mug-sp")] = _ical("feed_todos_suspeitos.ics")
+    respostas[_url_do_feed("womakerscode")] = _ical("feed_suspeito_cabecalho.ics")
+    cenario = Cenario(respostas)
+    cliente_real = httpx.Client
+
+    def cliente_falso(*args: object, **kwargs: Any) -> httpx.Client:
+        kwargs["transport"] = httpx.MockTransport(cenario._tratar)
+        return cliente_real(**kwargs)
+
+    capturar_real = modulo.capturar
+
+    def capturar_sem_pausa(destino: Path, cliente: httpx.Client, *args: object, **kwargs: object):
+        return capturar_real(destino, cliente, dormir=cenario.dormir)
+
+    monkeypatch.setattr(modulo.httpx, "Client", cliente_falso)
+    monkeypatch.setattr(modulo, "capturar", capturar_sem_pausa)
+    assert modulo.main([str(tmp_path)]) == 0
+    saida = capsys.readouterr()
+    texto = saida.out + saida.err
+    assert "vibe-space" in texto
+    for trecho in TRECHOS_SUSPEITOS:
+        assert trecho not in texto, trecho

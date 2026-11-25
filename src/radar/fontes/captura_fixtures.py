@@ -6,6 +6,7 @@ Baixa os feeds iCal dos calendários curados e da cidade de São Paulo e no máx
 - só `https` nos hosts `api.lu.ma` e `luma.com`, sem seguir redirecionamentos;
 - robots.txt de cada host lido antes da primeira requisição a ele (falha segura);
 - pausa de `PAUSA_SEGUNDOS` antes de cada requisição; nada que falhou é repetido;
+- feeds iCal checados evento a evento: VEVENT suspeito sai, o resto é salvo como veio;
 - páginas reduzidas ao JSON-LD do Event por lista de permissão; e-mails redigidos e
   menções `@perfil` trocadas por `@perfil-redigido`; qualquer outra arroba descarta o arquivo;
 - texto livre que sobra (iCal e campos de texto das páginas) passa por revisão humana.
@@ -137,6 +138,36 @@ _PERMITIDO_EVENTO: dict[str, Any] = {
 }
 
 
+class Ocorrencia(BaseModel):
+    """Arroba suspeita, sem o conteúdo original.
+
+    `tipo` é a forma de arroba achada (`arroba`, `arroba_isolada_dominio`, `arroba_fullwidth`,
+    `%40`, `%2540`, `&#64;`, `&#x40;`) ou `erro_na_checagem`. `padrao` é o trecho em volta
+    anonimizado: letras viram `x`, dígitos viram `9`, no máximo 40 caracteres.
+    """
+
+    tipo: str
+    padrao: str
+
+
+class DetalheFeed(BaseModel):
+    """Diagnóstico da checagem por evento de um feed iCal (vai para o `captura.json`)."""
+
+    total_eventos: int = 0
+    aprovados: int = 0
+    descartados: int = 0
+    # Preenchido quando o arquivo inteiro é descartado: `estrutura_invalida`,
+    # `suspeito_fora_de_evento`, `erro_na_checagem` ou `todos_eventos_descartados`.
+    motivo_arquivo: str | None = None
+    ocorrencias: list[Ocorrencia] = Field(default_factory=list)
+
+
+class ResultadoFiltroIcal(DetalheFeed):
+    """`DetalheFeed` mais o texto a salvar (None quando o arquivo inteiro é descartado)."""
+
+    texto: str | None = None
+
+
 class RelatorioCaptura(BaseModel):
     """Resultado de uma captura; gravado em `luma/captura.json`."""
 
@@ -148,6 +179,8 @@ class RelatorioCaptura(BaseModel):
     bloqueadas_robots: list[str] = Field(default_factory=list)
     # Arquivos não salvos porque a checagem bruta achou arroba suspeita depois da redação.
     descartados_por_dados_pessoais: list[str] = Field(default_factory=list)
+    # slug do feed → resultado da checagem por evento (só tipos e padrões anonimizados).
+    feeds_detalhe: dict[str, DetalheFeed] = Field(default_factory=dict)
     capturado_em: datetime
 
 
@@ -209,6 +242,57 @@ def encontrar_emails(texto: str) -> list[str]:
         normalizado[max(achado.start() - _TRECHO, 0) : achado.end() + _TRECHO]
         for achado in _FORMAS_DE_ARROBA.finditer(limpo)
     ]
+
+
+_TAMANHO_PADRAO = 40
+_JANELA_PADRAO = 15
+# Mesmas condições de vizinhança do `@` isolado, sem olhar o que vem depois.
+_ARROBA_ESPACADA = re.compile(r"(?:(?<!\S)|(?<=\\[nNt]))@(?=\s|$|\\[nNt])")
+
+
+def _anonimizar(trecho: str) -> str:
+    """Letras viram `x`, dígitos (e outros alfanuméricos) viram `9`; no máximo 40 caracteres."""
+    saida = []
+    for caractere in trecho[:_TAMANHO_PADRAO]:
+        if caractere.isalpha():
+            saida.append("x")
+        elif caractere.isalnum():
+            saida.append("9")
+        elif caractere.isspace():
+            saida.append(" ")
+        else:
+            saida.append(caractere)
+    return "".join(saida)
+
+
+def _tipo_de_arroba(normalizado: str, achado: re.Match[str]) -> str:
+    forma = achado.group(0)
+    if forma == "@":
+        if _ARROBA_ESPACADA.match(normalizado, achado.start()):
+            return "arroba_isolada_dominio"
+        return "arroba"
+    if forma == "\uff20":
+        return "arroba_fullwidth"
+    return forma.lower()
+
+
+def _ocorrencias(texto: str) -> list[Ocorrencia]:
+    """Mesma checagem de `encontrar_emails`, devolvendo só tipo e padrão anonimizado."""
+    normalizado = _normalizar_para_checagem(texto)
+
+    def _apagar(achado: re.Match[str]) -> str:
+        return " " * len(achado.group(0))
+
+    limpo = _EXCECOES_CHECAGEM.sub(_apagar, normalizado)
+    limpo = _ARROBA_ISOLADA.sub(_apagar, limpo)
+    ocorrencias = []
+    for achado in _FORMAS_DE_ARROBA.finditer(limpo):
+        inicio = max(achado.start() - _JANELA_PADRAO, 0)
+        trecho = normalizado[inicio : achado.end() + _JANELA_PADRAO]
+        ocorrencias.append(
+            Ocorrencia(tipo=_tipo_de_arroba(normalizado, achado), padrao=_anonimizar(trecho))
+        )
+    return ocorrencias
 
 
 def _normalizar_para_checagem(texto: str) -> str:
@@ -316,6 +400,160 @@ def _e_ical(texto: str) -> bool:
     return texto.lstrip("﻿ \t\r\n").upper().startswith("BEGIN:VCALENDAR")
 
 
+# --- Checagem por evento no iCal ---------------------------------------------------------
+
+_LINHA_DE_COMPONENTE = re.compile(r"(BEGIN|END):([A-Za-z0-9-]+)", re.IGNORECASE)
+_ERRO_NA_CHECAGEM = Ocorrencia(tipo="erro_na_checagem", padrao="")
+
+
+class _EstruturaInvalida(Exception):
+    """iCal com limites de componente ausentes, sobrando, aninhados ou ambíguos."""
+
+
+def _linhas_logicas(texto: str) -> list[tuple[str, int, int]]:
+    """Linhas lógicas (desdobradas) com o intervalo que ocupam no texto original.
+
+    Só serve para reconhecer a estrutura; o texto salvo usa os intervalos originais, então as
+    dobras são preservadas.
+    """
+    fisicas = re.findall(r"[^\n]*\n|[^\n]+$", texto)
+    logicas: list[tuple[str, int, int]] = []
+    posicao = 0
+    for fisica in fisicas:
+        fim = posicao + len(fisica)
+        conteudo = fisica.rstrip("\n").removesuffix("\r")
+        if conteudo[:1] in (" ", "\t"):
+            if not logicas:
+                raise _EstruturaInvalida
+            anterior, inicio, _ = logicas[-1]
+            logicas[-1] = (anterior + conteudo[1:], inicio, fim)
+        else:
+            logicas.append((conteudo, posicao, fim))
+        posicao = fim
+    return logicas
+
+
+def _blocos_de_evento(texto: str) -> list[tuple[int, int]]:
+    """Intervalos (no texto original) de cada VEVENT, com seus subcomponentes.
+
+    Exige exatamente um VCALENDAR, do começo ao fim do texto, e BEGIN/END casados.
+    """
+    logicas = _linhas_logicas(texto)
+    if not logicas:
+        raise _EstruturaInvalida
+    pilha: list[str] = []
+    blocos: list[tuple[int, int]] = []
+    inicio_evento = 0
+    for indice, (conteudo, inicio, fim) in enumerate(logicas):
+        componente = _LINHA_DE_COMPONENTE.fullmatch(conteudo)
+        if indice == 0 and not (
+            componente
+            and componente.group(1).upper() == "BEGIN"
+            and componente.group(2).upper() == "VCALENDAR"
+        ):
+            raise _EstruturaInvalida
+        if indice > 0 and not pilha:
+            raise _EstruturaInvalida  # conteúdo depois do END:VCALENDAR
+        if not conteudo:
+            raise _EstruturaInvalida
+        if componente is None:
+            continue
+        acao, nome = componente.group(1).upper(), componente.group(2).upper()
+        if acao == "BEGIN":
+            if (nome == "VCALENDAR") != (not pilha):
+                raise _EstruturaInvalida
+            if nome == "VEVENT":
+                if pilha != ["VCALENDAR"]:
+                    raise _EstruturaInvalida
+                inicio_evento = inicio
+            pilha.append(nome)
+        else:
+            if not pilha or pilha[-1] != nome:
+                raise _EstruturaInvalida
+            pilha.pop()
+            if nome == "VEVENT":
+                blocos.append((inicio_evento, fim))
+    if pilha:
+        raise _EstruturaInvalida  # truncado
+    return blocos
+
+
+def _checar(trecho: str) -> list[Ocorrencia] | None:
+    """Ocorrências do trecho (vazia = limpo). Qualquer erro vira suspeita, nunca aprovação."""
+    try:
+        if not encontrar_emails(trecho):
+            return []
+        return _ocorrencias(trecho) or [_ERRO_NA_CHECAGEM]
+    except Exception:
+        return None
+
+
+def filtrar_eventos_ical(texto: str) -> ResultadoFiltroIcal:
+    """Remove do iCal os VEVENT com arroba suspeita, preservando o resto byte a byte.
+
+    O arquivo inteiro é descartado (`texto=None`) se a estrutura for inválida ou ambígua, se
+    houver suspeita (ou erro na checagem) fora dos eventos, ou se todos os eventos caírem.
+    Nada do conteúdo original vai para o resultado além do texto aprovado.
+    """
+    try:
+        blocos = _blocos_de_evento(texto)
+    except _EstruturaInvalida:
+        return ResultadoFiltroIcal(motivo_arquivo="estrutura_invalida")
+    total = len(blocos)
+
+    fora: list[str] = []
+    posicao = 0
+    for inicio, fim in blocos:
+        fora.append(texto[posicao:inicio])
+        posicao = fim
+    fora.append(texto[posicao:])
+    ocorrencias_fora = _checar("".join(fora))
+    if ocorrencias_fora is None:
+        return ResultadoFiltroIcal(
+            total_eventos=total,
+            descartados=total,
+            motivo_arquivo="erro_na_checagem",
+            ocorrencias=[_ERRO_NA_CHECAGEM],
+        )
+    if ocorrencias_fora:
+        return ResultadoFiltroIcal(
+            total_eventos=total,
+            descartados=total,
+            motivo_arquivo="suspeito_fora_de_evento",
+            ocorrencias=ocorrencias_fora,
+        )
+
+    partes: list[str] = []
+    ocorrencias: list[Ocorrencia] = []
+    aprovados = 0
+    posicao = 0
+    for inicio, fim in blocos:
+        partes.append(texto[posicao:inicio])
+        posicao = fim
+        achadas = _checar(texto[inicio:fim])
+        if achadas == []:
+            partes.append(texto[inicio:fim])
+            aprovados += 1
+        else:
+            ocorrencias.extend(achadas if achadas is not None else [_ERRO_NA_CHECAGEM])
+    partes.append(texto[posicao:])
+
+    if total and not aprovados:
+        return ResultadoFiltroIcal(
+            total_eventos=total,
+            descartados=total,
+            motivo_arquivo="todos_eventos_descartados",
+            ocorrencias=ocorrencias,
+        )
+    return ResultadoFiltroIcal(
+        texto="".join(partes),
+        total_eventos=total,
+        aprovados=aprovados,
+        descartados=total - aprovados,
+        ocorrencias=ocorrencias,
+    )
+
+
 # --- Rede -----------------------------------------------------------------------------
 
 
@@ -398,6 +636,7 @@ def capturar(
     feeds_falha: dict[str, int | None] = {}
     bloqueadas: list[str] = []
     descartados: list[str] = []
+    detalhes: dict[str, DetalheFeed] = {}
     feeds: dict[str, str] = {}
     for slug, url in alvos:
         if not robots.permite(url):
@@ -405,9 +644,20 @@ def capturar(
             continue
         status, corpo = _baixar(cliente, url, dormir)
         if status == 200 and corpo is not None and _e_ical(corpo):
-            texto = redigir_emails(corpo)
-            if encontrar_emails(texto):
-                descartados.append(f"{slug}.ics")
+            try:
+                filtrado = filtrar_eventos_ical(redigir_emails(corpo))
+            except Exception:
+                # Falha inesperada nunca aprova nada; a mensagem não vai para lugar nenhum.
+                filtrado = ResultadoFiltroIcal(
+                    motivo_arquivo="erro_na_checagem", ocorrencias=[_ERRO_NA_CHECAGEM]
+                )
+            detalhes[slug] = DetalheFeed.model_validate(filtrado.model_dump(exclude={"texto"}))
+            texto = filtrado.texto
+            if texto is None:
+                if filtrado.motivo_arquivo == "estrutura_invalida":
+                    feeds_falha[slug] = status
+                else:
+                    descartados.append(f"{slug}.ics")
                 continue
             _gravar(pasta / f"{slug}.ics", texto)
             feeds[slug] = texto
@@ -442,6 +692,7 @@ def capturar(
         paginas=paginas,
         bloqueadas_robots=bloqueadas,
         descartados_por_dados_pessoais=descartados,
+        feeds_detalhe=detalhes,
         capturado_em=datetime.now(UTC),
     )
     _gravar(pasta / "captura.json", relatorio.model_dump_json(indent=2) + "\n")
@@ -485,6 +736,18 @@ def _imprimir_resumo(relatorio: RelatorioCaptura) -> None:
     descartados = ", ".join(relatorio.descartados_por_dados_pessoais) or "-"
     quantidade = len(relatorio.descartados_por_dados_pessoais)
     print(f"Descartados por dados pessoais ({quantidade}): {descartados}")
+    # Só contagens, motivo e tipos de ocorrência: nenhum trecho original vai para o log.
+    for slug, detalhe in relatorio.feeds_detalhe.items():
+        linha = (
+            f"  {slug}: {detalhe.total_eventos} evento(s), {detalhe.aprovados} aprovado(s), "
+            f"{detalhe.descartados} descartado(s)"
+        )
+        if detalhe.motivo_arquivo:
+            linha += f"; arquivo descartado ({detalhe.motivo_arquivo})"
+        tipos = sorted({ocorrencia.tipo for ocorrencia in detalhe.ocorrencias})
+        if tipos:
+            linha += f"; ocorrências: {', '.join(tipos)}"
+        print(linha)
 
 
 def main(argv: Sequence[str] | None = None) -> int:
