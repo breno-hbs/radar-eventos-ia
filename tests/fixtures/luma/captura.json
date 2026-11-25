@@ -1,0 +1,19 @@
+{
+  "feeds_ok": [
+    "codex-sp",
+    "womakerscode",
+    "mug-sp",
+    "cidade-sp"
+  ],
+  "feeds_falha": {},
+  "paginas": [
+    "https://luma.com/ayg5q20m",
+    "https://luma.com/m37dv3hg"
+  ],
+  "bloqueadas_robots": [],
+  "descartados_por_dados_pessoais": [
+    "ai-collective.ics",
+    "vibe-space.ics"
+  ],
+  "capturado_em": "2026-11-25T16:15:57.478579Z"
+}

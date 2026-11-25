@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//Codex - São Paulo//EN
+X-WR-CALNAME:Codex - São Paulo
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20260527T203000Z
+DTEND:20260527T233000Z
+DTSTAMP:20261125T161534Z
+ORGANIZER;CN="Glaucia Lemos":MAILTO:redigido@exemplo.invalid
+UID:evt-PPnuy0tzwk8MVct@events.lu.ma
+SUMMARY:Codex Community Meetup – São Paulo [Presencial]
+DESCRIPTION:Get up-to-date information at: https://luma.com/ayg5q20m\n\nAd
+ dress:\nZup IT Innovation\nSão Paulo, SP\nBrazil\n\nHosted by Glaucia Lem
+ os & 3 others
+LOCATION:Zup IT Innovation, Rua Pascoal Pais, 525 - 3º e 4º andar - Broo
+ klin, São Paulo - SP, 04581-060, Brazil
+GEO:-23.617043799999998;-46.687362
+SEQUENCE:217786534
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR
