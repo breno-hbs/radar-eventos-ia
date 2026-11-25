@@ -1,0 +1,47 @@
+name: Diagnóstico Fase 0
+
+# Roda uma única vez quando o script é enviado para o branch de diagnóstico.
+# O commit com o resultado é feito pelo GITHUB_TOKEN, que não dispara novas execuções.
+on:
+  push:
+    branches: [fase-0/diagnostico-fontes]
+    paths:
+      - diagnostico/diagnostico_fontes.py
+      - .github/workflows/diagnostico-fase0.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: diagnostico-fase0
+  cancel-in-progress: false
+
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install -r diagnostico/requirements.txt
+
+      - name: Rodar diagnóstico
+        run: python diagnostico/diagnostico_fontes.py
+
+      - name: Publicar resumo
+        if: always()
+        run: cat diagnostico/resultado.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Salvar resultado no branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add diagnostico/resultado.json diagnostico/resultado.md || true
+          git commit -m "Fase 0: resultado do diagnóstico de fontes" || echo "nada para salvar"
+          git push
