@@ -141,9 +141,10 @@ _PERMITIDO_EVENTO: dict[str, Any] = {
 class Ocorrencia(BaseModel):
     """Arroba suspeita, sem o conteúdo original.
 
-    `tipo` é a forma de arroba achada (`arroba`, `arroba_isolada_dominio`, `arroba_fullwidth`,
-    `%40`, `%2540`, `&#64;`, `&#x40;`) ou `erro_na_checagem`. `padrao` é o trecho em volta
-    anonimizado: letras viram `x`, dígitos viram `9`, no máximo 40 caracteres.
+    `tipo` é um nome textual da forma achada: `arroba`, `arroba_isolada_dominio`,
+    `arroba_fullwidth`, `url_40`, `url_2540`, `entidade_html_decimal`, `entidade_html_hex` ou
+    `erro_na_checagem`. `padrao` é o trecho em volta com toda forma de arroba trocada por
+    `(a)` e depois letras por `x` e dígitos por `9`, no máximo 40 caracteres.
     """
 
     tipo: str
@@ -250,10 +251,22 @@ _JANELA_PADRAO = 15
 _ARROBA_ESPACADA = re.compile(r"(?:(?<!\S)|(?<=\\[nNt]))@(?=\s|$|\\[nNt])")
 
 
-def _anonimizar(trecho: str) -> str:
-    """Letras viram `x`, dígitos (e outros alfanuméricos) viram `9`; no máximo 40 caracteres."""
+MARCADOR_ARROBA_NO_PADRAO = "(a)"
+# Nomes textuais dos tipos: o `captura.json` também passa pelo `--verificar`, então o
+# diagnóstico não pode conter nenhuma forma de arroba.
+_TIPOS_POR_FORMA = {
+    "\uff20": "arroba_fullwidth",
+    "%40": "url_40",
+    "%2540": "url_2540",
+    "&#64;": "entidade_html_decimal",
+    "&#x40;": "entidade_html_hex",
+}
+
+
+def _anonimizar_sem_arroba(trecho: str) -> str:
+    """Letras viram `x`, dígitos (e outros alfanuméricos) viram `9`, espaços viram espaço."""
     saida = []
-    for caractere in trecho[:_TAMANHO_PADRAO]:
+    for caractere in trecho:
         if caractere.isalpha():
             saida.append("x")
         elif caractere.isalnum():
@@ -262,7 +275,18 @@ def _anonimizar(trecho: str) -> str:
             saida.append(" ")
         else:
             saida.append(caractere)
-    return "".join(saida)
+    # Resto de entidade HTML cortada na borda da janela (`&#9`) não pode sobrar.
+    return "".join(saida).replace("&#", "&_")
+
+
+def _anonimizar(trecho: str) -> str:
+    """Padrão anonimizado: toda forma de arroba vira `(a)` antes de trocar letras e dígitos.
+
+    Nenhum padrão contém `@`, `＠`, `%40`, `%2540` ou `&#`; no máximo 40 caracteres.
+    """
+    partes = _FORMAS_DE_ARROBA.split(trecho)
+    padrao = MARCADOR_ARROBA_NO_PADRAO.join(_anonimizar_sem_arroba(parte) for parte in partes)
+    return padrao[:_TAMANHO_PADRAO]
 
 
 def _tipo_de_arroba(normalizado: str, achado: re.Match[str]) -> str:
@@ -271,9 +295,7 @@ def _tipo_de_arroba(normalizado: str, achado: re.Match[str]) -> str:
         if _ARROBA_ESPACADA.match(normalizado, achado.start()):
             return "arroba_isolada_dominio"
         return "arroba"
-    if forma == "\uff20":
-        return "arroba_fullwidth"
-    return forma.lower()
+    return _TIPOS_POR_FORMA[forma.lower()]
 
 
 def _ocorrencias(texto: str) -> list[Ocorrencia]:
