@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico A
+X-WR-CALDESC:Agenda completa em https://luma.com/calendario-fora-do-evento
+BEGIN:VEVENT
+UID:evt-AAAA1111@events.lu.ma
+SUMMARY:Meetup de IA em SP
+DTSTART:20261210T220000Z
+DTEND:20261211T010000Z
+LOCATION:Av. Paulista 1000\, Sao Paulo
+ORGANIZER;CN=Organizadora Teste:MAILTO:organizadora.teste@example.com
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-ia-sp\n\nContato: duvidas+ia@sub.example.org\nRSVP:\nrsvp.lista@example.com\nForm: https://example.com/form?email=contato%40example.com&x=1\nHost: https://luma.com/user/usr-abc123\nSite: https://example.com/meetup
+URL:https://luma.com/link-fora-da-descricao
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-BBBB2222@events.lu.ma
+SUMMARY:Evento com endereco oculto
+DTSTART:20261212T220000Z
+DTEND:20261213T010000Z
+LOCATION:https://luma.com/event/evt-BBBB2222
+ORGANIZER;CN=Joao Silva:mailto:joao.silva@events.lu.ma
+DESCRIPTION:Get up-to-date information at: https://luma.com/x7k2p9q1\n\nVeja tambem https://luma.com/event/evt-CCCC3333 e https://luma.com/meetup-ia-sp\nFale com "outro_org@example.net"
+END:VEVENT
+END:VCALENDAR
