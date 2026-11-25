@@ -24,7 +24,7 @@ Executada em 2026-11-25. O script e o resultado bruto estão em `diagnostico/`, 
 
 ## Lista inicial de organizadores
 
-Os IDs da Luma vieram das páginas públicas dos eventos. Os feeds do The AI Collective, WoMakersCode, MUG e da cidade foram baixados com sucesso; os do Codex e do Vibe Space serão confirmados no primeiro teste da Fase 1.
+Os IDs da Luma vieram das páginas públicas dos eventos. Todos os seis feeds foram confirmados na captura do F1-02 (execução #6, 2026-11-25): Codex e Vibe Space incluídos.
 
 | Organizador | Fonte | ID / endereço |
 |---|---|---|
@@ -38,3 +38,20 @@ Os IDs da Luma vieram das páginas públicas dos eventos. Os feeds do The AI Col
 | Enterprise AI São Paulo | Meetup (Fase 2) | `enterprise-ai-sao-paulo` |
 | AI Tinkerers SP | busca manual | sao-paulo.aitinkerers.org |
 | Mulheres em IA (MIA) | busca manual (Sympla) | — |
+
+## Captura do F1-02 (execução #6, 2026-11-25)
+
+Resultado em `tests/fixtures/luma/captura.json`. Checagem de dados pessoais por evento (D9).
+
+| Feed | Eventos | Aprovados | Descartados | Motivo do descarte |
+|---|---|---|---|---|
+| ai-collective | 298 | 297 | 1 | `arroba` (menção colada que a redação não reconhece) |
+| vibe-space | 231 | 230 | 1 | `arroba_isolada_dominio` (`@` seguido de algo com formato de domínio) |
+| codex-sp | 1 | 1 | 0 | — |
+| womakerscode | 9 | 9 | 0 | — |
+| mug-sp | 1 | 1 | 0 | — |
+| cidade-sp | 12 | 12 | 0 | — |
+
+- Nenhum feed bloqueado pelo robots.txt nem com falha de rede.
+- 1 página de evento salva (`pagina_1.html`, evento de 2023 em San Francisco, gratuito); a segunda página escolhida não foi salva.
+- Revisão humana: nenhum telefone nem e-mail no texto livre (o único número longo encontrado é parte de um link); restam nomes de anfitriões em `ORGANIZER;CN` e "Hosted by", aceitos pela D9.
