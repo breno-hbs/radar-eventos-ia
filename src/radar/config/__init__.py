@@ -30,6 +30,9 @@ class Configuracao(BaseSettings):
     limite_paginas_enriquecimento_por_execucao: int = Field(default=10, ge=0)
     # Ausências contáveis seguidas até o evento virar "nao_encontrado" (D12).
     limite_ausencias_nao_encontrado: int = Field(default=LIMITE_AUSENCIAS_PADRAO, ge=1)
+    # Tetos de tokens acumulados por execução do classificador (D13).
+    limite_tokens_entrada_por_execucao: int = Field(default=200_000, ge=1)
+    limite_tokens_saida_por_execucao: int = Field(default=40_000, ge=1)
 
     @field_validator(
         "database_url", "anthropic_api_key", "telegram_token", "telegram_chat_id", mode="before"

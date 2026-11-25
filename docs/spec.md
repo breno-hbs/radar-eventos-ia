@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.2 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.3 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -12,17 +12,17 @@ Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro
 ## 2. Escopo dos eventos
 - **Tipos:** meetups, palestras, hackathons, conferências e workshops sobre IA.
 - **Formato:** presenciais na Grande SP e online. Gratuitos e pagos.
-- **Horizonte:** 30 dias para meetups, palestras, workshops e online; 90 dias para conferências pagas. Antes do LLM vale 90 dias para todos; o corte de 30 dias vem depois da classificação (D11).
+- **Horizonte:** 90 dias para conferências e hackathons; 30 dias para todos os demais tipos, inclusive tipo desconhecido (`outro`), independentemente de preço e modalidade (D13). Antes do LLM vale 90 dias para todos; o corte por tipo vem depois da classificação (D11, D13).
 - **Idioma:**
 
 | Situação | Ação |
 |---|---|
-| Português, bilíngue ou com tradução | Aviso |
-| Idioma não informado | Aviso com etiqueta "idioma não confirmado" |
-| Presencial só em inglês, sem tradução | Resumo semanal, etiqueta "em inglês" |
-| Online só em inglês | Descartado |
+| Português, bilíngue com português ou com tradução para português | Aviso |
+| Idioma não informado (`desconhecido`) | Aviso com etiqueta "idioma não confirmado" |
+| Estrangeiro confirmado (`en` ou `outro`), sem tradução, presencial | Resumo semanal, etiqueta com o idioma |
+| Estrangeiro confirmado, sem tradução, exclusivamente online | Descartado |
 
-Página em inglês não implica evento em inglês; o classificador procura sinais explícitos e guarda o trecho de evidência.
+Página em inglês não implica evento em inglês; o classificador procura sinais explícitos e guarda o trecho de evidência. Estrangeiro confirmado exige trecho explícito; sem ele o idioma é `desconhecido` e o evento é avisado (D13).
 
 ## 3. Fontes
 - **Fase 1:** Luma via iCal: calendários de organizadores curados + feed da cidade de SP (D1, D2, D3).
@@ -36,19 +36,20 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
    - **Geográfico:** coordenadas na caixa da Grande SP → local textual (UF, país estrangeiro, CEP 01000-000 a 09999-999, "São Paulo") → modalidade online (plataforma de transmissão na URL do local ou "online" no texto). Só é descartado o evento com evidência de estar fora da Grande SP; sem coordenada e sem local conclusivo, segue para o classificador como `indefinida` e nunca é descartado só por isso (D6, D11).
    - **Horizonte:** descarta o que já terminou e o que começa depois de 90 dias; o corte de 30 dias por tipo (§2) é aplicado depois da classificação (D11).
 4. **Deduplicação** entre fontes.
-5. **Classificação com LLM** (só eventos novos ou alterados):
-   - responde: é IA, categoria, tópicos, idioma, tradução, resumo de 1 linha, trecho de evidência;
-   - plano B para modalidade e preço quando faltarem, só com evidência;
-   - saída JSON validada com Pydantic; conteúdo externo tratado como dado não confiável (o LLM não tem ferramentas);
+5. **Classificação com LLM** (só eventos novos ou alterados; detalhes na D13):
+   - responde: é IA, categoria, tópicos, tipo de evento, modalidade, idioma, tradução, estado de preço, localização (só quando o filtro deixou `indefinida`; nos demais casos, resposta diferente de `nao_se_aplica` é erro), resumo de 1 linha e trecho de evidência;
+   - todo campo conhecido traz um trecho copiado literalmente do texto do evento, conferido pelo código; sem evidência, "desconhecido". Trecho literal não garante interpretação correta: a avaliação do §8 continua;
+   - saída JSON estruturada, validada com Pydantic e contra o texto do evento; conteúdo externo vai delimitado como dado não confiável, sem link de inscrição, coordenadas nem identificadores, e toda URL dos textos reduzida ao host (o LLM não tem ferramentas);
    - chave de classificação = hash do conteúdo relevante normalizado + versão do prompt + modelo + versão do schema;
-   - registro por chamada: versão do prompt, modelo, tokens, latência, custo; limite de chamadas por execução.
+   - registro por chamada (inclusive erros): versão do prompt, modelo, tokens, latência e custo estimado; por execução, até 50 chamadas, 200 mil tokens de entrada e 40 mil de saída; uma chamada por evento, sem repetição;
+   - saída inválida vira erro registrado, nunca evento aprovado; após 3 erros de saída para a mesma chave o evento fica em "falha de classificação" até a chave mudar, e entra no resumo semanal como "Não classificado — confira manualmente" (com aviso excepcional se acontecer antes do próximo resumo).
 6. **Enriquecimento de preço (Luma):** página do evento, só eventos novos aprovados nos filtros, com limite por execução, cache e sem contorno de bloqueio (D4).
 7. **Estados de preço:** gratuito confirmado, pago com valor, pago sem valor conhecido, preço variável, preço desconhecido.
 8. **Estados do evento:** ativo, alterado, cancelado (só quando a fonte diz), encerrado, não encontrado (some por N execuções seguidas com todos os seus calendários lidos com sucesso; padrão 3; não gera aviso). Só eventos aprovados nos filtros entram no banco; regras de hash e transições na D12.
 9. **Agenda (Fase 3):** Google Calendar só com escopo FreeBusy; margem de deslocamento configurável para presenciais.
 10. **Avisos no Telegram:**
     - na próxima execução: evento de IA que cabe na agenda, com estado de preço e link;
-    - resumo semanal: conflitos de agenda, presenciais em inglês, pendentes;
+    - resumo semanal: conflitos de agenda, presenciais em idioma estrangeiro, pendentes, eventos não classificados (D13);
     - Fase 3: botões "Vou" e "Não tenho interesse" (via webhook serverless), lembrete na véspera (confere a agenda de novo) e aviso de mudança para eventos com "Vou".
 
 ## 5. Agendamento (GitHub Actions)

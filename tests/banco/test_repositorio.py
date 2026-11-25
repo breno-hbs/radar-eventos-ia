@@ -23,6 +23,7 @@ calendário (um calendário que falha não faz o hash oscilar); encerramento por
 from __future__ import annotations
 
 import importlib
+import inspect
 import uuid
 from collections.abc import Sequence
 from datetime import UTC, datetime, timedelta
@@ -1054,3 +1055,188 @@ def test_fila_mistura_classificados_e_pendentes(repo: ModuleType, sessao: Sessio
     _rodar(repo, sessao, [ok("cal-a", eventos)])
     _classificar(sessao, _ev(sessao, "evt-Um1")["id"])
     assert _ids(_para_classificar(repo, sessao)) == ["evt-Dois2"]
+
+
+# --- eventos_para_classificar: erros de saída repetidos (F1-06) ------------------------------
+#
+# `max_erros_saida`: evento com >= N classificações `erro` cujo `motivo_erro` começa por
+# "saida_" para a chave ATUAL sai da fila; erros "api_" não contam; padrão None = sem corte.
+
+
+def _erros(sessao: Session, evento_id: int, motivo: str, quantidade: int, **campos: str) -> None:
+    for _ in range(quantidade):
+        _classificar(sessao, evento_id, situacao="erro", motivo_erro=motivo, **campos)
+
+
+def test_tres_erros_de_saida_tiram_da_fila(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    _erros(sessao, _ev(sessao)["id"], "saida_json_invalido", 3)
+    assert _para_classificar(repo, sessao, max_erros_saida=3) == []
+
+
+def test_dois_erros_de_saida_mantem_na_fila(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    _erros(sessao, _ev(sessao)["id"], "saida_schema_invalido:tipo_evento", 2)
+    assert _ids(_para_classificar(repo, sessao, max_erros_saida=3)) == ["evt-Alfa1"]
+
+
+def test_erros_de_saida_de_motivos_diferentes_somam(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    evento_id = _ev(sessao)["id"]
+    _erros(sessao, evento_id, "saida_json_invalido", 1)
+    _erros(sessao, evento_id, "saida_truncada", 1)
+    _erros(sessao, evento_id, "saida_evidencia_nao_encontrada:trecho_preco", 1)
+    assert _para_classificar(repo, sessao, max_erros_saida=3) == []
+
+
+def test_erros_de_api_nao_tiram_da_fila(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    evento_id = _ev(sessao)["id"]
+    _erros(sessao, evento_id, "api_servidor", 3)
+    _erros(sessao, evento_id, "api_rate_limit", 2)
+    _erros(sessao, evento_id, "saida_truncada", 2)
+    assert _ids(_para_classificar(repo, sessao, max_erros_saida=3)) == ["evt-Alfa1"]
+
+
+@pytest.mark.parametrize(
+    "chave_antiga",
+    [
+        {"versao_prompt": "v0"},
+        {"modelo": "modelo-antigo"},
+        {"versao_schema": "0"},
+        {"hash_conteudo": "f" * 64},
+    ],
+)
+def test_erros_de_saida_de_outra_chave_nao_contam(
+    repo: ModuleType, sessao: Session, chave_antiga: dict[str, str]
+) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    _erros(sessao, _ev(sessao)["id"], "saida_json_invalido", 3, **chave_antiga)
+    assert _ids(_para_classificar(repo, sessao, max_erros_saida=3)) == ["evt-Alfa1"]
+
+
+def test_sem_max_erros_saida_nao_ha_corte(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    _erros(sessao, _ev(sessao)["id"], "saida_json_invalido", 5)
+    assert _ids(_para_classificar(repo, sessao)) == ["evt-Alfa1"]
+
+
+def test_erros_de_saida_de_um_evento_nao_afetam_outro(repo: ModuleType, sessao: Session) -> None:
+    eventos = [
+        evento("evt-Um1"),
+        evento("evt-Dois2", inicio=INICIO_PADRAO + timedelta(days=1), fim=None),
+    ]
+    _rodar(repo, sessao, [ok("cal-a", eventos)])
+    _erros(sessao, _ev(sessao, "evt-Um1")["id"], "saida_json_invalido", 3)
+    assert _ids(_para_classificar(repo, sessao, max_erros_saida=3)) == ["evt-Dois2"]
+
+
+# --- eventos_com_falha_classificacao (F1-06) -------------------------------------------------
+#
+# Estado derivado, sem coluna nova: evento com >= `max_erros_saida` (padrão 3) erros cujo
+# motivo começa por "saida_" para a chave atual (hash + prompt + modelo + schema).
+# Assinatura: eventos_com_falha_classificacao(sessao, *, versao_prompt, modelo,
+# versao_schema, max_erros_saida=3) -> list[Evento], por início.
+
+
+def _com_falha(repo: ModuleType, sessao: Session, **chave: Any) -> list:
+    return repo.eventos_com_falha_classificacao(sessao, **{**CHAVE, **chave})
+
+
+def test_tres_erros_de_saida_aparecem_como_falha_e_saem_da_fila(
+    repo: ModuleType, sessao: Session
+) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    evento_id = _ev(sessao)["id"]
+    _erros(sessao, evento_id, "saida_json_invalido", 2)
+    assert _com_falha(repo, sessao) == []
+    _erros(sessao, evento_id, "saida_truncada", 1)
+    resultado = _com_falha(repo, sessao)
+    assert _ids(resultado) == ["evt-Alfa1"]
+    from radar.banco.modelos import Evento
+
+    assert isinstance(resultado[0], Evento)
+    assert _para_classificar(repo, sessao, max_erros_saida=3) == []
+
+
+def test_max_erros_saida_configuravel_na_lista_de_falhas(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    _erros(sessao, _ev(sessao)["id"], "saida_json_invalido", 2)
+    assert _ids(_com_falha(repo, sessao, max_erros_saida=2)) == ["evt-Alfa1"]
+
+
+@pytest.mark.parametrize(
+    "chave_nova",
+    [
+        {"versao_prompt": "v2"},
+        {"modelo": "modelo-novo"},
+        {"versao_schema": "2"},
+    ],
+)
+def test_mudar_a_chave_tira_da_falha_e_volta_a_fila(
+    repo: ModuleType, sessao: Session, chave_nova: dict[str, str]
+) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    _erros(sessao, _ev(sessao)["id"], "saida_json_invalido", 3)
+    assert _ids(_com_falha(repo, sessao)) == ["evt-Alfa1"]
+    assert _com_falha(repo, sessao, **chave_nova) == []
+    assert _ids(_para_classificar(repo, sessao, max_erros_saida=3, **chave_nova)) == ["evt-Alfa1"]
+
+
+def test_mudar_o_conteudo_tira_da_falha_e_volta_a_fila(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    _erros(sessao, _ev(sessao)["id"], "saida_json_invalido", 3)
+    _rodar(repo, sessao, [ok("cal-a", [evento(titulo="Mudou")])], agora=AGORA + timedelta(hours=1))
+    assert _ev(sessao)["estado"] == "alterado"
+    assert _com_falha(repo, sessao) == []
+    assert _ids(_para_classificar(repo, sessao, max_erros_saida=3)) == ["evt-Alfa1"]
+
+
+def test_erros_de_api_nao_contam_como_falha(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    evento_id = _ev(sessao)["id"]
+    _erros(sessao, evento_id, "api_servidor", 3)
+    _erros(sessao, evento_id, "api_requisicao", 3)
+    _erros(sessao, evento_id, "saida_truncada", 2)
+    assert _com_falha(repo, sessao) == []
+
+
+def test_evento_fora_nao_aparece_na_falha(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    _erros(sessao, _ev(sessao)["id"], "saida_json_invalido", 3)
+    sessao.execute(text("UPDATE eventos SET localizacao = 'fora'"))
+    assert _com_falha(repo, sessao) == []
+
+
+def test_falhas_ordenadas_por_inicio(repo: ModuleType, sessao: Session) -> None:
+    eventos = [
+        evento("evt-Tarde1", inicio=INICIO_PADRAO + timedelta(days=3), fim=None),
+        evento("evt-Cedo1", inicio=INICIO_PADRAO, fim=None),
+        evento("evt-Meio1", inicio=INICIO_PADRAO + timedelta(days=1), fim=None),
+    ]
+    _rodar(repo, sessao, [ok("cal-a", eventos)])
+    for id_fonte in ("evt-Tarde1", "evt-Cedo1", "evt-Meio1"):
+        _erros(sessao, _ev(sessao, id_fonte)["id"], "saida_json_invalido", 3)
+    assert _ids(_com_falha(repo, sessao)) == ["evt-Cedo1", "evt-Meio1", "evt-Tarde1"]
+
+
+def test_falha_nao_lista_evento_ja_classificado_ok(repo: ModuleType, sessao: Session) -> None:
+    _rodar(repo, sessao, [ok("cal-a", [evento()])])
+    evento_id = _ev(sessao)["id"]
+    _erros(sessao, evento_id, "saida_json_invalido", 3)
+    _classificar(sessao, evento_id)
+    assert _com_falha(repo, sessao) == []
+
+
+def test_max_erros_saida_vem_de_uma_constante_unica(repo: ModuleType) -> None:
+    # A constante mora no repositório (o classificador importa o repositório; o contrário
+    # criaria import circular) e o classificador usa o mesmo valor.
+    assert isinstance(repo.MAX_ERROS_SAIDA, int)
+    padrao = (
+        inspect.signature(repo.eventos_com_falha_classificacao)
+        .parameters["max_erros_saida"]
+        .default
+    )
+    assert padrao == repo.MAX_ERROS_SAIDA
+    classificador = importlib.import_module("radar.classificacao.classificador")
+    assert classificador.MAX_ERROS_SAIDA is repo.MAX_ERROS_SAIDA
