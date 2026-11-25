@@ -22,6 +22,8 @@ VARIAVEIS = (
     "LIMITE_CHAMADAS_LLM_POR_EXECUCAO",
     "LIMITE_PAGINAS_ENRIQUECIMENTO_POR_EXECUCAO",
     "LIMITE_AUSENCIAS_NAO_ENCONTRADO",
+    "LIMITE_TOKENS_ENTRADA_POR_EXECUCAO",
+    "LIMITE_TOKENS_SAIDA_POR_EXECUCAO",
 )
 
 # Valores falsos, só para teste. Nunca usar credenciais reais aqui.
@@ -280,5 +282,34 @@ def test_limite_ausencias_lido_do_ambiente(
 @pytest.mark.parametrize("valor", ["0", "-1", "tres"])
 def test_limite_ausencias_invalido_e_rejeitado(monkeypatch: pytest.MonkeyPatch, valor: str) -> None:
     monkeypatch.setenv("LIMITE_AUSENCIAS_NAO_ENCONTRADO", valor)
+    with pytest.raises(ValidationError):
+        _carregar()
+
+
+# --- Limites de tokens do classificador (F1-06) --------------------------------------
+
+
+def test_limites_de_tokens_padrao() -> None:
+    config = _carregar()
+    assert config.limite_tokens_entrada_por_execucao == 200_000
+    assert config.limite_tokens_saida_por_execucao == 40_000
+
+
+def test_limites_de_tokens_lidos_do_ambiente(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("LIMITE_TOKENS_ENTRADA_POR_EXECUCAO", "1000")
+    monkeypatch.setenv("LIMITE_TOKENS_SAIDA_POR_EXECUCAO", "1")
+    config = _carregar()
+    assert config.limite_tokens_entrada_por_execucao == 1000
+    assert config.limite_tokens_saida_por_execucao == 1
+
+
+@pytest.mark.parametrize(
+    "variavel", ["LIMITE_TOKENS_ENTRADA_POR_EXECUCAO", "LIMITE_TOKENS_SAIDA_POR_EXECUCAO"]
+)
+@pytest.mark.parametrize("valor", ["0", "-5", "muitos"])
+def test_limites_de_tokens_invalidos(
+    monkeypatch: pytest.MonkeyPatch, variavel: str, valor: str
+) -> None:
+    monkeypatch.setenv(variavel, valor)
     with pytest.raises(ValidationError):
         _carregar()

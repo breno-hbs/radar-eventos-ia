@@ -104,8 +104,11 @@ def _coordenada(valor: float | None) -> str | None:
     return None if valor is None else f"{round(valor, CASAS_COORDENADA):.{CASAS_COORDENADA}f}"
 
 
-def _descricoes_distintas(descricoes: Mapping[str, str | None]) -> list[str]:
-    """Conjunto ordenado das descrições normalizadas, sem slug e sem vazias."""
+def descricoes_distintas(descricoes: Mapping[str, str | None]) -> list[str]:
+    """Conjunto ordenado das descrições normalizadas, sem slug e sem vazias.
+
+    Usado no hash e na mensagem do classificador (F1-06), para os dois verem o mesmo texto.
+    """
     return sorted({t for t in (_texto(d) for d in descricoes.values()) if t is not None})
 
 
@@ -129,7 +132,7 @@ def hash_conteudo(evento: EventoConsolidado, descricoes: Mapping[str, str | None
         "latitude": _coordenada(evento.latitude),
         "longitude": _coordenada(evento.longitude),
         "link_inscricao": _texto(evento.link_inscricao),
-        "descricoes": _descricoes_distintas(descricoes),
+        "descricoes": descricoes_distintas(descricoes),
     }
     canonico = json.dumps(conteudo, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
     return hashlib.sha256(canonico.encode("utf-8")).hexdigest()

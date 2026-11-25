@@ -90,12 +90,18 @@
 - Nunca notificar evento com `localizacao='fora'`, mesmo que esteja `ativo`/`alterado` no banco (revisão do F1-05).
 - Antes de exibir `link_inscricao`/`local_url`: recusar URL com usuário/senha (`https://user:senha@…`) e remover caracteres invisíveis de formatação (categoria Cf, ex.: U+202E) (revisão do F1-03).
 - **Sua parte:** criar o bot no @BotFather, mandar uma mensagem para ele e cadastrar `TELEGRAM_TOKEN` e `TELEGRAM_CHAT_ID` nos Secrets (eu passo o passo a passo).
+- Etiqueta "idioma não confirmado" para idioma `desconhecido`; etiqueta com o idioma para estrangeiro confirmado (`en`/`outro`) no resumo semanal (D13).
+- Mensagens do resumo semanal para eventos em falha de classificação ("Não classificado — confira manualmente") e do aviso excepcional (D13).
 - **Aceite:** testes com cliente falso; nenhuma notificação duplicada ao rodar duas vezes.
 
 ### F1-10 — Orquestração, agendamento e alertas
 - Comando `radar executar`: coleta → filtro → banco → classificação → enriquecimento → avisos.
 - Workflow agendado: 7h40, 12h40 e 19h40 (horário de SP), com grupo de concorrência.
 - Alertas no Telegram: falha de extração; fonte vazia por várias execuções; inatividade perto do dia 50.
+- Horizonte por tipo depois da classificação: conferência e hackathon 90 dias; demais tipos (inclusive `outro`) 30 dias, independentemente de preço e modalidade (D13).
+- Encaminhamento por idioma (D13): pt / bilíngue / com tradução → aviso; `desconhecido` → aviso com "idioma não confirmado"; estrangeiro confirmado sem tradução → resumo semanal se presencial, descartado se exclusivamente online.
+- Eventos em falha de classificação (`eventos_com_falha_classificacao`) → resumo semanal como "Não classificado — confira manualmente"; aviso excepcional se o evento acontecer antes do próximo resumo (D13).
+- Commit depois da classificação (o classificador só faz `flush`) e registro do `ResumoClassificacao` (interrupções, restantes, custo estimado).
 - **Sua parte:** criar o banco gratuito (Neon ou Supabase), cadastrar `DATABASE_URL` e `ANTHROPIC_API_KEY` nos Secrets e definir o limite mensal de gasto no console da Anthropic.
 - **Aceite:** uma execução manual completa ponta a ponta com aviso real no seu Telegram.
 

@@ -334,3 +334,13 @@ def test_descricoes_que_diferem_so_na_caixa_contam_como_diferentes(
     antes = conteudo.hash_conteudo(consolidado, {"cal-a": "Texto"})
     depois = conteudo.hash_conteudo(consolidado, {"cal-a": "Texto", "cal-b": "texto"})
     assert antes != depois
+
+
+# --- descricoes_distintas pública (F1-06: o classificador usa as mesmas descrições) ----------
+
+
+def test_descricoes_distintas_publica(conteudo: ModuleType) -> None:
+    distintas = conteudo.descricoes_distintas(
+        {"cal-a": "Texto   A", "cal-b": " Texto A\n", "cal-c": None, "cal-d": "", "cal-e": "B"}
+    )
+    assert distintas == ["B", "Texto A"]

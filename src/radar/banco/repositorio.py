@@ -9,9 +9,10 @@ import uuid
 from collections import defaultdict
 from collections.abc import Sequence
 from datetime import datetime
+from typing import Any
 
 from pydantic import BaseModel, ConfigDict
-from sqlalchemy import and_, exists, select
+from sqlalchemy import and_, exists, func, select
 from sqlalchemy.orm import Session
 
 from radar.banco.ciclo_vida import EstadoEvento, Observacao, transicionar
@@ -350,12 +351,15 @@ def _atualizar_existente(
         destinos[novo].append(linha.id)
 
 
-def eventos_para_classificar(
-    sessao: Session, versao_prompt: str, modelo: str, versao_schema: str, limite: int
-) -> list[Evento]:
-    """Eventos ativos ou alterados, fora de `localizacao='fora'`, sem classificação `ok` para a
-    chave atual (hash do conteúdo + versão do prompt + modelo + versão do schema), por início."""
-    classificado = exists().where(
+PREFIXO_ERRO_SAIDA = "saida_"
+# Erros de saída para a mesma chave até o evento entrar em "falha de classificação" (D13).
+MAX_ERROS_SAIDA = 3
+"""Erros de saída do LLM (contam para a falha de classificação); erros `api_` não contam."""
+
+
+def _classificado_ok(versao_prompt: str, modelo: str, versao_schema: str) -> Any:
+    """Existe classificação `ok` do evento para a chave atual."""
+    return exists().where(
         and_(
             Classificacao.evento_id == Evento.id,
             Classificacao.situacao == "ok",
@@ -365,14 +369,77 @@ def eventos_para_classificar(
             Classificacao.versao_schema == versao_schema,
         )
     )
+
+
+def _erros_de_saida_da_chave(versao_prompt: str, modelo: str, versao_schema: str) -> Any:
+    """Subconsulta correlacionada: nº de erros de saída do evento para a chave atual."""
+    return (
+        select(func.count(Classificacao.id))
+        .where(
+            Classificacao.evento_id == Evento.id,
+            Classificacao.situacao == "erro",
+            Classificacao.motivo_erro.startswith(PREFIXO_ERRO_SAIDA, autoescape=True),
+            Classificacao.hash_conteudo == Evento.hash_conteudo,
+            Classificacao.versao_prompt == versao_prompt,
+            Classificacao.modelo == modelo,
+            Classificacao.versao_schema == versao_schema,
+        )
+        .correlate(Evento)
+        .scalar_subquery()
+    )
+
+
+def eventos_para_classificar(
+    sessao: Session,
+    versao_prompt: str,
+    modelo: str,
+    versao_schema: str,
+    limite: int,
+    max_erros_saida: int | None = None,
+) -> list[Evento]:
+    """Eventos ativos ou alterados, fora de `localizacao='fora'`, sem classificação `ok` para a
+    chave atual (hash do conteúdo + versão do prompt + modelo + versão do schema), por início.
+
+    Com `max_erros_saida`, sai da fila o evento com pelo menos esse número de erros de saída
+    (`motivo_erro` começando por "saida_") para a chave atual — ver
+    `eventos_com_falha_classificacao` (D13). `None` = sem corte.
+    """
+    classificado = _classificado_ok(versao_prompt, modelo, versao_schema)
+    condicoes = [
+        Evento.estado.in_([_E.ATIVO.value, _E.ALTERADO.value]),
+        Evento.localizacao != "fora",
+        ~classificado,
+    ]
+    if max_erros_saida is not None:
+        condicoes.append(
+            _erros_de_saida_da_chave(versao_prompt, modelo, versao_schema) < max_erros_saida
+        )
+    consulta = select(Evento).where(*condicoes).order_by(Evento.inicio, Evento.id).limit(limite)
+    return list(sessao.scalars(consulta))
+
+
+def eventos_com_falha_classificacao(
+    sessao: Session,
+    *,
+    versao_prompt: str,
+    modelo: str,
+    versao_schema: str,
+    max_erros_saida: int = MAX_ERROS_SAIDA,
+) -> list[Evento]:
+    """Eventos em falha de classificação (estado derivado, D13), por início.
+
+    Falha = ativo ou alterado, fora de `localizacao='fora'`, sem classificação `ok` e com pelo
+    menos `max_erros_saida` erros de saída para a chave atual. Mudar conteúdo, prompt, modelo
+    ou schema muda a chave e o evento volta à fila; erros de API (`api_`) não contam.
+    """
     consulta = (
         select(Evento)
         .where(
             Evento.estado.in_([_E.ATIVO.value, _E.ALTERADO.value]),
             Evento.localizacao != "fora",
-            ~classificado,
+            ~_classificado_ok(versao_prompt, modelo, versao_schema),
+            _erros_de_saida_da_chave(versao_prompt, modelo, versao_schema) >= max_erros_saida,
         )
         .order_by(Evento.inicio, Evento.id)
-        .limit(limite)
     )
     return list(sessao.scalars(consulta))
