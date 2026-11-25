@@ -2,7 +2,9 @@
 
 Radar pessoal que coleta eventos de Inteligência Artificial em São Paulo (presenciais) e online, classifica com LLM, cruza com a agenda e avisa no Telegram.
 
-> Status: **Fase 0 — validação de viabilidade das fontes.** Ainda não há código do radar.
+> Status: **Fase 0 concluída.** Próximo passo: Fase 1 (fluxo completo com a Luma).
+>
+> Documentação: [especificação](docs/spec.md) · [decisões](docs/decisoes.md) · [viabilidade das fontes](docs/fase-0-viabilidade.md)
 
 ## Fases
 
