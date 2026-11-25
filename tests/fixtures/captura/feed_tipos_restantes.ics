@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico com os tipos restantes
+BEGIN:VEVENT
+UID:evt-OK000009@events.lu.ma
+SUMMARY:Evento limpo
+DTSTART:20270120T220000Z
+DTEND:20270121T010000Z
+DESCRIPTION:Sem contato.
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-SUSP0006@events.lu.ma
+SUMMARY:Evento com arroba codificada e dobrada
+DTSTART:20270120T220000Z
+DTEND:20270121T010000Z
+DESCRIPTION:Inscricao: https://example.com/?e=bruno%40exa
+ mple.com
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-SUSP0007@events.lu.ma
+SUMMARY:Evento com entidade HTML hexadecimal
+DTSTART:20270120T220000Z
+DTEND:20270121T010000Z
+DESCRIPTION:Contato: lucia&#x40;example.com
+END:VEVENT
+END:VCALENDAR

@@ -2047,10 +2047,31 @@ def _sem_eventos_suspeitos(texto: str) -> str:
     return _BLOCO_VEVENT.sub(lambda m: "" if "SUSP" in m.group(0) else m.group(0), texto)
 
 
+FORMAS_DE_ARROBA_PROIBIDAS_NO_PADRAO = ("@", "\uff20", "%40", "%2540", "&#")
+TIPOS_DE_OCORRENCIA = {
+    "arroba",
+    "arroba_fullwidth",
+    "arroba_isolada_dominio",
+    "url_40",
+    "url_2540",
+    "entidade_html_decimal",
+    "entidade_html_hex",
+    "erro_na_checagem",
+}
+
+
 def _assert_padrao_anonimo(padrao: str) -> None:
     assert len(padrao) <= 40, padrao
-    alfanumericos = {c for c in padrao if c.isalnum()}
+    # Toda forma de arroba vira `(a)`; fora isso, só sobram `x`, `9` e pontuação.
+    for forma in FORMAS_DE_ARROBA_PROIBIDAS_NO_PADRAO:
+        assert forma not in padrao, padrao
+    alfanumericos = {c for c in padrao.replace("(a)", "") if c.isalnum()}
     assert alfanumericos <= {"x", "9"}, padrao
+
+
+def _assert_ocorrencia_valida(ocorrencia: Any) -> None:
+    assert ocorrencia.tipo in TIPOS_DE_OCORRENCIA, ocorrencia.tipo
+    _assert_padrao_anonimo(ocorrencia.padrao)
 
 
 def test_filtrar_eventos_ical_tem_os_modelos_do_desenho() -> None:
@@ -2113,9 +2134,9 @@ def test_filtrar_eventos_ical_remove_so_o_evento_suspeito() -> None:
     assert "UID:calev-OK000002@events.lu.ma" in resultado.texto
 
 
-def test_filtrar_eventos_ical_tipo_da_ocorrencia_entidade_html() -> None:
+def test_filtrar_eventos_ical_tipo_da_ocorrencia_entidade_html_decimal() -> None:
     resultado = _modulo().filtrar_eventos_ical(_fixture("feed_misto.ics"))
-    assert [o.tipo for o in resultado.ocorrencias] == ["&#64;"]
+    assert [o.tipo for o in resultado.ocorrencias] == ["entidade_html_decimal"]
 
 
 # (3) vários suspeitos
@@ -2130,7 +2151,12 @@ def test_filtrar_eventos_ical_varios_suspeitos() -> None:
     assert resultado.descartados == 4
     assert resultado.motivo_arquivo is None
     tipos = {o.tipo for o in resultado.ocorrencias}
-    assert tipos >= {"&#64;", "arroba_fullwidth", "arroba_isolada_dominio", "%2540"}
+    assert tipos >= {
+        "entidade_html_decimal",
+        "arroba_fullwidth",
+        "arroba_isolada_dominio",
+        "url_2540",
+    }
 
 
 # (4) todos suspeitos
@@ -2306,6 +2332,10 @@ def test_filtrar_eventos_ical_excecao_no_evento_descarta_o_evento(
     assert resultado.total_eventos == 3
     assert resultado.aprovados == 2
     assert resultado.descartados == 1
+    assert [o.tipo for o in resultado.ocorrencias] == ["erro_na_checagem"]
+    for ocorrencia in resultado.ocorrencias:
+        _assert_padrao_anonimo(ocorrencia.padrao)
+        assert "PROVOCA" not in ocorrencia.padrao
 
 
 def test_filtrar_eventos_ical_excecao_fora_de_evento_descarta_arquivo(
@@ -2349,7 +2379,7 @@ def test_capturar_salva_feed_so_com_eventos_aprovados(tmp_path: Path, executar: 
     assert detalhe.aprovados == 3
     assert detalhe.descartados == 1
     assert detalhe.motivo_arquivo is None
-    assert [o.tipo for o in detalhe.ocorrencias] == ["&#64;"]
+    assert [o.tipo for o in detalhe.ocorrencias] == ["entidade_html_decimal"]
     for ocorrencia in detalhe.ocorrencias:
         _assert_padrao_anonimo(ocorrencia.padrao)
 
@@ -2464,3 +2494,106 @@ def test_main_stdout_nao_contem_trecho_suspeito(
     assert "vibe-space" in texto
     for trecho in TRECHOS_SUSPEITOS:
         assert trecho not in texto, trecho
+
+
+# --- Tipos textuais e padrão sem arroba ---------------------------------------------
+
+_CASOS_DE_TIPO = [
+    ("Contato joao@exa\r\n mple.com hoje", "arroba"),
+    ("Contato joao\uff20example.com hoje", "arroba_fullwidth"),
+    ("contato: joao @ gmail.com", "arroba_isolada_dominio"),
+    ("https://example.com/?e=joao%40example.com", "url_40"),
+    ("https://example.com/?e=joao%2540example.com", "url_2540"),
+    ("Contato joao&#64;example.com hoje", "entidade_html_decimal"),
+    ("Contato joao&#x40;example.com hoje", "entidade_html_hex"),
+    ("Contato joao&#X40;example.com hoje", "entidade_html_hex"),
+]
+
+
+def _feed_com_descricao(descricao: str) -> str:
+    texto = _fixture("feed_sem_links.ics").replace(
+        "DESCRIPTION:Detalhes em breve.", f"DESCRIPTION:{descricao}"
+    )
+    assert descricao in texto
+    return texto
+
+
+@pytest.mark.parametrize(("descricao", "tipo"), _CASOS_DE_TIPO)
+def test_filtrar_eventos_ical_tipo_textual_da_ocorrencia(descricao: str, tipo: str) -> None:
+    resultado = _modulo().filtrar_eventos_ical(_feed_com_descricao(descricao))
+    assert [o.tipo for o in resultado.ocorrencias] == [tipo]
+
+
+@pytest.mark.parametrize(("descricao", "tipo"), _CASOS_DE_TIPO)
+def test_filtrar_eventos_ical_padrao_troca_arroba_por_marcador(descricao: str, tipo: str) -> None:
+    resultado = _modulo().filtrar_eventos_ical(_feed_com_descricao(descricao))
+    (ocorrencia,) = resultado.ocorrencias
+    _assert_ocorrencia_valida(ocorrencia)
+    assert "(a)" in ocorrencia.padrao
+
+
+@pytest.mark.parametrize(
+    "nome",
+    [
+        "feed_misto.ics",
+        "feed_varios_suspeitos.ics",
+        "feed_email_dobrado.ics",
+        "feed_suspeito_cabecalho.ics",
+        "feed_tipos_restantes.ics",
+    ],
+)
+def test_filtrar_eventos_ical_ocorrencias_validas_nas_fixtures(nome: str) -> None:
+    resultado = _modulo().filtrar_eventos_ical(_fixture(nome))
+    assert resultado.ocorrencias
+    for ocorrencia in resultado.ocorrencias:
+        _assert_ocorrencia_valida(ocorrencia)
+
+
+def test_encontrar_emails_nao_acusa_ocorrencias_serializadas() -> None:
+    """O JSON de uma ocorrência não pode ser acusado pela própria checagem bruta."""
+    modulo = _modulo()
+    for nome in ("feed_misto.ics", "feed_varios_suspeitos.ics", "feed_tipos_restantes.ics"):
+        for ocorrencia in modulo.filtrar_eventos_ical(_fixture(nome)).ocorrencias:
+            assert modulo.encontrar_emails(ocorrencia.model_dump_json()) == []
+
+
+def test_regressao_captura_com_todos_os_tipos_passa_no_verificar(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """Ponta a ponta: o captura.json gerado nunca pode reprovar o `--verificar`."""
+    modulo = _modulo()
+    respostas = _respostas_base()
+    respostas[_url_do_feed("ai-collective")] = _ical("feed_misto.ics")
+    respostas[_url_do_feed("codex-sp")] = _ical("feed_varios_suspeitos.ics")
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_email_dobrado.ics")
+    respostas[_url_do_feed("womakerscode")] = _ical("feed_suspeito_cabecalho.ics")
+    respostas[_url_do_feed("mug-sp")] = _ical("feed_tipos_restantes.ics")
+    # Um evento do feed da cidade provoca erro na checagem (tipo `erro_na_checagem`).
+    respostas[_url_do_feed("cidade-sp")] = httpx.Response(
+        200,
+        text=_sem_eventos_suspeitos(_fixture("feed_misto.ics")).replace(
+            "SUMMARY:Workshop simples", "SUMMARY:PROVOCA_ERRO"
+        ),
+        headers={"content-type": "text/calendar"},
+    )
+    with monkeypatch.context() as contexto:
+        original = modulo.encontrar_emails
+
+        def falsa(texto: str) -> list[str]:
+            if "PROVOCA_ERRO" in texto:
+                raise RuntimeError("falha simulada na checagem")
+            return original(texto)
+
+        contexto.setattr(modulo, "encontrar_emails", falsa)
+        cenario = Cenario(respostas)
+        with cenario.cliente() as cliente:
+            relatorio = modulo.capturar(tmp_path, cliente, dormir=cenario.dormir)
+
+    tipos = {o.tipo for detalhe in relatorio.feeds_detalhe.values() for o in detalhe.ocorrencias}
+    assert tipos == TIPOS_DE_OCORRENCIA
+    captura_json = (_pasta(tmp_path) / "captura.json").read_text(encoding="utf-8")
+    assert modulo.encontrar_emails(captura_json) == []
+    for forma in FORMAS_DE_ARROBA_PROIBIDAS_NO_PADRAO:
+        assert forma not in captura_json, forma
+    capsys.readouterr()
+    assert modulo.main(["--verificar", str(tmp_path)]) == 0
