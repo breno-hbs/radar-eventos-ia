@@ -12,7 +12,7 @@ Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro
 ## 2. Escopo dos eventos
 - **Tipos:** meetups, palestras, hackathons, conferências e workshops sobre IA.
 - **Formato:** presenciais na Grande SP e online. Gratuitos e pagos.
-- **Horizonte:** 30 dias para meetups, palestras, workshops e online; 90 dias para conferências pagas.
+- **Horizonte:** 30 dias para meetups, palestras, workshops e online; 90 dias para conferências pagas. Antes do LLM vale 90 dias para todos; o corte de 30 dias vem depois da classificação (D11).
 - **Idioma:**
 
 | Situação | Ação |
@@ -32,7 +32,9 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 ## 4. Fluxo
 1. **Coleta** do iCal, um coletor por fonte, isolados.
 2. **Extração direta:** título, início/fim, local, coordenadas, status, ID (`UID`) e link de inscrição (`DESCRIPTION`, D4). Fuso de São Paulo.
-3. **Filtro geográfico, antes do LLM:** coordenadas na Grande SP → local textual → modalidade online. Sem coordenada e sem local conclusivo, o evento segue para o classificador; nunca é descartado só por isso (D6).
+3. **Filtros, antes do LLM:**
+   - **Geográfico:** coordenadas na caixa da Grande SP → local textual (UF, país estrangeiro, CEP 01000-000 a 09999-999, "São Paulo") → modalidade online (plataforma de transmissão na URL do local ou "online" no texto). Só é descartado o evento com evidência de estar fora da Grande SP; sem coordenada e sem local conclusivo, segue para o classificador como `indefinida` e nunca é descartado só por isso (D6, D11).
+   - **Horizonte:** descarta o que já terminou e o que começa depois de 90 dias; o corte de 30 dias por tipo (§2) é aplicado depois da classificação (D11).
 4. **Deduplicação** entre fontes.
 5. **Classificação com LLM** (só eventos novos ou alterados):
    - responde: é IA, categoria, tópicos, idioma, tradução, resumo de 1 linha, trecho de evidência;
