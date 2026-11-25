@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import re
 import tomllib
+import unicodedata
 from collections.abc import Callable
 from datetime import UTC, datetime
 from pathlib import Path
@@ -122,7 +123,12 @@ TODAS_AS_FIXTURES = [
 _EMAIL_AMPLO = re.compile(
     r"[A-Za-z0-9._%+-]+(?:@|%40)[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}"
 )
-_EXCECAO_UID_LUMA = re.compile(r"evt-[A-Za-z0-9]+@events\.lu\.ma")
+# UIDs da Luma: `evt-<id>@events.lu.ma` e `calev-<id>@events.lu.ma`.
+_EXCECAO_UID_LUMA = re.compile(r"(?:evt|calev)-[A-Za-z0-9]+@events\.lu\.ma")
+# Mesmo UID, mas só quando não está colado a outro texto (para a checagem bruta).
+_UID_LUMA_SOLTO = re.compile(
+    r"(?<![\w.%+\-])(?:evt|calev)-[A-Za-z0-9]+@events\.lu\.ma(?![\w\-]|\.\w)"
+)
 ESCAPES_ICAL = ("\\n", "\\N", "\\t", "\\\\", "\\;", "\\,")
 _CARACTERES_DE_LOCAL = set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._%+-")
 
@@ -172,11 +178,32 @@ _PERFIL_SOLTO = re.compile(
 )
 
 
+# `@` isolado, usado como "em" ("Frontier Tower @ Spaceship"): antes, início/espaço/escape
+# `\n` `\N` `\t`; depois, espaço/fim/esses escapes. Só o `@` literal.
+_ARROBA_ISOLADA = re.compile(
+    r"(?:(?<![^\s])|(?<=\\[nNt]))@(?=\s|$|\\[nNt])"
+    # ...desde que o que vem depois não pareça domínio (`palavra . palavra`, com espaços,
+    # NBSP e escapes do iCal permitidos em volta do ponto).
+    r"(?!(?:\s|\\[nNt])*\w+(?:\s|\\[nNt])*\.(?:\s|\\[nNt])*\w)"
+    # ...e desde que o próximo token (até espaço real ou escape do iCal) não tenha `\w.\w`
+    # em nenhuma posição, mesmo cercado de pontuação: `"gmail.com"`, `(gmail.com)`, URL.
+    r"(?!(?:\s|\\[nNt])*(?:(?!\s|\\[nNt]).)*?\w\.\w)"
+)
+_DOBRA_RFC5545 = re.compile(r"\r?\n[ \t]")
+
+
+def _sem_formatacao_invisivel(texto: str) -> str:
+    """Desdobra linhas (RFC 5545) e remove caracteres Unicode de categoria Cf."""
+    texto = _DOBRA_RFC5545.sub("", texto)
+    return "".join(c for c in texto if unicodedata.category(c) != "Cf")
+
+
 def _arrobas_suspeitas(texto: str) -> list[str]:
-    limpo = _EXCECAO_UID_LUMA.sub(" ", texto)
+    limpo = _UID_LUMA_SOLTO.sub(" ", _sem_formatacao_invisivel(texto))
     for excecao in _EXCECOES_LITERAIS:
         limpo = limpo.replace(excecao, " ")
     limpo = _PERFIL_SOLTO.sub(" ", limpo)
+    limpo = _ARROBA_ISOLADA.sub(" ", limpo)
     return _FORMAS_DE_ARROBA.findall(limpo)
 
 
@@ -192,6 +219,17 @@ def test_checagem_bruta_dos_testes() -> None:
     assert not _arrobas_suspeitas(f'UID:evt-A1@events.lu.ma {REDIGIDO} {{"@type":"Event"}}')
     assert not _arrobas_suspeitas("siga @perfil-redigido. (@perfil-redigido)")
     assert not _arrobas_suspeitas("Hosted by\\n@perfil-redigido https://x.com/@perfil-redigido")
+    assert not _arrobas_suspeitas("UID:calev-A1@events.lu.ma")
+    assert _arrobas_suspeitas("fulano.calev-1@events.lu.ma")
+    assert _arrobas_suspeitas("UID:calevx-1@events.lu.ma")
+    assert not _arrobas_suspeitas("Frontier Tower @ Spaceship\\n@ no inicio e fim @")
+    assert _arrobas_suspeitas("x ＠ y")
+    assert _arrobas_suspeitas("x &#64; y")
+    assert _arrobas_suspeitas("x @y")
+    assert _arrobas_suspeitas("joao @ example.com")
+    assert _arrobas_suspeitas("joao\\n@\\nexample . com")
+    assert _arrobas_suspeitas("joao @ gmail.com")
+    assert not _arrobas_suspeitas("Demo Night @ Cubo Itaú. Meetup @ FIAP Paulista")
 
 
 # --- Utilitários ------------------------------------------------------------------
@@ -476,6 +514,56 @@ def test_redigir_emails_barra_que_nao_e_escape_nao_inicia_mencao() -> None:
     assert modulo.encontrar_emails(resultado) != []
 
 
+# --- UID `calev-` e `@` isolado -----------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "UID:calev-LLLL1234@events.lu.ma",
+        "UID:calev-x7K2p9Q1zz@events.lu.ma\r\n",
+        "UID:evt-AAAA1111@events.lu.ma\r\nUID:calev-BBBB2222@events.lu.ma",
+    ],
+)
+def test_redigir_emails_preserva_uid_calev(texto: str) -> None:
+    assert _modulo().redigir_emails(texto) == texto
+
+
+@pytest.mark.parametrize(
+    "email",
+    ["calevx-1@events.lu.ma", "evtx-1@events.lu.ma", "calev@events.lu.ma"],
+)
+def test_redigir_emails_redige_prefixo_parecido_com_uid(email: str) -> None:
+    assert _modulo().redigir_emails(f"mailto:{email}") == f"mailto:{REDIGIDO}"
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "Frontier Tower @ Spaceship",
+        "Demo Night @ Cubo",
+        "LOCATION:Frontier Tower @ Spaceship",
+        "@ no início",
+        "fim @",
+        "linha\\n@ depois do escape",
+        "antes do escape @\\nlinha",
+        "tab\\t@\\tdepois",
+        "Demo Night @\tCubo",
+    ],
+)
+def test_redigir_emails_nao_altera_arroba_isolada(texto: str) -> None:
+    assert _modulo().redigir_emails(texto) == texto
+
+
+def test_redigir_emails_arroba_isolada_nao_protege_email_vizinho() -> None:
+    assert _modulo().redigir_emails("@ joao@ex.com") == f"@ {REDIGIDO}"
+
+
+def test_redigir_emails_mencao_colada_continua_redigida() -> None:
+    texto = "Hackathon #2 @Stanford"
+    assert _modulo().redigir_emails(texto) == f"Hackathon #2 {PERFIL_REDIGIDO}"
+
+
 def test_redigir_emails_mencoes_e_idempotente() -> None:
     redigir = _modulo().redigir_emails
     texto = "siga @radar_ia. (@vibe.space) https://x.com/@fulano fulano@example.com"
@@ -633,7 +721,147 @@ def test_encontrar_emails_reporta_marcador_de_perfil_colado(texto: str) -> None:
     assert _modulo().encontrar_emails(texto) != []
 
 
-@pytest.mark.parametrize("nome", ["feed_a.ics", "feed_b.ics", "nao_ical.html", "feed_mencoes.ics"])
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "UID:calev-LLLL1234@events.lu.ma",
+        "UID:evt-AAAA1111@events.lu.ma\r\nUID:calev-BBBB2222@events.lu.ma",
+        "Frontier Tower @ Spaceship",
+        "Demo Night @ Cubo",
+        "LOCATION:Frontier Tower @ Spaceship",
+        "@ no início",
+        "fim @",
+        "linha\\n@ depois do escape",
+        "antes do escape @\\nlinha",
+        f"@ {REDIGIDO}",
+    ],
+)
+def test_encontrar_emails_ignora_uid_calev_e_arroba_isolada(texto: str) -> None:
+    assert _modulo().encontrar_emails(texto) == []
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "fulano.calev-1@events.lu.ma",
+        "xcalev-1@events.lu.ma",
+        "calev-1@events.lu.ma.example",
+        "calevx-1@events.lu.ma",
+        "evtx-1@events.lu.ma",
+        "x ＠ y",
+        "x &#64; y",
+        "x %40 y",
+        "Frontier Tower @Spaceship",
+        "Frontier Tower@ Spaceship",
+        "@ joao@ex.com",
+    ],
+)
+def test_encontrar_emails_reporta_uid_colado_e_arroba_nao_isolada(texto: str) -> None:
+    assert _modulo().encontrar_emails(texto) != []
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "UID:calev-LLLL1234@events.lu.ma",
+        "fulano.calev-1@events.lu.ma",
+        "calevx-1@events.lu.ma",
+        "Frontier Tower @ Spaceship",
+        "x ＠ y",
+        "x &#64; y",
+        "Frontier Tower@ Spaceship",
+    ],
+)
+def test_encontrar_emails_concorda_com_checagem_bruta_em_calev_e_arroba(texto: str) -> None:
+    assert bool(_modulo().encontrar_emails(texto)) == bool(_arrobas_suspeitas(texto))
+
+
+# E-mails disfarçados com `@` "isolado": o que vem depois parece domínio.
+EMAILS_COM_ARROBA_ESPACADA = [
+    "joao @ example.com",
+    "joao\\n@\\nexample.com",
+    "joao\n@\nexample.com",
+    "joao @ example . com",
+    "contato: joao @ gmail.com",
+    "joao.silva @ empresa.com.br",
+    "joao\\t@\\tgmail.com",
+    "joao\t@\tgmail.com",
+    "joao @ gmail.com",
+    "joao @ gmail.com",
+    "joao @ gmail . com",
+    "joao\\N@\\Ngmail.com",
+    "joao @\\n gmail \\t.\\n com",
+]
+ARROBAS_ISOLADAS_ACEITAS = [
+    "Frontier Tower @ Spaceship",
+    "Demo Night @ Cubo Itaú",
+    "Meetup @ FIAP Paulista",
+    "@ no início",
+    "fim @",
+    "Demo Night @ (Cubo)",
+    "Meetup @ FIAP - Paulista",
+]
+
+# `@` isolado cujo próximo token esconde um domínio (dobra RFC 5545, pontuação em volta,
+# URL, caracteres invisíveis de categoria Cf).
+EMAILS_COM_TOKEN_DISFARCADO = [
+    "joao @ gm\r\n ail.com",
+    "joao @ gm\n\tail.com",
+    'joao @ "gmail.com"',
+    "joao @ (gmail.com)",
+    "joao @ <gmail.com>",
+    "joao @ [gmail.com]",
+    "joao @ https://gmail.com",
+    "joao @ ​gmail.com",
+    "joao @ g​mail.com",
+    "joao @ gmail‌.com",
+    "joao @ gmail.‍com",
+    "joao @ ⁠gmail.com",
+    "joao @ ﻿gmail.com",
+    "joao​ @ gmail.com",
+]
+
+
+@pytest.mark.parametrize("texto", EMAILS_COM_ARROBA_ESPACADA)
+def test_encontrar_emails_reporta_arroba_isolada_seguida_de_dominio(texto: str) -> None:
+    modulo = _modulo()
+    assert modulo.encontrar_emails(texto) != []
+    # A redação não pode "consertar" o texto a ponto de ele passar na checagem.
+    assert modulo.encontrar_emails(modulo.redigir_emails(texto)) != []
+
+
+@pytest.mark.parametrize("texto", EMAILS_COM_ARROBA_ESPACADA)
+def test_checagem_bruta_dos_testes_reporta_arroba_isolada_seguida_de_dominio(texto: str) -> None:
+    assert _arrobas_suspeitas(texto) != []
+
+
+@pytest.mark.parametrize("texto", ARROBAS_ISOLADAS_ACEITAS)
+def test_encontrar_emails_aceita_arroba_isolada_sem_dominio(texto: str) -> None:
+    modulo = _modulo()
+    assert modulo.encontrar_emails(texto) == []
+    assert modulo.redigir_emails(texto) == texto
+
+
+@pytest.mark.parametrize("texto", EMAILS_COM_TOKEN_DISFARCADO)
+def test_encontrar_emails_reporta_token_disfarcado_apos_arroba_isolada(texto: str) -> None:
+    modulo = _modulo()
+    assert modulo.encontrar_emails(texto) != []
+    assert modulo.encontrar_emails(modulo.redigir_emails(texto)) != []
+
+
+@pytest.mark.parametrize("texto", EMAILS_COM_TOKEN_DISFARCADO)
+def test_checagem_bruta_dos_testes_reporta_token_disfarcado(texto: str) -> None:
+    assert _arrobas_suspeitas(texto) != []
+
+
+@pytest.mark.parametrize("texto", ARROBAS_ISOLADAS_ACEITAS)
+def test_checagem_bruta_dos_testes_aceita_arroba_isolada_sem_dominio(texto: str) -> None:
+    assert _arrobas_suspeitas(texto) == []
+
+
+@pytest.mark.parametrize(
+    "nome", ["feed_a.ics", "feed_b.ics", "nao_ical.html", "feed_mencoes.ics", "feed_calev.ics"]
+)
 def test_encontrar_emails_nas_fixtures_antes_e_depois_da_redacao(nome: str) -> None:
     texto = _fixture(nome)
     assert _modulo().encontrar_emails(texto) != []
@@ -1198,6 +1426,49 @@ def test_capturar_feed_com_mencao_unicode_e_descartado(tmp_path: Path, executar:
         assert "josé" not in arquivo.read_text(encoding="utf-8"), arquivo.name
 
 
+def test_capturar_salva_feed_com_uid_calev_e_arroba_isolada(
+    tmp_path: Path, executar: Executar
+) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_calev.ics")
+    relatorio, _ = executar(respostas)
+    arquivo = _pasta(tmp_path) / "vibe-space.ics"
+    assert arquivo.is_file()
+    assert "vibe-space" in relatorio.feeds_ok
+    assert relatorio.descartados_por_dados_pessoais == []
+    salvo = arquivo.read_text(encoding="utf-8")
+    assert "UID:calev-LLLL1234@events.lu.ma" in salvo
+    assert "SUMMARY:Demo Night @ Cubo" in salvo
+    assert "LOCATION:Frontier Tower @ Spaceship" in salvo
+    assert f"Hackathon #2 {PERFIL_REDIGIDO}" in salvo
+    assert "Stanford" not in salvo
+    assert "organizadora.calev@example.com" not in salvo
+    assert _arrobas_suspeitas(salvo) == []
+
+
+def test_capturar_feed_com_email_de_arroba_espacada_e_descartado(
+    tmp_path: Path, executar: Executar
+) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_arroba_espacada.ics")
+    relatorio, _ = executar(respostas)
+    assert not (_pasta(tmp_path) / "vibe-space.ics").exists()
+    assert relatorio.descartados_por_dados_pessoais == ["vibe-space.ics"]
+    for arquivo in _pasta(tmp_path).iterdir():
+        assert "gmail" not in arquivo.read_text(encoding="utf-8"), arquivo.name
+
+
+def test_capturar_feed_com_dominio_dobrado_apos_arroba_isolada_e_descartado(
+    tmp_path: Path, executar: Executar
+) -> None:
+    """Dobra RFC 5545 real no meio do domínio (`gm` + CRLF + espaço + `ail.com`)."""
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_arroba_dobrada.ics")
+    relatorio, _ = executar(respostas)
+    assert not (_pasta(tmp_path) / "vibe-space.ics").exists()
+    assert relatorio.descartados_por_dados_pessoais == ["vibe-space.ics"]
+
+
 def test_capturar_descarte_aparece_no_captura_json(tmp_path: Path, executar: Executar) -> None:
     respostas = _respostas_base()
     respostas[_url_do_feed("mug-sp")] = _ical("feed_email_ofuscado.ics")
@@ -1634,6 +1905,10 @@ def test_main_cria_cliente_sem_redirecionamento_e_com_user_agent(
 
 CAMINHO_WORKFLOW = RAIZ / ".github" / "workflows" / "capturar-fixtures.yml"
 BRANCH_DADOS = "fase-1/f1-02-fixtures-dados"
+# Branch de dados com o número da execução: cada captura vai para um branch novo.
+_BRANCH_DADOS_COM_EXECUCAO = re.compile(
+    r"fase-1/f1-02-fixtures-dados-\$\{\{\s*github\.run_number\s*\}\}"
+)
 COMANDO_VERIFICAR = "python -m radar.fontes.captura_fixtures --verificar tests/fixtures"
 
 
@@ -1652,6 +1927,21 @@ def _passos(workflow: dict) -> list[dict]:
 
 def _comandos_run(workflow: dict) -> list[str]:
     return [passo.get("run", "") for passo in _passos(workflow)]
+
+
+def test_workflow_captura_usa_branch_com_numero_da_execucao() -> None:
+    assert _BRANCH_DADOS_COM_EXECUCAO.search(_texto_workflow())
+
+
+def test_workflow_captura_nunca_usa_branch_de_dados_sem_numero() -> None:
+    """Toda menção ao branch de dados no workflow traz o `github.run_number`."""
+    texto = _texto_workflow()
+    sem_numero = [
+        m.start()
+        for m in re.finditer(re.escape(BRANCH_DADOS), texto)
+        if not _BRANCH_DADOS_COM_EXECUCAO.match(texto, m.start())
+    ]
+    assert sem_numero == []
 
 
 def test_workflow_captura_so_roda_manualmente() -> None:

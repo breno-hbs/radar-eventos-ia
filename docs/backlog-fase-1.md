@@ -42,8 +42,8 @@
 - **Sequência:**
   1. PR com o script (`radar.fontes.captura_fixtures`) e o workflow → merge na `main`.
   2. O autor clica em "Run workflow" (Actions → Capturar fixtures da Luma).
-  3. O workflow captura, verifica e-mails e cria o branch `fase-1/f1-02-fixtures-dados` com as fixtures.
-  4. Claude revisa os dados, atualiza `docs/fase-0-viabilidade.md` com o resultado do Codex/Vibe Space e abre o segundo PR a partir desse branch.
+  3. O workflow captura, verifica e-mails e cria o branch `fase-1/f1-02-fixtures-dados-<N>` com as fixtures, em que `<N>` é o número da execução (`github.run_number`). Cada execução gera um branch novo; refazer não exige apagar o anterior.
+  4. Claude revisa os dados do branch da execução escolhida, atualiza `docs/fase-0-viabilidade.md` com o resultado do Codex/Vibe Space e abre o segundo PR a partir desse branch.
   - Observação: push feito pelo `GITHUB_TOKEN` não dispara o `testes.yml`; o segundo PR precisa de um commit do Claude para o CI rodar.
 - **Sua parte:** fazer os dois merges e clicar em "Run workflow" (1 clique).
 - **Aceite:** fixtures versionadas; IDs do Codex e Vibe Space confirmados ou marcados como inválidos em `docs/fase-0-viabilidade.md`.

@@ -21,6 +21,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 from collections.abc import Callable, Mapping, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
@@ -52,8 +53,8 @@ PERFIL_REDIGIDO = "@perfil-redigido"
 # Endereço de e-mail, inclusive a forma codificada em URL (`%40`). O começo é amplo de
 # propósito (qualquer posição); o escape `\n`/`\N` do iCal é tratado em `_dividir`.
 _PADRAO_EMAIL = re.compile(r"[\w.%+-]+(@|%40)[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+")
-# Único endereço preservado: o UID do evento na Luma (D4).
-_UID_LUMA = re.compile(r"evt-[A-Za-z0-9]+@events\.lu\.ma")
+# Únicos endereços preservados: os UIDs da Luma, `evt-<id>` e `calev-<id>` (D4).
+_UID_LUMA = re.compile(r"(?:evt|calev)-[A-Za-z0-9]+@events\.lu\.ma")
 # Escapes do iCal que terminam em letra (`\n`, `\N`, `\t`) e podem colar no endereço.
 _ESCAPES_COM_LETRA = "nNt"
 # Menção de rede social (`@perfil`, não e-mail): o `@` vem no início, depois de espaço, de um
@@ -71,16 +72,33 @@ _PADRAO_MENCAO = re.compile(
 
 # Checagem bruta (independente de `_PADRAO_EMAIL`): qualquer forma de arroba é suspeita.
 _FORMAS_DE_ARROBA = re.compile(r"%2540|%40|&#64;|&#x40;|\uff20|@", re.IGNORECASE)
-# O que a checagem bruta aceita: UID da Luma e marcadores de redação, desde que não colados
-# a restos de um endereço (exceto depois de um escape do iCal), e as chaves do JSON-LD.
+# O que a checagem bruta aceita: UIDs da Luma e marcadores de redação, desde que não colados
+# a restos de um endereço (exceto depois de um escape do iCal), as chaves do JSON-LD, o
+# marcador de perfil solto e o `@` isolado.
 _INICIO_ISOLADO = r"(?:(?<=\\[nNt])|(?<![\w.%+-]))"
 _EXCECOES_CHECAGEM = re.compile(
     _INICIO_ISOLADO
-    + r"(?:evt-[A-Za-z0-9]+@events\.lu\.ma|redigido@exemplo\.invalid|redigido%40exemplo\.invalid)"
+    + r"(?:(?:evt|calev)-[A-Za-z0-9]+@events\.lu\.ma(?![\w-]|\.\w)"
+    + r"|redigido@exemplo\.invalid|redigido%40exemplo\.invalid)"
     + r"|\"@context\"|\"@type\""
     + r"|(?:(?<=\\[nNt;,])|(?<=\\\\)|(?<![\w.%+\\·-]))@perfil-redigido"
     + r"(?![\w·-]|\.[\w·])"
 )
+# `@` isolado, usado como "em" ("Frontier Tower @ Spaceship"): antes, início, espaço em
+# branco ou escape `\n`/`\N`/`\t`; depois, espaço em branco, fim ou esses escapes. É avaliado
+# depois de descontar as exceções acima (para `@ redigido@exemplo.invalid` não contar) e só é
+# aceito se o que vem depois não parecer domínio:
+_ESPACO = r"(?:\s|\\[nNt])"
+_ARROBA_ISOLADA = re.compile(
+    r"(?:(?<!\S)|(?<=\\[nNt]))@(?=\s|$|\\[nNt])"
+    # ...nem `palavra . palavra`, com espaços (inclusive NBSP, tab, quebra) e escapes em volta;
+    + rf"(?!{_ESPACO}*\w+{_ESPACO}*\.{_ESPACO}*\w)"
+    # ...nem um próximo token (até espaço real ou escape) com `\w.\w` em qualquer posição,
+    # mesmo cercado de pontuação: `"gmail.com"`, `(gmail.com)`, `https://gmail.com`.
+    + rf"(?!{_ESPACO}*(?:(?!{_ESPACO}).)*?\w\.\w)"
+)
+# Normalização antes da checagem: dobra de linha da RFC 5545 e formatação invisível (Cf).
+_DOBRA_RFC5545 = re.compile(r"\r?\n[ \t]")
 _TRECHO = 20
 # Link canônico de evento: `https://luma.com/<slug>` sem subcaminho.
 _PADRAO_LINK = re.compile(r"(?<![\w./:-])https://luma\.com/[\w-]+(?![\w/.-])")
@@ -152,8 +170,9 @@ def _dividir(texto: str, achado: re.Match[str]) -> tuple[str, str]:
 def redigir_emails(texto: str) -> str:
     """Troca e-mails e menções de rede social por marcadores.
 
-    E-mail vira `EMAIL_REDIGIDO` (ou `EMAIL_REDIGIDO_URL`, se codificado), exceto o UID
-    `evt-<id>@events.lu.ma` da Luma (D4). Depois, menção `@perfil` vira `PERFIL_REDIGIDO`.
+    E-mail vira `EMAIL_REDIGIDO` (ou `EMAIL_REDIGIDO_URL`, se codificado), exceto os UIDs
+    `evt-<id>@events.lu.ma` e `calev-<id>@events.lu.ma` da Luma (D4). Depois, menção
+    `@perfil` vira `PERFIL_REDIGIDO`. `@` isolado ("Tower @ Spaceship") não é alterado.
     """
 
     def _trocar(achado: re.Match[str]) -> str:
@@ -173,15 +192,29 @@ def encontrar_emails(texto: str) -> list[str]:
     """Checagem bruta: um trecho por arroba suspeita que sobrou no texto.
 
     Independente da regex de redação: conta `@`, `%40`, `%2540`, `&#64;`, `&#x40;` e `＠`
-    (inclusive menções `@perfil` não redigidas), exceto o UID `evt-<id>@events.lu.ma`, os
-    marcadores de redação (inclusive `@perfil-redigido` solto) e as chaves
-    `"@context"`/`"@type"`. Os trechos nunca devem ir para log público.
+    (inclusive menções `@perfil` não redigidas), exceto os UIDs `evt-`/`calev-<id>@events.lu.ma`
+    soltos, os marcadores de redação (inclusive `@perfil-redigido` solto), as chaves
+    `"@context"`/`"@type"` e o `@` isolado entre espaços ou escapes do iCal que não é seguido
+    de algo com cara de domínio. Antes, o texto é desdobrado (RFC 5545) e perde os caracteres
+    Unicode de categoria Cf. Os trechos nunca devem ir para log público.
     """
-    limpo = _EXCECOES_CHECAGEM.sub(lambda achado: " " * len(achado.group(0)), texto)
+    normalizado = _normalizar_para_checagem(texto)
+
+    def _apagar(achado: re.Match[str]) -> str:
+        return " " * len(achado.group(0))
+
+    limpo = _EXCECOES_CHECAGEM.sub(_apagar, normalizado)
+    limpo = _ARROBA_ISOLADA.sub(_apagar, limpo)
     return [
-        texto[max(achado.start() - _TRECHO, 0) : achado.end() + _TRECHO]
+        normalizado[max(achado.start() - _TRECHO, 0) : achado.end() + _TRECHO]
         for achado in _FORMAS_DE_ARROBA.finditer(limpo)
     ]
+
+
+def _normalizar_para_checagem(texto: str) -> str:
+    """Desdobra linhas (RFC 5545) e remove caracteres Unicode de categoria Cf."""
+    desdobrado = _DOBRA_RFC5545.sub("", texto)
+    return "".join(c for c in desdobrado if unicodedata.category(c) != "Cf")
 
 
 # --- iCal e páginas -------------------------------------------------------------------

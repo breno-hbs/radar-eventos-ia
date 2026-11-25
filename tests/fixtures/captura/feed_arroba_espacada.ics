@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico com e-mail de arroba espacada
+BEGIN:VEVENT
+UID:evt-MMMM5678@events.lu.ma
+SUMMARY:Demo Night @ Cubo
+DTSTART:20270110T220000Z
+DTEND:20270111T010000Z
+LOCATION:Frontier Tower @ Spaceship
+DESCRIPTION:Mais informacoes\ncontato: joao @ gmail.com
+END:VEVENT
+END:VCALENDAR

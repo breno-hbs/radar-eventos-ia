@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico com UID calev e arroba isolada
+BEGIN:VEVENT
+UID:calev-LLLL1234@events.lu.ma
+SUMMARY:Demo Night @ Cubo
+DTSTART:20270105T220000Z
+DTEND:20270106T010000Z
+LOCATION:Frontier Tower @ Spaceship
+ORGANIZER;CN=Organizadora Calev:mailto:organizadora.calev@example.com
+DESCRIPTION:Hackathon #2 @Stanford\n@ no inicio da linha\nE no fim @\n\nNos vemos la.
+END:VEVENT
+END:VCALENDAR
