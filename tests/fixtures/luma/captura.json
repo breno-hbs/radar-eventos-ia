@@ -1,0 +1,71 @@
+{
+  "feeds_ok": [
+    "ai-collective",
+    "codex-sp",
+    "vibe-space",
+    "womakerscode",
+    "mug-sp",
+    "cidade-sp"
+  ],
+  "feeds_falha": {},
+  "paginas": [
+    "https://luma.com/gaico-park-hang"
+  ],
+  "bloqueadas_robots": [],
+  "descartados_por_dados_pessoais": [],
+  "feeds_detalhe": {
+    "ai-collective": {
+      "total_eventos": 298,
+      "aprovados": 297,
+      "descartados": 1,
+      "motivo_arquivo": null,
+      "ocorrencias": [
+        {
+          "tipo": "arroba",
+          "padrao": "xxx, xxx xxxxx (a)xxxxxx-xxxxxxxx"
+        }
+      ]
+    },
+    "codex-sp": {
+      "total_eventos": 1,
+      "aprovados": 1,
+      "descartados": 0,
+      "motivo_arquivo": null,
+      "ocorrencias": []
+    },
+    "vibe-space": {
+      "total_eventos": 231,
+      "aprovados": 230,
+      "descartados": 1,
+      "motivo_arquivo": null,
+      "ocorrencias": [
+        {
+          "tipo": "arroba_isolada_dominio",
+          "padrao": "9 — xxx xxxxxx (a) 999.xxxx xxxxx"
+        }
+      ]
+    },
+    "womakerscode": {
+      "total_eventos": 9,
+      "aprovados": 9,
+      "descartados": 0,
+      "motivo_arquivo": null,
+      "ocorrencias": []
+    },
+    "mug-sp": {
+      "total_eventos": 1,
+      "aprovados": 1,
+      "descartados": 0,
+      "motivo_arquivo": null,
+      "ocorrencias": []
+    },
+    "cidade-sp": {
+      "total_eventos": 12,
+      "aprovados": 12,
+      "descartados": 0,
+      "motivo_arquivo": null,
+      "ocorrencias": []
+    }
+  },
+  "capturado_em": "2026-11-25T17:39:18.680705Z"
+}

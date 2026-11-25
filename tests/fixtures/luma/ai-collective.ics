@@ -1,0 +1,4491 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//The AI Collective//EN
+X-WR-CALNAME:The AI Collective
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20230210T030000Z
+DTEND:20230210T050000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-5WU1y0W8U0qrCmC@events.lu.ma
+SUMMARY:SF GAI Meetup 2/9
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/fduy3TJ8t7xQYw06HEPU
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230307T023000Z
+DTEND:20230307T050000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-OGTT8b3Dky4RqE2@events.lu.ma
+SUMMARY:SF GAI Meetup 3/6
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/ZWZxvHkihKn7JOkHg9HK
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230314T013000Z
+DTEND:20230314T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-5BFTpc24c9u8TbA@events.lu.ma
+SUMMARY:SF GAI Meetup 3/13
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/UFH62eStseylh4HrNMI8
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230323T013000Z
+DTEND:20230323T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-7JbE73oqhi8LfCp@events.lu.ma
+SUMMARY:SF GAI Meetup 3/22
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/JbxFICGdJXG7Dyq4bWDp
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230330T013000Z
+DTEND:20230330T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-oAw5EUaktHO4N1E@events.lu.ma
+SUMMARY:SF GAI Summit 3/29
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/1F4eel3HqIgOA90tuAYF
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230413T013000Z
+DTEND:20230413T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-suWVjDlsIEc8WHN@events.lu.ma
+SUMMARY:SF GAI Meetup 4/12
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/nQKICydAsKOIIeLwRlrB
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230420T013000Z
+DTEND:20230420T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-d8SjWp1ennnnV5f@events.lu.ma
+SUMMARY:Silicon Valley GAI Meetup 4/19
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/95vwcLJIrDHuw38dpPf4
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230429T193000Z
+DTEND:20230429T220000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-SchiWMpl0UoJ3V2@events.lu.ma
+SUMMARY:GAICo Park Hang
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico-park-han
+ g\n\nAddress:\nMission Dolores Park\nSan Francisco, California\nUnited Sta
+ tes\n\nHosted by The AI Collective & 3 others
+LOCATION:Mission Dolores Park, Dolores St &, 19th St, San Francisco, CA 94
+ 114, USA
+GEO:37.75977;-122.427115
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230504T013000Z
+DTEND:20230504T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-jFpq8xcu4oxmjC4@events.lu.ma
+SUMMARY:GAICo Meetup 5/3
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/5970i3bKnumiFfJ8sA4w
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230511T013000Z
+DTEND:20230511T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-EdLhE8iwZdHHQqa@events.lu.ma
+SUMMARY:Silicon Valley GAICo Meetup 5/10
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico-meetup-5
+ -10\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Co
+ llective & 3 others
+LOCATION:https://luma.com/event/evt-EdLhE8iwZdHHQqa
+GEO:37.38341702314984;-122.07555271138163
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230517T010000Z
+DTEND:20230517T043000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vFRPl9fGC6ZjGmf@events.lu.ma
+SUMMARY:GAICo Summit 5/16
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico-summit-5
+ -16\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Co
+ llective & 3 others
+LOCATION:https://luma.com/event/evt-vFRPl9fGC6ZjGmf
+GEO:37.789112697282604;-122.39899220988288
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230601T010000Z
+DTEND:20230601T050000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Tammie Siew":MAILTO:redigido@exemplo.invalid
+UID:evt-Xmt9HfrVAxDLZFo@events.lu.ma
+SUMMARY:AI Dreamland: Generative AI Media Interactive Experience
+DESCRIPTION:Get up-to-date information at: https://luma.com/n7ex68po\n\nAd
+ dress:\nPebblebed\nSan Francisco, California\nUnited States\n\nHosted by T
+ ammie Siew & 5 others
+LOCATION:Pebblebed, 1417 15th St, San Francisco, CA 94103, USA
+GEO:37.766665;-122.416155
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230601T013000Z
+DTEND:20230601T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The GAI Collective and Revamp":MAILTO:redigido@exemplo.invalid
+UID:calev-iDQWyt8UzBSme2e@events.lu.ma
+SUMMARY:SF #TechWeek AI in eCommerce Meetup 5/31
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/QRNMpghsgVNorMn7AbCd
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230607T010011Z
+DTEND:20230607T043011Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-YnoS2RNKm82j0HK@events.lu.ma
+SUMMARY:GAICo Summit 6/6
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico-summit-6
+ -6\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Col
+ lective & 3 others
+LOCATION:https://luma.com/event/evt-YnoS2RNKm82j0HK
+GEO:37.787339206627195;-122.40226681913605
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230615T010000Z
+DTEND:20230615T033000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="OctoAI":MAILTO:redigido@exemplo.invalid
+UID:evt-HeOWt9iEJPTeNWN@events.lu.ma
+SUMMARY:OctoAI Launch Party & Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/3a1gzqre\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by OctoAI & The AI Co
+ llective
+LOCATION:https://luma.com/event/evt-HeOWt9iEJPTeNWN
+GEO:37.79104249822026;-122.40101085033632
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230622T013004Z
+DTEND:20230622T040004Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-LmRHfMHaf20LRI7@events.lu.ma
+SUMMARY:🧠 GAI Collective 🧠 Meetup 6/21
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico-6-21\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 3 others
+LOCATION:https://luma.com/event/evt-LmRHfMHaf20LRI7
+GEO:37.76381587131252;-122.42602367449277
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230625T160011Z
+DTEND:20230626T020011Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-CMwt4a7OLa3PH2v@events.lu.ma
+SUMMARY:ABC LLM Hackathon + Pitchathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/hackathon-6-25
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive
+LOCATION:https://luma.com/event/evt-CMwt4a7OLa3PH2v
+GEO:37.45785593455746;-122.1839796214393
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230629T013004Z
+DTEND:20230629T040004Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-NHNacgxfAosMRkv@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Stanford Meetup 6/28
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico-6-28\n\n
+ Address:\n610 Gerona Rd\nStanford, California\nUnited States\n\nHosted by 
+ The AI Collective, Chappy Asel & Pierce Kelaita
+LOCATION:610 Gerona Rd, Stanford, CA 94305, USA
+GEO:37.414257;-122.167658
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230707T013000Z
+DTEND:20230707T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-c2vZnsEb2nqwX2C@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Brainstorm Brew 7/6
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-7-6\n\n
+ Address:\nNFX\nSan Francisco, California\nUnited States\n\nHosted by The A
+ I Collective
+LOCATION:NFX, 32 Page St, San Francisco, CA 94102, USA
+GEO:37.774499;-122.421486
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230714T013000Z
+DTEND:20230714T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-OrFseoOXO2i6mJP@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Silicon Valley Meetup 7/13
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-7-13\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive
+LOCATION:https://luma.com/event/evt-OrFseoOXO2i6mJP
+GEO:37.38358136010915;-122.07569118903841
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230720T010000Z
+DTEND:20230720T043000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-pVYM7DqGZth5F1F@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Future of AI Panel 7/19
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico-7-19\n\n
+ Address:\nWerqwise\nSan Francisco, California\nUnited States\n\nHosted by 
+ The AI Collective
+LOCATION:Werqwise, 149 New Montgomery St 4th Floor, San Francisco, CA 9410
+ 5, USA
+GEO:37.786945;-122.399598
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230721T010000Z
+DTEND:20230721T030000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-6sPQB1pgCdHuXg5@events.lu.ma
+SUMMARY:Distinguished Members Happy Hour
+DESCRIPTION:Get up-to-date information at: https://luma.com/dinner-7-20\n
+ \nAddress:\nHeartwood SF\nSan Francisco, California\nUnited States\n\nHost
+ ed by The AI Collective
+LOCATION:Heartwood SF, 531 Commercial St, San Francisco, CA 94111, USA
+GEO:37.794317;-122.40198
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230728T003000Z
+DTEND:20230728T033000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-4AaWB90kEtl8KUe@events.lu.ma
+SUMMARY:🧠 GenAI Collective and Heretic 🧠 Future Founders Mixer 7/27
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-7-27\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive
+LOCATION:https://luma.com/event/evt-4AaWB90kEtl8KUe
+GEO:37.800888275602524;-122.44322935353647
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230804T010000Z
+DTEND:20230804T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-lD6Fqcvu8JeNFKW@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Redwood City Meetup 8/3
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-8-3\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e
+LOCATION:https://luma.com/event/evt-lD6Fqcvu8JeNFKW
+GEO:37.46955723993549;-122.26451608973642
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230811T010000Z
+DTEND:20230811T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-QYTrPimfrH8yGqj@events.lu.ma
+SUMMARY:🧠 GenAI Collective and M12 🧠 Gen Z in AI Mixer @ Github 8/10
+DESCRIPTION:Get up-to-date information at: https://luma.com/mixer-8-10\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e
+LOCATION:https://luma.com/event/evt-QYTrPimfrH8yGqj
+GEO:37.780708252592284;-122.39144908940544
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230816T010000Z
+DTEND:20230816T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vMkdSRS5E1d7IGr@events.lu.ma
+SUMMARY:🗣️ AI Salon x GenAI Collective 🧠 Accelerate San Francisco
+DESCRIPTION:Get up-to-date information at: https://luma.com/salon-accelera
+ te-sf\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI 
+ Collective & 4 others
+LOCATION:https://luma.com/event/evt-vMkdSRS5E1d7IGr
+GEO:37.77739581899155;-122.42800407937628
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230818T013019Z
+DTEND:20230818T040019Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-3bPbPpf8bF5fBoL@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Silicon Valley Meetup 8/17
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-8-17\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive
+LOCATION:https://luma.com/event/evt-3bPbPpf8bF5fBoL
+GEO:37.3807299007788;-122.07709833283188
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230824T013019Z
+DTEND:20230824T040019Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-c79kqwf8lcTjCJG@events.lu.ma
+SUMMARY:🧠 GenAI Collective and Twelve Labs 🧠  Meetup 8/23
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-8-23\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive
+LOCATION:https://luma.com/event/evt-c79kqwf8lcTjCJG
+GEO:37.80077896024799;-122.39794823160699
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230901T013040Z
+DTEND:20230901T040040Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-EFqFkGUyrQqP6RD@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Silicon Valley Meetup 8/31
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-8-31\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive
+LOCATION:https://luma.com/event/evt-EFqFkGUyrQqP6RD
+GEO:37.38326751185114;-122.07954715078617
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230908T003040Z
+DTEND:20230908T030040Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-OIBkhy7KN8BygY1@events.lu.ma
+SUMMARY:🧠 GenAI Collective and FPV Ventures 🧠  Discussion Lounge 9/7
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-9-7\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & FPV Ventures
+LOCATION:https://luma.com/event/evt-OIBkhy7KN8BygY1
+GEO:37.77789206341517;-122.40657137621017
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230911T230000Z
+DTEND:20230912T010000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Open Future Forum, The GenAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-DhDqCFGGhwE3WJZ@events.lu.ma
+SUMMARY:AI Investors & Networking
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://www.eventbrite.com/e/ai-investors-networking-tickets-7070
+ 83233987?aff=ebdsoporgprofile
+GEO:37.444332;-122.160849
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230919T010040Z
+DTEND:20230919T043040Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-GnKKOg59xoPgVOW@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Disruptive Horizons Summit
+DESCRIPTION:Get up-to-date information at: https://luma.com/summit-9-18\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive
+LOCATION:https://luma.com/event/evt-GnKKOg59xoPgVOW
+GEO:37.78739784686716;-122.40227225819801
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230920T010040Z
+DTEND:20230920T043040Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-4zw7YSrFan3LBEX@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Galaxy Interactive 🪐 GenAI Virtual Worl
+ ds Summit
+DESCRIPTION:Get up-to-date information at: https://luma.com/summit-9-19\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & Cole Mora
+LOCATION:https://luma.com/event/evt-4zw7YSrFan3LBEX
+GEO:37.78928666509249;-122.40026222361139
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230922T013000Z
+DTEND:20230922T033000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Pierce Kelaita":MAILTO:redigido@exemplo.invalid
+UID:evt-D1BH7vANGkQbii3@events.lu.ma
+SUMMARY:9/21 SLS Private Dinner
+DESCRIPTION:Get up-to-date information at: https://luma.com/dinner-9-21\n
+ \nAddress:\n610 Gerona Rd\nStanford, California\nUnited States\n\nHosted b
+ y Pierce Kelaita, Chappy Asel & The AI Collective
+LOCATION:610 Gerona Rd, Stanford, CA 94305, USA
+GEO:37.414257;-122.167658
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230923T160000Z
+DTEND:20230924T040000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Stanford Law School, The GenAI Collective ":MAILTO:redigido@exemplo.invalid
+UID:calev-y3dCFGg2S2pwz8k@events.lu.ma
+SUMMARY:LLM x Law Hackathon #2 @perfil-redigido
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://partiful.com/e/xlVcg6ApMYiun8yt4pTp
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230929T013052Z
+DTEND:20230929T040052Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-GQLJnCRp5hvnUBx@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Silicon Valley Meetup 9/28
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-9-28\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive
+LOCATION:https://luma.com/event/evt-GQLJnCRp5hvnUBx
+GEO:37.380701407403414;-122.07748301848116
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231005T013052Z
+DTEND:20231005T040052Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Z7nR1ukVzpI9IBL@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Brainstorm Brew 10/4
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-10-4\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive
+LOCATION:https://luma.com/event/evt-Z7nR1ukVzpI9IBL
+GEO:37.774482719986246;-122.41917310122803
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231014T170000Z
+DTEND:20231015T230000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="TedAI, The GenAI Collective":MAILTO:redigido@exemplo.invalid
+UID:calev-fmkXw4VuSpvFoVb@events.lu.ma
+SUMMARY:TedAI Hackathon
+DESCRIPTION:Find more information on https://luma.com/genai-collective
+LOCATION:https://www.ai-event.ted.com/hackathon
+GEO:37.784469;-122.398445
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231020T013052Z
+DTEND:20231020T040052Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-iGnTUfqKk5ZYFU3@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Redwood City Meetup 10/19
+DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-10-19\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & Chappy Asel
+LOCATION:https://luma.com/event/evt-iGnTUfqKk5ZYFU3
+GEO:37.49062626095715;-122.2308762044461
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231026T010052Z
+DTEND:20231026T043052Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-hBSGXzSz2t3DCke@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Rocketship VC 🚀 AI Blastoff Summit
+DESCRIPTION:Get up-to-date information at: https://luma.com/summit-10-25\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 6 others
+LOCATION:https://luma.com/event/evt-hBSGXzSz2t3DCke
+GEO:37.789250698658115;-122.39947801529317
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231026T180052Z
+DTEND:20231026T190052Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-aDp3qqDCBoYt9mn@events.lu.ma
+SUMMARY:🧠 GenAI Collective x OctoML 🐙 Builder's Roundtable: Domain A
+ ware LLMs
+DESCRIPTION:Get up-to-date information at: https://luma.com/roundtable-10-
+ 26\n\nHosted by The AI Collective & OctoAI
+LOCATION:https://luma.com/event/evt-aDp3qqDCBoYt9mn
+GEO:37.7858028908604;-122.40075385957348
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231102T013052Z
+DTEND:20231102T040052Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-EuhwkqvA7KVrJnj@events.lu.ma
+SUMMARY:🗣️ AI Salon x GenAI Collective 🧠 Human Flourishing
+DESCRIPTION:Get up-to-date information at: https://luma.com/11-1\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 6 
+ others
+LOCATION:https://luma.com/event/evt-EuhwkqvA7KVrJnj
+GEO:37.762067773732376;-122.41544475752806
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231110T013041Z
+DTEND:20231110T033041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-UtlS6YIR8GHROtE@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Raiz Capital 🧠 Ignore Previous Instruct
+ ions
+DESCRIPTION:Get up-to-date information at: https://luma.com/mixer-11-9\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 3 others
+LOCATION:https://luma.com/event/evt-UtlS6YIR8GHROtE
+GEO:37.79451101203449;-122.39316863852135
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231110T023041Z
+DTEND:20231110T050041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-eNnovXC8VkG9XYl@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Susa Ventures 🦍 Healthcare Jungle Happy
+  Hour
+DESCRIPTION:Get up-to-date information at: https://luma.com/11-9\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 4 
+ others
+LOCATION:https://luma.com/event/evt-eNnovXC8VkG9XYl
+GEO:37.759463426225864;-122.40901312448825
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231117T023041Z
+DTEND:20231117T050041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-bb7rPnkolEmMCIM@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Doors to Beyond 🌌
+DESCRIPTION:Get up-to-date information at: https://luma.com/11-16\n\nAddre
+ ss:\nCheck event page for more details.\n\nHosted by The AI Collective
+LOCATION:https://luma.com/event/evt-bb7rPnkolEmMCIM
+GEO:37.383071629937774;-122.0796462248342
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231121T190041Z
+DTEND:20231121T200041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-YDkpPkYuPBXIpCH@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Virtual Friendsgiving! 🦃
+DESCRIPTION:Get up-to-date information at: https://luma.com/11-21\n\nHoste
+ d by The AI Collective & 4 others
+LOCATION:https://luma.com/event/evt-YDkpPkYuPBXIpCH
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231201T013041Z
+DTEND:20231201T040041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-aW5MYUlhnkaiCWt@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Biergarten Bash 🍻🪴
+DESCRIPTION:Get up-to-date information at: https://luma.com/11-30\n\nAddre
+ ss:\nCheck event page for more details.\n\nHosted by The AI Collective & 3
+  others
+LOCATION:https://luma.com/event/evt-aW5MYUlhnkaiCWt
+GEO:37.77461150688351;-122.42468866386795
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231206T023000Z
+DTEND:20231206T050000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-8rzjc4iAN3cSiwT@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 AI and Longevity ⚡️
+DESCRIPTION:Get up-to-date information at: https://luma.com/12-5\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective, Mat
+ t Huang & Coco Chen
+LOCATION:https://luma.com/event/evt-8rzjc4iAN3cSiwT
+GEO:37.541038118270414;-122.0331476019955
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231214T010041Z
+DTEND:20231214T033041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-DczNapKyPMlHCi9@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Linux Foundation 🔷 Open Source Social
+DESCRIPTION:Get up-to-date information at: https://luma.com/12-13\n\nAddre
+ ss:\nCheck event page for more details.\n\nHosted by The AI Collective & 3
+  others
+LOCATION:https://luma.com/event/evt-DczNapKyPMlHCi9
+GEO:37.330011240857466;-121.88713734056924
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20231215T020041Z
+DTEND:20231215T053041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-IeMLtwHbGRlOsac@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Holiday Party! 🥳🎄
+DESCRIPTION:Get up-to-date information at: https://luma.com/12-14\n\nAddre
+ ss:\nCheck event page for more details.\n\nHosted by The AI Collective & 6
+  others
+LOCATION:https://luma.com/event/evt-IeMLtwHbGRlOsac
+GEO:37.786078059147364;-122.40139373662494
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240112T020041Z
+DTEND:20240112T050041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-aE01BpXrFFJ3Yi0@events.lu.ma
+SUMMARY:🧠 GenAI Collective x DataStax 🥞 AGI Enablers Summit 🤖
+DESCRIPTION:Get up-to-date information at: https://luma.com/1-11\n\nAddres
+ s:\n2625 Augustine Dr suite 125\nSanta Clara, California\nUnited States\n
+ \nHosted by The AI Collective & 3 others
+LOCATION:2625 Augustine Dr suite 125, Santa Clara, CA 95054, USA
+GEO:37.382979;-121.975127
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240120T023041Z
+DTEND:20240120T050041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-cvn4Xaz6s1j5IOA@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Bytes && Bites SF Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/1-19\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 4 
+ others
+LOCATION:https://luma.com/event/evt-cvn4Xaz6s1j5IOA
+GEO:37.758879022550836;-122.44302919551257
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240126T013041Z
+DTEND:20240126T043041Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Agentic AI Foundation":MAILTO:redigido@exemplo.invalid
+UID:evt-29M0q6WWRCNzGMH@events.lu.ma
+SUMMARY:⚙️ MLOps Community x GenAI Collective 🧠 Tech Talks 🎙️
+DESCRIPTION:Get up-to-date information at: https://luma.com/1-25\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by Agentic AI Foundation 
+ & 9 others
+LOCATION:https://luma.com/event/evt-29M0q6WWRCNzGMH
+GEO:37.791132315650934;-122.40522822124201
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240131T013052Z
+DTEND:20240131T040052Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ytHaPaKrPsCUhLv@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Inaugural Marin Meetup! 🍻
+DESCRIPTION:Get up-to-date information at: https://luma.com/1-30\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective, Mat
+ t Huang & Chris Guest
+LOCATION:https://luma.com/event/evt-ytHaPaKrPsCUhLv
+GEO:37.97669882768495;-122.54050045799205
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240210T023036Z
+DTEND:20240210T050036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-XJajJ5eWo4v2bcK@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Let's Talk AGI! 🤖
+DESCRIPTION:Get up-to-date information at: https://luma.com/2-9\n\nAddress
+ :\nCheck event page for more details.\n\nHosted by The AI Collective & 4 o
+ thers
+LOCATION:https://luma.com/event/evt-XJajJ5eWo4v2bcK
+GEO:37.76106174567613;-122.43941359366913
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240222T013036Z
+DTEND:20240222T043036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-3xxMP4pG81xn8v1@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🐰 Design Buddies 🚀Ansh Mehra 🧠 The 
+ GenAI 🤝 Design Workshop You've All Been Waiting For
+DESCRIPTION:Get up-to-date information at: https://luma.com/2-21\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 5 
+ others
+LOCATION:https://luma.com/event/evt-3xxMP4pG81xn8v1
+GEO:37.77823815677654;-122.39045798226485
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240223T020036Z
+DTEND:20240223T030036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-lL0WgU68uQsc3nv@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Community Town Hall 🏛️
+DESCRIPTION:Get up-to-date information at: https://luma.com/2-22\n\nHosted
+  by The AI Collective & 7 others
+LOCATION:https://luma.com/event/evt-lL0WgU68uQsc3nv
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240224T023036Z
+DTEND:20240224T050036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-XYcfbAGI12fJQGm@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Broken Dreams, Loose Ends, and Horror 
+ Stories: The Worst from the Best
+DESCRIPTION:Get up-to-date information at: https://luma.com/2-23\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 4 
+ others
+LOCATION:https://luma.com/event/evt-XYcfbAGI12fJQGm
+GEO:37.758811994668655;-122.43954180825465
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240228T013036Z
+DTEND:20240228T043036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-PuFme3Rkp1pVLVz@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🐰 Design Buddies 🚀Ansh Mehra 🧠 The 
+ GenAI 🤝 Product Workshop You've All Been Waiting For
+DESCRIPTION:Get up-to-date information at: https://luma.com/2-27\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 5 
+ others
+LOCATION:https://luma.com/event/evt-PuFme3Rkp1pVLVz
+GEO:37.78117384691741;-122.39172424742118
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240313T010000Z
+DTEND:20240313T030000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-VF6T4OhmKVXx9iE@events.lu.ma
+SUMMARY:AI Open Demo Night - SF March
+DESCRIPTION:Get up-to-date information at: https://luma.com/2024-ProductHu
+ nt-SFdemonight\n\nAddress:\nCheck event page for more details.\n\nHosted b
+ y The AI Collective & 6 others
+LOCATION:https://luma.com/event/evt-VF6T4OhmKVXx9iE
+GEO:37.791920218284965;-122.40461213153867
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240321T010036Z
+DTEND:20240321T043036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-RgSQRGw0Zm6TAkH@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Daily 🗣️ AI & Voice Summit
+DESCRIPTION:Get up-to-date information at: https://luma.com/3-20\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 3 
+ others
+LOCATION:https://luma.com/event/evt-RgSQRGw0Zm6TAkH
+GEO:37.771767170654854;-122.4245762040925
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240322T010036Z
+DTEND:20240322T040036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-9z2xvBddqhYebSM@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Marin Startup & Scaleup Nerdworking
+DESCRIPTION:Get up-to-date information at: https://luma.com/3-21\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 3 
+ others
+LOCATION:https://luma.com/event/evt-9z2xvBddqhYebSM
+GEO:37.906380324245426;-122.54852360802694
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240403T013036Z
+DTEND:20240403T040036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-MfmEfPYbKp8GpvF@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Research Roundtable 🧑‍🔬
+DESCRIPTION:Get up-to-date information at: https://luma.com/4-2\n\nAddress
+ :\n1720 Villa St\nMountain View, California\nUnited States\n\nHosted by Th
+ e AI Collective, Agastya Kalra & Chappy Asel
+LOCATION:1720 Villa St, Mountain View, CA 94041, USA
+GEO:37.398344;-122.089796
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240410T173057Z
+DTEND:20240410T193057Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Chris Guest":MAILTO:redigido@exemplo.invalid
+UID:evt-b9zDfqcSrfwaC5R@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Casual Coffee | San Rafael
+DESCRIPTION:Get up-to-date information at: https://luma.com/marin-4-10\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Chris Guest & Th
+ e AI Collective
+LOCATION:https://luma.com/event/evt-b9zDfqcSrfwaC5R
+GEO:37.972177619349026;-122.52985789789736
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240410T220036Z
+DTEND:20240411T000036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Gyy372IQR0rIAJF@events.lu.ma
+SUMMARY:🧠 GenAI Collective NYC 🧠 AI & Fintech Innovators Soiree
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-nyc\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by The AI Collective
+  & 3 others
+LOCATION:https://luma.com/event/evt-Gyy372IQR0rIAJF
+GEO:40.74100416820593;-73.98889834705999
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240418T013036Z
+DTEND:20240418T040036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ryPrVvnHRVVDZHy@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Girls in Tech 🙍‍♀️ Diversity and 
+ Equity in Tech
+DESCRIPTION:Get up-to-date information at: https://luma.com/3-27\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 4 
+ others
+LOCATION:https://luma.com/event/evt-ryPrVvnHRVVDZHy
+GEO:37.791758879827135;-122.40047593149873
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240418T173057Z
+DTEND:20240418T193057Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Chris Guest":MAILTO:redigido@exemplo.invalid
+UID:evt-SOz768aSnVn9Juu@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Casual Coffee | Corte Madera
+DESCRIPTION:Get up-to-date information at: https://luma.com/marin-4-18\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Chris Guest & Th
+ e AI Collective
+LOCATION:https://luma.com/event/evt-SOz768aSnVn9Juu
+GEO:37.92480357787857;-122.51885534883031
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240423T163057Z
+DTEND:20240423T193057Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-RgU43Z0wvh6Eo4Y@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Marin Climate Hike
+DESCRIPTION:Get up-to-date information at: https://luma.com/climate-hike\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive, Chris Guest & SF Climate Week
+LOCATION:https://luma.com/event/evt-RgU43Z0wvh6Eo4Y
+GEO:37.87275197746978;-122.45435436125135
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240425T010056Z
+DTEND:20240425T020056Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-k2eD6VPeC0cHy5B@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Community Town Hall 🏛️
+DESCRIPTION:Get up-to-date information at: https://luma.com/4-24\n\nHosted
+  by The AI Collective & 3 others
+LOCATION:https://luma.com/event/evt-k2eD6VPeC0cHy5B
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240425T230000Z
+DTEND:20240426T020000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Kevin Kong":MAILTO:redigido@exemplo.invalid
+UID:evt-EP8Hroaz1QdJKEP@events.lu.ma
+SUMMARY:AI for Climate & Deep Tech: Founders Roundtable (Invite Only)
+DESCRIPTION:Get up-to-date information at: https://luma.com/75w1gmz8\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Kevin Kong & 7 oth
+ ers
+LOCATION:https://luma.com/event/evt-EP8Hroaz1QdJKEP
+GEO:37.782119521896746;-122.39574214092926
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240514T223036Z
+DTEND:20240515T003036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ZcVM2Y25LVLkGEi@events.lu.ma
+SUMMARY:🧠 GenAI Collective NYC 🧠 Unlocking the Next Wave of GenAI Ad
+ option in Industry
+DESCRIPTION:Get up-to-date information at: https://luma.com/nyc-ai-industr
+ y\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective, Prithvi Rajasekaran & Sriram Ramakrishnan
+LOCATION:https://luma.com/event/evt-ZcVM2Y25LVLkGEi
+GEO:40.732955640192976;-73.98729619410325
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240522T173001Z
+DTEND:20240523T000001Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Chris Guest":MAILTO:redigido@exemplo.invalid
+UID:evt-yYBJCi6F86VVVXw@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Marin AI Co-Working
+DESCRIPTION:Get up-to-date information at: https://luma.com/marin-5-22-cow
+ orking\n\nAddress:\nCheck event page for more details.\n\nHosted by Chris 
+ Guest & The AI Collective
+LOCATION:https://luma.com/event/evt-yYBJCi6F86VVVXw
+GEO:37.97536577772023;-122.52600239036755
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240523T003001Z
+DTEND:20240523T040001Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Chris Guest":MAILTO:redigido@exemplo.invalid
+UID:evt-9vPbp31fjSbR7EE@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Marin Open Mic Demo Night
+DESCRIPTION:Get up-to-date information at: https://luma.com/marin-5-22-dem
+ o\n\nAddress:\nCheck event page for more details.\n\nHosted by Chris Guest
+  & The AI Collective
+LOCATION:https://luma.com/event/evt-9vPbp31fjSbR7EE
+GEO:37.97507862741973;-122.52346201735833
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240529T013036Z
+DTEND:20240529T040036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-KPQlRCf8X9eZL6a@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Research Roundtable 👩‍🔬👨‍
+ 🔬
+DESCRIPTION:Get up-to-date information at: https://luma.com/5-28\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 3 
+ others
+LOCATION:https://luma.com/event/evt-KPQlRCf8X9eZL6a
+GEO:37.398860196836445;-122.0922598204417
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240531T010036Z
+DTEND:20240531T040036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-yASTSI63qCJBgHZ@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 SF Demo Extravaganza 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/sf-demo\n\nAdd
+ ress:\nShack15\nSan Francisco, California\nUnited States\n\nHosted by The 
+ AI Collective & 4 others
+LOCATION:Shack15, 1, Ferry Building, Suite 201, San Francisco, CA 94111, U
+ SA
+GEO:37.79623;-122.394139
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240605T220036Z
+DTEND:20240606T000036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-aLGbC8eUsRx3QzV@events.lu.ma
+SUMMARY:Open Sky AI: A GenAI Picnic by GenAI Collective x MLOps Community 
+ x NY #TechWeek
+DESCRIPTION:Get up-to-date information at: https://luma.com/NYTechWeekAI\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & Agentic AI Foundation
+LOCATION:https://luma.com/event/evt-aLGbC8eUsRx3QzV
+GEO:40.74160441313224;-73.98544123918484
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240611T163042Z
+DTEND:20240612T000042Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Chris Guest":MAILTO:redigido@exemplo.invalid
+UID:evt-34iXK6PlAUY3NJK@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Marin AI Jun Co-Working
+DESCRIPTION:Get up-to-date information at: https://luma.com/jko8wn8k\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Chris Guest & The 
+ AI Collective
+LOCATION:https://luma.com/event/evt-34iXK6PlAUY3NJK
+GEO:37.972244518966306;-122.52375148251053
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240613T010036Z
+DTEND:20240613T043036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-RfGbpvJQw0EVocR@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Light Dao ☀️ NeuroAI - Accelerating Ra
+ dical Shifts for Leaders & Investors
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-light\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 3 others
+LOCATION:https://luma.com/event/evt-RfGbpvJQw0EVocR
+GEO:37.799672830789724;-122.45984432313298
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240624T233000Z
+DTEND:20240625T043000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Harrison Chase":MAILTO:redigido@exemplo.invalid
+UID:evt-QJVE2z7QFTGdaAm@events.lu.ma
+SUMMARY:RAG++: AI Hack Night
+DESCRIPTION:Get up-to-date information at: https://luma.com/vpdj2zoj\n\nAd
+ dress:\nThe Pearl\nSan Francisco, California\nUnited States\n\nHosted by H
+ arrison Chase, Christopher Maddock & Brian Raymond
+LOCATION:The Pearl, 601 19th St, San Francisco, CA 94107, USA
+GEO:37.761445;-122.388951
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240625T180050Z
+DTEND:20240625T190050Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-PnNrccCrDJx3C2W@events.lu.ma
+SUMMARY:🧠 GenAI Collective x OctoAI 🐙 All About Fine-Tuning LLMs
+DESCRIPTION:Get up-to-date information at: https://luma.com/roundtable-6-2
+ 5\n\nHosted by The AI Collective, OctoAI & Naomi Chetrit Band
+LOCATION:https://luma.com/event/evt-PnNrccCrDJx3C2W
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240625T223013Z
+DTEND:20240626T003013Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-0AAlXNfAIC2BzaD@events.lu.ma
+SUMMARY:GenAI Collective NYC x Fractal Tech: AI Lightning Talks ⚡
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-lightnin
+ g-talks\n\nAddress:\nCheck event page for more details.\n\nHosted by The A
+ I Collective & 3 others
+LOCATION:https://luma.com/event/evt-0AAlXNfAIC2BzaD
+GEO:40.715382606187795;-73.94393131569726
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240628T010036Z
+DTEND:20240628T040036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-sHT9DlpD5ozUxMb@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 SF Demo Spectacular 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/demo-spectacul
+ ar\n\nAddress:\nShack15\nSan Francisco, California\nUnited States\n\nHoste
+ d by The AI Collective & 13 others
+LOCATION:Shack15, 1, Ferry Building, Suite 201, San Francisco, CA 94111, U
+ SA
+GEO:37.79623;-122.394139
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240709T223013Z
+DTEND:20240710T010013Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-UUISX1HX7w6DZwh@events.lu.ma
+SUMMARY:GenAI Collective NYC Presents: SWE-Agent & the Future of Software 
+ Engineering
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-swe-agen
+ t\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective, Prithvi Rajasekaran & Sriram Ramakrishnan
+LOCATION:https://luma.com/event/evt-UUISX1HX7w6DZwh
+GEO:40.72006904471747;-74.0023714232811
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240712T003036Z
+DTEND:20240712T033036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-4Blndpz7luigTp3@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  The Diversity AI Forum
+DESCRIPTION:Get up-to-date information at: https://luma.com/diversity-ai-f
+ orum\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI C
+ ollective & 5 others
+LOCATION:https://luma.com/event/evt-4Blndpz7luigTp3
+GEO:37.794160589962864;-122.40462449402098
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240718T210000Z
+DTEND:20240718T220000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-BAYYJfemJabkiKB@events.lu.ma
+SUMMARY:🧠 The GenAI Collective 🧠 Office Hours 👨‍🏫
+DESCRIPTION:Get up-to-date information at: https://luma.com/0n3ukaid\n\nHo
+ sted by The AI Collective, Mihir Somaiya & Naomi Chetrit Band
+LOCATION:https://luma.com/event/evt-BAYYJfemJabkiKB
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240719T010036Z
+DTEND:20240719T033036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-0cUW50vWIwNUHz1@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  AI Video Quest 📽️
+DESCRIPTION:Get up-to-date information at: https://luma.com/AI-Video-Quest
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 4 others
+LOCATION:https://luma.com/event/evt-0cUW50vWIwNUHz1
+GEO:37.758203033172485;-122.44134820323085
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240723T233036Z
+DTEND:20240724T023036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-qXO16GnX0wXHafK@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Garden Gathering 🌺
+DESCRIPTION:Get up-to-date information at: https://luma.com/garden-gatheri
+ ng\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Col
+ lective & 4 others
+LOCATION:https://luma.com/event/evt-qXO16GnX0wXHafK
+GEO:37.41351905496532;-122.1697457823916
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240725T210036Z
+DTEND:20240725T233036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-cLXW0ymhvQX5uP9@events.lu.ma
+SUMMARY:🇬🇧 British Consulate x GenAI Collective 🧠  Embodied AI Ro
+ undtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/embodied-ai\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 3 others
+LOCATION:https://luma.com/event/evt-cLXW0ymhvQX5uP9
+GEO:37.788439369326255;-122.40238149213725
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240729T220000Z
+DTEND:20240730T000000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-M81xm1HivyqUCgl@events.lu.ma
+SUMMARY:GenAI Collective NYC x Pitango Ventures x CometML x Jounce: GenAI 
+ & Enterprise Innovation Executive Dinner
+DESCRIPTION:Get up-to-date information at: https://luma.com/7bccd0dk\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 6 others
+LOCATION:https://luma.com/event/evt-M81xm1HivyqUCgl
+GEO:40.72927314062401;-73.99335173886922
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240806T140000Z
+DTEND:20240806T190000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-f2xFYToSM9oXjpq@events.lu.ma
+SUMMARY:🧠 AWS x GenAI Collective NYC 🧠 LLM Fine-Tuning Workshop
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-aws-slm
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive
+LOCATION:https://luma.com/event/evt-f2xFYToSM9oXjpq
+GEO:40.75205506690771;-73.98162682789506
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240808T223036Z
+DTEND:20240809T010036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ZwctBwX8TBvXuBx@events.lu.ma
+SUMMARY:*️⃣ Æthos x GenAI Collective x NextStep Health 🧠  Future o
+ f Life & Work in the age of AI 💼
+DESCRIPTION:Get up-to-date information at: https://luma.com/Boston-8-8\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 5 others
+LOCATION:https://luma.com/event/evt-ZwctBwX8TBvXuBx
+GEO:42.3642619750191;-71.08423901687011
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240814T010036Z
+DTEND:20240814T030036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-jPId7tzMgoAt3h6@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Headline 💸  How to Pitch Your AI Startu
+ p to Investors Panel
+DESCRIPTION:Get up-to-date information at: https://luma.com/pitch-panel\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 4 others
+LOCATION:https://luma.com/event/evt-jPId7tzMgoAt3h6
+GEO:37.80014579497875;-122.46226882636742
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240814T013036Z
+DTEND:20240814T040036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-7n1mgwDb9FfxoJT@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Research Roundtable 🧑‍🔬
+DESCRIPTION:Get up-to-date information at: https://luma.com/roundtable-8-1
+ 3\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective & 4 others
+LOCATION:https://luma.com/event/evt-7n1mgwDb9FfxoJT
+GEO:37.397868720147805;-122.08802631706591
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240814T223013Z
+DTEND:20240815T003013Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vVSibSpaNL8Fan2@events.lu.ma
+SUMMARY:GenAI Collective: NYC Research Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/nyc-research-r
+ oundtable\n\nAddress:\nCheck event page for more details.\n\nHosted by The
+  AI Collective & 3 others
+LOCATION:https://luma.com/event/evt-vVSibSpaNL8Fan2
+GEO:40.72718892006194;-73.99132108425704
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240816T010007Z
+DTEND:20240816T040007Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-O4hE946Xbloilgy@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 SF Demo Showcase 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/demo-showcase
+ \n\nAddress:\nShack15\n2nd floor of San Francisco's Ferry Building, left s
+ ide of the main market entrance.\nSan Francisco, California\nUnited States
+ \n\nHosted by The AI Collective & 6 others
+LOCATION:Shack15, 1, Ferry Building, Suite 201, San Francisco, CA 94111, U
+ SA
+GEO:37.79623;-122.394139
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240822T170036Z
+DTEND:20240823T003036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Chris Guest":MAILTO:redigido@exemplo.invalid
+UID:evt-G9wAJUKegCFQyTT@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Marin AI Aug Co-Working
+DESCRIPTION:Get up-to-date information at: https://luma.com/lmhjca2d\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Chris Guest & The 
+ AI Collective
+LOCATION:https://luma.com/event/evt-G9wAJUKegCFQyTT
+GEO:37.97490651682773;-122.5267474841118
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240829T223036Z
+DTEND:20240830T010036Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-gWGfB7tvytmZjPM@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Miami Kickoff 🌴
+DESCRIPTION:Get up-to-date information at: https://luma.com/miami-kickoff
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 5 others
+LOCATION:https://luma.com/event/evt-gWGfB7tvytmZjPM
+GEO:25.77539666551712;-80.19205354751617
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240904T170000Z
+DTEND:20240905T020000Z
+DTSTAMP:20261125T173851Z
+ORGANIZER;CN="Melissa Herrera":MAILTO:redigido@exemplo.invalid
+UID:evt-eBwCQaCCscrecsb@events.lu.ma
+SUMMARY:RAG++ NYC
+DESCRIPTION:Get up-to-date information at: https://luma.com/rag-ai-hack-ny
+ c\n\nAddress:\nPier Sixty\nNew York, New York\nUnited States\n\nHosted by 
+ Melissa Herrera & 4 others
+LOCATION:Pier Sixty, Pier 60, 60 Chelsea Piers, New York, NY 10011, USA
+GEO:40.746662;-74.010773
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240904T173000Z
+DTEND:20240904T220000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-n6V4U3gecf3wLGV@events.lu.ma
+SUMMARY:🧠 GenAI Collective x AWS x Invisible Technologies 🛠️ SLMOp
+ s Workshop
+DESCRIPTION:Get up-to-date information at: https://luma.com/slm-workshop\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & Korina Skhinas
+LOCATION:https://luma.com/event/evt-n6V4U3gecf3wLGV
+GEO:37.788879933092936;-122.39821916475304
+SEQUENCE:217791531
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240917T220000Z
+DTEND:20240918T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Andrew Chang":MAILTO:redigido@exemplo.invalid
+UID:evt-UdkrmHq8aR0baFS@events.lu.ma
+SUMMARY:AI Founder Social @ Maxwell Social
+DESCRIPTION:Get up-to-date information at: https://luma.com/AIFounderSocia
+ l\n\nAddress:\nCheck event page for more details.\n\nHosted by Andrew Chan
+ g & 7 others
+LOCATION:https://luma.com/event/evt-UdkrmHq8aR0baFS
+GEO:40.723083296449715;-74.00779575742249
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240918T003000Z
+DTEND:20240918T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Erika Bahr":MAILTO:redigido@exemplo.invalid
+UID:evt-EfliHJIjTzlfrAL@events.lu.ma
+SUMMARY:Empower Enterprise Series A+ Pitch & Connect Dinner
+DESCRIPTION:Get up-to-date information at: https://luma.com/2tz5bp1m\n\nAd
+ dress:\n180 Montgomery St\nThis event will be on the 13th floor\nSan Franc
+ isco, California\nUnited States\n\nHosted by Erika Bahr & 3 others
+LOCATION:180 Montgomery St, San Francisco, CA 94104, USA
+GEO:37.790806;-122.40224
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240919T223000Z
+DTEND:20240920T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-xhalpd3AEJgMiMV@events.lu.ma
+SUMMARY:🧠  GenAI Collective NYC 🧠  Research Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/nyc-roundtable
+ -9-10\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI 
+ Collective & 5 others
+LOCATION:https://luma.com/event/evt-xhalpd3AEJgMiMV
+GEO:40.727048780760626;-73.99172945186132
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240920T003000Z
+DTEND:20240920T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Chris Guest":MAILTO:redigido@exemplo.invalid
+UID:evt-u0JOb9XmYDji6k6@events.lu.ma
+SUMMARY:🧠 GenAI Collective Marin 🧠  The Scaling Salon
+DESCRIPTION:Get up-to-date information at: https://luma.com/lgcgvywy\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Chris Guest & The 
+ AI Collective
+LOCATION:https://luma.com/event/evt-u0JOb9XmYDji6k6
+GEO:37.97527687240157;-122.52620598908129
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240924T223000Z
+DTEND:20240925T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-BgUU9c9B4OdhuXd@events.lu.ma
+SUMMARY:🧠  GenAI Collective Miami x GPTuesdays 🧠  Research Roundtabl
+ e
+DESCRIPTION:Get up-to-date information at: https://luma.com/miami-research
+ -roundtable\n\nAddress:\nCheck event page for more details.\n\nHosted by T
+ he AI Collective & 3 others
+LOCATION:https://luma.com/event/evt-BgUU9c9B4OdhuXd
+GEO:25.780197254636217;-80.19006399339106
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20240926T223000Z
+DTEND:20240927T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-NHz7GFsFtnU6qUP@events.lu.ma
+SUMMARY:GenAI Collective NYC x Fractal Tech: AI Lightning Talks ⚡
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-lightning-t
+ alks\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI C
+ ollective, Randy Lariar & Jake Zegil
+LOCATION:https://luma.com/event/evt-NHz7GFsFtnU6qUP
+GEO:40.713942765760294;-73.94816977511387
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241001T223000Z
+DTEND:20241002T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vhp77Hxwg18fZQE@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Madrona ☔ Seattle Frontier Technologies 
+ Forum
+DESCRIPTION:Get up-to-date information at: https://luma.com/seattle-forum
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 4 others
+LOCATION:https://luma.com/event/evt-vhp77Hxwg18fZQE
+GEO:47.60816880225567;-122.33627349045162
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241003T223000Z
+DTEND:20241004T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Oq2m0gNXE5f70CI@events.lu.ma
+SUMMARY:🧠 GenAI Collective Boston 🧠 AI Lightning Talks ⚡
+DESCRIPTION:Get up-to-date information at: https://luma.com/boston-lightni
+ ng-1\n\nAddress:\nOne Broadway\nCambridge, Massachusetts\nUnited States\n
+ \nHosted by The AI Collective & 5 others
+LOCATION:One Broadway, 1 Broadway, Cambridge, MA 02142, USA
+GEO:42.362782;-71.083538
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241011T230000Z
+DTEND:20241012T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-D79MmJEfKDYvO3n@events.lu.ma
+SUMMARY:EXCLUSIVE: #SFTechWeek AI Founders & Funders Happy Hour Wine Tasti
+ ng 🍷 with SVB, 99VC & the GenAI Collective 🧠
+DESCRIPTION:Get up-to-date information at: https://luma.com/wine-and-tech
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 7 others
+LOCATION:https://luma.com/event/evt-D79MmJEfKDYvO3n
+GEO:37.78855793595677;-122.39863972473682
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241015T183000Z
+DTEND:20241015T203000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-1Y0f1bEZ2pvGSvu@events.lu.ma
+SUMMARY:🧠 GenAI Collective LA 🧠 Consumer AI #LATechWeek
+DESCRIPTION:Get up-to-date information at: https://luma.com/GenAIConsumer
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 3 others
+LOCATION:https://luma.com/event/evt-1Y0f1bEZ2pvGSvu
+GEO:34.04679643683757;-118.4551074855114
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241016T153000Z
+DTEND:20241016T220000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-JCHfSEVuTP2Cy0b@events.lu.ma
+SUMMARY:🧠 AWS x GenAI Collective NYC 🧠 Bedrock Roadshow
+DESCRIPTION:Get up-to-date information at: https://luma.com/NYCBedrockDay
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive, Sriram Ramakrishnan & Prithvi Rajasekaran
+LOCATION:https://luma.com/event/evt-JCHfSEVuTP2Cy0b
+GEO:40.74140089698254;-73.98736556141517
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241017T223000Z
+DTEND:20241018T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-TYxl179eCOldmN1@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  DC Kickoff 🏛️
+DESCRIPTION:Get up-to-date information at: https://luma.com/DC-Kickoff\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 4 others
+LOCATION:https://luma.com/event/evt-TYxl179eCOldmN1
+GEO:38.90291108848738;-77.04024993627387
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241025T003000Z
+DTEND:20241025T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-IxSmfBI4XHFFjik@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  AI & Creativity Workshop + Panel
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-creativity-
+ workshop\n\nAddress:\nCheck event page for more details.\n\nHosted by The 
+ AI Collective & 4 others
+LOCATION:https://luma.com/event/evt-IxSmfBI4XHFFjik
+GEO:37.779101171058116;-122.38927882548694
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241029T000036Z
+DTEND:20241029T013036Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-iauYE1IB8l5H8q0@events.lu.ma
+SUMMARY:🧠 GenAI Collective SF 🧠 Unlock Your Mind: A Journey Through 
+ Books and Community 📚
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-book-clu
+ b\n\nAddress:\nWefunder\nSan Francisco, California\nUnited States\n\nHoste
+ d by The AI Collective & 3 others
+LOCATION:Wefunder, 1885 Mission St, San Francisco, CA 94103, USA
+GEO:37.766869;-122.419605
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241029T223000Z
+DTEND:20241030T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-iBzF4sDNglOHfB9@events.lu.ma
+SUMMARY:🧠  GenAI Collective NYC 🧠  Research Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/nyc-october-ro
+ undtable\n\nAddress:\nCheck event page for more details.\n\nHosted by The 
+ AI Collective & 8 others
+LOCATION:https://luma.com/event/evt-iBzF4sDNglOHfB9
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241030T000000Z
+DTEND:20241030T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-3kA1sNnH2dAEYFC@events.lu.ma
+SUMMARY:🏦 SVB x GenAI Collective 🧠 TC Disrupt After-Hour: B2B SaaS A
+ I Fireside Chat & Networking 🔥
+DESCRIPTION:Get up-to-date information at: https://luma.com/disrupt-after-
+ hour\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI C
+ ollective & 14 others
+LOCATION:https://luma.com/event/evt-3kA1sNnH2dAEYFC
+GEO:37.78844037598315;-122.39886628751036
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20241031
+DTEND;VALUE=DATE:20241103
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Tammie Siew":MAILTO:redigido@exemplo.invalid
+UID:evt-QidCAGycJl0d4fr@events.lu.ma
+SUMMARY:Halloween Craftathon 🎃
+DESCRIPTION:Get up-to-date information at: https://luma.com/halloween-craf
+ tothon\n\nAddress:\nPebblebed\nSan Francisco, California\nUnited States\n
+ \nHosted by Tammie Siew & 5 others
+LOCATION:Pebblebed, 1417 15th St, San Francisco, CA 94103, USA
+GEO:37.766665;-122.416155
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241103T020000Z
+DTEND:20241103T060000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Tammie Siew":MAILTO:redigido@exemplo.invalid
+UID:evt-rdE23YzvTTIC0Et@events.lu.ma
+SUMMARY:🤖🎃SPOOKYLAND: AI & ART & ALCOHOL, OH MY! 🤖🎃
+DESCRIPTION:Get up-to-date information at: https://luma.com/tzkyabmd\n\nAd
+ dress:\nPebblebed\nSan Francisco, California\nUnited States\n\nHosted by T
+ ammie Siew & 3 others
+LOCATION:Pebblebed, 1417 15th St, San Francisco, CA 94103, USA
+GEO:37.766665;-122.416155
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241107T000000Z
+DTEND:20241107T050000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Adam Chan":MAILTO:redigido@exemplo.invalid
+UID:evt-vNTIz7J3lCyZ7Yl@events.lu.ma
+SUMMARY:AI Builders Night
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-builders-ni
+ ght\n\nAddress:\nGitHub\nSan Francisco, California\nUnited States\n\nHoste
+ d by Adam Chan & 6 others
+LOCATION:GitHub, 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA
+GEO:37.782266;-122.391164
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241113T230000Z
+DTEND:20241114T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-CzEbTghwHYwUYoi@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 NYC Demo Night 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/nyc-demo-night
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 9 others
+LOCATION:https://luma.com/event/evt-CzEbTghwHYwUYoi
+GEO:40.752883001900834;-73.98083032271472
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241113T233000Z
+DTEND:20241114T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-FikXnATroMb5H7y@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Boston Demo Night⚡
+DESCRIPTION:Get up-to-date information at: https://luma.com/boston-demo-1
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 5 others
+LOCATION:https://luma.com/event/evt-FikXnATroMb5H7y
+GEO:42.36427998539791;-71.08409970760505
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241114T180000Z
+DTEND:20241114T230000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-m8jD1fwfTtRDDa9@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🇫🇷  Inaugural Paris Meetup with Koyeb!
+DESCRIPTION:Get up-to-date information at: https://luma.com/bonjour\n\nAdd
+ ress:\nLe Parvis Pompidou\nParis, Île-de-France\nFrance\n\nHosted by The 
+ AI Collective & 3 others
+LOCATION:Le Parvis Pompidou, 2 Rue Aubry le Boucher, 75004 Paris, France
+GEO:48.86034;2.35075
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241115T000000Z
+DTEND:20241115T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-wug1AsyybTTq7C5@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Building Chicago AI Connections: Eleva
+ te Your Pitch & Build Community
+DESCRIPTION:Get up-to-date information at: https://luma.com/CHI-Launch\n\n
+ Address:\nBeermiscuous\nWe'll Gather in The Cellar\nChicago, Illinois\nUni
+ ted States\n\nHosted by The AI Collective, Jonathan Johnson-Swagel & Chapp
+ y Asel
+LOCATION:Beermiscuous, 2812 N Lincoln Ave, Chicago, IL 60657, USA
+GEO:41.932847;-87.659428
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241119T233000Z
+DTEND:20241120T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-bEROIMMOikbgrlc@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Pop-up AI Policy Meetup
+DESCRIPTION:Get up-to-date information at: https://luma.com/DC-AI-Policy-M
+ eetup\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI 
+ Collective & 3 others
+LOCATION:https://luma.com/event/evt-bEROIMMOikbgrlc
+GEO:38.901264721319905;-77.04082004776582
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241122T000000Z
+DTEND:20241122T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-irHBqOVAByO9BUb@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Austin Kickoff 🔥
+DESCRIPTION:Get up-to-date information at: https://luma.com/austin-kickoff
+ \n\nAddress:\nLazarus Brewing Co.\nAustin, Texas\nUnited States\n\nHosted 
+ by The AI Collective & 3 others
+LOCATION:Lazarus Brewing Co., 1902 E 6th St, Austin, TX 78702, USA
+GEO:30.26174;-97.722002
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241122T030000Z
+DTEND:20241122T050000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Rissa Cao":MAILTO:redigido@exemplo.invalid
+UID:evt-EbqzxtJHcbFjxt4@events.lu.ma
+SUMMARY:GenAI Collective 🧠 SF Consumer AI Growth Hacking Unfiltered
+DESCRIPTION:Get up-to-date information at: https://luma.com/sawbydqe\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Rissa Cao, The AI 
+ Collective & Olivia Zhou
+LOCATION:https://luma.com/event/evt-EbqzxtJHcbFjxt4
+GEO:37.479675380393644;-122.1556935141894
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241202T233000Z
+DTEND:20241203T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-BNOjWBHBpEYM4mp@events.lu.ma
+SUMMARY:GenAI Collective 🔥 HOT TAKES MONDAY
+DESCRIPTION:Get up-to-date information at: https://luma.com/boston-discuss
+ ion-1\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI 
+ Collective & 4 others
+LOCATION:https://luma.com/event/evt-BNOjWBHBpEYM4mp
+GEO:42.35156443126388;-71.10254911128318
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241205T020000Z
+DTEND:20241205T050000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-tEXBhFSSQLomTqp@events.lu.ma
+SUMMARY:SF Demo Night 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/demo-night\n\n
+ Address:\nShack15\n2nd floor of San Francisco's Ferry Building, left side 
+ of the main market entrance.\nSan Francisco, California\nUnited States\n\n
+ Hosted by The AI Collective & 9 others
+LOCATION:Shack15, 1, Ferry Building, Suite 201, San Francisco, CA 94111, U
+ SA
+GEO:37.79623;-122.394139
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241207T190000Z
+DTEND:20241207T213000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-SD2IwR2ZWjaEgIp@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Boston Demo Day⚡
+DESCRIPTION:Get up-to-date information at: https://luma.com/demo-night-bos
+ ton\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Co
+ llective & 4 others
+LOCATION:https://luma.com/event/evt-SD2IwR2ZWjaEgIp
+GEO:42.3629779961418;-71.0843244844582
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241210T210000Z
+DTEND:20241210T220000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-b2QbaPqTeURtlwD@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 GUI AI Agents 🤖
+DESCRIPTION:Get up-to-date information at: https://luma.com/wanv4jkd\n\nAd
+ dress:\nVancouver Convention Centre West Building\nVancouver, British Colu
+ mbia\nCanada\n\nHosted by The AI Collective, Wanda Wang & Thomas Joshi
+LOCATION:Vancouver Convention Centre West Building, Canada Pl, Vancouver, 
+ BC V6C 3G3, Canada
+GEO:49.289116;-123.116891
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241213T230000Z
+DTEND:20241214T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-OXFn9I67Se0doI2@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Community Town hall 🏡 x Art Basel 
+ 🎨
+DESCRIPTION:Get up-to-date information at: https://luma.com/miami-town-hal
+ l\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective, Aman Sharma & Charles Whiteman
+LOCATION:https://luma.com/event/evt-OXFn9I67Se0doI2
+GEO:25.76762369198275;-80.19496074388839
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241218T000000Z
+DTEND:20241218T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-MiBWNIyQS1TDCHc@events.lu.ma
+SUMMARY:🎄 GenAI Collective 🎄  Chicago Demo Night – AI Innovations 
+ Unwrapped
+DESCRIPTION:Get up-to-date information at: https://luma.com/DecemberDemosG
+ enAICollective\n\nAddress:\nCheck event page for more details.\n\nHosted b
+ y The AI Collective & 4 others
+LOCATION:https://luma.com/event/evt-MiBWNIyQS1TDCHc
+GEO:41.88559970222622;-87.66975256424833
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241218T010000Z
+DTEND:20241218T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ZUDgfZbWAXhOtH7@events.lu.ma
+SUMMARY:🏔️ GenAI Collective 🧠 Denver Kickoff! 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/denver-kickoff
+ \n\nAddress:\nWynkoop Brewing Company\nSecond floor!\nDenver, Colorado\nUn
+ ited States\n\nHosted by The AI Collective & 3 others
+LOCATION:Wynkoop Brewing Company, 1634 18th St, Denver, CO 80202, USA
+GEO:39.753444;-104.998498
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241219T230000Z
+DTEND:20241220T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-6lruLmOUT7DVA0R@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Toronto Kickoff 🇨🇦
+DESCRIPTION:Get up-to-date information at: https://luma.com/genaiTO-kickof
+ f\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective & Chappy Asel
+LOCATION:https://luma.com/event/evt-6lruLmOUT7DVA0R
+GEO:43.670729367512955;-79.38602299537479
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250115T013000Z
+DTEND:20250115T053000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Krypton M.":MAILTO:redigido@exemplo.invalid
+UID:evt-hIFF33HGcYgE7Gu@events.lu.ma
+SUMMARY:AI Founder Investor MeetUp @perfil-redigido
+DESCRIPTION:Get up-to-date information at: https://luma.com/32vl9dbd\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Krypton M. & 6 oth
+ ers
+LOCATION:https://luma.com/event/evt-hIFF33HGcYgE7Gu
+GEO:37.80089152388414;-122.4565193133028
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250116T010000Z
+DTEND:20250116T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ym2AbkiWvE726p8@events.lu.ma
+SUMMARY:ONLINE! 🧠 GenAI Collective 🧠 AI Tools & Hacks! 🤖
+DESCRIPTION:Get up-to-date information at: https://luma.com/tools\n\nHoste
+ d by The AI Collective & 4 others
+LOCATION:https://luma.com/event/evt-ym2AbkiWvE726p8
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250117T000000Z
+DTEND:20250117T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-cnVmzl7APK3eTrq@events.lu.ma
+SUMMARY:🌇 Keeping Austin Weird (with GenAI Collective 🧠)
+DESCRIPTION:Get up-to-date information at: https://luma.com/atx-01-2025\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 3 others
+LOCATION:https://luma.com/event/evt-cnVmzl7APK3eTrq
+GEO:30.26167684856679;-97.73672709149821
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250124T020000Z
+DTEND:20250124T050000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-y4TsCHa82Krgz7i@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Marin 1st Birthday Social
+DESCRIPTION:Get up-to-date information at: https://luma.com/rfvkuejx\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 3 others
+LOCATION:https://luma.com/event/evt-y4TsCHa82Krgz7i
+GEO:37.974055378982335;-122.53930827254989
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250125T163000Z
+DTEND:20250126T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-sfVL7vY3GwpKiLg@events.lu.ma
+SUMMARY:Women in AI RAG Hackathon @ Stanford
+DESCRIPTION:Get up-to-date information at: https://luma.com/women-in-tech
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 3 others
+LOCATION:https://luma.com/event/evt-sfVL7vY3GwpKiLg
+GEO:37.42678564972234;-122.15902174550322
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250128T233000Z
+DTEND:20250129T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-kwFtLZfwAYbj2Kg@events.lu.ma
+SUMMARY:🧠  GenAI Collective NYC 🧠  Research Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/0128_nyc_rr\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 8 others
+LOCATION:https://luma.com/event/evt-kwFtLZfwAYbj2Kg
+GEO:40.72958155445054;-73.99039540403994
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250129T003000Z
+DTEND:20250129T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-JnugeluqBM5MMrb@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Table Talks: An Exclusive GenAI Dinner
+  in Chicago
+DESCRIPTION:Get up-to-date information at: https://luma.com/GenAIDinnerChi
+ cago\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI C
+ ollective & Jonathan Johnson-Swagel
+LOCATION:https://luma.com/event/evt-JnugeluqBM5MMrb
+GEO:41.99449132129335;-87.75074265924106
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250130T020000Z
+DTEND:20250130T050000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Qo44LJTzFLI9PFV@events.lu.ma
+SUMMARY:SF Demo Night 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/demos\n\nAddre
+ ss:\nAWS GenAI Loft\nSan Francisco, California\nUnited States\n\nHosted by
+  The AI Collective & 4 others
+LOCATION:AWS GenAI Loft, 525 Market St, San Francisco, CA 94105, USA
+GEO:37.790321;-122.399369
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250131T003000Z
+DTEND:20250131T030000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-d9ZAjvS5NDyUhGq@events.lu.ma
+SUMMARY:Demos & Discussions: 🧠GenAI Collective x Madrona Ventures
+DESCRIPTION:Get up-to-date information at: https://luma.com/seattle-demos
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 3 others
+LOCATION:https://luma.com/event/evt-d9ZAjvS5NDyUhGq
+GEO:47.606564051927016;-122.3324326945269
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250206T020000Z
+DTEND:20250206T050000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-aFTmeOfTJGY2ms9@events.lu.ma
+SUMMARY:Demo Night @ Entrepreneur First 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/ef-demo-night
+ \n\nAddress:\n501 Folsom St\nSan Francisco, California\nUnited States\n\nH
+ osted by The AI Collective & 5 others
+LOCATION:501 Folsom St, San Francisco, CA 94105, USA
+GEO:37.786979;-122.39447
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250206T230000Z
+DTEND:20250207T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-jId8EYn4wu8X87M@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Toronto 2nd Event 🇨🇦
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-to-2\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 3 others
+LOCATION:https://luma.com/event/evt-jId8EYn4wu8X87M
+GEO:43.673048425205764;-79.38253871523851
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250208T170000Z
+DTEND:20250208T193000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-GdG3hUvzIYSi0NF@events.lu.ma
+SUMMARY:🧠 GenAI Collective London 🧠 Kickoff Event 💂🏼‍♀️
+DESCRIPTION:Get up-to-date information at: https://luma.com/london-genai-k
+ ickoff\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI
+  Collective & Zachary Baker
+LOCATION:https://luma.com/event/evt-GdG3hUvzIYSi0NF
+GEO:51.53051744474702;-0.07223100487077419
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250212T230000Z
+DTEND:20250213T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-BET2CSJq54rNzlD@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Founders Roundtable : Accelerate Go-To-
+ Market with GenAI
+DESCRIPTION:Get up-to-date information at: https://luma.com/miami-founders
+ -roundtable\n\nAddress:\nCheck event page for more details.\n\nHosted by T
+ he AI Collective & 3 others
+LOCATION:https://luma.com/event/evt-BET2CSJq54rNzlD
+GEO:25.77498850317723;-80.19269840072658
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250215T180000Z
+DTEND:20250215T210000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-r9WKmFF2v0RWl5r@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Hike at SF Land's End 🥾
+DESCRIPTION:Get up-to-date information at: https://luma.com/hikesf\n\nAddr
+ ess:\nCheck event page for more details.\n\nHosted by The AI Collective & 
+ Rob Ross
+LOCATION:https://luma.com/event/evt-r9WKmFF2v0RWl5r
+GEO:37.78122046385;-122.509578367902
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250219T000000Z
+DTEND:20250219T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vqY8thfNV7JElqG@events.lu.ma
+SUMMARY:🌇 GenAI Collective Chicago: How AI is Innovating the Physical W
+ orld
+DESCRIPTION:Get up-to-date information at: https://luma.com/Chicago-AI-Mee
+ ts-Physical-World\n\nAddress:\nCheck event page for more details.\n\nHoste
+ d by The AI Collective & Jonathan Johnson-Swagel
+LOCATION:https://luma.com/event/evt-vqY8thfNV7JElqG
+GEO:41.88590568847629;-87.66987131902
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250219T023000Z
+DTEND:20250219T050000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-NSD7KdQJFOldGup@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  DeepSeek for Founders 🐳
+DESCRIPTION:Get up-to-date information at: https://luma.com/deepseekfounde
+ rs\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Col
+ lective & Chappy Asel
+LOCATION:https://luma.com/event/evt-NSD7KdQJFOldGup
+GEO:37.78563692623757;-122.39588960471683
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250220T000000Z
+DTEND:20250220T030000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Elena From Next Her":MAILTO:redigido@exemplo.invalid
+UID:evt-pz9cGAYJPsEFzGV@events.lu.ma
+SUMMARY:DC Tech Party #3: The Match Lab 🧪
+DESCRIPTION:Get up-to-date information at: https://luma.com/dc-2-12\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by Elena From Next Her
+ , Adrian Tovalin & DC Tech Parties
+LOCATION:https://luma.com/event/evt-pz9cGAYJPsEFzGV
+GEO:38.9044572024155;-77.04231380292984
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250220T233000Z
+DTEND:20250221T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-hUBOASBWABkL8PN@events.lu.ma
+SUMMARY:🧠  GenAI Collective NYC 🧠  February Research Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico_nyc_feb_
+ roundtable\n\nAddress:\nCheck event page for more details.\n\nHosted by Th
+ e AI Collective & 10 others
+LOCATION:https://luma.com/event/evt-hUBOASBWABkL8PN
+GEO:40.75038340789576;-73.98333053925575
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250221T223000Z
+DTEND:20250222T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-j4HkO82oujZ1gKI@events.lu.ma
+SUMMARY:AI Soirée: The Human Alignment Question
+DESCRIPTION:Get up-to-date information at: https://luma.com/dc-2-21\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by The AI Collective &
+  3 others
+LOCATION:https://luma.com/event/evt-j4HkO82oujZ1gKI
+GEO:38.88970467928262;-76.99820842247725
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250227T223000Z
+DTEND:20250228T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Agentic AI Foundation":MAILTO:redigido@exemplo.invalid
+UID:evt-1JCeMLesWa928jA@events.lu.ma
+SUMMARY:AI/ML makers unplugged with Google Cloud
+DESCRIPTION:Get up-to-date information at: https://luma.com/44crjdtl\n\nAd
+ dress:\nGoogle NYC - Pier 57\nNew York, New York\nUnited States\n\nHosted 
+ by Agentic AI Foundation
+LOCATION:Google NYC - Pier 57, 29 11th Ave Pier 57, New York, NY 10011, US
+ A
+GEO:40.743809;-74.008977
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250228T010000Z
+DTEND:20250228T030000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-CcgmcV4iwVG8wFC@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Drive Capital 🧠  Corporate by Day, Entr
+ epreneur by Night
+DESCRIPTION:Get up-to-date information at: https://luma.com/atx-2-27\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 3 others
+LOCATION:https://luma.com/event/evt-CcgmcV4iwVG8wFC
+GEO:30.26523257350264;-97.76007093256784
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250301T000000Z
+DTEND:20250301T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vJlulklWaUyko7l@events.lu.ma
+SUMMARY:Subscription Free Futures
+DESCRIPTION:Get up-to-date information at: https://luma.com/subscriptions
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 4 others
+LOCATION:https://luma.com/event/evt-vJlulklWaUyko7l
+GEO:42.34044260337755;-71.09042685362974
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250304T000000Z
+DTEND:20250304T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-p9O1GJlgmTGQUFM@events.lu.ma
+SUMMARY:Behind the Scenes of Global AI Diplomacy
+DESCRIPTION:Get up-to-date information at: https://luma.com/dc-3-3\n\nAddr
+ ess:\nCheck event page for more details.\n\nHosted by The AI Collective & 
+ 3 others
+LOCATION:https://luma.com/event/evt-p9O1GJlgmTGQUFM
+GEO:38.90427953626179;-77.04216400970788
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250305T230000Z
+DTEND:20250306T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-jqEUHCQK1jbtAMn@events.lu.ma
+SUMMARY:ConvergeAI Summit - Rethinking AI: Challenging the Status Quo
+DESCRIPTION:Get up-to-date information at: https://luma.com/convergeai\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 4 others
+LOCATION:https://luma.com/event/evt-jqEUHCQK1jbtAMn
+GEO:47.643304764761815;-122.13383656132645
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250306T230000Z
+DTEND:20250307T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-b6neDWUM5ObMfpz@events.lu.ma
+SUMMARY:Launching UofT | GenAI Collective Toronto Chapter!
+DESCRIPTION:Get up-to-date information at: https://luma.com/541khcpp\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 8 others
+LOCATION:https://luma.com/event/evt-b6neDWUM5ObMfpz
+GEO:43.66303477168058;-79.385941814861
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250307T020000Z
+DTEND:20250307T043000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-JGwdAFiDw6mU0yn@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Rho 💳 AI Agents Founders Dinner
+DESCRIPTION:Get up-to-date information at: https://luma.com/rho-3-5\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by The AI Collective &
+  5 others
+LOCATION:https://luma.com/event/evt-JGwdAFiDw6mU0yn
+GEO:37.763630519056456;-122.44772500641302
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250307T030000Z
+DTEND:20250307T053000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-PwmxuQXoLAUdQNr@events.lu.ma
+SUMMARY:🧠 Beta University x GenAI Collective 🧠  Shaping the Future o
+ f AI Infrastructure
+DESCRIPTION:Get up-to-date information at: https://luma.com/f9xm35p3\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 3 others
+LOCATION:https://luma.com/event/evt-PwmxuQXoLAUdQNr
+GEO:37.44931135440184;-122.15534758076905
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250308T170000Z
+DTEND:20250308T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-K2x8pffk8xC8VVM@events.lu.ma
+SUMMARY:☕ Breaking Barriers: A GenAI Collective International Women's Da
+ y Brunch 🥞
+DESCRIPTION:Get up-to-date information at: https://luma.com/AI-Brunch-Roun
+ dtable\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI
+  Collective & Jonathan Johnson-Swagel
+LOCATION:https://luma.com/event/evt-K2x8pffk8xC8VVM
+GEO:41.995738413716;-87.74892978948574
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250312T010000Z
+DTEND:20250312T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Rv0Dl7FxZAnrYEG@events.lu.ma
+SUMMARY:🧠 GenAI Collective and HumanX 🎲 Las Vegas AI Leaders Converg
+ ence
+DESCRIPTION:Get up-to-date information at: https://luma.com/humanx\n\nAddr
+ ess:\nCheck event page for more details.\n\nHosted by The AI Collective
+LOCATION:https://luma.com/event/evt-Rv0Dl7FxZAnrYEG
+GEO:36.13912800436129;-115.1609468368953
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250313T000000Z
+DTEND:20250313T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-XGXI7ISb3fBLjjZ@events.lu.ma
+SUMMARY:🧠 GenAI Collective Denver 🧠  AI Tools & Networking
+DESCRIPTION:Get up-to-date information at: https://luma.com/denver-3-12\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 4 others
+LOCATION:https://luma.com/event/evt-XGXI7ISb3fBLjjZ
+GEO:39.763973366186136;-104.9806713186326
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250314T000000Z
+DTEND:20250314T030000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-bkRBftToXQCgCzE@events.lu.ma
+SUMMARY:🌟 GenAI Collective 🌟  International Women's Day: Living Room
+  Discussion
+DESCRIPTION:Get up-to-date information at: https://luma.com/iwd-sf\n\nAddr
+ ess:\nCheck event page for more details.\n\nHosted by The AI Collective & 
+ 8 others
+LOCATION:https://luma.com/event/evt-bkRBftToXQCgCzE
+GEO:37.771658130634705;-122.41286833318884
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250314T010000Z
+DTEND:20250314T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-QoPxJu5krWrSfb0@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Demo Night Marin!
+DESCRIPTION:Get up-to-date information at: https://luma.com/zfro7u24\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective,
+  Chris Guest & ⚡️BRETT BERHOFF⚡️
+LOCATION:https://luma.com/event/evt-QoPxJu5krWrSfb0
+GEO:37.97527961371577;-122.52379961420627
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250318T123000Z
+DTEND:20250318T150000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ErFKzVpX5YhEbtX@events.lu.ma
+SUMMARY:🧠 GenAI Collective Delhi 🧠 Pehli Mulakaat: Kick Off Event 
+ 🚀 w. Essentia
+DESCRIPTION:Get up-to-date information at: https://luma.com/delhi-genai\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 4 others
+LOCATION:https://luma.com/event/evt-ErFKzVpX5YhEbtX
+GEO:28.613530399169587;77.36618129692548
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250319T123000Z
+DTEND:20250319T150000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-1MW6OC0JHjYZY48@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Bengaluru Kickoff
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-blru\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 6 others
+LOCATION:https://luma.com/event/evt-1MW6OC0JHjYZY48
+GEO:12.944810586828504;77.68850944786041
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250321T113000Z
+DTEND:20250321T143000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-pASzx93IOlOk3eQ@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Mumbai Kickoff 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-mumbai\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by The AI Collective
+  & 3 others
+LOCATION:https://luma.com/event/evt-pASzx93IOlOk3eQ
+GEO:19.066955991562814;72.83486346890129
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250325T190000Z
+DTEND:20250325T220000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-WeII7joQ0bJAQLs@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Lunch & Learn (Marin County)
+DESCRIPTION:Get up-to-date information at: https://luma.com/knntwu8p\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective,
+  ⚡️BRETT BERHOFF⚡️ & Chris Guest
+LOCATION:https://luma.com/event/evt-WeII7joQ0bJAQLs
+GEO:37.97524801763915;-122.5262628814134
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250325T203000Z
+DTEND:20250326T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-RyzkR2wP9jCu5m8@events.lu.ma
+SUMMARY:🧠 GenAI Collective Miami 🧠  AI Agent Hack Night @ eMerge
+DESCRIPTION:Get up-to-date information at: https://luma.com/miami-ai-agent
+ -hacknight\n\nAddress:\nCheck event page for more details.\n\nHosted by Th
+ e AI Collective & 5 others
+LOCATION:https://luma.com/event/evt-RyzkR2wP9jCu5m8
+GEO:25.80178277893403;-80.1997352465638
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250327T010000Z
+DTEND:20250327T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-4PDwAMO3GaQsvxM@events.lu.ma
+SUMMARY:SF Demo Night 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/sf-demo-night
+ \n\nAddress:\nAWS GenAI Loft\nSan Francisco, California\nUnited States\n\n
+ Hosted by The AI Collective & 5 others
+LOCATION:AWS GenAI Loft, 525 Market St, San Francisco, CA 94105, USA
+GEO:37.790321;-122.399369
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250327T230000Z
+DTEND:20250328T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-eGVAA9XiN5fEvMX@events.lu.ma
+SUMMARY:AI Soirée: Dystopia or Utopia?
+DESCRIPTION:Get up-to-date information at: https://luma.com/marchsoiree\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 3 others
+LOCATION:https://luma.com/event/evt-eGVAA9XiN5fEvMX
+GEO:38.88832143285414;-77.00083017041231
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250328T000000Z
+DTEND:20250328T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-G0JsbNyMVG50sOs@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  - The Convergence of Mindfulness, Prod
+ uctivity, and Gen AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/east-bay-may\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive, Dave Wegbreit & Markiesha Patrice
+LOCATION:https://luma.com/event/evt-G0JsbNyMVG50sOs
+GEO:37.758257864472135;-121.95681579074137
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250328T190000Z
+DTEND:20250328T220000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-c4ZCNHWwI5VvHog@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🍁 Montreal Kickoff 🇨🇦
+DESCRIPTION:Get up-to-date information at: https://luma.com/5qmzqpwt\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 5 others
+LOCATION:https://luma.com/event/evt-c4ZCNHWwI5VvHog
+GEO:45.50249730915596;-73.55809891440117
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250328T223000Z
+DTEND:20250329T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-J5Le2pGzqFT4bqK@events.lu.ma
+SUMMARY:🧠  GenAI Collective NYC 🧠  x Permanence x AI Review Presents
+ : March Technical Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico_mar_25_r
+ r_nyc\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI 
+ Collective & 13 others
+LOCATION:https://luma.com/event/evt-J5Le2pGzqFT4bqK
+GEO:40.75363627274565;-73.9811196256196
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250329T210000Z
+DTEND:20250330T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-pVJaNDRdliGv4K5@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Marin AI Investors Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/marin-investor
+ s\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective & 4 others
+LOCATION:https://luma.com/event/evt-pVJaNDRdliGv4K5
+GEO:37.97072974457241;-122.492096226386
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250403T170000Z
+DTEND:20250403T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Hyperstition Incorporated":MAILTO:redigido@exemplo.invalid
+UID:evt-c2SfaVYRtcLRw0Z@events.lu.ma
+SUMMARY:GenAI Collective NYC @ Deep Tech Week NYC: Software's Agentic Futu
+ re
+DESCRIPTION:Get up-to-date information at: https://luma.com/dtw-democrat-a
+ i\n\nAddress:\nCheck event page for more details.\n\nHosted by Hyperstitio
+ n Incorporated & 3 others
+LOCATION:https://luma.com/event/evt-c2SfaVYRtcLRw0Z
+GEO:40.69953464790305;-73.98229168059501
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250403T210000Z
+DTEND:20250403T230000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-53DbE3WqsHFYncr@events.lu.ma
+SUMMARY:AI Power Hour: GenAI Collective x Prefect
+DESCRIPTION:Get up-to-date information at: https://luma.com/prefect-hh\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e, Catherine McMillan & Anna D'Aprile
+LOCATION:https://luma.com/event/evt-53DbE3WqsHFYncr
+GEO:38.900603961150296;-77.04534303220026
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250403T220000Z
+DTEND:20250404T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Emma Kundro":MAILTO:redigido@exemplo.invalid
+UID:evt-BVpBZZF3ENgUTCl@events.lu.ma
+SUMMARY:CrewAI Enterprise AI Agent Week - Chicago
+DESCRIPTION:Get up-to-date information at: https://luma.com/fd0zzad0\n\nAd
+ dress:\nMicrosoft Midwest District\nChicago, Illinois\nUnited States\n\nHo
+ sted by Emma Kundro & 5 others
+LOCATION:Microsoft Midwest District, 200 E Randolph St #200, Chicago, IL 6
+ 0601, USA
+GEO:41.885283;-87.621512
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250404T220000Z
+DTEND:20250405T000000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Alex Barnes":MAILTO:redigido@exemplo.invalid
+UID:evt-aj8nghweHMCL9iE@events.lu.ma
+SUMMARY:AI + Neurodiversity
+DESCRIPTION:Get up-to-date information at: https://luma.com/owrw41hq\n\nAd
+ dress:\nHolland Bloorview Kids Rehabilitation Hospital\nToronto, Ontario\n
+ Canada\n\nHosted by Alex Barnes, Rageen Rajendram & Azadeh Kushki
+LOCATION:Holland Bloorview Kids Rehabilitation Hospital, 150 Kilgour Rd, T
+ oronto, ON M4G 1R8, Canada
+GEO:43.718057;-79.37418
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250408T153000Z
+DTEND:20250408T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-rpmN8ESx0yBlnGx@events.lu.ma
+SUMMARY:🧠 GenAI Collective Poland 🧠 Kickoff Event (Warsaw)
+DESCRIPTION:Get up-to-date information at: https://luma.com/gaico-pl1\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by The AI Collective
+ , Victor Mijal & Bartek Borkowski
+LOCATION:https://luma.com/event/evt-rpmN8ESx0yBlnGx
+GEO:52.23094138461286;20.98521570424504
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250409T220000Z
+DTEND:20250410T000000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Karan D":MAILTO:redigido@exemplo.invalid
+UID:evt-1RhMBghre85IqrQ@events.lu.ma
+SUMMARY:🧠 GenAI Collective Toronto 🇨🇦 with Dentons and Graphite V
+ entures
+DESCRIPTION:Get up-to-date information at: https://luma.com/0qfqfry0\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Karan D & 4 others
+LOCATION:https://luma.com/event/evt-1RhMBghre85IqrQ
+GEO:43.64879820217153;-79.37952956715743
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250410T210000Z
+DTEND:20250411T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-nlAiQnhttnR2AWG@events.lu.ma
+SUMMARY:GenAI Collective - NYC Demo Night
+DESCRIPTION:Get up-to-date information at: https://luma.com/GenAIDemoNight
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 6 others
+LOCATION:https://luma.com/event/evt-nlAiQnhttnR2AWG
+GEO:40.73817276906501;-73.98775172463533
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250416T010000Z
+DTEND:20250416T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-2Q05F7duoLjO6Rf@events.lu.ma
+SUMMARY:AI Showdown: Pitch, Compete, Win ✨ Alumni Ventures and ​​The
+  GenAI Collective
+DESCRIPTION:Get up-to-date information at: https://luma.com/premier\n\nAdd
+ ress:\nSVB Experience Center\nSan Francisco, California\nUnited States\n\n
+ Hosted by The AI Collective & 4 others
+LOCATION:SVB Experience Center, 532 Market St, San Francisco, CA 94104, US
+ A
+GEO:37.790586;-122.400333
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250416T210000Z
+DTEND:20250416T233000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-lJOvrpF2LnOYIZA@events.lu.ma
+SUMMARY:AI Insiders Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/halcyonhouse\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 7 others
+LOCATION:https://luma.com/event/evt-lJOvrpF2LnOYIZA
+GEO:38.90494064946791;-77.0659152989283
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250417T233000Z
+DTEND:20250418T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-PvvgAvEBue6GSTX@events.lu.ma
+SUMMARY:🧠 GenAI Collective Austin 🧠 AI Leaders Forum: Executive Pers
+ pectives on Enterprise AI Implementation
+DESCRIPTION:Get up-to-date information at: https://luma.com/tx-630-9\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 4 others
+LOCATION:https://luma.com/event/evt-PvvgAvEBue6GSTX
+GEO:30.255860252455932;-97.70171718229984
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250418T010000Z
+DTEND:20250418T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-D5HLu26BpYnp48u@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠 Living Room Chats for AI Founders
+DESCRIPTION:Get up-to-date information at: https://luma.com/AI-founders\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive, Chappy Asel & Stephen Campbell
+LOCATION:https://luma.com/event/evt-D5HLu26BpYnp48u
+GEO:37.788926819700414;-122.40013573017171
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250418T010000Z
+DTEND:20250418T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-sV2AkruL0MZT93j@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Thesys ➕ Exploring Generative UI 📟
+DESCRIPTION:Get up-to-date information at: https://luma.com/thesys\n\nAddr
+ ess:\nCheck event page for more details.\n\nHosted by The AI Collective & 
+ 8 others
+LOCATION:https://luma.com/event/evt-sV2AkruL0MZT93j
+GEO:37.78709494307604;-122.39778253178083
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250424T010000Z
+DTEND:20250424T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-I4URESA24aj1jLf@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Game Night! (Marin County)
+DESCRIPTION:Get up-to-date information at: https://luma.com/pinball\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by The AI Collective &
+  ⚡️BRETT BERHOFF⚡️
+LOCATION:https://luma.com/event/evt-I4URESA24aj1jLf
+GEO:37.9736493781096;-122.52699498262466
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250429T123000Z
+DTEND:20250429T143000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Daniel Porras":MAILTO:redigido@exemplo.invalid
+UID:evt-6xcLNHPeg1E3KLO@events.lu.ma
+SUMMARY:AI Frontiers: NYU Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/1s5sa93s\n\nAd
+ dress:\nFlybridge Capital Partners\nNew York, New York\nUnited States\n\nH
+ osted by Daniel Porras & 4 others
+LOCATION:Flybridge Capital Partners, 16 W 23rd St floor 5, New York, NY 10
+ 010, USA
+GEO:40.74163;-73.99044
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250429T231500Z
+DTEND:20250430T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-sP6MUC1cMMTTLPD@events.lu.ma
+SUMMARY:🧠 GenAI Collective x Roam 🧠 Cruising through Austin with AI 
+ Founders
+DESCRIPTION:Get up-to-date information at: https://luma.com/cruise-04-29\n
+ \nAddress:\n208 Barton Springs Rd\nCapital Cruises is located on the boat 
+ dock at the lakeside of the Hyatt Regency Hotel. The Hyatt is located at 2
+ 08 Barton Springs Road near the intersection of Congress and Barton Spring
+ s on the south side of Town Lake.\nAustin, Texas\nUnited States\n\nHosted 
+ by The AI Collective & 3 others
+LOCATION:208 Barton Springs Rd, Austin, TX 78704, USA
+GEO:30.260631;-97.746807
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250430T220000Z
+DTEND:20250501T000000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Emanuel Perez":MAILTO:redigido@exemplo.invalid
+UID:evt-I7lghucy4v3zOCJ@events.lu.ma
+SUMMARY:🧜‍♀️ The AI Collective HR • Vibecoding 101: Make Your I
+ dea Real
+DESCRIPTION:Get up-to-date information at: https://luma.com/0rvnrpht\n\nAd
+ dress:\nNSU Innovation Center\nParking is available along E. Main St and i
+ n downtown Norfolk for free after 6pm. Parking is also available at the Wa
+ terside garage and Fountain garage.\nNorfolk, Virginia\nUnited States\n\nH
+ osted by Emanuel Perez & 4 others
+LOCATION:NSU Innovation Center, 520 E Main St, Norfolk, VA 23510, USA
+GEO:36.84589;-76.287649
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250430T223000Z
+DTEND:20250501T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-YP4XKcHVhKdfxiL@events.lu.ma
+SUMMARY:🧠  GenAI Collective NYC 🧠  x Hebbia AI: April Research Round
+ table
+DESCRIPTION:Get up-to-date information at: https://luma.com/april-hebbia-r
+ r\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective & 9 others
+LOCATION:https://luma.com/event/evt-YP4XKcHVhKdfxiL
+GEO:40.738303734801384;-74.00421052923097
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250507T010000Z
+DTEND:20250507T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Bn06LV4dUiLXObE@events.lu.ma
+SUMMARY:🧠 AI Founders Rooftop Happy Hour 🥂 (w/ GenAI Collective & Ro
+ am)
+DESCRIPTION:Get up-to-date information at: https://luma.com/la-ai\n\nAddre
+ ss:\nCheck event page for more details.\n\nHosted by The AI Collective & 4
+  others
+LOCATION:https://luma.com/event/evt-Bn06LV4dUiLXObE
+GEO:34.075045461345475;-118.36275637588425
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250507T170000Z
+DTEND:20250507T180000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-9BZaij9bfy1TBnw@events.lu.ma
+SUMMARY:AI Fireside Chat 🧠 GenAI Collective x Brett Berhoff 🧠
+DESCRIPTION:Get up-to-date information at: https://luma.com/AIfireside\n\n
+ Hosted by The AI Collective & ⚡️BRETT BERHOFF⚡️
+LOCATION:https://luma.com/event/evt-9BZaij9bfy1TBnw
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250508T010000Z
+DTEND:20250508T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-DRHuHWVMIV90oAw@events.lu.ma
+SUMMARY:CONFIGure: An evening of connection to configure
+DESCRIPTION:Get up-to-date information at: https://luma.com/configafterpar
+ ty\n\nAddress:\nDovetail\nSan Francisco, California\nUnited States\n\nHost
+ ed by The AI Collective & 7 others
+LOCATION:Dovetail, 660 Market St, San Francisco, CA 94104, USA
+GEO:37.788307;-122.402957
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250508T173000Z
+DTEND:20250508T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-SrL2MUzy0MI6BD1@events.lu.ma
+SUMMARY:🇬🇧 LONDON DEMO NIGHT 💂🏼‍♂️ 🧠 GenAI Collective
+  🧠
+DESCRIPTION:Get up-to-date information at: https://luma.com/london-demo-da
+ y\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective, Ayman Ali & Zachary Baker
+LOCATION:https://luma.com/event/evt-SrL2MUzy0MI6BD1
+GEO:51.53148089504666;-0.07335909159635913
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250509T010000Z
+DTEND:20250509T030000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-6zEEcNidkQ9ykoe@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  AI Founder Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/AI-founder\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e, Chappy Asel & Christopher O'Dore
+LOCATION:https://luma.com/event/evt-6zEEcNidkQ9ykoe
+GEO:37.784566163258596;-122.39455008176448
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250511T103000Z
+DTEND:20250511T123000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vLkkkXn7CtlLkjH@events.lu.ma
+SUMMARY:🧠 GenAI Collective Delhi × Miami 🧠 Living-Room Discussion 
+ 🌴
+DESCRIPTION:Get up-to-date information at: https://luma.com/delhi-11\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 4 others
+LOCATION:https://luma.com/event/evt-vLkkkXn7CtlLkjH
+GEO:28.619891191647408;77.36009250198107
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250513T220000Z
+DTEND:20250514T000000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-x4cAwFvAYkqSN6O@events.lu.ma
+SUMMARY:Fintech + AI | FinTech Community Talks on AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/z4rwma45\n\nAd
+ dress:\nNEXT Canada\n18th floor\nToronto, Ontario\nCanada\n\nHosted by The
+  AI Collective & 4 others
+LOCATION:NEXT Canada, 175 Bloor Street East #1800, South Tower, Toronto, O
+ N M4W 3R8, Canada
+GEO:43.670902;-79.382488
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250515T123000Z
+DTEND:20250515T150000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ShTzceqQ4sbg7G9@events.lu.ma
+SUMMARY:🧠 GenAI Collective Bengaluru 🧠  Agentic AI for Ops, Marketin
+ g, Sales & Support  – A Founders Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/sh3nmap2\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective
+LOCATION:https://luma.com/event/evt-ShTzceqQ4sbg7G9
+GEO:12.893396282624378;77.6396502496253
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250516T010000Z
+DTEND:20250516T030000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-G42E8AMF7HbpWo9@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Enterprise AI: The Agentic Shift | Fea
+ turing SAP + Moveworks
+DESCRIPTION:Get up-to-date information at: https://luma.com/AgenticShift\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 4 others
+LOCATION:https://luma.com/event/evt-G42E8AMF7HbpWo9
+GEO:37.79175359847064;-122.39949382322239
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250516T020000Z
+DTEND:20250516T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-QvWMQ7pbMdfR9MM@events.lu.ma
+SUMMARY:Portland Launch Party
+DESCRIPTION:Get up-to-date information at: https://luma.com/p4klxegw\n\nAd
+ dress:\n2130 SW 5th Ave\nPortland, Oregon\nUnited States\n\nHosted by The 
+ AI Collective & AJ Green
+LOCATION:2130 SW 5th Ave, Portland, OR 97201, USA
+GEO:45.507569;-122.682724
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250521T013000Z
+DTEND:20250521T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-R0CVqIy1V2S8DDM@events.lu.ma
+SUMMARY:EXCLUSIVE: Frontier AI Founders Dinner
+DESCRIPTION:Get up-to-date information at: https://luma.com/fps-5-25\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 5 others
+LOCATION:https://luma.com/event/evt-R0CVqIy1V2S8DDM
+GEO:37.76554329456511;-122.400175331951
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250523T013000Z
+DTEND:20250523T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-0HMVp2ejfWfocfG@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  AI Startup Growth
+DESCRIPTION:Get up-to-date information at: https://luma.com/startupgrowth
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 3 others
+LOCATION:https://luma.com/event/evt-0HMVp2ejfWfocfG
+GEO:37.45051054942702;-122.15796380812084
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250527T220000Z
+DTEND:20250528T000000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-hu6LMaEMtZt4RKt@events.lu.ma
+SUMMARY:AI for Bloggers & Content Creators ✍️ 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/uoft\n\nAddres
+ s:\nCheck event page for more details.\n\nHosted by The AI Collective & 4 
+ others
+LOCATION:https://luma.com/event/evt-hu6LMaEMtZt4RKt
+GEO:43.65054608771357;-79.381117540982
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250528T010000Z
+DTEND:20250528T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-rzGGwwKOoJjtOR9@events.lu.ma
+SUMMARY:Seattle Demo Day - ROAM
+DESCRIPTION:Get up-to-date information at: https://luma.com/un5me18v\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 3 others
+LOCATION:https://luma.com/event/evt-rzGGwwKOoJjtOR9
+GEO:47.61444293130472;-122.35878698169758
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250528T223000Z
+DTEND:20250529T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-5whojLG2oGq1yr4@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  × [Vectorize] — Agentic AI in the W
+ ild
+DESCRIPTION:Get up-to-date information at: https://luma.com/VectorizeXGenA
+ ICollective\n\nAddress:\nCheck event page for more details.\n\nHosted by T
+ he AI Collective, Jonathan Johnson-Swagel & Mary Grygleski
+LOCATION:https://luma.com/event/evt-5whojLG2oGq1yr4
+GEO:41.88329167642149;-87.62200596234742
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250529T010000Z
+DTEND:20250529T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Pn1QO6cPJh2834k@events.lu.ma
+SUMMARY:SF DEMO NIGHT 🚀 (w/ The GenAI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/sfd\n\nAddress
+ :\nAWS GenAI Loft\nSan Francisco, California\nUnited States\n\nHosted by T
+ he AI Collective & 7 others
+LOCATION:AWS GenAI Loft, 525 Market St, San Francisco, CA 94105, USA
+GEO:37.790321;-122.399369
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250530T010000Z
+DTEND:20250530T030000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Kiran Vaidya":MAILTO:redigido@exemplo.invalid
+UID:evt-1JAfB3oUcUfxtci@events.lu.ma
+SUMMARY:GenAI Collective Vancouver 🍁 🇨🇦 Chapter Kick-off
+DESCRIPTION:Get up-to-date information at: https://luma.com/fk9imkvs\n\nAd
+ dress:\nAlibi Room\nLess than 2 km from Vancouver Convention Center which 
+ is the venue for Web Summit\nVancouver, British Columbia\nCanada\n\nHosted
+  by Kiran Vaidya
+LOCATION:Alibi Room, 157 Alexander St, Vancouver, BC V6A 1B8, Canada
+GEO:49.284251;-123.100268
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250603T203000Z
+DTEND:20250603T230000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-9WNDcBji1E1ENoR@events.lu.ma
+SUMMARY:AI Collective NYC | Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-nyc\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by The AI Collective &
+  9 others
+LOCATION:https://luma.com/event/evt-9WNDcBji1E1ENoR
+GEO:40.7238117809365;-73.99412372865537
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250604T010000Z
+DTEND:20250604T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-J0T7gEb8FAKlTjW@events.lu.ma
+SUMMARY:AI Collective México | Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/cdmx-06-03\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e
+LOCATION:https://luma.com/event/evt-J0T7gEb8FAKlTjW
+GEO:19.42572502363085;-99.16469162187848
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250604T153000Z
+DTEND:20250604T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-SlAbeLMowXNP0Ea@events.lu.ma
+SUMMARY:AI Collective Poland | Launch Party 🚀 (Wroclove)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-poland\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 3 others
+LOCATION:https://luma.com/event/evt-SlAbeLMowXNP0Ea
+GEO:51.11137874859608;17.020990200616538
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250604T220000Z
+DTEND:20250605T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-7FPK5X18HnHMwjV@events.lu.ma
+SUMMARY:AI Collective Miami | Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-miami\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by The AI Collective
+  & 5 others
+LOCATION:https://luma.com/event/evt-7FPK5X18HnHMwjV
+GEO:25.80176640560203;-80.20058630550638
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250605T010000Z
+DTEND:20250605T040000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-rxgsJnHk9Kizj32@events.lu.ma
+SUMMARY:AI Collective SF | Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-sf\n\nAddr
+ ess:\nAWS GenAI Loft\nSan Francisco, California\nUnited States\n\nHosted b
+ y The AI Collective & 34 others
+LOCATION:AWS GenAI Loft, 525 Market St, San Francisco, CA 94105, USA
+GEO:37.790321;-122.399369
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250605T170000Z
+DTEND:20250605T180000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-yUFvH8opGCUohJL@events.lu.ma
+SUMMARY:AI Collective Worldwide Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-global\n\n
+ Hosted by The AI Collective & 8 others
+LOCATION:https://luma.com/event/evt-yUFvH8opGCUohJL
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250605T210000Z
+DTEND:20250605T233000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-tkdM83CEFQM5rR3@events.lu.ma
+SUMMARY:AI Collective Toronto | Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-toronto\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 4 others
+LOCATION:https://luma.com/event/evt-tkdM83CEFQM5rR3
+GEO:43.642627923299116;-79.39127081358227
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250605T223000Z
+DTEND:20250606T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-WbSN2C02vIuSVbF@events.lu.ma
+SUMMARY:Chicago 🕵‍♂️ Special Mystery Event 🧠 GenAI Collective 
+ x Programmers Inc 🧠 "Agentic AI Unleashed"
+DESCRIPTION:Get up-to-date information at: https://luma.com/GenAICollectiv
+ eSecretReveal\n\nAddress:\nCheck event page for more details.\n\nHosted by
+  The AI Collective, Mary Grygleski & Jonathan Johnson-Swagel
+LOCATION:https://luma.com/event/evt-WbSN2C02vIuSVbF
+GEO:41.83842529811419;-87.62512545984389
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250605T233000Z
+DTEND:20250606T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-1yxYRPokDYeoRNK@events.lu.ma
+SUMMARY:AI Collective Austin | Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-austin\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 3 others
+LOCATION:https://luma.com/event/evt-1yxYRPokDYeoRNK
+GEO:30.25390524081675;-97.70254968137355
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250606T213000Z
+DTEND:20250607T000000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-z0HbNnGLldPMHST@events.lu.ma
+SUMMARY:AI Collective DC | Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-washington
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 5 others
+LOCATION:https://luma.com/event/evt-z0HbNnGLldPMHST
+GEO:38.9003622516883;-77.04398620063836
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250610T013000Z
+DTEND:20250610T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-iqdhFNMtUPUqeml@events.lu.ma
+SUMMARY:🧠 GenAI Collective 🧠  Harness MySQL for Next Gen AI Startups
+DESCRIPTION:Get up-to-date information at: https://luma.com/my-sql\n\nAddr
+ ess:\nCheck event page for more details.\n\nHosted by The AI Collective & 
+ 7 others
+LOCATION:https://luma.com/event/evt-iqdhFNMtUPUqeml
+GEO:37.76627841005695;-122.41772500615244
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250610T220000Z
+DTEND:20250611T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-WHAUdD0DIflR3yo@events.lu.ma
+SUMMARY:AI Soirée no. 3
+DESCRIPTION:Get up-to-date information at: https://luma.com/dc-soiree\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by The AI Collective
+  & 4 others
+LOCATION:https://luma.com/event/evt-WHAUdD0DIflR3yo
+GEO:38.887162557175714;-76.99733645627
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250611T060000Z
+DTEND:20250611T083000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-EElFEdzC0HtPTcy@events.lu.ma
+SUMMARY:Fast Break: Exclusive Breakfast for AI Founders 🥐 - by The AI C
+ ollective and Nebius 🧠
+DESCRIPTION:Get up-to-date information at: https://luma.com/GTC-Paris-brea
+ kfast\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI 
+ Collective & 3 others
+LOCATION:https://luma.com/event/evt-EElFEdzC0HtPTcy
+GEO:48.87231256005646;2.3339697044009426
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250611T223000Z
+DTEND:20250612T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-oN4cC8B0Ozf7rPM@events.lu.ma
+SUMMARY:AI Collective Boston | Launch Party 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-boston\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 3 others
+LOCATION:https://luma.com/event/evt-oN4cC8B0Ozf7rPM
+GEO:42.36178934600108;-71.08151383044658
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250612T000000Z
+DTEND:20250612T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-1V0SEn1Djeu6FoT@events.lu.ma
+SUMMARY:🧠 GenAI Collective Denver 🧠  Discussion Meetup by Roam
+DESCRIPTION:Get up-to-date information at: https://luma.com/gai-roam-denve
+ r\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Coll
+ ective & 4 others
+LOCATION:https://luma.com/event/evt-1V0SEn1Djeu6FoT
+GEO:39.74946337921897;-105.00152003968228
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250612T163000Z
+DTEND:20250612T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-8pnjyk0oADK4yji@events.lu.ma
+SUMMARY:🧠 The AI Collective - Paris Demo Night 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/paris-demo-nig
+ ht\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Col
+ lective & 4 others
+LOCATION:https://luma.com/event/evt-8pnjyk0oADK4yji
+GEO:48.90077899567369;2.2823593143409053
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250612T220000Z
+DTEND:20250613T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Randy Lariar":MAILTO:redigido@exemplo.invalid
+UID:evt-M7E0cvgDhxK6FyX@events.lu.ma
+SUMMARY:🧠 AI Collective 🧠 NYC Demo Night 🚀
+DESCRIPTION:Get up-to-date information at: https://luma.com/e1sc035o\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Randy Lariar & 7 o
+ thers
+LOCATION:https://luma.com/event/evt-M7E0cvgDhxK6FyX
+GEO:40.70406923720215;-74.01453025435372
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250614T140000Z
+DTEND:20250614T223000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="UofT AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-2u0vxdjeYhe6nzw@events.lu.ma
+SUMMARY:The AI Collective x UTMIST | Lovable x Roam International Hackatho
+ n
+DESCRIPTION:Get up-to-date information at: https://luma.com/5xcrfkid\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by UofT AI Collective
+  & 3 others
+LOCATION:https://luma.com/event/evt-2u0vxdjeYhe6nzw
+GEO:43.66062699240996;-79.39858234650016
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250614T150000Z
+DTEND:20250614T220000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ekhBepdOCGrmQAE@events.lu.ma
+SUMMARY:The AI Collective | Lovable x Roam International Hackathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/usa-vs-canada
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & 3 others
+LOCATION:https://luma.com/event/evt-ekhBepdOCGrmQAE
+GEO:30.56802258966084;-97.65410425692511
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250617T173000Z
+DTEND:20250617T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-6bDc2e08w9wptsS@events.lu.ma
+SUMMARY:🇬🇧 LONDON DEMO NIGHT 💂🏼‍♂️ 🧠 GenAI Collective
+  🧠
+DESCRIPTION:Get up-to-date information at: https://luma.com/s8xrm67o\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective,
+  Ayman Ali & Zachary Baker
+LOCATION:https://luma.com/event/evt-6bDc2e08w9wptsS
+GEO:51.516411330059825;-0.107300833491092
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250617T213000Z
+DTEND:20250618T000000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-yhoQhOrt3CaWnGY@events.lu.ma
+SUMMARY:GenAI Montreal X AI Collective Montreal Launch Party 🚀 From Buz
+ zwords to Business: Real AI for Sales and Scale 📈
+DESCRIPTION:Get up-to-date information at: https://luma.com/mtl-6-17\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 3 others
+LOCATION:https://luma.com/event/evt-yhoQhOrt3CaWnGY
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250617T220000Z
+DTEND:20250618T000000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="🧜‍♀️ The AI Collective Hampton Roads":MAILTO:redigido@exemplo.invalid
+UID:evt-xPnjaEyNRx0s0Ei@events.lu.ma
+SUMMARY:🧜‍♀️ The AI Collective HR • Future-Proof Crash Course: 
+ AI & no-code skills for 757 creators
+DESCRIPTION:Get up-to-date information at: https://luma.com/s984kbo5\n\nAd
+ dress:\nECPI University\nVirginia Beach, Virginia\nUnited States\n\nHosted
+  by 🧜‍♀️ The AI Collective Hampton Roads, Ted Patterson & The AI 
+ Collective
+LOCATION:ECPI University, 5555 Greenwich Rd, Virginia Beach, VA 23462, USA
+GEO:36.842538;-76.178872
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250617T220000Z
+DTEND:20250618T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-5B2Bg4VnsyMqFeP@events.lu.ma
+SUMMARY:🧠 The AI Collective 🧠  Detroit Chapter Kick-off
+DESCRIPTION:Get up-to-date information at: https://luma.com/1tjora2u\n\nAd
+ dress:\nTechTown Detroit\nDetroit, Michigan\nUnited States\n\nHosted by Th
+ e AI Collective & 3 others
+LOCATION:TechTown Detroit, 440 Burroughs St, Detroit, MI 48202, USA
+GEO:42.36501;-83.072996
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250618T003000Z
+DTEND:20250618T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-hT1EShBABFlRb58@events.lu.ma
+SUMMARY:The AI Collective Montreal Launch After Party 🎉
+DESCRIPTION:Get up-to-date information at: https://luma.com/aft-party\n\nA
+ ddress:\nPhilemon Bar\nMontréal, Québec\nCanada\n\nHosted by The AI Coll
+ ective & 3 others
+LOCATION:Philemon Bar, 111 Rue Saint-Paul O, Montréal, QC H2Y 1Z5, Canada
+GEO:45.5040611;-73.5547556
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250618T100000Z
+DTEND:20250618T123000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Carlo Almendral":MAILTO:redigido@exemplo.invalid
+UID:evt-VTOcIo20LhYC6i4@events.lu.ma
+SUMMARY:The New Marketing Playbook: Built with AI. Run by humans (for now)
+DESCRIPTION:Get up-to-date information at: https://luma.com/n4j207pd\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Carlo Almendral & 
+ 5 others
+LOCATION:https://luma.com/event/evt-VTOcIo20LhYC6i4
+GEO:14.55134202062727;121.04623721740383
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250618T223000Z
+DTEND:20250619T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-hwTUOPA1gssWFfv@events.lu.ma
+SUMMARY:🧠  AI Collective NYC 🧠  x Justwork NYC: June Research Roundt
+ able
+DESCRIPTION:Get up-to-date information at: https://luma.com/jun-25-rr\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by The AI Collective
+  & 9 others
+LOCATION:https://luma.com/event/evt-hwTUOPA1gssWFfv
+GEO:40.705088870821896;-74.0071656812338
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250618T223000Z
+DTEND:20250619T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-gcDkak7JQPohnSY@events.lu.ma
+SUMMARY:Inbox Intelligence: AI x Notion Mail Series — Part 2
+DESCRIPTION:Get up-to-date information at: https://luma.com/kscatcsm\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by The AI Collective 
+ & 4 others
+LOCATION:https://luma.com/event/evt-gcDkak7JQPohnSY
+GEO:38.89954052017666;-77.0482186592668
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250619T223000Z
+DTEND:20250620T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-VN67NoDG3jrQxpB@events.lu.ma
+SUMMARY:🏗️ Building Bridges across TO Health Innovators🌉
+DESCRIPTION:Get up-to-date information at: https://luma.com/to-health\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by The AI Collective
+  & 10 others
+LOCATION:https://luma.com/event/evt-VN67NoDG3jrQxpB
+GEO:43.65578742126444;-79.38490242634934
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250620T150000Z
+DTEND:20250620T230000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-rNMDL11vkMprkoW@events.lu.ma
+SUMMARY:World's Largest Hackathon Build Session: MIAMI
+DESCRIPTION:Get up-to-date information at: https://luma.com/miami-hackatho
+ n\n\nAddress:\nThe LAB Miami\nMiami, Florida\nUnited States\n\nHosted by T
+ he AI Collective & 3 others
+LOCATION:The LAB Miami, 2750 NW 3rd Ave #24, Miami, FL 33127, USA
+GEO:25.8021942;-80.2019789
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250620T160000Z
+DTEND:20250620T170000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-MbdfM0oOQ2tw1v2@events.lu.ma
+SUMMARY:🎉🚀AI Collective New Chapter Q+A❤️🔥
+DESCRIPTION:Get up-to-date information at: https://luma.com/new_chapter\n
+ \nHosted by The AI Collective
+LOCATION:https://luma.com/event/evt-MbdfM0oOQ2tw1v2
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261126T020000Z
+DTEND:20261126T050000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-YY3wwNrsTyfjSQw@events.lu.ma
+SUMMARY:#LATechWeek AI Collective Pitch Night (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-la-og-pitc
+ h-night\n\nAddress:\nCheck event page for more details.\n\nHosted by The A
+ I Collective & 4 others
+LOCATION:https://luma.com/event/evt-YY3wwNrsTyfjSQw
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261126T073000Z
+DTEND:20261126T090000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-1FDGHEnrfEPFKRM@events.lu.ma
+SUMMARY:Network event with the AI Collective
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ad-11-12\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive, Nick Marlow & Guillaume Leroux
+LOCATION:https://luma.com/event/evt-1FDGHEnrfEPFKRM
+GEO:-34.92187475601752;138.61205685579185
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261126T150000Z
+DTEND:20261126T170000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ZgHu3XgbZVYqyNI@events.lu.ma
+SUMMARY:Why Should I Care About the EU AI Act?
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-fi-why-sho
+ uld-i-care-about-the-eu-ai-act\n\nAddress:\nMaria 01\nEvent Space, Buildin
+ g 1 (main building)\nHelsinki, Finland\n\nHosted by The AI Collective & 6 
+ others
+LOCATION:Maria 01, Lapinlahdenkatu 16, 00180 Helsinki, Finland
+GEO:60.16675379999999;24.9219224
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261128T043000Z
+DTEND:20261128T103000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Luma Event":MAILTO:redigido@exemplo.invalid
+UID:evt-WhiBf0YaLSGFD7U@events.lu.ma
+SUMMARY:Stripe Indore Community Launch Buildathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/stripe-indore-
+ community\n\nAddress:\nCheck event page for more details.
+LOCATION:https://luma.com/event/evt-WhiBf0YaLSGFD7U
+GEO:22.674453577174468;75.87865317039969
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261128T060000Z
+DTEND:20261128T120000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Htx7MDTwhhasRBi@events.lu.ma
+SUMMARY:Domain Experts, Assemble: A Lovable x AI Collective Build Day (w/ 
+ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-is-9-5\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 4 others
+LOCATION:https://luma.com/event/evt-Htx7MDTwhhasRBi
+GEO:33.73260279625541;73.09465923342974
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261128T060000Z
+DTEND:20261128T110000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Lê Uyên Thảo":MAILTO:redigido@exemplo.invalid
+UID:evt-3YhAM7t5lwNKDen@events.lu.ma
+SUMMARY:LEADERSHIP LINKEDIN NETWORKING SUMMIT 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/pr9k3uap\n\nAd
+ dress:\nNina Next Space\nThành phố Hồ Chí Minh, Vietnam\n\nHosted by
+  Lê Uyên Thảo & 4 others
+LOCATION:Nina Next Space, 180/1 Đ. Nguyễn Tất Thành, Xóm Chiếu, H
+ ồ Chí Minh, Vietnam
+GEO:10.7627773;106.70775719999999
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261128T083000Z
+DTEND:20261128T113000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-U7GTbfJZwAdOiQO@events.lu.ma
+SUMMARY:GTM Rewind 2026: What Worked. What Flopped. What’s Next.
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-gtm-rewind
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Colle
+ ctive & Women in Product Marketing™
+LOCATION:https://luma.com/event/evt-U7GTbfJZwAdOiQO
+GEO:12.936699744931282;77.69071314202561
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261128T100000Z
+DTEND:20261128T143000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-zJcuExdCJpOWm6s@events.lu.ma
+SUMMARY:Meet and Greet
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-kul-202611
+ 28\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Col
+ lective, Jean Ng & FIRUZ ALIMOV
+LOCATION:https://luma.com/event/evt-zJcuExdCJpOWm6s
+GEO:3.150511315416796;101.6967270437798
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261129T170000Z
+DTEND:20261129T203000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-FzoXpUk8piWVFb0@events.lu.ma
+SUMMARY:AI SPY: Projekcija dokumentarca i debatno veče (w/ The AI Collect
+ ive)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-se-11-29\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 5 others
+LOCATION:https://luma.com/event/evt-FzoXpUk8piWVFb0
+GEO:44.80672891278179;20.45270962129811
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261130T170000Z
+DTEND:20261130T183000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ZictTn2VzKsvK4B@events.lu.ma
+SUMMARY:The AI Collective Podcast with AJ & Catherine: Monday, Nov 30
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-2c9z\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e, AJ Green & Catherine McMillan
+LOCATION:https://luma.com/event/evt-ZictTn2VzKsvK4B
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261130T233000Z
+DTEND:20261201T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vjP1GzbAMNW01HM@events.lu.ma
+SUMMARY:Lunch with a Side of AI (w/ AI Collective NZ)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-nz-12-1\n
+ \nHosted by The AI Collective & Nadia Ellis
+LOCATION:https://luma.com/event/evt-vjP1GzbAMNW01HM
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261201T070000Z
+DTEND:20261201T110000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-2UyPHCBgrVDwgDZ@events.lu.ma
+SUMMARY:C-Suite Dinner: AI Disasters in Critical Infrastuctures (w/ The AI
+  Collective, FACCI and Visione Group)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ad-12-1\n
+ \nAddress:\nGEORGES\nAdelaide, SA\nAustralia\n\nHosted by The AI Collectiv
+ e & Guillaume Leroux
+LOCATION:GEORGES, 20 Waymouth St, Adelaide SA 5000, Australia
+GEO:-34.9256701;138.5988405
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261201T170000Z
+DTEND:20261201T183000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-KTMzYdzRO71LDbH@events.lu.ma
+SUMMARY:The AI Collective Podcast with AJ & Catherine: Tuesday, Dec 1
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-4b4m\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e, AJ Green & Catherine McMillan
+LOCATION:https://luma.com/event/evt-KTMzYdzRO71LDbH
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261201T223000Z
+DTEND:20261202T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-VOwpcm2vKwiBRzB@events.lu.ma
+SUMMARY:Vibe Night in Sandy Springs (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-us-12-1\n
+ \nAddress:\nHudson Grille Sandy Springs\nSandy Springs, GA\nUnited States
+ \n\nHosted by The AI Collective & 3 others
+LOCATION:Hudson Grille Sandy Springs, 6317 Roswell Rd NE, Sandy Springs, G
+ A 30328, USA
+GEO:33.9274497;-84.3784171
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261201T230000Z
+DTEND:20261202T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-gOzAOVTeqlx2kcj@events.lu.ma
+SUMMARY:Stamford AI Meetup | w/ The AI Collective
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-st-12-1\n
+ \nAddress:\nPoint Cafè - 2200 Atlantic St., Stamford (Harbor Point)\n\nHo
+ sted by The AI Collective & Darrell DeMakes
+LOCATION:Point Cafè - 2200 Atlantic St., Stamford (Harbor Point)
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261202T153000Z
+DTEND:20261202T183000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-qUGv2h03rWXmX1F@events.lu.ma
+SUMMARY:Checking the checkers: AI, Evidence and Health Claims (w/ The AI C
+ ollective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-sw-health-
+ claims-evidence-checking\n\nAddress:\nCheck event page for more details.\n
+ \nHosted by The AI Collective, Neelima Misra & Lola Phoenix
+LOCATION:https://luma.com/event/evt-qUGv2h03rWXmX1F
+GEO:59.334878526472586;18.05725401559384
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261202T170000Z
+DTEND:20261202T184500Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-T39cmr7zAIb1Q4W@events.lu.ma
+SUMMARY:The AI Collective Podcast with AJ & Catherine: Wednesday, Dec 2
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-8i73\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e, AJ Green & Catherine McMillan
+LOCATION:https://luma.com/event/evt-T39cmr7zAIb1Q4W
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261202T220000Z
+DTEND:20261203T020000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-EQg3ApxBf4g5FJM@events.lu.ma
+SUMMARY:NYC Pitch Night (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ny-12-02\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive, Tejas Ravindra & Rami A
+LOCATION:https://luma.com/event/evt-EQg3ApxBf4g5FJM
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261202T220000Z
+DTEND:20261203T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-tmAC6iaDHyFpH3D@events.lu.ma
+SUMMARY:AI Open Mic and Networking (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-cl-12-2\n
+ \nAddress:\nMissing Falls Brewery\nAkron, OH\nUnited States\n\nHosted by T
+ he AI Collective & 4 others
+LOCATION:Missing Falls Brewery, 540 S Main St Ste 112, Akron, OH 44311, US
+ A
+GEO:41.0705056;-81.52679309999999
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261202T223000Z
+DTEND:20261203T003000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-gSF4Iu4OCFF5A3e@events.lu.ma
+SUMMARY:Brookhaven Monthly Meetup (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-at-12-2b\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 5 others
+LOCATION:https://luma.com/event/evt-gSF4Iu4OCFF5A3e
+GEO:33.85947389883942;-84.33215814852024
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T013000Z
+DTEND:20261203T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-DQisopGtHNvKpHw@events.lu.ma
+SUMMARY:Fund or Fold: How VCs Actually Decide
+DESCRIPTION:Get up-to-date information at: https://luma.com/fundorfold\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 9 others
+LOCATION:https://luma.com/event/evt-DQisopGtHNvKpHw
+GEO:37.79170495537573;-122.39802501722016
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T020000Z
+DTEND:20261203T030000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Bill Raymond":MAILTO:redigido@exemplo.invalid
+UID:evt-zDPHl0OT91DQ9NN@events.lu.ma
+SUMMARY:Practical AI at Work: Stay on brand with AI Images
+DESCRIPTION:Get up-to-date information at: https://luma.com/l7lm0xx0\n\nHo
+ sted by Bill Raymond & 3 others
+LOCATION:https://luma.com/event/evt-zDPHl0OT91DQ9NN
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T100000Z
+DTEND:20261203T130000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-QQHNJAPGXHAkgJw@events.lu.ma
+SUMMARY:The Agora: an open Forum on AI (Eng/中文)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ta-12-3\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & Alix Zerd
+LOCATION:https://luma.com/event/evt-QQHNJAPGXHAkgJw
+GEO:25.041952221736672;121.55743843845681
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T130000Z
+DTEND:20261203T143000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vq68NeVmLEQdg6R@events.lu.ma
+SUMMARY:Building a Startup 101 (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-la-12-3\n
+ \nHosted by The AI Collective, Harmony Abayomi & Pablo Naicker
+LOCATION:https://luma.com/event/evt-vq68NeVmLEQdg6R
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T150000Z
+DTEND:20261203T180000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-yuLGSGL2d6lwrQx@events.lu.ma
+SUMMARY:OpenAI Technical Practitioner Training (Lawrence, KS)
+DESCRIPTION:Get up-to-date information at: https://luma.com/OpenAITraining
+ \n\nAddress:\n2033 Becker Dr\nLawrence, KS\nUnited States\n\nHosted by The
+  AI Collective, Ted Kihm & Daniel Green
+LOCATION:2033 Becker Dr, Lawrence, KS 66047, USA
+GEO:38.9479618;-95.26804179999999
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T170000Z
+DTEND:20261203T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-KJWiTl4FjvpRPrx@events.lu.ma
+SUMMARY:AI on the Software Development Life Cycle | The AI Collective × A
+ msterdam JUG
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ne-12-3\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 5 others
+LOCATION:https://luma.com/event/evt-KJWiTl4FjvpRPrx
+GEO:52.33805727285615;4.877798871410329
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T170000Z
+DTEND:20261203T183000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-wv9xZpw50iCWaU0@events.lu.ma
+SUMMARY:The AI Collective Podcast with AJ & Catherine: Thursday, Dec 3
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-6mz7\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e, AJ Green & Catherine McMillan
+LOCATION:https://luma.com/event/evt-wv9xZpw50iCWaU0
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261204T020000Z
+DTEND:20261204T043000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-UamvCUgoBxsxGnG@events.lu.ma
+SUMMARY:From AI Ideas to Impact: Stories, Growth & a Year-End Celebration 
+ (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-tr-12-3\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 5 others
+LOCATION:https://luma.com/event/evt-UamvCUgoBxsxGnG
+GEO:37.769089229895364;-121.9576844779481
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261204T090000Z
+DTEND:20261204T100000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-pBKW8j8QhoYmrfT@events.lu.ma
+SUMMARY:Beyond AI Readiness: Architecting the Intelligent Enterprise (w/ T
+ he AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-sw-ai-read
+ y-2\n\nHosted by The AI Collective, Neelima Misra & Data & AI Stockholm
+LOCATION:https://luma.com/event/evt-pBKW8j8QhoYmrfT
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261204T110000Z
+DTEND:20261204T130000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-tQKCu5Y41ynH0KK@events.lu.ma
+SUMMARY:Your Career Post AI (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-si-12-4\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 5 others
+LOCATION:https://luma.com/event/evt-tQKCu5Y41ynH0KK
+GEO:1.2919735930963194;103.85028202209493
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261204T140000Z
+DTEND:20261204T163000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-YPB5nxiTDME2gp6@events.lu.ma
+SUMMARY:Rogue AI Agents: Hype or Real Risk? What AI safety is, and why eve
+ ry Zimbabwean should care. (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-safety-lect
+ ure01\n\nAddress:\n31 Josiah Chinamano Ave\nHarare, Zimbabwe\n\nHosted by 
+ The AI Collective & Ishe Hove
+LOCATION:31 Josiah Chinamano Ave, Harare, Zimbabwe
+GEO:-17.8196095;31.0416377
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261204T170000Z
+DTEND:20261204T183000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-xYKL07Bh8Lk4OkE@events.lu.ma
+SUMMARY:The AI Collective Podcast with AJ & Catherine: Friday, Dec 4
+DESCRIPTION:Get up-to-date information at: https://luma.com/genai-5nj1\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e, AJ Green & Catherine McMillan
+LOCATION:https://luma.com/event/evt-xYKL07Bh8Lk4OkE
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261204T183000Z
+DTEND:20261204T203000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-pwHswfovhvkhKSq@events.lu.ma
+SUMMARY:Founder Fridays: The AI Collective x Unstuck Labs
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-dc-12-4\n
+ \nAddress:\nUnstuck Labs\nCome and meet us on 8th floor!\nArlington, VA\nU
+ nited States\n\nHosted by The AI Collective & 4 others
+LOCATION:Unstuck Labs, 3100 Clarendon Blvd 800, 8th floor, Arlington, VA 2
+ 2201, USA
+GEO:38.886741199999996;-77.0950622
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261205T083000Z
+DTEND:20261205T113000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-mNmJhVZsaX5VNSn@events.lu.ma
+SUMMARY:Blow Your Own Trumpet: Find Your Genius. Build Your Authority. Mon
+ etize Your Visibility.
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-be-12-5\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 3 others
+LOCATION:https://luma.com/event/evt-mNmJhVZsaX5VNSn
+GEO:12.935036768207965;77.69386242893364
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261205T090000Z
+DTEND:20261205T160000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-j2BLd6wOKIzRd3O@events.lu.ma
+SUMMARY:Movie Hits–Themed Christmas Celebration Party
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-kul-secret
+ party\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI 
+ Collective & 3 others
+LOCATION:https://luma.com/event/evt-j2BLd6wOKIzRd3O
+GEO:3.1479186960825074;101.71090258015572
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261205T110000Z
+DTEND:20261205T153000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-gKF4KnwqW6vP2TO@events.lu.ma
+SUMMARY:Movie Hits Music Night
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-kul-202612
+ 05\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Col
+ lective & 3 others
+LOCATION:https://luma.com/event/evt-gKF4KnwqW6vP2TO
+GEO:3.1470942126555013;101.71179645249705
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261205T160000Z
+DTEND:20261205T220000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-1LLMwxCDrIrKCVW@events.lu.ma
+SUMMARY:LAUNCH WKND feat. Lovable and Vernon & Friends (w/ The AI Collecti
+ ve)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ch-12-5\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive, Vernon T. Foster II & Himanshu Palerwal
+LOCATION:https://luma.com/event/evt-1LLMwxCDrIrKCVW
+GEO:37.546057517302096;-77.44364487084233
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261206T053000Z
+DTEND:20261206T073000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-wsiDDBkIp12prag@events.lu.ma
+SUMMARY:AI Founders & Leaders Brunch
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-brunch\n\n
+ Address:\nCheck event page for more details.\n\nHosted by The AI Collectiv
+ e & 4 others
+LOCATION:https://luma.com/event/evt-wsiDDBkIp12prag
+GEO:12.90826403623561;77.60951710547593
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261212
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-RgjYr1aigJ20Bnb@events.lu.ma
+SUMMARY:GITEX GLOBAL 2026 | The AI Collective is an Ecosystem Partner
+DESCRIPTION:Get up-to-date information at: https://luma.com/gitex2026\n\nA
+ ddress:\nDubai World Trade Centre\nSummit: 7 Dec at Dubai World Trade Cent
+ re (invite-only). Expo: 8–11 Dec at Dubai Exhibition Centre, Expo City D
+ ubai.\nDubai, United Arab Emirates\n\nHosted by The AI Collective, Oumaima
+  Talouka & Sana Bagersh
+LOCATION:Dubai World Trade Centre, Sheikh Zayed Rd - Trade Center Second -
+  Dubai - United Arab Emirates
+GEO:25.223345899999998;55.2869344
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261207T110000Z
+DTEND:20261207T140000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-n9ogEMxck80yIPh@events.lu.ma
+SUMMARY:From Vibe to Live, Lovable Virtual Office Hours｜Lovable 線上 O
+ ffice Hour
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ta-12-7_ma
+ in\n\nHosted by The AI Collective & Grace Pan
+LOCATION:https://luma.com/event/evt-n9ogEMxck80yIPh
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261208T150000Z
+DTEND:20261208T170000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-cApGwNzoQ8GPWBv@events.lu.ma
+SUMMARY:Vision AI - How crowded spaces are powered by VAELLA (and they are
+  hiring!)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-fi-12-8\n
+ \nAddress:\nMaria 01\nEvent space, 2nd floor, Building 1 (Main building)\n
+ Helsinki, Finland\n\nHosted by The AI Collective & Bambi Dang
+LOCATION:Maria 01, Lapinlahdenkatu 16, 00180 Helsinki, Finland
+GEO:60.16675379999999;24.9219224
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261208T223000Z
+DTEND:20261209T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-tiBEvByuvoFy2F6@events.lu.ma
+SUMMARY:Prompt and Connect
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-at-12-8\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 3 others
+LOCATION:https://luma.com/event/evt-tiBEvByuvoFy2F6
+GEO:33.92770720990744;-84.38090327455107
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261209T230000Z
+DTEND:20261210T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-WY03XtuTbBHPZnI@events.lu.ma
+SUMMARY:AI Hype vs Reality and Governance (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-in-12-9\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & Gervais Johnson
+LOCATION:https://luma.com/event/evt-WY03XtuTbBHPZnI
+GEO:39.929563123845966;-86.16331395417843
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261210T010000Z
+DTEND:20261210T033000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-YIuQpAteQiRVdF8@events.lu.ma
+SUMMARY:AI Dinner Club - The AI Collective SLC Edition ✨
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-sl-12-9\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 3 others
+LOCATION:https://luma.com/event/evt-YIuQpAteQiRVdF8
+GEO:40.55375205589192;-111.88829519429171
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261210T013000Z
+DTEND:20261210T043000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="Bonneville Labs":MAILTO:redigido@exemplo.invalid
+UID:evt-XZBnIOBETuVqeJT@events.lu.ma
+SUMMARY:AI x Bio Pitch Contest
+DESCRIPTION:Get up-to-date information at: https://luma.com/dec9thaixbiopi
+ tch\n\nAddress:\nAWS Builder Loft\nSan Francisco, CA\nUnited States\n\nHos
+ ted by Bonneville Labs & Ash Kumra
+LOCATION:AWS Builder Loft, 525 Market St, Courtyard Entrance, 525 Market S
+ t, San Francisco, CA 94105, USA
+GEO:37.7904122;-122.39934480000001
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261210T190000Z
+DTEND:20261210T200000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-w5kL9z7mEreKiYc@events.lu.ma
+SUMMARY:From AI Hype to Actual Impact (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-gl-12\n\nH
+ osted by The AI Collective, Adelina Martiniuc & Adelina Martiniuc
+LOCATION:https://luma.com/event/evt-w5kL9z7mEreKiYc
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261212T023000Z
+DTEND:20261212T060000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-FPjL0rPiXXii3Zy@events.lu.ma
+SUMMARY:Poker Night for B2B Founders
+DESCRIPTION:Get up-to-date information at: https://luma.com/b2b-founders-p
+ oker\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI C
+ ollective & 6 others
+LOCATION:https://luma.com/event/evt-FPjL0rPiXXii3Zy
+GEO:37.787881932563444;-122.39027597126874
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261214T180000Z
+DTEND:20261214T190000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-gTbeprq8kAXNmCx@events.lu.ma
+SUMMARY:AI Roundtable #30: What Actually Worked: The Most Useful AI Use Ca
+ ses of 2026 (w/ The AI Collective Kansas City & Voyage Consulting Group)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-kc-roundta
+ ble30\n\nHosted by The AI Collective & 4 others
+LOCATION:https://luma.com/event/evt-gTbeprq8kAXNmCx
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261216T160000Z
+DTEND:20261216T190000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-86BB8YzePsq9wlr@events.lu.ma
+SUMMARY:AI Governance as an enabler for value realisation (w/ The AI Colle
+ ctive)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-sw-12-16\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & Jenny Andersson
+LOCATION:https://luma.com/event/evt-86BB8YzePsq9wlr
+GEO:55.60264306896928;12.997986100483827
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261216T230000Z
+DTEND:20261217T010000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Hz3sCWjbSSzHgBg@events.lu.ma
+SUMMARY:Demo Night (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ha-12-24\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive, Kyle Sparzo & Nisreen Cain
+LOCATION:https://luma.com/event/evt-Hz3sCWjbSSzHgBg
+GEO:41.76689416107035;-72.66774848064118
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261217T103000Z
+DTEND:20261217T140000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-3KK2VGTe46sDe1s@events.lu.ma
+SUMMARY:Gemini Build Night (Eng/中文)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ta-12-17\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive & 4 others
+LOCATION:https://luma.com/event/evt-3KK2VGTe46sDe1s
+GEO:25.04474480479405;121.55584600666674
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261222T230000Z
+DTEND:20261223T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-ogKzPlFw5EEQxpU@events.lu.ma
+SUMMARY:Founders Holiday Mixer (w/ The AI Collective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-ny-12-22\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by The AI Collect
+ ive, Jenny Ge @ Syndicat & Jonathan K
+LOCATION:https://luma.com/event/evt-ogKzPlFw5EEQxpU
+GEO:40.738254168354025;-73.9894289747946
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270121T230000Z
+DTEND:20270122T013000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vsCSljs6AkhLkWG@events.lu.ma
+SUMMARY:AI x Philosophy Series Session 1: Being Human in the Age of Intell
+ igent Machines (w/ Johns Hopkins Human Capital Development Lab)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-dc-1-21\n
+ \nAddress:\nJohns Hopkins University Bloomberg Center\nWashington, DC\nUni
+ ted States\n\nHosted by The AI Collective & 9 others
+LOCATION:Johns Hopkins University Bloomberg Center, 555 Pennsylvania Ave N
+ W, Washington, DC 20001, USA
+GEO:38.8930776;-77.0192927
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270122T000000Z
+DTEND:20270122T023000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-IEXHqrE2vl7O4Zt@events.lu.ma
+SUMMARY:AI Collective x Gauntlet AI | Inside the Gauntlet (w/ The AI Colle
+ ctive)
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-gauntlet-n
+ ov10\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI C
+ ollective & 5 others
+LOCATION:https://luma.com/event/evt-IEXHqrE2vl7O4Zt
+GEO:30.266858878839912;-97.74180425952177
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270203T103000Z
+DTEND:20270203T133000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-Rdl2Rpc6IsDtRtw@events.lu.ma
+SUMMARY:Leadership in the AI Era
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-kul-202702
+ 03\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Col
+ lective & 3 others
+LOCATION:https://luma.com/event/evt-Rdl2Rpc6IsDtRtw
+GEO:3.1493450580365394;101.69332230295379
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270213T060000Z
+DTEND:20270213T130000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-oikPvOMAqEsmV1p@events.lu.ma
+SUMMARY:HeyGen is coming to Islamabad!!! | AI Avatar Pop-Up (w/ The AI Col
+ lective)
+DESCRIPTION:Get up-to-date information at: https://luma.com/78_657\n\nAddr
+ ess:\nCheck event page for more details.\n\nHosted by The AI Collective, F
+ atima Nadeem & Shaheer Akhtar
+LOCATION:https://luma.com/event/evt-oikPvOMAqEsmV1p
+GEO:33.73368333136849;73.09412878822462
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270320T040000Z
+DTEND:20270320T093000Z
+DTSTAMP:20261125T173852Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-BJHKt32MucrI4mH@events.lu.ma
+SUMMARY:Find Work Fast 3.0: The Battle of Generations
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-kul-202703
+ 20\n\nAddress:\nCheck event page for more details.\n\nHosted by The AI Col
+ lective & 3 others
+LOCATION:https://luma.com/event/evt-BJHKt32MucrI4mH
+GEO:3.1485877049535187;101.69388451925676
+SEQUENCE:217791532
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR
