@@ -1,10 +1,11 @@
 """Testes do F1-06 — prompt versionado e montagem da mensagem (conteúdo externo como dado).
 
 Assinaturas fixadas (radar.classificacao.prompt):
-- `VERSAO_PROMPT = "classificador_v2"` (F1-07b); o texto fica em `prompts/classificador_v2.md`
-  (raiz do repositório) e `SHA256_PROMPT_V2` é o sha256 dos bytes desse arquivo. O v1 fica no
-  repositório como histórico: `prompts/classificador_v1.md` com `SHA256_PROMPT_V1`;
-- `carregar_prompt() -> str`: o conteúdo do arquivo da versão atual (v2, UTF-8);
+- `VERSAO_PROMPT = "classificador_v3"` (F1-07b parte C); o texto fica em
+  `prompts/classificador_v3.md` (raiz do repositório) e `SHA256_PROMPT_V3` é o sha256 dos bytes
+  desse arquivo. v1 e v2 ficam no repositório como histórico, com `SHA256_PROMPT_V1` e
+  `SHA256_PROMPT_V2`;
+- `carregar_prompt() -> str`: o conteúdo do arquivo da versão atual (v3, UTF-8);
 - `montar_mensagem(evento: Evento, localizacao_filtro: str) -> tuple[str, str]`
   → (mensagem, texto_fonte). `texto_fonte` é o texto contra o qual as evidências são
   conferidas.
@@ -44,8 +45,9 @@ from .fabricas import DESCRICAO, LOCAL_TEXTO, evento_orm
 
 RAIZ = Path(__file__).resolve().parents[2]
 FIXTURE_CODEX = RAIZ / "tests" / "fixtures" / "luma" / "codex-sp.ics"
-ARQUIVO_PROMPT = RAIZ / "prompts" / "classificador_v2.md"
+ARQUIVO_PROMPT = RAIZ / "prompts" / "classificador_v3.md"
 ARQUIVO_PROMPT_V1 = RAIZ / "prompts" / "classificador_v1.md"
+ARQUIVO_PROMPT_V2 = RAIZ / "prompts" / "classificador_v2.md"
 ABRE = "<evento_nao_confiavel>"
 FECHA = "</evento_nao_confiavel>"
 MARCA_CORTE = "[descrição truncada]"
@@ -77,21 +79,31 @@ def _montar(prompt: ModuleType, localizacao: str = "sp", **campos: Any) -> tuple
 
 
 def test_versao_do_prompt(prompt: ModuleType) -> None:
-    assert prompt.VERSAO_PROMPT == "classificador_v2"
+    assert prompt.VERSAO_PROMPT == "classificador_v3"
 
 
 def test_arquivo_do_prompt_existe_e_bate_com_o_hash(prompt: ModuleType) -> None:
     assert ARQUIVO_PROMPT.is_file()
-    assert hashlib.sha256(ARQUIVO_PROMPT.read_bytes()).hexdigest() == prompt.SHA256_PROMPT_V2
+    assert hashlib.sha256(ARQUIVO_PROMPT.read_bytes()).hexdigest() == prompt.SHA256_PROMPT_V3
 
 
-def test_prompt_v1_continua_no_repositorio(prompt: ModuleType) -> None:
-    assert ARQUIVO_PROMPT_V1.is_file()
-    assert hashlib.sha256(ARQUIVO_PROMPT_V1.read_bytes()).hexdigest() == prompt.SHA256_PROMPT_V1
-    assert prompt.SHA256_PROMPT_V1 != prompt.SHA256_PROMPT_V2
+@pytest.mark.parametrize(
+    ("arquivo", "constante"),
+    [(ARQUIVO_PROMPT_V1, "SHA256_PROMPT_V1"), (ARQUIVO_PROMPT_V2, "SHA256_PROMPT_V2")],
+)
+def test_prompts_antigos_continuam_no_repositorio(
+    prompt: ModuleType, arquivo: Path, constante: str
+) -> None:
+    assert arquivo.is_file()
+    assert hashlib.sha256(arquivo.read_bytes()).hexdigest() == getattr(prompt, constante)
 
 
-def test_schema_nao_muda_no_prompt_v2() -> None:
+def test_hashes_das_versoes_sao_distintos(prompt: ModuleType) -> None:
+    hashes = {prompt.SHA256_PROMPT_V1, prompt.SHA256_PROMPT_V2, prompt.SHA256_PROMPT_V3}
+    assert len(hashes) == 3
+
+
+def test_schema_nao_muda_no_prompt_v3() -> None:
     modelos = importlib.import_module("radar.classificacao.modelos")
     assert modelos.VERSAO_SCHEMA == "1"
 
@@ -106,7 +118,7 @@ def test_prompt_explica_o_delimitador_de_dado_nao_confiavel(prompt: ModuleType) 
     assert "evento_nao_confiavel" in prompt.carregar_prompt()
 
 
-# --- Regras do prompt v2 (presença, por casefold) ------------------------------------------
+# --- Regras do prompt atual (v3 = v2 + idioma/título e localização; presença por casefold) --
 
 
 @pytest.fixture
@@ -152,6 +164,16 @@ def test_v2_idioma_so_com_declaracao_explicita(texto_v2: str) -> None:
 
 def test_v2_pede_trechos_curtos(texto_v2: str) -> None:
     assert "120 caracteres" in texto_v2
+
+
+def test_v3_titulo_em_ingles_nao_e_evidencia_de_idioma(texto_v2: str) -> None:
+    assert "título em inglês não é evidência" in texto_v2
+
+
+def test_v3_localizacao_nao_se_aplica_quando_o_filtro_decidiu(texto_v2: str) -> None:
+    assert "localizacao_filtro" in texto_v2
+    assert "nao_se_aplica" in texto_v2
+    assert "indefinida" in texto_v2
 
 
 # --- Mensagem ------------------------------------------------------------------------------

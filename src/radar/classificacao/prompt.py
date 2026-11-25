@@ -20,13 +20,15 @@ from zoneinfo import ZoneInfo
 from radar.banco.conteudo import descricoes_distintas
 from radar.banco.modelos import Evento
 
-VERSAO_PROMPT = "classificador_v2"
+VERSAO_PROMPT = "classificador_v3"
 SHA256_PROMPT_V1 = "ed0d100998287a8193f419db8ac4da0e5bb7b7a994045662a2c1487899801ab0"
-# v1 fica no repositório como histórico (D16); só o v2 é carregado.
+# v1 e v2 ficam no repositório como histórico (D16, D17); só o v3 é carregado.
 SHA256_PROMPT_V2 = "d3f50c140dbcb9e80a402e335b7274d89f672c822cae166f66cd2a14397514c8"
 DIR_PROMPTS = Path(__file__).resolve().parents[3] / "prompts"
 ARQUIVO_PROMPT_V1 = DIR_PROMPTS / "classificador_v1.md"
-ARQUIVO_PROMPT = DIR_PROMPTS / "classificador_v2.md"
+ARQUIVO_PROMPT_V2 = DIR_PROMPTS / "classificador_v2.md"
+SHA256_PROMPT_V3 = "9352a1148e2f0d34d6a4061a72082617b82a4e9208e7baa0c3f2c081f949085e"
+ARQUIVO_PROMPT = DIR_PROMPTS / "classificador_v3.md"
 
 MAX_CARACTERES_MENSAGEM = 12_000
 MAX_CARACTERES_DESCRICOES = 6_000
@@ -42,10 +44,10 @@ _PONTUACAO_FINAL = ".,;:!?)]}>\"'"
 
 
 def carregar_prompt() -> str:
-    """Texto do prompt atual (v2). Arquivo alterado sem trocar a versão → RuntimeError."""
+    """Texto do prompt atual (v3). Arquivo alterado sem trocar a versão → RuntimeError."""
     dados = ARQUIVO_PROMPT.read_bytes()
-    if hashlib.sha256(dados).hexdigest() != SHA256_PROMPT_V2:
-        raise RuntimeError("prompt alterado sem nova versão (SHA256_PROMPT_V2 não bate)")
+    if hashlib.sha256(dados).hexdigest() != SHA256_PROMPT_V3:
+        raise RuntimeError("prompt alterado sem nova versão (SHA256_PROMPT_V3 não bate)")
     return ARQUIVO_PROMPT.read_text(encoding="utf-8")
 
 

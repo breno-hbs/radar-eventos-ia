@@ -465,27 +465,116 @@ def test_sp_com_nao_se_aplica_e_ok(
     assert resumo.ok == [evento.id]
 
 
+_AUSENTE = object()
+
+
 @pytest.mark.parametrize(
-    ("filtro", "resposta"),
-    [("sp", "fora"), ("online", "sp")],
+    ("filtro", "localizacao", "trecho"),
+    [
+        ("sp", "sp", ""),  # antes: erro de schema (trecho⇔desconhecida)
+        ("sp", "sp", LOCAL_TEXTO),
+        ("sp", "fora", LOCAL_TEXTO),
+        ("online", "desconhecida", ""),
+        ("online", "sp", LOCAL_TEXTO),
+        ("sp", "sp", "Rua Inexistente, 999 - Marte"),  # descartado, não conferido
+        ("sp", "marte", ""),  # valor fora do enum também é descartado
+        ("sp", _AUSENTE, _AUSENTE),  # campos ausentes são preenchidos
+    ],
 )
-def test_localizacao_indevida_e_erro(
+def test_filtro_decidido_descarta_localizacao_do_llm(
+    classificador: ModuleType,
+    cliente_mod: ModuleType,
+    modelos: ModuleType,
+    sessao: Session,
+    cliente: ClienteFalso,
+    filtro: str,
+    localizacao: Any,
+    trecho: Any,
+) -> None:
+    evento = _inserir(sessao, localizacao=filtro)
+    dados = saida_valida()
+    for chave, valor in (("localizacao", localizacao), ("trecho_localizacao", trecho)):
+        if valor is _AUSENTE:
+            del dados[chave]
+        else:
+            dados[chave] = valor
+    cliente.fila = [_resposta(cliente_mod, dados)]
+    resumo = _rodar(classificador, sessao, cliente)
+    assert resumo.erros == []
+    assert resumo.ok == [evento.id]
+    [linha] = _classificacoes(sessao, evento.id)
+    assert linha["situacao"] == "ok"
+    assert linha["resultado"]["localizacao"] == "nao_se_aplica"
+    assert linha["resultado"]["trecho_localizacao"] == ""
+    modelos.SaidaClassificador.model_validate(linha["resultado"])
+
+
+@pytest.mark.parametrize(
+    ("dados", "motivo"),
+    [
+        (
+            {**saida_valida(), "localizacao": "sp", "trecho_localizacao": "", "extra": 1},
+            "saida_schema_invalido",
+        ),
+        (
+            saida_valida(localizacao="sp", trecho_localizacao="", tipo_evento="festa"),
+            "saida_schema_invalido:tipo_evento",
+        ),
+        (
+            saida_valida(localizacao="fora", trecho_localizacao="", trecho_preco="R$ 999"),
+            "saida_evidencia_nao_encontrada:trecho_preco",
+        ),
+    ],
+)
+def test_descarte_nao_esconde_outros_erros(
     classificador: ModuleType,
     cliente_mod: ModuleType,
     sessao: Session,
     cliente: ClienteFalso,
-    filtro: str,
-    resposta: str,
+    dados: dict[str, Any],
+    motivo: str,
 ) -> None:
-    evento = _inserir(sessao, localizacao=filtro)
-    dados = saida_valida(localizacao=resposta, trecho_localizacao=LOCAL_TEXTO)
+    evento = _inserir(sessao, localizacao="sp")
     cliente.fila = [_resposta(cliente_mod, dados)]
     resumo = _rodar(classificador, sessao, cliente)
     assert resumo.ok == []
-    assert resumo.erros == [(evento.id, "saida_localizacao_indevida")]
-    [linha] = _classificacoes(sessao, evento.id)
-    assert linha["situacao"] == "erro"
-    assert linha["motivo_erro"] == "saida_localizacao_indevida"
+    [(evento_id, obtido)] = resumo.erros
+    assert evento_id == evento.id
+    if motivo == "saida_schema_invalido":
+        assert obtido.startswith(motivo)
+    else:
+        assert obtido == motivo
+
+
+def test_descarte_nao_transforma_json_invalido_em_ok(
+    classificador: ModuleType, cliente_mod: ModuleType, sessao: Session, cliente: ClienteFalso
+) -> None:
+    evento = _inserir(sessao, localizacao="sp")
+    cliente.fila = [_resposta(cliente_mod, texto='{"localizacao": "sp"')]
+    resumo = _rodar(classificador, sessao, cliente)
+    assert resumo.erros == [(evento.id, "saida_json_invalido")]
+
+
+def test_indefinida_com_sp_sem_trecho_continua_erro_de_schema(
+    classificador: ModuleType, cliente_mod: ModuleType, sessao: Session, cliente: ClienteFalso
+) -> None:
+    evento = _inserir(sessao, localizacao="indefinida", evidencia_localizacao="nenhuma")
+    cliente.fila = [_resposta(cliente_mod, saida_valida(localizacao="sp", trecho_localizacao=""))]
+    resumo = _rodar(classificador, sessao, cliente)
+    assert resumo.ok == []
+    [(evento_id, motivo)] = resumo.erros
+    assert evento_id == evento.id
+    assert motivo.startswith("saida_schema_invalido")
+
+
+def test_indefinida_com_trecho_inexistente_continua_erro(
+    classificador: ModuleType, cliente_mod: ModuleType, sessao: Session, cliente: ClienteFalso
+) -> None:
+    evento = _inserir(sessao, localizacao="indefinida", evidencia_localizacao="nenhuma")
+    dados = saida_valida(localizacao="sp", trecho_localizacao="Rua Inexistente, 999")
+    cliente.fila = [_resposta(cliente_mod, dados)]
+    resumo = _rodar(classificador, sessao, cliente)
+    assert resumo.erros == [(evento.id, "saida_evidencia_nao_encontrada:trecho_localizacao")]
 
 
 def test_indefinida_com_localizacao_e_evidencia_e_ok(
@@ -841,24 +930,20 @@ def test_validar_trecho_inexistente(
 
 
 @pytest.mark.parametrize(
-    ("filtro", "resposta"),
+    ("filtro", "resposta", "trecho"),
     [
-        ("sp", "fora"),
-        ("sp", "sp"),
-        ("sp", "desconhecida"),
-        ("online", "sp"),
-        ("online", "online"),
+        ("sp", "fora", LOCAL_TEXTO),
+        ("sp", "sp", "Rua Inexistente, 999"),
+        ("sp", "desconhecida", ""),
+        ("online", "sp", LOCAL_TEXTO),
     ],
 )
-def test_validar_localizacao_indevida(
-    classificador: ModuleType, modelos: ModuleType, filtro: str, resposta: str
+def test_validar_com_filtro_decidido_nao_confere_localizacao(
+    classificador: ModuleType, modelos: ModuleType, filtro: str, resposta: str, trecho: str
 ) -> None:
-    trecho = "" if resposta == "desconhecida" else LOCAL_TEXTO
+    # "saida_localizacao_indevida" deixou de existir: a localização do LLM é descartada
     saida = _saida(modelos, localizacao=resposta, trecho_localizacao=trecho)
-    assert (
-        classificador.validar_contra_evento(saida, TEXTO_FONTE, filtro)
-        == "saida_localizacao_indevida"
-    )
+    assert classificador.validar_contra_evento(saida, TEXTO_FONTE, filtro) is None
 
 
 def test_validar_indefinida_aceita_localizacao_com_evidencia(
