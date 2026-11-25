@@ -1,0 +1,1059 @@
+{
+  "executado_em": "2026-11-25T14:52:09.829160+00:00",
+  "robots": [
+    {
+      "url": "https://luma.com/robots.txt",
+      "url_final": "https://luma.com/robots.txt",
+      "status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "tamanho": 150,
+      "conteudo": "\nUser-agent: Googlebot\nDisallow: /social-share\nDisallow: /in/\nDisallow: /company/\nDisallow: /session-*\n\nSitemap: https://sitemap.luma.com/sitemap.xml\n"
+    },
+    {
+      "url": "https://www.meetup.com/robots.txt",
+      "url_final": "https://www.meetup.com/robots.txt",
+      "status": 200,
+      "content_type": "text/plain;charset=UTF-8",
+      "tamanho": 3770,
+      "conteudo": "Sitemap: https://www.meetup.com/pro-index-sitemap.xml\nSitemap: https://www.meetup.com/topics-index-sitemap.xml\nSitemap: https://www.meetup.com/topics-localized-index-sitemap.xml\nSitemap: https://www.meetup.com/topics-country-index-sitemap.xml\nSitemap: https://www.meetup.com/groups-index-sitemap.xml\nSitemap: https://www.meetup.com/events-index-sitemap.xml\nSitemap: https://www.meetup.com/international-cities-static-ga-index-sitemap.xml\nSitemap: https://www.meetup.com/usa-cities-static-ga-index-sitemap.xml\nSitemap: https://www.meetup.com/find-international-index-sitemap.xml\nSitemap: https://www.meetup.com/find-usa-index-sitemap.xml\nSitemap: https://www.meetup.com/blog/sitemap_index.xml\nSitemap: https://www.meetup.com/cities-index-sitemap.xml\n\nSitemap: https://www.meetup.com/cities_sitemap_index.xml\nSitemap: https://www.meetup.com/interests_sitemap_index.xml\n\nUser-agent: *\nDisallow: /files/\nDisallow: /fb/\nDisallow: /preview/\nDisallow: /n/*\n\nUser-agent: *\nDisallow: */calendar/*atom*\nDisallow: */calendar/*rss*\nDisallow: */calendar/*xml*\n\nUser-agent: *\nDisallow: */events/atom/*\nDisallow: */events/rss/*\nDisallow: */events/xml/*\n\nUser-agent: *\nDisallow: */rsvps/*atom*\nDisallow: */rsvps/*rss*\nDisallow: */rsvps/*xml*\n\nUser-agent: *\nDisallow: */newest/*atom*\nDisallow: */newest/*rss*\nDisallow: */newest/*xml*\n\nUser-agent: *\nDisallow: /meetup_api/?\nDisallow: /meetup_api?\nDisallow: /*/meetup_api/\nDisallow: /*/meetup_api?\nDisallow: /*/meetup_api$\n\nUser-agent: *\nDisallow: /api/?\nDisallow: /api?\nDisallow: /*/api/\nDisallow: /*/api?\nDisallow: /*/api$\n\nUser-agent: *\nDisallow: */report_abuse/*\n\nUser-agent: *\nDisallow: /*?keywords=*\nDisallow: /*&keywords=*\nDisallow: /*?source=*\nDisallow: /*&source=*\nDisallow: /*?distance=*\nDisallow: /*&distance=*\nDisallow: /*?dateRange=*\nDisallow: /*&dateRange=*\nDisallow: /*?eventType=*\nDisallow: /*&eventType=*\nDisallow: /*?sortField=*\nDisallow: /*&sortField=*\nDisallow: /*?categoryId=*\nDisallow: /*&categoryId=*\nDisallow: /*?s=*\nDisallow: /*?utf8=*\nDisallow: /*&s=*\nDisallow: /*&utf8=*\nDisallow: /*?_af_cid=*\nDisallow: /*?_cookie-check=*\nDisallow: /*?_locale=*\nDisallow: /*?albumsOffset=*\nDisallow: /*?chapter_analytics_code=*\nDisallow: /*?delete_id=*\nDisallow: /*?edit_id=*\nDisallow: /*?err=*\nDisallow: /*?errors=*\nDisallow: /*?fbclid=*\nDisallow: /*?forumId=*\nDisallow: /*?mv=*\nDisallow: /*?op=*\nDisallow: /*?pager.offset=*\nDisallow: /*?photoAlbumId=*\nDisallow: /*?post=*\nDisallow: /*?returnPage=*\nDisallow: /*?search_forum=*\nDisallow: /*?set_mobile=*\nDisallow: /*?showAllGroups=*\nDisallow: /*?sort=*\nDisallow: /*?sortBy=*\nDisallow: /*?success=*\nDisallow: /*?_locale=*\nDisallow: /*?zipstatecity=*\nDisallow: /*?state=*\nDisallow: /*?radius=*\nDisallow: /*?pageToken=*\nDisallow: /*?offset=*\nDisallow: /*?hidePromoBar=*\nDisallow: /*?country=*\nDisallow: /*?city=*\nDisallow: /*&_af_cid=*\nDisallow: /*&_cookie-check=*\nDisallow: /*&_locale=*\nDisallow: /*&albumsOffset=*\nDisallow: /*&chapter_analytics_code=*\nDisallow: /*&delete_id=*\nDisallow: /*&edit_id=*\nDisallow:"
+    },
+    {
+      "url": "https://www.sympla.com.br/robots.txt",
+      "url_final": "https://www.sympla.com.br/robots.txt",
+      "status": 503,
+      "content_type": "text/html",
+      "tamanho": 162,
+      "conteudo": "<html>\r\n<head><title>503 Service Temporarily Unavailable</title></head>\r\n<body>\r\n<center><h1>503 Service Temporarily Unavailable</h1></center>\r\n</body>\r\n</html>\r\n"
+    },
+    {
+      "url": "https://sao-paulo.aitinkerers.org/robots.txt",
+      "url_final": "https://sao-paulo.aitinkerers.org/robots.txt",
+      "status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "tamanho": 8336,
+      "conteudo": "User-agent: *\nAllow: /\nAllow: /robots.txt\nAllow: /agents.md\nAllow: /.well-known/agent-skills\nAllow: /.well-known/api-catalog\nAllow: /.well-known/mcp\nAllow: /.well-known/oauth-protected-resource\nAllow: /.well-known/oauth-authorization-server\nAllow: /llms.txt\nAllow: /llms-full.txt\nAllow: /sitemap.xml\nAllow: /sitemaps/\nDisallow: /signin\nDisallow: /redis_cache/\nDisallow: /form-submit-organize-a-city\nDisallow: /jobs/*/visit\nDisallow: /meetup/cancel_rsvp/\nDisallow: /meetup/*/post_cancel_rsvp/\nDisallow: /meetup/confirm_attendance/\nDisallow: /qrcode/\nDisallow: /badge/*/go/\nDisallow: /talent/candidates\nDisallow: /talent-scout\nDisallow: /admin/\nDisallow: /api/\nDisallow: /styles/ashley\n\nUser-agent: Googlebot\nAllow: /\nAllow: /robots.txt\nAllow: /agents.md\nAllow: /.well-known/agent-skills\nAllow: /.well-known/api-catalog\nAllow: /.well-known/mcp\nAllow: /.well-known/oauth-protected-resource\nAllow: /.well-known/oauth-authorization-server\nAllow: /llms.txt\nAllow: /llms-full.txt\nAllow: /sitemap.xml\nAllow: /sitemaps/\nDisallow: /signin\nDisallow: /redis_cache/\nDisallow: /form-submit-organize-a-city\nDisallow: /jobs/*/visit\nDisallow: /meetup/cancel_rsvp/\nDisallow: /meetup/*/post_cancel_rsvp/\nDisallow: /meetup/confirm_attendance/\nDisallow: /qrcode/\nDisallow: /badge/*/go/\nDisallow: /talent/candidates\nDisallow: /talent-scout\nDisallow: /admin/\nDisallow: /api/\n\nUser-agent: GPTBot\nAllow: /\nAllow: /robots.txt\nAllow: /agents.md\nAllow: /.well-known/agent-skills\nAllow: /.well-known/api-catalog\nAllow: /.well-known/mcp\nAllow: /.well-known/oauth-protected-resource\nAllow: /.well-known/oauth-authorization-server\nAllow: /llms.txt\nAllow: /llms-full.txt\nAllow: /sitemap.xml\nAllow: /sitemaps/\nDisallow: /signin\nDisallow: /redis_cache/\nDisallow: /form-submit-organize-a-city\nDisallow: /jobs/*/visit\nDisallow: /meetup/cancel_rsvp/\nDisallow: /meetup/*/post_cancel_rsvp/\nDisallow: /meetup/confirm_attendance/\nDisallow: /qrcode/\nDisallow: /badge/*/go/\nDisallow: /talent/candidates\nDisallow: /talent-scout\nDisallow: /admin/\nDisallow: /api/\nDisallow: /styles/ashley\n\nUser-agent: OAI-SearchBot\nAllow: /\nAllow: /robots.txt\nAllow: /agents.md\nAllow: /.well-known/agent-skills\nAllow: /.well-known/api-catalog\nAllow: /.well-known/mcp\nAllow: /.well-known/oauth-protected-resource\nAllow: /.well-known/oauth-authorization-server\nAllow: /llms.txt\nAllow: /llms-full.txt\nAllow: /sitemap.xml\nAllow: /sitemaps/\nDisallow: /signin\nDisallow: /redis_cache/\nDisallow: /form-submit-organize-a-city\nDisallow: /jobs/*/visit\nDisallow: /meetup/cancel_rsvp/\nDisallow: /meetup/*/post_cancel_rsvp/\nDisallow: /meetup/confirm_attendance/\nDisallow: /qrcode/\nDisallow: /badge/*/go/\nDisallow: /talent/candidates\nDisallow: /talent-scout\nDisallow: /admin/\nDisallow: /api/\nDisallow: /styles/ashley\n\nUser-agent: ChatGPT-User\nAllow: /\nAllow: /robots.txt\nAllow: /agents.md\nAllow: /.well-known/agent-skills\nAllow: /.well-known/api-catalog\nAllow: /.well-known/mcp\nAllow: /.well-known/oauth-protected-resource\nAllow: /.well-known/oauth-authorization-server\nAllow: /"
+    }
+  ],
+  "luma_paginas": [
+    {
+      "url": "https://luma.com/aic-cognition-sp",
+      "url_final": "https://luma.com/aic-cognition-sp",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 252733,
+      "ids_calendario": [
+        "cal-E74MDlDKBaeAwXK"
+      ],
+      "ids_cidade": [
+        "discplace-AQZnCu9wl4LmOIp"
+      ],
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/aic-cognition-sp\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/SoldOut\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
+      },
+      "links_ics_na_pagina": []
+    },
+    {
+      "url": "https://luma.com/aic-sa-2-26",
+      "url_final": "https://luma.com/aic-sa-2-26",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 153680,
+      "ids_calendario": [
+        "cal-E74MDlDKBaeAwXK"
+      ],
+      "ids_cidade": [],
+      "json_ld": {
+        "tem_event": false,
+        "qtd_blocos": 0
+      },
+      "links_ics_na_pagina": []
+    },
+    {
+      "url": "https://luma.com/ayg5q20m",
+      "url_final": "https://luma.com/ayg5q20m",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 182815,
+      "ids_calendario": [
+        "cal-sAAnGigXnTQWpw6"
+      ],
+      "ids_cidade": [],
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/ayg5q20m\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/SoldOut\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
+      },
+      "links_ics_na_pagina": []
+    },
+    {
+      "url": "https://luma.com/devin-sp-2",
+      "url_final": "https://luma.com/devin-sp-2",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 216087,
+      "ids_calendario": [
+        "cal-s9CExmUfS7kMu50"
+      ],
+      "ids_cidade": [],
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/devin-sp-2\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/SoldOut\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
+      },
+      "links_ics_na_pagina": []
+    },
+    {
+      "url": "https://luma.com/saopaulo",
+      "url_final": "https://luma.com/saopaulo",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 288679,
+      "ids_calendario": [
+        "cal-12E3GKkrCVMzPqX",
+        "cal-7NlnR7M5Ew20s0e",
+        "cal-87tZfJUGfnwsYEK",
+        "cal-HtbK5aYvR5B2WAu",
+        "cal-K9IcbN14WTbkzOs",
+        "cal-MW9Jul11VErBTNj",
+        "cal-OkvizsF0APaGInD",
+        "cal-OoWLL7OgNNy2cCj",
+        "cal-SDJ8BXWwdvWpZlE",
+        "cal-hzPakTiFYq4cKjC",
+        "cal-l9pKMl4NqZDGIYs",
+        "cal-qLK9y9ELGYVA0j5"
+      ],
+      "ids_cidade": [
+        "discplace-AQZnCu9wl4LmOIp"
+      ],
+      "json_ld": {
+        "tem_event": false,
+        "qtd_blocos": 1
+      },
+      "links_ics_na_pagina": []
+    }
+  ],
+  "luma_ics": [
+    {
+      "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-12E3GKkrCVMzPqX",
+      "url_final": "https://api.lu.ma/ics/get?entity=calendar&id=cal-12E3GKkrCVMzPqX",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 776,
+      "entidade": "calendar",
+      "id": "cal-12E3GKkrCVMzPqX",
+      "analise": {
+        "nome_calendario": "Triaxis Capital",
+        "total_eventos": 1,
+        "futuros_90d": 1,
+        "futuros_90d_parecem_ia": 0,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "DTSTART": 1,
+          "DTEND": 1,
+          "DTSTAMP": 1,
+          "ORGANIZER": 1,
+          "UID": 1,
+          "SUMMARY": 1,
+          "DESCRIPTION": 1,
+          "LOCATION": 1,
+          "GEO": 1,
+          "SEQUENCE": 1,
+          "STATUS": 1
+        },
+        "amostra": [
+          {
+            "titulo": "Revenue Summit 2026",
+            "inicio": "2026-11-25T16:30:00+00:00",
+            "local": "Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paulo - SP, 04547-130,",
+            "url": "",
+            "tamanho_descricao": 131,
+            "parece_ia": false,
+            "uid": "evt-oJnGMDJ7aiuvsu9@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/ykvah3q3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-7NlnR7M5Ew20s0e",
+      "url_final": "https://api.lu.ma/ics/get?entity=calendar&id=cal-7NlnR7M5Ew20s0e",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 5945,
+      "entidade": "calendar",
+      "id": "cal-7NlnR7M5Ew20s0e",
+      "analise": {
+        "nome_calendario": "SpaceXSI for Sao Paulo, Brazil",
+        "total_eventos": 10,
+        "futuros_90d": 1,
+        "futuros_90d_parecem_ia": 0,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "DTSTART": 10,
+          "DTEND": 10,
+          "DTSTAMP": 10,
+          "ORGANIZER": 10,
+          "UID": 10,
+          "SUMMARY": 10,
+          "DESCRIPTION": 10,
+          "LOCATION": 10,
+          "GEO": 8,
+          "SEQUENCE": 10,
+          "STATUS": 10
+        },
+        "amostra": [
+          {
+            "titulo": "Grok Bot Workshop São Paulo",
+            "inicio": "2026-12-04T17:00:00+00:00",
+            "local": "Zup IT Innovation, Rua Pascoal Pais, 525 - 3º e 4º andar - Brooklin, São Paulo -",
+            "url": "",
+            "tamanho_descricao": 150,
+            "parece_ia": false,
+            "uid": "evt-14lTTiq5UPNPpai@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/7a3wkm3q"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-87tZfJUGfnwsYEK",
+      "url_final": "https://api.lu.ma/ics/get?entity=calendar&id=cal-87tZfJUGfnwsYEK",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 12408,
+      "entidade": "calendar",
+      "id": "cal-87tZfJUGfnwsYEK",
+      "analise": {
+        "nome_calendario": "Personal",
+        "total_eventos": 18,
+        "futuros_90d": 1,
+        "futuros_90d_parecem_ia": 0,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "DTSTART": 18,
+          "DTEND": 18,
+          "DTSTAMP": 18,
+          "ORGANIZER": 18,
+          "UID": 18,
+          "SUMMARY": 18,
+          "DESCRIPTION": 18,
+          "LOCATION": 18,
+          "GEO": 18,
+          "SEQUENCE": 18,
+          "STATUS": 18
+        },
+        "amostra": [
+          {
+            "titulo": "Oficina - Cerâmica fria",
+            "inicio": "2026-11-26T17:00:00+00:00",
+            "local": "School of Architecture and Urbanism of the University of Sao Paulo, Universidade",
+            "url": "",
+            "tamanho_descricao": 189,
+            "parece_ia": false,
+            "uid": "evt-9kBpb6n7CQen7vt@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/eb9h4t4i"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-E74MDlDKBaeAwXK",
+      "url_final": "https://api.lu.ma/ics/get?entity=calendar&id=cal-E74MDlDKBaeAwXK",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 166959,
+      "entidade": "calendar",
+      "id": "cal-E74MDlDKBaeAwXK",
+      "analise": {
+        "nome_calendario": "The AI Collective",
+        "total_eventos": 300,
+        "futuros_90d": 58,
+        "futuros_90d_parecem_ia": 56,
+        "eventos_com_preco_na_descricao": 1,
+        "campos_presentes": {
+          "DTSTART": 300,
+          "DTEND": 300,
+          "DTSTAMP": 300,
+          "ORGANIZER": 300,
+          "UID": 300,
+          "SUMMARY": 300,
+          "DESCRIPTION": 300,
+          "LOCATION": 300,
+          "SEQUENCE": 300,
+          "STATUS": 300,
+          "GEO": 262
+        },
+        "amostra": [
+          {
+            "titulo": "Building Together: Share Your Work, Find Your People (w/ The AI Collective)",
+            "inicio": "2026-11-25T15:00:00+00:00",
+            "local": "https://luma.com/event/evt-XULaC5zGCiNGkWG",
+            "url": "",
+            "tamanho_descricao": 89,
+            "parece_ia": true,
+            "uid": "evt-XULaC5zGCiNGkWG@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-du-11-25"
+            ]
+          },
+          {
+            "titulo": "The AI Collective Podcast with AJ & Catherine: Wednesday, Nov 25",
+            "inicio": "2026-11-25T17:00:00+00:00",
+            "local": "https://luma.com/event/evt-GUTJIfcwvhHjbyp",
+            "url": "",
+            "tamanho_descricao": 163,
+            "parece_ia": true,
+            "uid": "evt-GUTJIfcwvhHjbyp@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/genai-b9wy"
+            ]
+          },
+          {
+            "titulo": "#LATechWeek AI Collective Pitch Night (w/ The AI Collective)",
+            "inicio": "2026-11-26T02:00:00+00:00",
+            "local": "https://luma.com/event/evt-YY3wwNrsTyfjSQw",
+            "url": "",
+            "tamanho_descricao": 154,
+            "parece_ia": true,
+            "uid": "evt-YY3wwNrsTyfjSQw@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-la-og-pitch-night"
+            ]
+          },
+          {
+            "titulo": "Network event with the AI Collective",
+            "inicio": "2026-11-26T07:30:00+00:00",
+            "local": "https://luma.com/event/evt-1FDGHEnrfEPFKRM",
+            "url": "",
+            "tamanho_descricao": 166,
+            "parece_ia": true,
+            "uid": "evt-1FDGHEnrfEPFKRM@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-ad-11-12"
+            ]
+          },
+          {
+            "titulo": "Why Should I Care About the EU AI Act?",
+            "inicio": "2026-11-26T15:00:00+00:00",
+            "local": "Maria 01, Lapinlahdenkatu 16, 00180 Helsinki, Finland",
+            "url": "",
+            "tamanho_descricao": 209,
+            "parece_ia": true,
+            "uid": "evt-ZgHu3XgbZVYqyNI@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-fi-why-should-i-care-about-the-eu-ai-act"
+            ]
+          },
+          {
+            "titulo": "Stripe Indore Community Launch Buildathon",
+            "inicio": "2026-11-28T04:30:00+00:00",
+            "local": "https://luma.com/event/evt-WhiBf0YaLSGFD7U",
+            "url": "",
+            "tamanho_descricao": 116,
+            "parece_ia": false,
+            "uid": "evt-WhiBf0YaLSGFD7U@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/stripe-indore-community"
+            ]
+          },
+          {
+            "titulo": "Domain Experts, Assemble: A Lovable x AI Collective Build Day (w/ The AI Collective)",
+            "inicio": "2026-11-28T06:00:00+00:00",
+            "local": "https://luma.com/event/evt-Htx7MDTwhhasRBi",
+            "url": "",
+            "tamanho_descricao": 143,
+            "parece_ia": true,
+            "uid": "evt-Htx7MDTwhhasRBi@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-is-9-5"
+            ]
+          },
+          {
+            "titulo": "LEADERSHIP LINKEDIN NETWORKING SUMMIT 2026",
+            "inicio": "2026-11-28T06:00:00+00:00",
+            "local": "Nina Next Space, 180/1 Đ. Nguyễn Tất Thành, Xóm Chiếu, Hồ Chí Minh, Vietnam",
+            "url": "",
+            "tamanho_descricao": 148,
+            "parece_ia": false,
+            "uid": "evt-3YhAM7t5lwNKDen@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/pr9k3uap"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-HtbK5aYvR5B2WAu",
+      "url_final": "https://api.lu.ma/ics/get?entity=calendar&id=cal-HtbK5aYvR5B2WAu",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 878,
+      "entidade": "calendar",
+      "id": "cal-HtbK5aYvR5B2WAu",
+      "analise": {
+        "nome_calendario": "MUG São Paulo - MongoDB User Group",
+        "total_eventos": 1,
+        "futuros_90d": 1,
+        "futuros_90d_parecem_ia": 0,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "DTSTART": 1,
+          "DTEND": 1,
+          "DTSTAMP": 1,
+          "ORGANIZER": 1,
+          "UID": 1,
+          "SUMMARY": 1,
+          "DESCRIPTION": 1,
+          "LOCATION": 1,
+          "GEO": 1,
+          "SEQUENCE": 1,
+          "STATUS": 1
+        },
+        "amostra": [
+          {
+            "titulo": "MUG São Paulo NOV 2026 - Vector Search na Prática & mais",
+            "inicio": "2026-11-25T21:00:00+00:00",
+            "local": "FIAP - Paulista, Av. Paulista, 1106 - 7º andar - Bela Vista, São Paulo - SP, 013",
+            "url": "",
+            "tamanho_descricao": 143,
+            "parece_ia": false,
+            "uid": "evt-AXkUVWCxURYLxoT@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/afm6b12v"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-K9IcbN14WTbkzOs",
+      "url_final": "https://api.lu.ma/ics/get?entity=calendar&id=cal-K9IcbN14WTbkzOs",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 5034,
+      "entidade": "calendar",
+      "id": "cal-K9IcbN14WTbkzOs",
+      "analise": {
+        "nome_calendario": "WoMakersCode",
+        "total_eventos": 9,
+        "futuros_90d": 1,
+        "futuros_90d_parecem_ia": 1,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "DTSTART": 9,
+          "DTEND": 9,
+          "DTSTAMP": 9,
+          "ORGANIZER": 9,
+          "UID": 9,
+          "SUMMARY": 9,
+          "DESCRIPTION": 9,
+          "LOCATION": 9,
+          "GEO": 8,
+          "SEQUENCE": 9,
+          "STATUS": 9
+        },
+        "amostra": [
+          {
+            "titulo": "Construindo IA em Escala: da Engenharia ao Impacto no Cliente",
+            "inicio": "2026-12-03T11:30:00+00:00",
+            "local": "Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paulo - SP, 04547-130,",
+            "url": "",
+            "tamanho_descricao": 183,
+            "parece_ia": true,
+            "uid": "evt-xlla7UIGWU7AR4n@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/gb0prlff"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-MW9Jul11VErBTNj",
+      "url_final": "https://api.lu.ma/ics/get?entity=calendar&id=cal-MW9Jul11VErBTNj",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 2525,
+      "entidade": "calendar",
+      "id": "cal-MW9Jul11VErBTNj",
+      "analise": {
+        "nome_calendario": "Personal",
+        "total_eventos": 4,
+        "futuros_90d": 2,
+        "futuros_90d_parecem_ia": 0,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "DTSTART": 4,
+          "DTEND": 4,
+          "DTSTAMP": 4,
+          "ORGANIZER": 4,
+          "UID": 4,
+          "SUMMARY": 4,
+          "DESCRIPTION": 4,
+          "LOCATION": 4,
+          "GEO": 4,
+          "SEQUENCE": 4,
+          "STATUS": 4
+        },
+        "amostra": [
+          {
+            "titulo": "Brunch com Felipe Nasr",
+            "inicio": "2026-11-29T12:00:00+00:00",
+            "local": "TEMPO by Porsche, Rua Maria Carolina, 624 - Loja Térreo - Pinheiros, São Paulo -",
+            "url": "",
+            "tamanho_descricao": 132,
+            "parece_ia": false,
+            "uid": "evt-oy5YHy8BtOYbCbp@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/qfrzgtbn"
+            ]
+          },
+          {
+            "titulo": "2º Encontro de Porsches na TEMPO [Último do ano]",
+            "inicio": "2026-12-06T12:00:00+00:00",
+            "local": "TEMPO by Porsche, Rua Maria Carolina, 624 - Loja Térreo - Pinheiros, São Paulo -",
+            "url": "",
+            "tamanho_descricao": 132,
+            "parece_ia": false,
+            "uid": "evt-iNzHAf51UTMPfEE@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/qc2krjcw"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-OkvizsF0APaGInD",
+      "url_final": "https://api.lu.ma/ics/get?entity=calendar&id=cal-OkvizsF0APaGInD",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 1754,
+      "entidade": "calendar",
+      "id": "cal-OkvizsF0APaGInD",
+      "analise": {
+        "nome_calendario": "Personal",
+        "total_eventos": 2,
+        "futuros_90d": 1,
+        "futuros_90d_parecem_ia": 0,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "DTSTART": 2,
+          "DTEND": 2,
+          "DTSTAMP": 2,
+          "ORGANIZER": 2,
+          "UID": 2,
+          "SUMMARY": 2,
+          "DESCRIPTION": 2,
+          "LOCATION": 2,
+          "GEO": 2,
+          "SEQUENCE": 2,
+          "STATUS": 2
+        },
+        "amostra": [
+          {
+            "titulo": "Bora Trocar | Negritude, empreendedorismo e mercado de trabalho",
+            "inicio": "2026-11-25T22:00:00+00:00",
+            "local": "R. Itapeva, 432 - Bela Vista, São Paulo - SP, 01332-000, Brazil",
+            "url": "",
+            "tamanho_descricao": 470,
+            "parece_ia": false,
+            "uid": "evt-L6KNoab9Q80j1Mm@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/b8whaegx"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=discplace&id=discplace-AQZnCu9wl4LmOIp",
+      "url_final": "https://api.lu.ma/ics/get?entity=discplace&id=discplace-AQZnCu9wl4LmOIp",
+      "status": 400,
+      "content_type": "application/json; charset=utf-8",
+      "tamanho": 54,
+      "entidade": "discplace",
+      "id": "discplace-AQZnCu9wl4LmOIp",
+      "inicio_resposta": "{\"message\":\"Invalid entity for ICS file.\",\"code\":null}"
+    },
+    {
+      "url": "https://api.lu.ma/ics/get?entity=discover&id=discplace-AQZnCu9wl4LmOIp",
+      "url_final": "https://api.lu.ma/ics/get?entity=discover&id=discplace-AQZnCu9wl4LmOIp",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "tamanho": 14575,
+      "entidade": "discover",
+      "id": "discplace-AQZnCu9wl4LmOIp",
+      "analise": {
+        "nome_calendario": "What’s Happening in São Paulo",
+        "total_eventos": 12,
+        "futuros_90d": 12,
+        "futuros_90d_parecem_ia": 3,
+        "eventos_com_preco_na_descricao": 3,
+        "campos_presentes": {
+          "DTSTART": 12,
+          "DTEND": 12,
+          "DTSTAMP": 12,
+          "ORGANIZER": 12,
+          "UID": 12,
+          "SUMMARY": 12,
+          "DESCRIPTION": 12,
+          "LOCATION": 12,
+          "GEO": 12,
+          "SEQUENCE": 12,
+          "STATUS": 12
+        },
+        "amostra": [
+          {
+            "titulo": "Revenue Summit 2026",
+            "inicio": "2026-11-25T16:30:00+00:00",
+            "local": "Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paulo - SP, 04547-130,",
+            "url": "",
+            "tamanho_descricao": 729,
+            "parece_ia": false,
+            "uid": "evt-oJnGMDJ7aiuvsu9@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/ykvah3q3"
+            ]
+          },
+          {
+            "titulo": "Devin Meetup São Paulo",
+            "inicio": "2026-11-25T21:00:00+00:00",
+            "local": "https://luma.com/event/evt-YEkDcmJq3cWyjK5",
+            "url": "",
+            "tamanho_descricao": 741,
+            "parece_ia": true,
+            "uid": "evt-YEkDcmJq3cWyjK5@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/devin-sp-4"
+            ]
+          },
+          {
+            "titulo": "MUG São Paulo NOV 2026 - Vector Search na Prática & mais",
+            "inicio": "2026-11-25T21:00:00+00:00",
+            "local": "FIAP - Paulista, Av. Paulista, 1106 - 7º andar - Bela Vista, São Paulo - SP, 013",
+            "url": "",
+            "tamanho_descricao": 740,
+            "parece_ia": false,
+            "uid": "evt-AXkUVWCxURYLxoT@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/afm6b12v"
+            ]
+          },
+          {
+            "titulo": "Bora Trocar | Negritude, empreendedorismo e mercado de trabalho",
+            "inicio": "2026-11-25T22:00:00+00:00",
+            "local": "R. Itapeva, 432 - Bela Vista, São Paulo - SP, 01332-000, Brazil",
+            "url": "",
+            "tamanho_descricao": 1070,
+            "parece_ia": false,
+            "uid": "evt-L6KNoab9Q80j1Mm@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/b8whaegx"
+            ]
+          },
+          {
+            "titulo": "Oficina - Cerâmica fria",
+            "inicio": "2026-11-26T17:00:00+00:00",
+            "local": "School of Architecture and Urbanism of the University of Sao Paulo, Universidade",
+            "url": "",
+            "tamanho_descricao": 411,
+            "parece_ia": false,
+            "uid": "evt-9kBpb6n7CQen7vt@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/eb9h4t4i"
+            ]
+          },
+          {
+            "titulo": "Brunch com Felipe Nasr",
+            "inicio": "2026-11-29T12:00:00+00:00",
+            "local": "TEMPO by Porsche, Rua Maria Carolina, 624 - Loja Térreo - Pinheiros, São Paulo -",
+            "url": "",
+            "tamanho_descricao": 373,
+            "parece_ia": false,
+            "uid": "evt-oy5YHy8BtOYbCbp@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/qfrzgtbn"
+            ]
+          },
+          {
+            "titulo": "ENTRE GALERIAS: Roteiro Cultural no Centro Histórico",
+            "inicio": "2026-11-29T13:00:00+00:00",
+            "local": "Formosa Hi-Fi, Viaduto do Chá - Centro Histórico de São Paulo, São Paulo - SP, 0",
+            "url": "",
+            "tamanho_descricao": 834,
+            "parece_ia": false,
+            "uid": "evt-dXFOQDsspqC1038@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/f0c1qgcn"
+            ]
+          },
+          {
+            "titulo": "Construindo IA em Escala: da Engenharia ao Impacto no Cliente",
+            "inicio": "2026-12-03T11:30:00+00:00",
+            "local": "Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paulo - SP, 04547-130,",
+            "url": "",
+            "tamanho_descricao": 775,
+            "parece_ia": true,
+            "uid": "evt-xlla7UIGWU7AR4n@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/gb0prlff"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "luma_enriquecimento": [
+    {
+      "url": "https://luma.com/ykvah3q3",
+      "url_final": "https://luma.com/ykvah3q3",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 154795,
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/ykvah3q3\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/SoldOut\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
+      }
+    },
+    {
+      "url": "https://luma.com/7a3wkm3q",
+      "url_final": "https://luma.com/7a3wkm3q",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 170859,
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/7a3wkm3q\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/InStock\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
+      }
+    },
+    {
+      "url": "https://luma.com/eb9h4t4i",
+      "url_final": "https://luma.com/eb9h4t4i",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 110161,
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/eb9h4t4i\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/SoldOut\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
+      }
+    }
+  ],
+  "meetup_ics": [
+    {
+      "url": "https://www.meetup.com/aidev-saopaulo/events/ical/",
+      "url_final": "https://www.meetup.com/aidev-saopaulo/events/ical/",
+      "status": 200,
+      "content_type": "text/calendar",
+      "tamanho": 8542,
+      "e_icalendar": true,
+      "analise": {
+        "nome_calendario": "[vText(b'S\\xc3\\xa3o Paulo AI Developer Group'), vText(b'S\\xc3\\xa3o Paulo AI Developer Group')]",
+        "total_eventos": 3,
+        "futuros_90d": 3,
+        "futuros_90d_parecem_ia": 3,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "UID": 3,
+          "SEQUENCE": 3,
+          "DTSTAMP": 3,
+          "DTSTART": 3,
+          "DTEND": 3,
+          "SUMMARY": 3,
+          "DESCRIPTION": 3,
+          "URL": 3,
+          "STATUS": 3,
+          "CREATED": 3,
+          "LAST-MODIFIED": 3,
+          "CLASS": 3
+        },
+        "amostra": [
+          {
+            "titulo": "[Virtual] Google Agents in Production for Enterprises with Oracle",
+            "inicio": "2026-12-01T14:00:00-03:00",
+            "local": "",
+            "url": "https://www.meetup.com/aidev-saopaulo/events/317511525/",
+            "tamanho_descricao": 2391,
+            "parece_ia": true,
+            "uid": "event_317511525@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026101209)[Event",
+              "https://www.aicamp.ai/event/eventdetails/W2026120109)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)",
+              "https://www.aicamp.ai/event/eventdetails/W2026121709)"
+            ]
+          },
+          {
+            "titulo": "Google AI Deep Dive (Ep 6) - Platform Engineering on GKE using Gemini",
+            "inicio": "2026-12-04T14:00:00-03:00",
+            "local": "",
+            "url": "https://www.meetup.com/aidev-saopaulo/events/317411643/",
+            "tamanho_descricao": 1249,
+            "parece_ia": true,
+            "uid": "event_317411643@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)"
+            ]
+          },
+          {
+            "titulo": "AI Webinar (Diagrid and AWS) - Durable Execution for Agents",
+            "inicio": "2026-12-09T15:00:00-03:00",
+            "local": "",
+            "url": "https://www.meetup.com/aidev-saopaulo/events/317414190/",
+            "tamanho_descricao": 2445,
+            "parece_ia": true,
+            "uid": "event_317414190@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://www.meetup.com/enterprise-ai-sao-paulo/events/ical/",
+      "url_final": "https://www.meetup.com/enterprise-ai-sao-paulo/events/ical/",
+      "status": 200,
+      "content_type": "text/calendar",
+      "tamanho": 8554,
+      "e_icalendar": true,
+      "analise": {
+        "nome_calendario": "[vText(b'Enterprise AI S\\xc3\\xa3o Paulo'), vText(b'Enterprise AI S\\xc3\\xa3o Paulo')]",
+        "total_eventos": 3,
+        "futuros_90d": 3,
+        "futuros_90d_parecem_ia": 3,
+        "eventos_com_preco_na_descricao": 0,
+        "campos_presentes": {
+          "UID": 3,
+          "SEQUENCE": 3,
+          "DTSTAMP": 3,
+          "DTSTART": 3,
+          "DTEND": 3,
+          "SUMMARY": 3,
+          "DESCRIPTION": 3,
+          "URL": 3,
+          "STATUS": 3,
+          "CREATED": 3,
+          "LAST-MODIFIED": 3,
+          "CLASS": 3
+        },
+        "amostra": [
+          {
+            "titulo": "[Virtual] Google Agents in Production for Enterprises with Oracle",
+            "inicio": "2026-12-01T14:00:00-03:00",
+            "local": "",
+            "url": "https://www.meetup.com/enterprise-ai-sao-paulo/events/317511527/",
+            "tamanho_descricao": 2386,
+            "parece_ia": true,
+            "uid": "event_317511527@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026101209)[Event",
+              "https://www.aicamp.ai/event/eventdetails/W2026120109)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)",
+              "https://www.aicamp.ai/event/eventdetails/W2026121709)"
+            ]
+          },
+          {
+            "titulo": "Google AI Deep Dive (Ep 6) - Platform Engineering on GKE using Gemini",
+            "inicio": "2026-12-04T14:00:00-03:00",
+            "local": "",
+            "url": "https://www.meetup.com/enterprise-ai-sao-paulo/events/317411640/",
+            "tamanho_descricao": 1244,
+            "parece_ia": true,
+            "uid": "event_317411640@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)"
+            ]
+          },
+          {
+            "titulo": "AI Webinar (Diagrid and AWS) - Durable Execution for Agents",
+            "inicio": "2026-12-09T15:00:00-03:00",
+            "local": "",
+            "url": "https://www.meetup.com/enterprise-ai-sao-paulo/events/317414209/",
+            "tamanho_descricao": 2440,
+            "parece_ia": true,
+            "uid": "event_317414209@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "aitinkerers": {
+    "url": "https://sao-paulo.aitinkerers.org/",
+    "url_final": "https://sao-paulo.aitinkerers.org/",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "tamanho": 575021,
+    "links_feed": [
+      "https://aitinkerers.org/api/public/v1/events/blog_UMa2gozI_k0/calendar.ics"
+    ],
+    "json_ld": {
+      "tem_event": false,
+      "qtd_blocos": 8
+    },
+    "links_evento": [
+      "/p/agents-everywhere-bots-channels-more-global-hackathon",
+      "/p/ai-for-social-impact-hackaton",
+      "/p/ai-tinkerers-sao-paulo-e-link-school-of-business-agosto-2025",
+      "/p/ai-tinkerers-sao-paulo-e-oracle-janeiro-2026",
+      "/p/ai-tinkerers-sao-paulo-e-oracle-julho-2025",
+      "/p/ai-tinkerers-sao-paulo-junho-2025",
+      "/p/ai-tinkerers-sao-paulo-na-espm-com-neo4j-e-oracle-novembro-2025",
+      "/p/ai-tinkerers-sao-paulo-setembro-2025",
+      "/p/ai-tinkerers-sp-e-banco-bmg",
+      "/p/ai-tinkerers-sp-e-blip"
+    ]
+  },
+  "sympla_evento": {
+    "url": "https://www.sympla.com.br/evento/6-evento-mulheres-em-ia-mia/3627822",
+    "url_final": "https://www.sympla.com.br/evento/6-evento-mulheres-em-ia-mia/3627822",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "tamanho": 233682,
+    "json_ld": {
+      "tem_event": false,
+      "qtd_blocos": 0
+    }
+  }
+}
