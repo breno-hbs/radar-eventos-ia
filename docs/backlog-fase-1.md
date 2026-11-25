@@ -75,9 +75,14 @@
 
 ### F1-07 — Dataset de avaliação e métricas
 - `avaliacao/dev.jsonl` e `avaliacao/teste.jsonl` separados; Vector Search e Grok Bot só no `dev` (D7).
-- Script `avaliar.py`: precision, recall e F1 no conjunto escolhido, com a lista de erros.
-- **Sua parte:** rotular ~30 eventos (eu preparo a planilha com os candidatos tirados das fixtures; você marca "é IA / não é" e o idioma).
-- **Aceite:** primeiro relatório de métricas do prompt v1 no conjunto de teste, salvo em `docs/`.
+- `python -m radar.avaliacao --conjunto teste|dev --saida <arquivo.md>`: precision, recall e F1 no conjunto escolhido, com a lista de erros.
+- `python -m radar.avaliacao --conjunto teste|dev`; workflow manual `avaliar.yml` publica o relatório em `docs/avaliacao/` num branch novo (D14).
+- **Sua parte:**
+  - [x] criar a workspace na Anthropic com limite de US$ 5 e cadastrar `ANTHROPIC_API_KEY` nos Secrets;
+  - [ ] rotular os 40 eventos da planilha (é IA / não é, e o idioma), D14;
+  - [ ] gerar `avaliacao/teste.jsonl` (30) e `avaliacao/dev.jsonl` (10) a partir da planilha;
+  - [ ] rodar **Avaliar classificador** com `teste` e revisar o relatório.
+- **Aceite:** primeiro relatório de métricas do prompt v1 no conjunto de teste, salvo em `docs/avaliacao/`.
 
 ### F1-08 — Enriquecimento de preço da Luma
 - Implementa a D4: só eventos novos aprovados, limite por execução (padrão 10), cache por `id_fonte`, nenhuma repetição após erro, regras de moeda e oferta.

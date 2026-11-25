@@ -1,0 +1,63 @@
+name: Avaliar classificador
+
+# ATENÇÃO: o sufixo `classificador_v1` do arquivo de relatório e da mensagem de commit é fixo.
+# Ao trocar `VERSAO_PROMPT` (src/radar/classificacao/prompt.py), atualize-o aqui também —
+# ele não é derivado automaticamente.
+
+# Avaliação manual (D14): classifica um conjunto rotulado (avaliacao/<conjunto>.jsonl) com a
+# API de verdade e publica o relatório num branch novo por execução
+# (fase-1/f1-07-avaliacao-${{ github.run_number }}) para revisão. Nunca roda em pull request,
+# nunca faz push na main nem força o push. A chave da API só existe no passo da avaliação.
+on:
+  workflow_dispatch:
+    inputs:
+      conjunto:
+        description: "Conjunto a avaliar"
+        type: choice
+        options:
+          - teste
+          - dev
+        default: teste
+
+permissions:
+  contents: write
+
+concurrency:
+  group: avaliar-classificador
+  cancel-in-progress: false
+
+jobs:
+  avaliar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+
+      - name: Avaliar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CONJUNTO: ${{ inputs.conjunto }}
+        run: >-
+          python -m radar.avaliacao --conjunto "$CONJUNTO"
+          --saida "docs/avaliacao/${CONJUNTO}-classificador_v1.md"
+
+      - name: Publicar no branch de avaliação
+        env:
+          CONJUNTO: ${{ inputs.conjunto }}
+        run: |
+          git checkout -B fase-1/f1-07-avaliacao-${{ github.run_number }}
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "docs/avaliacao/${CONJUNTO}-classificador_v1.md"
+          git diff --cached --quiet && { echo "Relatório sem mudanças."; exit 0; }
+          git commit -m "F1-07: avaliação do classificador_v1 (${CONJUNTO})"
+          git push origin fase-1/f1-07-avaliacao-${{ github.run_number }}

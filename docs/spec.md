@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.3 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.4 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -82,6 +82,8 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 - Métricas: precision, recall e F1, com prioridade ao recall.
 - Dataset inicial: 30 eventos rotulados à mão (positivos, negativos, ambíguos, IA só como marketing, páginas em inglês de eventos em português).
 - Conjunto de desenvolvimento separado do conjunto de teste fixo. Casos usados para escrever o prompt ficam só no desenvolvimento (D7).
+- Fase 1: 40 eventos sorteados das fixtures fora do repositório (planilha; semente só como referência), teste 30 e dev 10, rotulados pelo autor; erro de saída do LLM conta como "não IA" e à parte; erro de API interrompe a avaliação sem relatório; F1 = 0 quando o recall é 0; acerto de idioma entre os classificados. Roda só pelo workflow manual com secret e limite de gastos; relatório em `docs/avaliacao/` (D14).
+- Limitação conhecida: nos feeds de calendário a descrição não vem no iCal, então a classificação desses eventos depende do título (D14).
 - "Não tenho interesse" alimenta uma fila de revisão manual, nunca o dataset automaticamente.
 - Metas (recall ≥ 95%, precision ≥ 90%, F1 ≥ 90%) são referência até ~100 casos.
 
@@ -110,3 +112,4 @@ Claude Code com CLAUDE.md de regras e subagentes: planejador, implementador (um 
 ## 13. Pendências
 - Termos de uso do Meetup (bloqueia só a Fase 2).
 - Método de autorização do Google Calendar (Fase 3).
+- Descrição dos eventos de feeds de calendário que vêm sem `DESCRIPTION` no iCal (D14).
