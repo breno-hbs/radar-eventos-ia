@@ -16,6 +16,9 @@ Assinaturas fixadas (radar.classificacao.classificador):
   `radar.classificacao.modelos.VERSAO_SCHEMA` (monkeypatch nesses módulos muda a chave), e o
   custo usa `radar.classificacao.precos.TABELA_PRECOS` em tempo de chamada.
 - `ErroAPI(categoria=..., status_http=...)` (construtor por palavra-chave).
+- F1-07b: `classificar_pendentes` NÃO aplica a regra de comunidade de IA (aplicada na
+  leitura, F1-10): o `resultado` ok gravado é a saída do LLM, validável por
+  `SaidaClassificador` e sem chaves extras. O texto bruto do LLM nunca é gravado.
 - Toda categoria de ErroAPI fora de autenticacao/rate_limit (servidor, timeout, conexao,
   requisicao, outro) conta para as 3 falhas seguidas; nenhuma delas interrompe na primeira.
 - Tokens (inclusive de erros de saída) somam por execução; antes de cada chamada, acumulado
@@ -726,6 +729,54 @@ def test_limite_de_tokens_nao_atingido_nao_interrompe(
     assert len(cliente.chamadas) == 3
     assert resumo.interrompido_por is None
     assert resumo.restantes is False
+
+
+# --- F1-07b: resultado gravado sem alteração; texto bruto fora do banco ---------------------
+
+
+def test_resultado_ok_gravado_valida_no_modelo_sem_chaves_extras(
+    classificador: ModuleType,
+    cliente_mod: ModuleType,
+    modelos: ModuleType,
+    sessao: Session,
+    cliente: ClienteFalso,
+) -> None:
+    # a regra de comunidade de IA é aplicada na leitura (F1-10), nunca na gravação
+    evento = _inserir(sessao, calendarios=["ai-collective"])
+    cliente.fila = [_resposta(cliente_mod, saida_valida(e_ia=False))]
+    _rodar(classificador, sessao, cliente)
+    [linha] = _classificacoes(sessao, evento.id)
+    assert linha["situacao"] == "ok"
+    saida = modelos.SaidaClassificador.model_validate(linha["resultado"])
+    assert set(linha["resultado"]) == set(modelos.SaidaClassificador.model_fields)
+    assert "e_ia_por_comunidade" not in linha["resultado"]
+    assert saida.e_ia is False
+    assert linha["resultado"] == saida_valida(e_ia=False)
+
+
+def test_classificar_pendentes_sem_parametro_de_comunidades(classificador: ModuleType) -> None:
+    import inspect
+
+    assert "comunidades_ia" not in inspect.signature(classificador.classificar_pendentes).parameters
+
+
+@pytest.mark.parametrize("stop_reason", ["end_turn", "max_tokens"])
+def test_texto_bruto_do_llm_nunca_vai_ao_banco(
+    classificador: ModuleType,
+    cliente_mod: ModuleType,
+    sessao: Session,
+    cliente: ClienteFalso,
+    stop_reason: str,
+) -> None:
+    evento = _inserir(sessao)
+    cliente.fila = [
+        _resposta(cliente_mod, texto="SEGREDO-BRUTO-42 {sem json", stop_reason=stop_reason)
+    ]
+    _rodar(classificador, sessao, cliente)
+    [linha] = _classificacoes(sessao, evento.id)
+    assert linha["situacao"] == "erro"
+    for coluna, valor in linha.items():
+        assert "SEGREDO-BRUTO" not in json.dumps(valor, default=str), coluna
 
 
 # --- validar_contra_evento (sem banco) -----------------------------------------------------

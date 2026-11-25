@@ -1,23 +1,28 @@
 # Feeds iCal da Luma lidos pelo coletor (D1, D3, D10).
 # Sem URL: o código monta https://api.lu.ma/ics/get?entity=<entidade>&id=<id>.
 # IDs confirmados na captura do F1-02 (docs/fase-0-viabilidade.md).
+# comunidade_ia: true → eventos do calendário contam como IA depois do LLM (D15).
 calendarios_luma:
   - slug: ai-collective
     nome: The AI Collective
     entidade: calendar
     id: cal-E74MDlDKBaeAwXK
+    comunidade_ia: true
   - slug: codex-sp
     nome: Codex - São Paulo
     entidade: calendar
     id: cal-sAAnGigXnTQWpw6
+    comunidade_ia: true
   - slug: vibe-space
     nome: Vibe Space
     entidade: calendar
     id: cal-s9CExmUfS7kMu50
+    comunidade_ia: true
   - slug: womakerscode
     nome: WoMakersCode
     entidade: calendar
     id: cal-K9IcbN14WTbkzOs
+    comunidade_ia: true
   - slug: mug-sp
     nome: MUG São Paulo (MongoDB)
     entidade: calendar

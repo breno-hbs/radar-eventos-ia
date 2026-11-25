@@ -11,9 +11,9 @@ from __future__ import annotations
 import json
 from collections.abc import Sequence
 from pathlib import Path
-from typing import Literal
+from typing import Literal, NamedTuple
 
-from pydantic import BaseModel, ConfigDict, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from radar.banco.conteudo import consolidar_observacoes, hash_conteudo
 from radar.banco.modelos import Evento
@@ -24,8 +24,6 @@ from radar.fontes.modelos import EventoNormalizado
 # Casos usados para escrever o prompt: só podem estar no dev (D7).
 TERMOS_SO_DEV = ("vector search", "grok bot")
 
-ItemAvaliacao = tuple["RotuloAvaliacao", Evento, str]
-
 
 class RotuloAvaliacao(BaseModel):
     """Uma linha do JSONL: o evento e a verdade rotulada pelo autor."""
@@ -33,9 +31,19 @@ class RotuloAvaliacao(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     calendario: str
-    id_fonte: str
+    # Vira nome de arquivo no diagnóstico (D15): só letras, dígitos, "_" e "-".
+    id_fonte: str = Field(pattern=r"^[A-Za-z0-9_-]+$")
     e_ia: bool
     idioma: Literal["pt", "en", "bilingue", "outro", "desconhecido"]
+
+
+class ItemAvaliacao(NamedTuple):
+    """Um evento do conjunto, pronto para `classificar_evento`."""
+
+    rotulo: RotuloAvaliacao
+    evento: Evento
+    localizacao_filtro: str
+    comunidade_ia: bool
 
 
 def carregar_rotulos(caminho: Path) -> list[RotuloAvaliacao]:
@@ -110,8 +118,16 @@ def _evento_orm(observacao: EventoNormalizado) -> tuple[Evento, str]:
     return evento, localizacao.situacao
 
 
-def carregar_eventos(rotulos: Sequence[RotuloAvaliacao], dir_fixtures: Path) -> list[ItemAvaliacao]:
-    """(rótulo, evento, localizacao_filtro) na ordem dos rótulos. Id fora do feed → ValueError."""
+def carregar_eventos(
+    rotulos: Sequence[RotuloAvaliacao],
+    dir_fixtures: Path,
+    *,
+    comunidades_ia: frozenset[str] = frozenset(),
+) -> list[ItemAvaliacao]:
+    """Itens na ordem dos rótulos. Id fora do feed → ValueError.
+
+    `comunidade_ia` do item = o calendário do rótulo está em `comunidades_ia` (D15).
+    """
     feeds: dict[str, dict[str, EventoNormalizado]] = {}
     itens: list[ItemAvaliacao] = []
     for rotulo in rotulos:
@@ -123,17 +139,19 @@ def carregar_eventos(rotulos: Sequence[RotuloAvaliacao], dir_fixtures: Path) -> 
                 f"evento {rotulo.id_fonte} não está na fixture do calendário {rotulo.calendario!r}"
             )
         evento, filtro = _evento_orm(observacao)
-        itens.append((rotulo, evento, filtro))
+        itens.append(ItemAvaliacao(rotulo, evento, filtro, rotulo.calendario in comunidades_ia))
     return itens
 
 
 def validar_conjuntos(teste: Sequence[ItemAvaliacao], dev: Sequence[ItemAvaliacao]) -> None:
     """Conjuntos independentes (D7): nenhum id nos dois e casos do prompt só no dev."""
-    ids_dev = {rotulo.id_fonte for rotulo, _, _ in dev}
-    repetidos = sorted(rotulo.id_fonte for rotulo, _, _ in teste if rotulo.id_fonte in ids_dev)
+    ids_dev = {item.rotulo.id_fonte for item in dev}
+    repetidos = sorted(item.rotulo.id_fonte for item in teste if item.rotulo.id_fonte in ids_dev)
     if repetidos:
         raise ValueError(f"eventos nos dois conjuntos: {', '.join(repetidos)}")
-    for rotulo, evento, _ in teste:
-        titulo = evento.titulo.casefold()
+    for item in teste:
+        titulo = item.evento.titulo.casefold()
         if any(termo in titulo for termo in TERMOS_SO_DEV):
-            raise ValueError(f"evento {rotulo.id_fonte} foi usado no prompt e só pode ficar no dev")
+            raise ValueError(
+                f"evento {item.rotulo.id_fonte} foi usado no prompt e só pode ficar no dev"
+            )

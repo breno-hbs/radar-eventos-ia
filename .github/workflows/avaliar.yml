@@ -49,6 +49,18 @@ jobs:
         run: >-
           python -m radar.avaliacao --conjunto "$CONJUNTO"
           --saida "docs/avaliacao/${CONJUNTO}-classificador_v1.md"
+          --diagnostico diagnostico-avaliacao
+
+      # Resposta bruta do LLM nos erros de saída (D15): só como artifact, retenção curta,
+      # nunca commitada. Roda mesmo se a avaliação falhar.
+      - name: Publicar diagnóstico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostico-avaliacao-${{ github.run_number }}
+          path: diagnostico-avaliacao
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Publicar no branch de avaliação
         env:

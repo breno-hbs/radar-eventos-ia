@@ -5,6 +5,10 @@ pull_request; `permissions: contents: write`; o secret ANTHROPIC_API_KEY aparece
 vez, no `env` do passo que roda `python -m radar.avaliacao` (nunca em `run`, nem no env do
 job/workflow); grava `docs/avaliacao/<conjunto>-classificador_v1.md` e publica num branch
 novo `fase-1/f1-07-avaliacao-${{ github.run_number }}`, sem push na main e sem forçar.
+
+F1-07b: o passo da avaliação usa `--diagnostico diagnostico-avaliacao`; um passo
+`actions/upload-artifact@v4` com `if: always()`, path diagnostico-avaliacao,
+retention-days 7 e if-no-files-found: ignore publica o diagnóstico, sem o secret.
 """
 
 from __future__ import annotations
@@ -97,3 +101,33 @@ def test_grava_relatorio_e_publica_em_branch_novo(workflow: dict[Any, Any], text
     assert "git push" in runs
     assert "--force" not in runs
     assert not re.search(r"git push\s+(-f|origin\s+main\b|origin\s+HEAD:main)", runs)
+
+
+# --- F1-07b: diagnóstico como artefato ------------------------------------------------------
+
+DIR_DIAGNOSTICO = "diagnostico-avaliacao"
+
+
+def _passo_avaliacao(workflow: dict[Any, Any]) -> dict[str, Any]:
+    [passo] = [p for p in _passos(workflow) if "python -m radar.avaliacao" in str(p.get("run"))]
+    return passo
+
+
+def test_avaliacao_grava_diagnostico(workflow: dict[Any, Any]) -> None:
+    run = _passo_avaliacao(workflow)["run"]
+    assert re.search(rf"--diagnostico[ =]\"?{DIR_DIAGNOSTICO}\b", run)
+
+
+def test_diagnostico_publicado_como_artefato(workflow: dict[Any, Any]) -> None:
+    passos = _passos(workflow)
+    uploads = [p for p in passos if str(p.get("uses", "")).startswith("actions/upload-artifact")]
+    assert len(uploads) == 1
+    [upload] = uploads
+    assert upload["uses"] == "actions/upload-artifact@v4"
+    assert "always()" in str(upload.get("if", ""))
+    opcoes = upload["with"]
+    assert str(opcoes["path"]).strip() == DIR_DIAGNOSTICO
+    assert int(opcoes["retention-days"]) == 7
+    assert opcoes["if-no-files-found"] == "ignore"
+    assert SECRET not in str(upload)
+    assert passos.index(upload) > passos.index(_passo_avaliacao(workflow))

@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.4 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.5 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -25,7 +25,7 @@ Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro
 Página em inglês não implica evento em inglês; o classificador procura sinais explícitos e guarda o trecho de evidência. Estrangeiro confirmado exige trecho explícito; sem ele o idioma é `desconhecido` e o evento é avisado (D13).
 
 ## 3. Fontes
-- **Fase 1:** Luma via iCal: calendários de organizadores curados + feed da cidade de SP (D1, D2, D3).
+- **Fase 1:** Luma via iCal: calendários de organizadores curados + feed da cidade de SP (D1, D2, D3). Calendários de comunidades de IA (AI Collective, Vibe Space, Codex SP, WoMakersCode) são marcados com `comunidade_ia` em `config/fontes.yaml` (D15).
 - **Fase 2:** Meetup via iCal, condicionado à leitura dos termos de uso.
 - **Busca manual semanal (~15 min):** mede o que o radar perdeu, descobre organizadores novos e cobre o AI Tinkerers SP (D5).
 
@@ -42,6 +42,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
    - saída JSON estruturada, validada com Pydantic e contra o texto do evento; conteúdo externo vai delimitado como dado não confiável, sem link de inscrição, coordenadas nem identificadores, e toda URL dos textos reduzida ao host (o LLM não tem ferramentas);
    - chave de classificação = hash do conteúdo relevante normalizado + versão do prompt + modelo + versão do schema;
    - registro por chamada (inclusive erros): versão do prompt, modelo, tokens, latência e custo estimado; por execução, até 50 chamadas, 200 mil tokens de entrada e 40 mil de saída; uma chamada por evento, sem repetição;
+   - a classificação grava a saída do LLM sem alteração e nunca o texto bruto da resposta. A regra de comunidade de IA (evento de calendário marcado `comunidade_ia` conta como IA, só com saída válida) não é gravada: é aplicada na decisão do aviso (F1-10), a partir dos calendários do evento e do `fontes.yaml` vigente, e na avaliação (D15);
    - saída inválida vira erro registrado, nunca evento aprovado; após 3 erros de saída para a mesma chave o evento fica em "falha de classificação" até a chave mudar, e entra no resumo semanal como "Não classificado — confira manualmente" (com aviso excepcional se acontecer antes do próximo resumo).
 6. **Enriquecimento de preço (Luma):** página do evento, só eventos novos aprovados nos filtros, com limite por execução, cache e sem contorno de bloqueio (D4).
 7. **Estados de preço:** gratuito confirmado, pago com valor, pago sem valor conhecido, preço variável, preço desconhecido.
@@ -84,6 +85,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 - Conjunto de desenvolvimento separado do conjunto de teste fixo. Casos usados para escrever o prompt ficam só no desenvolvimento (D7).
 - Fase 1: 40 eventos sorteados das fixtures fora do repositório (planilha; semente só como referência), teste 30 e dev 10, rotulados pelo autor; erro de saída do LLM conta como "não IA" e à parte; erro de API interrompe a avaliação sem relatório; F1 = 0 quando o recall é 0; acerto de idioma entre os classificados. Roda só pelo workflow manual com secret e limite de gastos; relatório em `docs/avaliacao/` (D14).
 - Limitação conhecida: nos feeds de calendário a descrição não vem no iCal, então a classificação desses eventos depende do título (D14).
+- Após a 1ª avaliação (recall 0,41): comunidades de IA contam como IA também na avaliação; rótulos de idioma só onde o texto declara (o teste atual não mede idioma de forma útil); diagnóstico opcional da resposta bruta dos erros de saída, só como artifact do Actions com retenção de 7 dias; o conjunto de teste já foi visto, então os próximos números são comparação, não medida independente (D15).
 - "Não tenho interesse" alimenta uma fila de revisão manual, nunca o dataset automaticamente.
 - Metas (recall ≥ 95%, precision ≥ 90%, F1 ≥ 90%) são referência até ~100 casos.
 
