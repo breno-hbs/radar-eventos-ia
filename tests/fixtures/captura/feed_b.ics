@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico B
+BEGIN:VEVENT
+UID:evt-DDDD4444@events.lu.ma
+SUMMARY:Hackathon GenAI
+DTSTART:20261215T120000Z
+DTEND:20261215T210000Z
+LOCATION:https://luma.com/event/evt-DDDD4444
+ORGANIZER;CN=Hackers:mailto:hackers@example.com
+DESCRIPTION:Get up-to-date information at: https://luma.com/x7k2p9q1\n\nNovo: https://luma.com/hackathon-genai
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico com hosts estranhos
+BEGIN:VEVENT
+UID:evt-GGGG7777@events.lu.ma
+SUMMARY:Evento com links de outros hosts
+DTSTART:20261218T220000Z
+DTEND:20261219T010000Z
+DESCRIPTION:Falsos: https://luma.com.evil.example/golpe http://luma.com/sem-https https://lu.ma/encurtado https://www.luma.com/com-www https://evil.example/luma.com/x\n\nVerdadeiro: https://luma.com/meetup-ia-sp
+END:VEVENT
+END:VCALENDAR

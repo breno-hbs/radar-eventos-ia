@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico com e-mail ofuscado
+BEGIN:VEVENT
+UID:evt-HHHH8888@events.lu.ma
+SUMMARY:Evento com contato ofuscado
+DTSTART:20261222T220000Z
+DTEND:20261223T010000Z
+LOCATION:https://luma.com/event/evt-HHHH8888
+DESCRIPTION:Sem link de pagina.\n\nContato: joao&#64;example.com
+END:VEVENT
+END:VCALENDAR

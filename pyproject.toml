@@ -5,6 +5,7 @@ description = "Radar de eventos de IA em São Paulo: coleta, classifica e avisa 
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "httpx==0.28.1",
     "pydantic==2.14.4",
     "pydantic-settings==2.16.3",
 ]

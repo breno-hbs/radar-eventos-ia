@@ -1,0 +1,42 @@
+name: Capturar fixtures da Luma
+
+# Captura única e manual (D9): baixa os feeds iCal e 2 páginas de evento, redige e-mails
+# e publica o resultado no branch de dados para revisão. Nunca faz push na main nem força
+# o push: para refazer a captura, apague antes o branch de dados.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capturar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+
+      - name: Capturar fixtures
+        run: python -m radar.fontes.captura_fixtures tests/fixtures
+
+      - name: Verificar e-mails nas fixtures
+        run: python -m radar.fontes.captura_fixtures --verificar tests/fixtures
+
+      - name: Publicar no branch de dados
+        run: |
+          git checkout -B fase-1/f1-02-fixtures-dados
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tests/fixtures/luma
+          git diff --cached --quiet && { echo "Nada novo capturado."; exit 0; }
+          git commit -m "F1-02: fixtures reais da Luma"
+          git push origin fase-1/f1-02-fixtures-dados

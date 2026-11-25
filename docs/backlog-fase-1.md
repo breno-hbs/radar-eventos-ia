@@ -37,9 +37,15 @@
 - **Aceite:** CI verde num PR com um teste trivial.
 
 ### F1-02 — Fixtures reais da Luma
-- Workflow manual (`workflow_dispatch`) que baixa uma vez os feeds iCal da lista de organizadores e da cidade e 2 páginas de evento, e salva em `tests/fixtures/luma/`.
+- Workflow manual (`workflow_dispatch`) que baixa uma vez os feeds iCal da lista de organizadores e da cidade e 2 páginas de evento, e salva em `tests/fixtures/luma/` (regras de privacidade e de acesso na D9).
 - Os feeds do Codex e do Vibe Space são confirmados aqui.
-- **Sua parte:** clicar em "Run workflow" na aba Actions (1 clique).
+- **Sequência:**
+  1. PR com o script (`radar.fontes.captura_fixtures`) e o workflow → merge na `main`.
+  2. O autor clica em "Run workflow" (Actions → Capturar fixtures da Luma).
+  3. O workflow captura, verifica e-mails e cria o branch `fase-1/f1-02-fixtures-dados` com as fixtures.
+  4. Claude revisa os dados, atualiza `docs/fase-0-viabilidade.md` com o resultado do Codex/Vibe Space e abre o segundo PR a partir desse branch.
+  - Observação: push feito pelo `GITHUB_TOKEN` não dispara o `testes.yml`; o segundo PR precisa de um commit do Claude para o CI rodar.
+- **Sua parte:** fazer os dois merges e clicar em "Run workflow" (1 clique).
 - **Aceite:** fixtures versionadas; IDs do Codex e Vibe Space confirmados ou marcados como inválidos em `docs/fase-0-viabilidade.md`.
 
 ### F1-03 — Coletor Luma
