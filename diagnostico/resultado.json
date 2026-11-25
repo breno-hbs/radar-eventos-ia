@@ -1,5 +1,5 @@
 {
-  "executado_em": "2026-11-25T14:46:32.855422+00:00",
+  "executado_em": "2026-11-25T14:52:09.829160+00:00",
   "robots": [
     {
       "url": "https://luma.com/robots.txt",
@@ -79,7 +79,7 @@
       "url_final": "https://luma.com/aic-sa-2-26",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "tamanho": 153679,
+      "tamanho": 153680,
       "ids_calendario": [
         "cal-E74MDlDKBaeAwXK"
       ],
@@ -95,7 +95,7 @@
       "url_final": "https://luma.com/ayg5q20m",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "tamanho": 182814,
+      "tamanho": 182815,
       "ids_calendario": [
         "cal-sAAnGigXnTQWpw6"
       ],
@@ -132,7 +132,7 @@
       "url_final": "https://luma.com/devin-sp-2",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "tamanho": 216090,
+      "tamanho": 216087,
       "ids_calendario": [
         "cal-s9CExmUfS7kMu50"
       ],
@@ -169,7 +169,7 @@
       "url_final": "https://luma.com/saopaulo",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "tamanho": 288486,
+      "tamanho": 288679,
       "ids_calendario": [
         "cal-12E3GKkrCVMzPqX",
         "cal-7NlnR7M5Ew20s0e",
@@ -229,7 +229,11 @@
             "local": "Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paulo - SP, 04547-130,",
             "url": "",
             "tamanho_descricao": 131,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-oJnGMDJ7aiuvsu9@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/ykvah3q3"
+            ]
           }
         ]
       }
@@ -268,7 +272,11 @@
             "local": "Zup IT Innovation, Rua Pascoal Pais, 525 - 3º e 4º andar - Brooklin, São Paulo -",
             "url": "",
             "tamanho_descricao": 150,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-14lTTiq5UPNPpai@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/7a3wkm3q"
+            ]
           }
         ]
       }
@@ -307,7 +315,11 @@
             "local": "School of Architecture and Urbanism of the University of Sao Paulo, Universidade",
             "url": "",
             "tamanho_descricao": 189,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-9kBpb6n7CQen7vt@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/eb9h4t4i"
+            ]
           }
         ]
       }
@@ -346,7 +358,11 @@
             "local": "https://luma.com/event/evt-XULaC5zGCiNGkWG",
             "url": "",
             "tamanho_descricao": 89,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-XULaC5zGCiNGkWG@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-du-11-25"
+            ]
           },
           {
             "titulo": "The AI Collective Podcast with AJ & Catherine: Wednesday, Nov 25",
@@ -354,7 +370,11 @@
             "local": "https://luma.com/event/evt-GUTJIfcwvhHjbyp",
             "url": "",
             "tamanho_descricao": 163,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-GUTJIfcwvhHjbyp@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/genai-b9wy"
+            ]
           },
           {
             "titulo": "#LATechWeek AI Collective Pitch Night (w/ The AI Collective)",
@@ -362,7 +382,11 @@
             "local": "https://luma.com/event/evt-YY3wwNrsTyfjSQw",
             "url": "",
             "tamanho_descricao": 154,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-YY3wwNrsTyfjSQw@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-la-og-pitch-night"
+            ]
           },
           {
             "titulo": "Network event with the AI Collective",
@@ -370,7 +394,11 @@
             "local": "https://luma.com/event/evt-1FDGHEnrfEPFKRM",
             "url": "",
             "tamanho_descricao": 166,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-1FDGHEnrfEPFKRM@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-ad-11-12"
+            ]
           },
           {
             "titulo": "Why Should I Care About the EU AI Act?",
@@ -378,7 +406,11 @@
             "local": "Maria 01, Lapinlahdenkatu 16, 00180 Helsinki, Finland",
             "url": "",
             "tamanho_descricao": 209,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-ZgHu3XgbZVYqyNI@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-fi-why-should-i-care-about-the-eu-ai-act"
+            ]
           },
           {
             "titulo": "Stripe Indore Community Launch Buildathon",
@@ -386,7 +418,11 @@
             "local": "https://luma.com/event/evt-WhiBf0YaLSGFD7U",
             "url": "",
             "tamanho_descricao": 116,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-WhiBf0YaLSGFD7U@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/stripe-indore-community"
+            ]
           },
           {
             "titulo": "Domain Experts, Assemble: A Lovable x AI Collective Build Day (w/ The AI Collective)",
@@ -394,7 +430,11 @@
             "local": "https://luma.com/event/evt-Htx7MDTwhhasRBi",
             "url": "",
             "tamanho_descricao": 143,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-Htx7MDTwhhasRBi@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/aic-is-9-5"
+            ]
           },
           {
             "titulo": "LEADERSHIP LINKEDIN NETWORKING SUMMIT 2026",
@@ -402,7 +442,11 @@
             "local": "Nina Next Space, 180/1 Đ. Nguyễn Tất Thành, Xóm Chiếu, Hồ Chí Minh, Vietnam",
             "url": "",
             "tamanho_descricao": 148,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-3YhAM7t5lwNKDen@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/pr9k3uap"
+            ]
           }
         ]
       }
@@ -441,7 +485,11 @@
             "local": "FIAP - Paulista, Av. Paulista, 1106 - 7º andar - Bela Vista, São Paulo - SP, 013",
             "url": "",
             "tamanho_descricao": 143,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-AXkUVWCxURYLxoT@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/afm6b12v"
+            ]
           }
         ]
       }
@@ -480,7 +528,11 @@
             "local": "Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paulo - SP, 04547-130,",
             "url": "",
             "tamanho_descricao": 183,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-xlla7UIGWU7AR4n@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/gb0prlff"
+            ]
           }
         ]
       }
@@ -519,7 +571,11 @@
             "local": "TEMPO by Porsche, Rua Maria Carolina, 624 - Loja Térreo - Pinheiros, São Paulo -",
             "url": "",
             "tamanho_descricao": 132,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-oy5YHy8BtOYbCbp@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/qfrzgtbn"
+            ]
           },
           {
             "titulo": "2º Encontro de Porsches na TEMPO [Último do ano]",
@@ -527,7 +583,11 @@
             "local": "TEMPO by Porsche, Rua Maria Carolina, 624 - Loja Térreo - Pinheiros, São Paulo -",
             "url": "",
             "tamanho_descricao": 132,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-iNzHAf51UTMPfEE@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/qc2krjcw"
+            ]
           }
         ]
       }
@@ -566,7 +626,11 @@
             "local": "R. Itapeva, 432 - Bela Vista, São Paulo - SP, 01332-000, Brazil",
             "url": "",
             "tamanho_descricao": 470,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-L6KNoab9Q80j1Mm@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/b8whaegx"
+            ]
           }
         ]
       }
@@ -615,7 +679,11 @@
             "local": "Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paulo - SP, 04547-130,",
             "url": "",
             "tamanho_descricao": 729,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-oJnGMDJ7aiuvsu9@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/ykvah3q3"
+            ]
           },
           {
             "titulo": "Devin Meetup São Paulo",
@@ -623,7 +691,11 @@
             "local": "https://luma.com/event/evt-YEkDcmJq3cWyjK5",
             "url": "",
             "tamanho_descricao": 741,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-YEkDcmJq3cWyjK5@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/devin-sp-4"
+            ]
           },
           {
             "titulo": "MUG São Paulo NOV 2026 - Vector Search na Prática & mais",
@@ -631,7 +703,11 @@
             "local": "FIAP - Paulista, Av. Paulista, 1106 - 7º andar - Bela Vista, São Paulo - SP, 013",
             "url": "",
             "tamanho_descricao": 740,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-AXkUVWCxURYLxoT@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/afm6b12v"
+            ]
           },
           {
             "titulo": "Bora Trocar | Negritude, empreendedorismo e mercado de trabalho",
@@ -639,7 +715,11 @@
             "local": "R. Itapeva, 432 - Bela Vista, São Paulo - SP, 01332-000, Brazil",
             "url": "",
             "tamanho_descricao": 1070,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-L6KNoab9Q80j1Mm@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/b8whaegx"
+            ]
           },
           {
             "titulo": "Oficina - Cerâmica fria",
@@ -647,7 +727,11 @@
             "local": "School of Architecture and Urbanism of the University of Sao Paulo, Universidade",
             "url": "",
             "tamanho_descricao": 411,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-9kBpb6n7CQen7vt@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/eb9h4t4i"
+            ]
           },
           {
             "titulo": "Brunch com Felipe Nasr",
@@ -655,7 +739,11 @@
             "local": "TEMPO by Porsche, Rua Maria Carolina, 624 - Loja Térreo - Pinheiros, São Paulo -",
             "url": "",
             "tamanho_descricao": 373,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-oy5YHy8BtOYbCbp@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/qfrzgtbn"
+            ]
           },
           {
             "titulo": "ENTRE GALERIAS: Roteiro Cultural no Centro Histórico",
@@ -663,7 +751,11 @@
             "local": "Formosa Hi-Fi, Viaduto do Chá - Centro Histórico de São Paulo, São Paulo - SP, 0",
             "url": "",
             "tamanho_descricao": 834,
-            "parece_ia": false
+            "parece_ia": false,
+            "uid": "evt-dXFOQDsspqC1038@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/f0c1qgcn"
+            ]
           },
           {
             "titulo": "Construindo IA em Escala: da Engenharia ao Impacto no Cliente",
@@ -671,9 +763,111 @@
             "local": "Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paulo - SP, 04547-130,",
             "url": "",
             "tamanho_descricao": 775,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "evt-xlla7UIGWU7AR4n@events.lu.ma",
+            "urls_na_descricao": [
+              "https://luma.com/gb0prlff"
+            ]
           }
         ]
+      }
+    }
+  ],
+  "luma_enriquecimento": [
+    {
+      "url": "https://luma.com/ykvah3q3",
+      "url_final": "https://luma.com/ykvah3q3",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 154795,
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/ykvah3q3\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/SoldOut\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
+      }
+    },
+    {
+      "url": "https://luma.com/7a3wkm3q",
+      "url_final": "https://luma.com/7a3wkm3q",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 170859,
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/7a3wkm3q\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/InStock\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
+      }
+    },
+    {
+      "url": "https://luma.com/eb9h4t4i",
+      "url_final": "https://luma.com/eb9h4t4i",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho": 110161,
+      "json_ld": {
+        "tem_event": true,
+        "campos": [
+          "@context",
+          "@id",
+          "@type",
+          "description",
+          "endDate",
+          "eventAttendanceMode",
+          "eventStatus",
+          "image",
+          "location",
+          "name",
+          "offers",
+          "organizer",
+          "startDate",
+          "url"
+        ],
+        "tem_startDate": true,
+        "tem_location": true,
+        "tem_offers": true,
+        "offers_exemplo": "[{\"@type\": \"Offer\", \"url\": \"https://luma.com/eb9h4t4i\", \"name\": \"General Admission\", \"price\": 0, \"priceCurrency\": \"usd\", \"availability\": \"https://schema.org/SoldOut\"}]",
+        "attendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": null
       }
     }
   ],
@@ -712,7 +906,15 @@
             "local": "",
             "url": "https://www.meetup.com/aidev-saopaulo/events/317511525/",
             "tamanho_descricao": 2391,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "event_317511525@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026101209)[Event",
+              "https://www.aicamp.ai/event/eventdetails/W2026120109)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)",
+              "https://www.aicamp.ai/event/eventdetails/W2026121709)"
+            ]
           },
           {
             "titulo": "Google AI Deep Dive (Ep 6) - Platform Engineering on GKE using Gemini",
@@ -720,7 +922,12 @@
             "local": "",
             "url": "https://www.meetup.com/aidev-saopaulo/events/317411643/",
             "tamanho_descricao": 1249,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "event_317411643@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)"
+            ]
           },
           {
             "titulo": "AI Webinar (Diagrid and AWS) - Durable Execution for Agents",
@@ -728,7 +935,12 @@
             "local": "",
             "url": "https://www.meetup.com/aidev-saopaulo/events/317414190/",
             "tamanho_descricao": 2445,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "event_317414190@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)"
+            ]
           }
         ]
       }
@@ -767,7 +979,15 @@
             "local": "",
             "url": "https://www.meetup.com/enterprise-ai-sao-paulo/events/317511527/",
             "tamanho_descricao": 2386,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "event_317511527@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026101209)[Event",
+              "https://www.aicamp.ai/event/eventdetails/W2026120109)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)",
+              "https://www.aicamp.ai/event/eventdetails/W2026121709)"
+            ]
           },
           {
             "titulo": "Google AI Deep Dive (Ep 6) - Platform Engineering on GKE using Gemini",
@@ -775,7 +995,12 @@
             "local": "",
             "url": "https://www.meetup.com/enterprise-ai-sao-paulo/events/317411640/",
             "tamanho_descricao": 1244,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "event_317411640@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)"
+            ]
           },
           {
             "titulo": "AI Webinar (Diagrid and AWS) - Durable Execution for Agents",
@@ -783,7 +1008,12 @@
             "local": "",
             "url": "https://www.meetup.com/enterprise-ai-sao-paulo/events/317414209/",
             "tamanho_descricao": 2440,
-            "parece_ia": true
+            "parece_ia": true,
+            "uid": "event_317414209@meetup.com",
+            "urls_na_descricao": [
+              "https://www.aicamp.ai/event/eventdetails/W2026120409)",
+              "https://www.aicamp.ai/event/eventdetails/W2026120910)"
+            ]
           }
         ]
       }
@@ -794,7 +1024,7 @@
     "url_final": "https://sao-paulo.aitinkerers.org/",
     "status": 200,
     "content_type": "text/html; charset=utf-8",
-    "tamanho": 574879,
+    "tamanho": 575021,
     "links_feed": [
       "https://aitinkerers.org/api/public/v1/events/blog_UMa2gozI_k0/calendar.ics"
     ],
