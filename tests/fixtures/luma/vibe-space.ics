@@ -1,0 +1,3270 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//Vibe Space Academy//EN
+X-WR-CALNAME:Vibe Space Academy
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20240527T220000Z
+DTEND:20240528T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-m1WfRPhYOxOV9qT@events.lu.ma
+SUMMARY:Pizza com The Graph Brasil
+DESCRIPTION:Get up-to-date information at: https://luma.com/pq7wsgia\n\nAd
+ dress:\nCEMG - Centro Empresarial Mario Garnero\n13º Piso, CJ. 133\nSão 
+ Paulo, São Paulo\nBrazil\n\nHosted by Matheus Pagani & Danilo Falco
+LOCATION:CEMG - Centro Empresarial Mario Garnero, Av. Brig. Faria Lima, 14
+ 61-1485 - Pinheiros, São Paulo - SP, 01452-002, Brazil
+GEO:-23.570363;-46.690656
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20241007
+DTEND;VALUE=DATE:20241012
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-pG3Y6C6KDBcjfaA@events.lu.ma
+SUMMARY:SF AI2Web3 Bootcamp
+DESCRIPTION:Get up-to-date information at: https://luma.com/72pf06p0\n\nAd
+ dress:\n717 Market St #100\nDigital Garage 📍717 Market St #100, San Fra
+ ncisco, CA 94103 (FIDI, SOMA, Union Square). Identify yourself at the rece
+ ption then head to third floor.\nSan Francisco, California\nUnited States
+ \n\nHosted by Matheus Pagani & 5 others
+LOCATION:717 Market St #100, San Francisco, CA 94103, USA
+GEO:37.786982;-122.403855
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241014T200000Z
+DTEND:20241015T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-PnGbiBQVHsgDgdd@events.lu.ma
+SUMMARY:From Solidity to ZK with ZKM
+DESCRIPTION:Get up-to-date information at: https://luma.com/u1r03qc5\n\nAd
+ dress:\nEdge & Node House of Web3\nThe event venue is in the Presidio, nea
+ r the golden gate bridge. Ring the bell to enter and head to the 2nd floor
+  reception.\nSan Francisco, California\nUnited States\n\nHosted by Matheus
+  Pagani & 3 others
+LOCATION:Edge & Node House of Web3, Building 103, 103 Montgomery St, San F
+ rancisco, CA 94129, USA
+GEO:37.800898;-122.458976
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20241209
+DTEND;VALUE=DATE:20241214
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-AOI6VlcZHu1TqSn@events.lu.ma
+SUMMARY:NY AI2WEB3 Bootcamp
+DESCRIPTION:Get up-to-date information at: https://luma.com/wpulcyh2\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Matheus Pagani & 5
+  others
+LOCATION:https://luma.com/event/evt-AOI6VlcZHu1TqSn
+GEO:40.732270858148205;-73.99010051868315
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241212T230000Z
+DTEND:20241213T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-59Mu8dymwunjEyX@events.lu.ma
+SUMMARY:DeAI Day with VARA and ORA
+DESCRIPTION:Get up-to-date information at: https://luma.com/0wixfa6r\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Matheus Pagani & B
+ uild City
+LOCATION:https://luma.com/event/evt-59Mu8dymwunjEyX
+GEO:40.73365277790269;-73.99112019268824
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241213T230000Z
+DTEND:20241214T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ENw3R2ABJG88JB7@events.lu.ma
+SUMMARY:DeAI Agents with NEAR, Coinbase and Fleek
+DESCRIPTION:Get up-to-date information at: https://luma.com/v2ukl6bh\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Matheus Pagani & B
+ uild City
+LOCATION:https://luma.com/event/evt-ENw3R2ABJG88JB7
+GEO:40.7353519918422;-73.98767079858405
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20241214T230000Z
+DTEND:20241215T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Build City":MAILTO:redigido@exemplo.invalid
+UID:evt-CoscwlKWwn3DFJ0@events.lu.ma
+SUMMARY:DeAI DAY NYC- Founder & Builder Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/u6tjspd1\n\nAd
+ dress:\n1 World Trade Center\nThe Block Office - Floor 77 SUITE 77D, NEW Y
+ ORK, NY 10007-0089\nNew York, New York\nUnited States\n\nHosted by Build C
+ ity & 6 others
+LOCATION:1 World Trade Center, New York, NY 10007, USA
+GEO:40.713004;-74.013128
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250211T230000Z
+DTEND:20250212T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-2f1FLn8twV6D0EH@events.lu.ma
+SUMMARY:Agent Camp NYC by Dabl Club
+DESCRIPTION:Get up-to-date information at: https://luma.com/agent-camp\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-2f1FLn8twV6D0EH
+GEO:40.7245005452218;-73.99909319612345
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250212T230000Z
+DTEND:20250213T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-LZJSyGR0I1bqFsi@events.lu.ma
+SUMMARY:Agent Camp NYC by Dabl Club
+DESCRIPTION:Get up-to-date information at: https://luma.com/fo0cb0jp\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-LZJSyGR0I1bqFsi
+GEO:40.72208545597826;-74.00214920726097
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250214T230000Z
+DTEND:20250215T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Lc0LjOMdgnODwCL@events.lu.ma
+SUMMARY:Agent Camp NYC with ORA and Lab 7007
+DESCRIPTION:Get up-to-date information at: https://luma.com/ny-camp-ora\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-Lc0LjOMdgnODwCL
+GEO:40.70525742468505;-74.01609821182953
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250214T230000Z
+DTEND:20250215T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-NWcRkXa4rUYthng@events.lu.ma
+SUMMARY:Agent Camp NYC by Dabl Club
+DESCRIPTION:Get up-to-date information at: https://luma.com/nyc-agent-camp
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Paga
+ ni & Arpit Gupta
+LOCATION:https://luma.com/event/evt-NWcRkXa4rUYthng
+GEO:40.70577069921564;-74.01160621041646
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250313T210000Z
+DTEND:20250314T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-xREZ6FVwBnZtdQt@events.lu.ma
+SUMMARY:Agent Bootcamp SF
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-bootcamp\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+  & Era Qian
+LOCATION:https://luma.com/event/evt-xREZ6FVwBnZtdQt
+GEO:37.78666951797484;-122.40173119815147
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250416T000000Z
+DTEND:20250416T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-qY134Rs7lRyEBlS@events.lu.ma
+SUMMARY:Vibe Coding 101
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays-
+ 1\n\nHosted by Matheus Pagani, Emerging Tech Coalition & Build City
+LOCATION:https://luma.com/event/evt-qY134Rs7lRyEBlS
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250422T220000Z
+DTEND:20250423T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-nXTV49aVRIwo3Kn@events.lu.ma
+SUMMARY:Vibe Tuesdays - Office Hours
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays-
+ 2\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-nXTV49aVRIwo3Kn
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250424T220000Z
+DTEND:20250424T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-M844GG6qgxy8OTp@events.lu.ma
+SUMMARY:Vibe Thursdays - Guest Workshop with Kevin Jones
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-thursdays
+ -kevin\n\nHosted by Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-M844GG6qgxy8OTp
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250429T220000Z
+DTEND:20250430T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-KGeGsQmGjm5N88P@events.lu.ma
+SUMMARY:Vibe Tuesdays - Mastering Cursor
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays-
+ cursor\n\nHosted by Matheus Pagani & Emerging Tech Coalition
+LOCATION:https://luma.com/event/evt-KGeGsQmGjm5N88P
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250501T210000Z
+DTEND:20250501T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-dKeA25UwGOary0T@events.lu.ma
+SUMMARY:Vibe Thursdays - Guest Workshop with RJ from AuraFlow
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays-
+ rj\n\nHosted by Matheus Pagani & Emerging Tech Coalition
+LOCATION:https://luma.com/event/evt-dKeA25UwGOary0T
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250506T170000Z
+DTEND:20250506T180000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-JVXps4jCV7e6gPE@events.lu.ma
+SUMMARY:Vibe Tuesdays - Twitter Space with CryptoFede from Mode
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays-
+ cryptofede\n\nHosted by Matheus Pagani, Build City & CryptoFede
+LOCATION:https://luma.com/event/evt-JVXps4jCV7e6gPE
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250506T220000Z
+DTEND:20250506T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-iraQvDNudxFgrN0@events.lu.ma
+SUMMARY:Vibe Tuesdays - Guest Workshop with Alec James from Nexus
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays-
+ alec\n\nHosted by Matheus Pagani & Alec James
+LOCATION:https://luma.com/event/evt-iraQvDNudxFgrN0
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250508T220000Z
+DTEND:20250508T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-pUemzxtk2GXifgE@events.lu.ma
+SUMMARY:Vibe Thursdays - Guest Workshop with Patrick Skinner
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-thursdays
+ -patrick\n\nHosted by Matheus Pagani & Patrick Skinner
+LOCATION:https://luma.com/event/evt-pUemzxtk2GXifgE
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250513T220000Z
+DTEND:20250513T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-7Wl7VNz7JDnMaLA@events.lu.ma
+SUMMARY:Vibe Tuesdays - Guest Workshop with Austin Griffith
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays-
+ web3\n\nHosted by Matheus Pagani & austin
+LOCATION:https://luma.com/event/evt-7Wl7VNz7JDnMaLA
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250515T210000Z
+DTEND:20250515T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-xLVAXlGReC0Q2S8@events.lu.ma
+SUMMARY:Vibe Thursdays - Guest Workshop with Naruto from Avail
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-thursdays
+ -naruto\n\nHosted by Matheus Pagani & Naruto
+LOCATION:https://luma.com/event/evt-xLVAXlGReC0Q2S8
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250520T200000Z
+DTEND:20250520T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-CfGbyHyWnV9Bkqc@events.lu.ma
+SUMMARY:Vibe Tuesdays - Getting Ready to Play
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays-
+ play\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-CfGbyHyWnV9Bkqc
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250522T200000Z
+DTEND:20250522T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-cRxUH79EDo7yInH@events.lu.ma
+SUMMARY:Vibe Thursdays - Meet the Players
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-thursdays
+ \n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-cRxUH79EDo7yInH
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250523
+DTEND;VALUE=DATE:20250603
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-rhJRwob1enPJMWv@events.lu.ma
+SUMMARY:Vibe Play Earn Hackathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibathon\n\nHo
+ sted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-rhJRwob1enPJMWv
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250527T200000Z
+DTEND:20250527T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-gQCJZoMNRAsBluW@events.lu.ma
+SUMMARY:Vibe Tuesdays - Web3 Games with Tap Ants Voucher System
+DESCRIPTION:Get up-to-date information at: https://luma.com/tap-ants\n\nHo
+ sted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-gQCJZoMNRAsBluW
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250529T210000Z
+DTEND:20250529T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-up0hLrH8EJKAPR3@events.lu.ma
+SUMMARY:Vibe Thursdays - From Vibe to Hire
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-hire\n\nH
+ osted by Matheus Pagani & Laura
+LOCATION:https://luma.com/event/evt-up0hLrH8EJKAPR3
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250603T210000Z
+DTEND:20250603T213000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-C05aziIo4ynPZMA@events.lu.ma
+SUMMARY:Vibe Tuesdays - Next Steps
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-tuesdays
+ \n\nHosted by Matheus Pagani & Build City
+LOCATION:https://luma.com/event/evt-C05aziIo4ynPZMA
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250605T203000Z
+DTEND:20250605T223000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Windsurf":MAILTO:redigido@exemplo.invalid
+UID:evt-vnLtEMssuJoj9yj@events.lu.ma
+SUMMARY:Windsurf NYC Meetup: Tech Week Edition
+DESCRIPTION:Get up-to-date information at: https://luma.com/surfnyc\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by Windsurf & 3 others
+LOCATION:https://luma.com/event/evt-vnLtEMssuJoj9yj
+GEO:40.71662912703375;-73.99393027761981
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250612T210000Z
+DTEND:20250613T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Build City":MAILTO:redigido@exemplo.invalid
+UID:evt-KzIxMR5QNpssA1K@events.lu.ma
+SUMMARY:Build City Live: Vibe Coding NYC — Turning Ideas Into Reality
+DESCRIPTION:Get up-to-date information at: https://luma.com/ljjkltsy\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Build City & Mathe
+ us Pagani
+LOCATION:https://luma.com/event/evt-KzIxMR5QNpssA1K
+GEO:40.72554586318238;-74.0013819025133
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250612T210000Z
+DTEND:20250612T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ture0nPmFR9UpHV@events.lu.ma
+SUMMARY:Vibe Thursdays - Casual Meetup with Celo
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-thursdays
+ -sophia-celo\n\nHosted by Matheus Pagani & Sneha Kumari 
+LOCATION:https://luma.com/event/evt-ture0nPmFR9UpHV
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250619T220000Z
+DTEND:20250619T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-qty0QyFavrOGAgR@events.lu.ma
+SUMMARY:Vibe Thursdays - Guest Workshop with Kevin Jones
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-thursdays
+ -token-api\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-qty0QyFavrOGAgR
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250626T150000Z
+DTEND:20250626T180000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Flow.com":MAILTO:redigido@exemplo.invalid
+UID:evt-7HGtVNY3qBGJhN2@events.lu.ma
+SUMMARY:Web3 Founders & VCs Brunch @ Permissionless & NFT NYC
+DESCRIPTION:Get up-to-date information at: https://luma.com/4zxzuu2t\n\nAd
+ dress:\nWarehouse Studios\nSecond Floor\nKings County, New York\nUnited St
+ ates\n\nHosted by Flow.com & 6 others
+LOCATION:Warehouse Studios, 3905 2nd Ave 2nd Floor, Brooklyn, NY 11232, US
+ A
+GEO:40.6550254;-74.0105514
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250701T190000Z
+DTEND:20250701T200000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-eSmKbqEyPlp7Oxo@events.lu.ma
+SUMMARY:Vibe Tuesdays - Vibe Designing is here
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-designing
+ \n\nHosted by Matheus Pagani & Mattia | Reweb
+LOCATION:https://luma.com/event/evt-eSmKbqEyPlp7Oxo
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250703T210000Z
+DTEND:20250703T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-rUiA33hsBuL0dsr@events.lu.ma
+SUMMARY:Vibe Thursdays - The Art of Prompt Engineering
+DESCRIPTION:Get up-to-date information at: https://luma.com/prompt-art\n\n
+ Hosted by Matheus Pagani & Sneha Kumari 
+LOCATION:https://luma.com/event/evt-rUiA33hsBuL0dsr
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250708T230000Z
+DTEND:20250709T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matt Bergland":MAILTO:redigido@exemplo.invalid
+UID:evt-UWH48jApaWEHBb2@events.lu.ma
+SUMMARY:Windsurf Brooklyn Build Session
+DESCRIPTION:Get up-to-date information at: https://luma.com/bkbuild\n\nAdd
+ ress:\n339 Troutman St\nKings County, New York\nUnited States\n\nHosted by
+  Matt Bergland & 4 others
+LOCATION:339 Troutman St, Brooklyn, NY 11237, USA
+GEO:40.70509759999999;-73.9244746
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250710T210000Z
+DTEND:20250710T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Rop70jAmzTk3YDq@events.lu.ma
+SUMMARY:Vibe Thursdays - Vibing Go-To-Market Strategies
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-gtm\n\nHo
+ sted by Matheus Pagani, cg & Otakar Libal
+LOCATION:https://luma.com/event/evt-Rop70jAmzTk3YDq
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250714T200000Z
+DTEND:20250715T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Build City":MAILTO:redigido@exemplo.invalid
+UID:evt-D1GNiuK2GkVYqE4@events.lu.ma
+SUMMARY:Vibe Coding Week - Buffalo
+DESCRIPTION:Get up-to-date information at: https://luma.com/8mb7l0cz\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Build City & 4 oth
+ ers
+LOCATION:https://luma.com/event/evt-D1GNiuK2GkVYqE4
+GEO:42.89555862057736;-78.87101656261676
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250717T200000Z
+DTEND:20250717T210000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-xzYFToYpUobBgW2@events.lu.ma
+SUMMARY:Vibe Thursdays - From Idea to Pitch
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-buf
+ falo\n\nHosted by Matheus Pagani & Build City
+LOCATION:https://luma.com/event/evt-xzYFToYpUobBgW2
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250718T180000Z
+DTEND:20250718T210000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-CfC2KkuIHzaQWHb@events.lu.ma
+SUMMARY:Demo Day: Vibe Coding Week - Buffalo
+DESCRIPTION:Get up-to-date information at: https://luma.com/buffalo-vibes
+ \n\nAddress:\n640 Ellicott St\nBuffalo, New York\nUnited States\n\nHosted 
+ by Matheus Pagani & Build City
+LOCATION:640 Ellicott St, Buffalo, NY 14203, USA
+GEO:42.895881599999996;-78.8692689
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250722T220000Z
+DTEND:20250723T003000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-cEUifGtr7X1bILL@events.lu.ma
+SUMMARY:Vibe Coding After Dark: Building AI Agents (RSVP with Splash requi
+ red to check in)
+DESCRIPTION:Get up-to-date information at: https://luma.com/shopify-vibes
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Paga
+ ni
+LOCATION:https://luma.com/event/evt-cEUifGtr7X1bILL
+GEO:40.72700323501386;-73.99659474838471
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250726T180000Z
+DTEND:20250726T200000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-GMlgPGS4WgRfCw3@events.lu.ma
+SUMMARY:Vibe Pitch Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch\n\n
+ Hosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-GMlgPGS4WgRfCw3
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250728T200000Z
+DTEND:20250729T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Datamellon":MAILTO:redigido@exemplo.invalid
+UID:evt-nrAH22cKYu6WgiO@events.lu.ma
+SUMMARY:Datamellon AI Ignite Global Finals – San Francisco
+DESCRIPTION:Get up-to-date information at: https://luma.com/2thpjrco\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Datamellon & 5 oth
+ ers
+LOCATION:https://luma.com/event/evt-nrAH22cKYu6WgiO
+GEO:37.80070286585758;-122.41365677048925
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250731T133000Z
+DTEND:20250731T143000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ro4DoEFMNHwYB61@events.lu.ma
+SUMMARY:Vibe Thursdays - Founder Success Story: ShopMaven AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/shopmaven-laun
+ ch-story\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-ro4DoEFMNHwYB61
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250805T220000Z
+DTEND:20250806T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-X7g4up1K9h4OzC3@events.lu.ma
+SUMMARY:Vibe Coding After Dark: Getting Started
+DESCRIPTION:Get up-to-date information at: https://luma.com/getting-vibed
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Paga
+ ni & Robert Lee
+LOCATION:https://luma.com/event/evt-X7g4up1K9h4OzC3
+GEO:40.70403640099073;-74.01575342019478
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250807T210000Z
+DTEND:20250807T213000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-iNpyp92NcUz1loj@events.lu.ma
+SUMMARY:Vibe Coder University Invite-Only Pre-Launch
+DESCRIPTION:Get up-to-date information at: https://luma.com/vcu\n\nHosted 
+ by Matheus Pagani & Vibe Coder University
+LOCATION:https://luma.com/event/evt-iNpyp92NcUz1loj
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250807T220000Z
+DTEND:20250808T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Coeus Collective Ventures":MAILTO:redigido@exemplo.invalid
+UID:evt-TMqLCP7cnADIkNb@events.lu.ma
+SUMMARY:Liquid Equity: The Premiere Summer 2025 Event for Founders, Creato
+ rs, & Investors
+DESCRIPTION:Get up-to-date information at: https://luma.com/vrfr8cdc\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Coeus Collective V
+ entures & 5 others
+LOCATION:https://luma.com/event/evt-TMqLCP7cnADIkNb
+GEO:40.74280207697618;-73.99119966185837
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250809T160000Z
+DTEND:20250809T200000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Maria Ashby":MAILTO:redigido@exemplo.invalid
+UID:evt-xBNiqcvi4FGXAJa@events.lu.ma
+SUMMARY:Vibe Code Island: A Vibe Coding + AI  Hackathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/xe49waty\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Maria Ashby & Math
+ eus Pagani
+LOCATION:https://luma.com/event/evt-xBNiqcvi4FGXAJa
+GEO:40.754288550790264;-73.97400117219442
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250812T183000Z
+DTEND:20250812T203000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-4yT6dt5PIkdGoMs@events.lu.ma
+SUMMARY:Panel: Accelerating Innovation with AI (⚠️ Register in the Bra
+ zilCham platform and bring your ID ⚠️)
+DESCRIPTION:Get up-to-date information at: https://luma.com/ny-br-vibes\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+  & Vinicius Granja
+LOCATION:https://luma.com/event/evt-4yT6dt5PIkdGoMs
+GEO:40.758679159749526;-73.9773727128656
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250812T230000Z
+DTEND:20250813T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Jvlw5LHiFmTdBIA@events.lu.ma
+SUMMARY:Vibe Coding After Dark: Speedrun
+DESCRIPTION:Get up-to-date information at: https://luma.com/speedrun-vibes
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Paga
+ ni & 5 others
+LOCATION:https://luma.com/event/evt-Jvlw5LHiFmTdBIA
+GEO:40.70344942714767;-73.92379760972271
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250813T200000Z
+DTEND:20250813T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-rBPLjXvesCnWQDk@events.lu.ma
+SUMMARY:Vibe Coding with The Graph
+DESCRIPTION:Get up-to-date information at: https://luma.com/the-graph-vibe
+ s-ny\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus 
+ Pagani, Kevin Jones & Reem Chahrour
+LOCATION:https://luma.com/event/evt-rBPLjXvesCnWQDk
+GEO:40.76753963796881;-73.99040541091932
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250815T133000Z
+DTEND:20250815T160000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Flow.com":MAILTO:redigido@exemplo.invalid
+UID:evt-9Hs7uU4CybQDxh7@events.lu.ma
+SUMMARY:Builder Breakfast With Flow.com  @ ETH NYC - EthGlobal Hackathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/h0tt41g8\n\nAd
+ dress:\nElmo\nNew York, New York\nUnited States\n\nHosted by Flow.com, Mat
+ heus Pagani & Waterloo Blockchain
+LOCATION:Elmo, 156 7th Ave, New York, NY 10011, USA
+GEO:40.7419444;-73.9975
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250816T010000Z
+DTEND:20250817T040000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Donghyun Kim":MAILTO:redigido@exemplo.invalid
+UID:evt-wC3yczGXHMTeIFS@events.lu.ma
+SUMMARY:Cortex AI Agent Global Hybrid Hackathon 2025
+DESCRIPTION:Get up-to-date information at: https://luma.com/ozlvxsmj\n\nAd
+ dress:\nHero City\nKickoff in San Mateo / Fully online hackathon\nSan Mate
+ o, California\nUnited States\n\nHosted by Donghyun Kim
+LOCATION:Hero City, 55 E 3rd Ave, San Mateo, CA 94401, USA
+GEO:37.563904799999996;-122.32510850000001
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250819T173000Z
+DTEND:20250819T203000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-3jfBx42lhyEUCFF@events.lu.ma
+SUMMARY:Workshop: Rapid Prototyping with AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-prototyping
+ -ny\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus P
+ agani & 4 others
+LOCATION:https://luma.com/event/evt-3jfBx42lhyEUCFF
+GEO:40.76046813400451;-73.97570247758031
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250822T130000Z
+DTEND:20250822T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Navneet Shrivastava":MAILTO:redigido@exemplo.invalid
+UID:evt-C17tMwfHpFBj2xw@events.lu.ma
+SUMMARY:VibeSpace - Build Newark
+DESCRIPTION:Get up-to-date information at: https://luma.com/0u0x4gho\n\nAd
+ dress:\n550 Broad St\nNewark, New Jersey\nUnited States\n\nHosted by Navne
+ et Shrivastava & 5 others
+LOCATION:550 Broad St, Newark, NJ 07102, USA
+GEO:40.742575699999996;-74.1687227
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250825T220000Z
+DTEND:20250825T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-F6PDhMxyhTBCa4o@events.lu.ma
+SUMMARY:XDC Vibe Coding - Free Bootcamp - Live Kick-off & AMA (Win $500)
+DESCRIPTION:Get up-to-date information at: https://luma.com/xdc-vibes\n\nH
+ osted by Matheus Pagani & Jonathan M
+LOCATION:https://luma.com/event/evt-F6PDhMxyhTBCa4o
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250826T210000Z
+DTEND:20250826T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-eSZCpNFIvMZwUt6@events.lu.ma
+SUMMARY:Vibe Tuesdays - Guest Interview with James Floreani Founder of Res
+ onade
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-resonade
+ \n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-eSZCpNFIvMZwUt6
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250826T230000Z
+DTEND:20250827T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-H8upcJRyUrqcBJz@events.lu.ma
+SUMMARY:Vibe Coding with ZetaChain and Bolt.new
+DESCRIPTION:Get up-to-date information at: https://luma.com/zeta-vibes\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani &
+  4 others
+LOCATION:https://luma.com/event/evt-H8upcJRyUrqcBJz
+GEO:40.70558854231997;-73.92724202428444
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250827T220000Z
+DTEND:20250828T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ViE4UB82ujlByMe@events.lu.ma
+SUMMARY:XDC Vibe Coding Bootcamp - Stage 1: Vibe
+DESCRIPTION:Get up-to-date information at: https://luma.com/xdc-vibe\n\nHo
+ sted by Matheus Pagani & Jonathan M
+LOCATION:https://luma.com/event/evt-ViE4UB82ujlByMe
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250828T140000Z
+DTEND:20250828T150000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-a1Kae532amhcQyQ@events.lu.ma
+SUMMARY:ApeChain Vibe Coding Camp - Live AMA Session
+DESCRIPTION:Get up-to-date information at: https://luma.com/apechain-camp-
+ live\n\nHosted by Matheus Pagani, Alok ApeCo & Ryan Smith
+LOCATION:https://luma.com/event/evt-a1Kae532amhcQyQ
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250828T220000Z
+DTEND:20250829T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-kUXU6cHvFXb3Kc0@events.lu.ma
+SUMMARY:XDC Vibe Coding Bootcamp - Stage 2: Craft
+DESCRIPTION:Get up-to-date information at: https://luma.com/xdc-vibe-craft
+ \n\nHosted by Matheus Pagani & Jonathan M
+LOCATION:https://luma.com/event/evt-kUXU6cHvFXb3Kc0
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250829T220000Z
+DTEND:20250830T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-QiCUHRGGq874PJy@events.lu.ma
+SUMMARY:XDC Vibe Coding Bootcamp - Stage 3: Deploy
+DESCRIPTION:Get up-to-date information at: https://luma.com/xdc-vibe-deplo
+ y\n\nHosted by Matheus Pagani & Jonathan M
+LOCATION:https://luma.com/event/evt-QiCUHRGGq874PJy
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250830T180000Z
+DTEND:20250830T210000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-NpNvD71PP8ZtJ7N@events.lu.ma
+SUMMARY:Vibe Coding Pitch Day: From Idea to Funded Venture
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-2\n
+ \nHosted by Matheus Pagani, Pedro Gabriel Silva & Ryan Kagy
+LOCATION:https://luma.com/event/evt-NpNvD71PP8ZtJ7N
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250901T170000Z
+DTEND:20250901T190000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-qyLgwdEENY0z7EQ@events.lu.ma
+SUMMARY:Build Together: OpenAI Open Model Hackathon Team Formation & Feedb
+ ack Session
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-oss\n\nHos
+ ted by The AI Collective & 3 others
+LOCATION:https://luma.com/event/evt-qyLgwdEENY0z7EQ
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250902T230000Z
+DTEND:20250903T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-CTPCskTlYAWnZYg@events.lu.ma
+SUMMARY:Vibe Coding with ZetaChain and Bolt.new
+DESCRIPTION:Get up-to-date information at: https://luma.com/zeta-vibes-2\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+  & 6 others
+LOCATION:https://luma.com/event/evt-CTPCskTlYAWnZYg
+GEO:40.70546597430287;-73.92729163263735
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250904T220000Z
+DTEND:20250905T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-U2oA4kS9LEj3AEx@events.lu.ma
+SUMMARY:XDC Vibe Coding Bootcamp - Final Stage: Pitch
+DESCRIPTION:Get up-to-date information at: https://luma.com/xdc-vibe-pitch
+ \n\nHosted by Matheus Pagani & Jonathan M
+LOCATION:https://luma.com/event/evt-U2oA4kS9LEj3AEx
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250909T000000Z
+DTEND:20250909T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="The AI Collective":MAILTO:redigido@exemplo.invalid
+UID:evt-vApnHWBRsnLiXgW@events.lu.ma
+SUMMARY:OpenAI Open Model Hackathon Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-oss-demo\n
+ \nHosted by The AI Collective & 3 others
+LOCATION:https://luma.com/event/evt-vApnHWBRsnLiXgW
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250909T230000Z
+DTEND:20250910T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-JM9UoFCFlU8QHca@events.lu.ma
+SUMMARY:Windsurf Brooklyn Tech Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/windsurf-bk\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+  & 9 others
+LOCATION:https://luma.com/event/evt-JM9UoFCFlU8QHca
+GEO:40.70627660253757;-73.92332860722914
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250913T180000Z
+DTEND:20250913T233000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-JkMaBOEOyU28bu8@events.lu.ma
+SUMMARY:Harrisburg University Virtual Vibe Coding Hackathon with n8n
+DESCRIPTION:Get up-to-date information at: https://luma.com/harrisburg-vib
+ es\n\nHosted by Matheus Pagani & 6 others
+LOCATION:https://luma.com/event/evt-JkMaBOEOyU28bu8
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250916T230000Z
+DTEND:20250917T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Qi9SMo7kj6zErJA@events.lu.ma
+SUMMARY:Mastering AI Agents with Qodo
+DESCRIPTION:Get up-to-date information at: https://luma.com/qodo-ny\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by Matheus Pagani & 7 
+ others
+LOCATION:https://luma.com/event/evt-Qi9SMo7kj6zErJA
+GEO:40.70628296316746;-73.92333710365013
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250920T180000Z
+DTEND:20250920T210000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-9MP6VP1CxeFH46I@events.lu.ma
+SUMMARY:Vibe Demo Day: From Concept to Traction
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-3\n
+ \nHosted by Pedro Gabriel Silva & Matheus Pagani
+LOCATION:https://luma.com/event/evt-9MP6VP1CxeFH46I
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250922T220000Z
+DTEND:20250923T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Natalie Neptune":MAILTO:redigido@exemplo.invalid
+UID:evt-wZbSPSicjfsq0mM@events.lu.ma
+SUMMARY:AI Agents Hackathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/cnlno79w\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Natalie Neptune & 
+ 3 others
+LOCATION:https://luma.com/event/evt-wZbSPSicjfsq0mM
+GEO:40.72067869153091;-74.00225031693942
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250923T230000Z
+DTEND:20250924T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-82yn8M99DQCXEBF@events.lu.ma
+SUMMARY:Tech Founder Mixer - #SEEDWEEKNYC by SeedLegals
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-seedweek
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Paga
+ ni & 5 others
+LOCATION:https://luma.com/event/evt-82yn8M99DQCXEBF
+GEO:40.7062821629276;-73.92666397000897
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250927T190000Z
+DTEND:20250927T233000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Ilias Anwar":MAILTO:redigido@exemplo.invalid
+UID:evt-rDFtmUVnx2mpoMQ@events.lu.ma
+SUMMARY:Fun House - for investors , founders, creators, and universities -
+  #SEEDWEEKNYC by SeedLegals
+DESCRIPTION:Get up-to-date information at: https://luma.com/sb5jf6mb\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Ilias Anwar & 34 o
+ thers
+LOCATION:https://luma.com/event/evt-rDFtmUVnx2mpoMQ
+GEO:40.744684927860476;-73.98991997009898
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250929
+DTEND;VALUE=DATE:20251024
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="ETH Kipu":MAILTO:redigido@exemplo.invalid
+UID:evt-EE5EzxlZfvpAGG1@events.lu.ma
+SUMMARY:Ethereum Developer Pack Online
+DESCRIPTION:Get up-to-date information at: https://luma.com/9zxrpvoc\n\nHo
+ sted by ETH Kipu & Chainlink
+LOCATION:https://luma.com/event/evt-EE5EzxlZfvpAGG1
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250930T220000Z
+DTEND:20251001T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-A4Ca98D5CORzlYi@events.lu.ma
+SUMMARY:Windsurf Vibe Competition
+DESCRIPTION:Get up-to-date information at: https://luma.com/windsurf-vibes
+ \n\nAddress:\nOS NYC\nNew York, New York\nUnited States\n\nHosted by Mathe
+ us Pagani & 7 others
+LOCATION:OS NYC, 50 Bowery, New York, NY 10013, USA
+GEO:40.7159481;-73.9968282
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251006T210000Z
+DTEND:20251007T030000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Frontier Tower":MAILTO:redigido@exemplo.invalid
+UID:evt-yrTGf4IzolG9CUr@events.lu.ma
+SUMMARY:Vibe Space SF
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-space-0b4
+ b\n\nAddress:\nFrontier Tower @ Spaceship / Floor 2 995 Market Street, San
+  Francisco\n\nHosted by Frontier Tower, Matheus Pagani & Will
+LOCATION:Frontier Tower @ Spaceship / Floor 2 995 Market Street, San Franc
+ isco
+GEO:37.781965;-122.409697
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251006T210000Z
+DTEND:20251007T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Venture Miner":MAILTO:redigido@exemplo.invalid
+UID:calev-Hm7MX91gGxxbboZ@events.lu.ma
+SUMMARY:Vibe Week Starter Pack - #SFTechWeek
+DESCRIPTION:Find more information on https://luma.com/ventureminer
+LOCATION:https://partiful.com/e/56oqJx0q85eKvpqr7TTu
+GEO:37.7822672;-122.4099607
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251007T200000Z
+DTEND:20251008T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Ellis Norman":MAILTO:redigido@exemplo.invalid
+UID:evt-PdNIRESIVdDOeFt@events.lu.ma
+SUMMARY:BATTLECODES NYC
+DESCRIPTION:Get up-to-date information at: https://luma.com/battlecodes\n
+ \nAddress:\nOS NYC\nNew York, New York\nUnited States\n\nHosted by Ellis N
+ orman & 3 others
+LOCATION:OS NYC, 50 Bowery, New York, NY 10013, USA
+GEO:40.7159481;-73.9968282
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251007T210000Z
+DTEND:20251008T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Venture Miner":MAILTO:redigido@exemplo.invalid
+UID:calev-VkCPRMfrXniqBB1@events.lu.ma
+SUMMARY:VIBE SPACE - #SFTechWeek
+DESCRIPTION:Find more information on https://luma.com/ventureminer
+LOCATION:https://partiful.com/e/DHxYqtnTfGg5O0IXn5L4
+GEO:37.7822672;-122.4099607
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251009T210000Z
+DTEND:20251010T013000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-x1u4U0iPmSD8Dek@events.lu.ma
+SUMMARY:Let The Vibes Flow @ TechWeek SF
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-flow\n\nA
+ ddress:\nFrontier Tower 🧑‍🚀\n7th Floor\nSan Francisco, California
+ \nUnited States\n\nHosted by Matheus Pagani & 3 others
+LOCATION:Frontier Tower 🧑‍🚀, 995 Market St, San Francisco, CA 9410
+ 3, USA
+GEO:37.7822672;-122.4099607
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251010T210000Z
+DTEND:20251011T013000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ppUaqoZQxuChDVH@events.lu.ma
+SUMMARY:VibeWeek Demo Day: Pitch to AI VCs @ TechWeek SF
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-demo-sf\n
+ \nAddress:\nFrontier Tower 🧑‍🚀\n16th Floor\nSan Francisco, Califor
+ nia\nUnited States\n\nHosted by Matheus Pagani & 4 others
+LOCATION:Frontier Tower 🧑‍🚀, 995 Market St, San Francisco, CA 9410
+ 3, USA
+GEO:37.7822672;-122.4099607
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251011T210000Z
+DTEND:20251012T013000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ogZe69WclcuFp19@events.lu.ma
+SUMMARY:Hacktoberfest 2025 during TechWeek SF
+DESCRIPTION:Get up-to-date information at: https://luma.com/hacktoberfest-
+ sf\n\nAddress:\nFrontier Tower 🧑‍🚀\n2nd Floor\nSan Francisco, Cali
+ fornia\nUnited States\n\nHosted by Matheus Pagani & 5 others
+LOCATION:Frontier Tower 🧑‍🚀, 995 Market St, San Francisco, CA 9410
+ 3, USA
+GEO:37.7822672;-122.4099607
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251012T130000Z
+DTEND:20251012T160000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-5LvsG6rvZkOizO5@events.lu.ma
+SUMMARY:The Harvard SEAS LLM Hackathon: From Transformer Basics to Agentic
+  AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/harvard-seas-l
+ lm\n\nHosted by Matheus Pagani & Anshika Gupta
+LOCATION:https://luma.com/event/evt-5LvsG6rvZkOizO5
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251012T220000Z
+DTEND:20251013T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-iDKlkJkWoTj887q@events.lu.ma
+SUMMARY:Brazilian BBQ @ TechWeek SF
+DESCRIPTION:Get up-to-date information at: https://luma.com/picanha\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-iDKlkJkWoTj887q
+GEO:37.7753382762627;-122.42356788534198
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251015T230000Z
+DTEND:20251016T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-P18GTPAPeV5XZJl@events.lu.ma
+SUMMARY:Introdução: O que é Vibe Coding?
+DESCRIPTION:Get up-to-date information at: https://luma.com/intro-vibebr\n
+ \nHosted by Pedro Gabriel Silva, Augusto & Matheus Pagani
+LOCATION:https://luma.com/event/evt-P18GTPAPeV5XZJl
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251016T203000Z
+DTEND:20251017T013000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Demetrios":MAILTO:redigido@exemplo.invalid
+UID:evt-dQFUOWSb1pgEa06@events.lu.ma
+SUMMARY:AI Agent World Tour in NYC
+DESCRIPTION:Get up-to-date information at: https://luma.com/agentsummitNYC
+ \n\nAddress:\nIdeal Glass Studios\nNew York, New York\nUnited States\n\nHo
+ sted by Demetrios & 9 others
+LOCATION:Ideal Glass Studios, 9 W 8th St, New York, NY 10011, USA
+GEO:40.7327106;-73.9970289
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251017T160000Z
+DTEND:20251018T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Luma Event":MAILTO:redigido@exemplo.invalid
+UID:evt-qYSvhXKLYB4OZFY@events.lu.ma
+SUMMARY:AWS Agentic AI Hackathon - LA
+DESCRIPTION:Get up-to-date information at: https://luma.com/bgllor3g\n\nAd
+ dress:\nCheck event page for more details.
+LOCATION:https://luma.com/event/evt-qYSvhXKLYB4OZFY
+GEO:34.0273238411241;-118.47117755263389
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251018T180000Z
+DTEND:20251018T210000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-aZ2zc5poL4mSFOo@events.lu.ma
+SUMMARY:Vibe Demo Day: Artizen Season 6
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-4\n
+ \nHosted by Pedro Gabriel Silva, Augusto & Matheus Pagani
+LOCATION:https://luma.com/event/evt-aZ2zc5poL4mSFOo
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251022T010000Z
+DTEND:20251022T050000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-0TkNKzo9X8zeLrl@events.lu.ma
+SUMMARY:Vibe Coding Speedrun - Vegas
+DESCRIPTION:Get up-to-date information at: https://luma.com/vegas-vibes\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Pedro Gabriel 
+ Silva, Matheus Pagani & Augusto
+LOCATION:https://luma.com/event/evt-0TkNKzo9X8zeLrl
+GEO:36.18356684748249;-115.14804409406038
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251022T230000Z
+DTEND:20251023T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-1dXutwGNplUMkSB@events.lu.ma
+SUMMARY:Workshop Vibe Coding: Fundamentos de IA
+DESCRIPTION:Get up-to-date information at: https://luma.com/work-fund-ia\n
+ \nHosted by Pedro Gabriel Silva & 3 others
+LOCATION:https://luma.com/event/evt-1dXutwGNplUMkSB
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251024T000000Z
+DTEND:20251024T030000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Yasin":MAILTO:redigido@exemplo.invalid
+UID:evt-QSYDM9nKIUGpLDo@events.lu.ma
+SUMMARY:Healthcare AI & Tech Crunch Afterparty
+DESCRIPTION:Get up-to-date information at: https://luma.com/xh4xhk7j\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Yasin & 3 others
+LOCATION:https://luma.com/event/evt-QSYDM9nKIUGpLDo
+GEO:37.779025520907894;-122.3987944776214
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251028T140000Z
+DTEND:20251028T160000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-SHvcLTvSjjKtdUM@events.lu.ma
+SUMMARY:ApeChain Vibe Coding Camp
+DESCRIPTION:Get up-to-date information at: https://luma.com/apechain-vibes
+ \n\nHosted by Matheus Pagani & 3 others
+LOCATION:https://luma.com/event/evt-SHvcLTvSjjKtdUM
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251028T230000Z
+DTEND:20251029T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-h1NWtmhBWHc34HH@events.lu.ma
+SUMMARY:Mini Bootcamp Hands-on Day 1
+DESCRIPTION:Get up-to-date information at: https://luma.com/boot-ep1\n\nHo
+ sted by Pedro Gabriel Silva & 7 others
+LOCATION:https://luma.com/event/evt-h1NWtmhBWHc34HH
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251029T020000Z
+DTEND:20251029T050000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Colton Kaplan":MAILTO:redigido@exemplo.invalid
+UID:evt-kD3lMYeIVDerXHi@events.lu.ma
+SUMMARY:Founder & Investor Happy Hour @ The Modernist (Unofficial TechCrun
+ ch Disrupt 2025)
+DESCRIPTION:Get up-to-date information at: https://luma.com/6h29maiw\n\nAd
+ dress:\nModernist\nSan Francisco, California\nUnited States\n\nHosted by C
+ olton Kaplan & 4 others
+LOCATION:Modernist, 139 Steuart St, San Francisco, CA 94105, USA
+GEO:37.7929077;-122.39239230000001
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251029T230000Z
+DTEND:20251030T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-H43N2UuO7S9GoHK@events.lu.ma
+SUMMARY:Mini Bootcamp Hands-on Day 2
+DESCRIPTION:Get up-to-date information at: https://luma.com/boot-ep2\n\nHo
+ sted by Pedro Gabriel Silva & 7 others
+LOCATION:https://luma.com/event/evt-H43N2UuO7S9GoHK
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251030T010000Z
+DTEND:20251030T040000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Fbkzp1TzQG8qgG7@events.lu.ma
+SUMMARY:Vibe Coding Speedrun with Dovetail
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-dovetail
+ \n\nAddress:\nDovetail\nSan Francisco, California\nUnited States\n\nHosted
+  by Matheus Pagani & 4 others
+LOCATION:Dovetail, 660 Market St, San Francisco, CA 94104, USA
+GEO:37.7883067;-122.402957
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251030T230000Z
+DTEND:20251031T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-awlbpvr1t5vGfFp@events.lu.ma
+SUMMARY:Mini Bootcamp Hands-on Day 3
+DESCRIPTION:Get up-to-date information at: https://luma.com/boot-ep3\n\nHo
+ sted by Pedro Gabriel Silva & 7 others
+LOCATION:https://luma.com/event/evt-awlbpvr1t5vGfFp
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251031T010000Z
+DTEND:20251031T030000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Gopher MCP":MAILTO:redigido@exemplo.invalid
+UID:evt-EuQNDCJX3EG4RdX@events.lu.ma
+SUMMARY:#TechCrunch Dinner $1M+ ARR Founder/Investor
+DESCRIPTION:Get up-to-date information at: https://luma.com/abah9c57\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Gopher MCP & 4 oth
+ ers
+LOCATION:https://luma.com/event/evt-EuQNDCJX3EG4RdX
+GEO:37.74949636634922;-122.43050571649194
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251031T180000Z
+DTEND:20251031T210000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-PJu1lurW8YmdgQr@events.lu.ma
+SUMMARY:Vibe Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-5\n
+ \nHosted by Pedro Gabriel Silva, Matheus Pagani & Augusto
+LOCATION:https://luma.com/event/evt-PJu1lurW8YmdgQr
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251105T130000Z
+DTEND:20251105T223000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matt Bergland":MAILTO:redigido@exemplo.invalid
+UID:evt-Bx1NvyWPMwbMXdJ@events.lu.ma
+SUMMARY:Cognition Merge: São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-sp\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matt Bergland 
+ & 3 others
+LOCATION:https://luma.com/event/evt-Bx1NvyWPMwbMXdJ
+GEO:-23.585469634931574;-46.69932528119819
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251112T230000Z
+DTEND:20251113T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-6jDL8RNkgvPf8sE@events.lu.ma
+SUMMARY:Vibe Wednesday: Interviews
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-wednesday
+ 1\n\nHosted by Pedro Gabriel Silva, Augusto & Matheus Pagani
+LOCATION:https://luma.com/event/evt-6jDL8RNkgvPf8sE
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251115T190000Z
+DTEND:20251115T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-06jNpTJgQOEAhVG@events.lu.ma
+SUMMARY:Vibe Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-6\n
+ \nHosted by Pedro Gabriel Silva, Matheus Pagani & Augusto
+LOCATION:https://luma.com/event/evt-06jNpTJgQOEAhVG
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251119T230000Z
+DTEND:20251120T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-NLsg5zvnXvDXWxP@events.lu.ma
+SUMMARY:Vibe Wednesday: Interviews
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-wednesday
+ 2\n\nHosted by Pedro Gabriel Silva, Matheus Pagani & Augusto
+LOCATION:https://luma.com/event/evt-NLsg5zvnXvDXWxP
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251126T000000Z
+DTEND:20251126T030000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Pedro Gabriel Silva":MAILTO:redigido@exemplo.invalid
+UID:evt-aFxCCXSiZYEdVBe@events.lu.ma
+SUMMARY:Vibe Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-7\n
+ \nHosted by Pedro Gabriel Silva & 3 others
+LOCATION:https://luma.com/event/evt-aFxCCXSiZYEdVBe
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251201T220000Z
+DTEND:20251201T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Jhillika Kumar":MAILTO:redigido@exemplo.invalid
+UID:evt-Op0yxRGbglz0JEM@events.lu.ma
+SUMMARY:Leveraging AI to Build Community
+DESCRIPTION:Get up-to-date information at: https://luma.com/3v00q3d6\n\nHo
+ sted by Jhillika Kumar, Matheus Pagani & steph that quirky bird girl
+LOCATION:https://luma.com/event/evt-Op0yxRGbglz0JEM
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251206T190000Z
+DTEND:20251206T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-TuWYv6zRqju1wtO@events.lu.ma
+SUMMARY:Vibe Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-8\n
+ \nHosted by Matheus Pagani & 4 others
+LOCATION:https://luma.com/event/evt-TuWYv6zRqju1wtO
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251208T220000Z
+DTEND:20251209T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Nir Naamani":MAILTO:redigido@exemplo.invalid
+UID:evt-OswW304xuLxdJST@events.lu.ma
+SUMMARY:Monday.com × Lovable x Railway Hackathon: Full-Stack Founder  - B
+ uild, Automate, Ship
+DESCRIPTION:Get up-to-date information at: https://luma.com/LovablexMonday
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Nir Naamani 
+ & 6 others
+LOCATION:https://luma.com/event/evt-OswW304xuLxdJST
+GEO:40.73894052259282;-73.98892144394397
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251213T190000Z
+DTEND:20251213T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Cin9SpgVPtWen3P@events.lu.ma
+SUMMARY:Vibe Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-pitch-9\n
+ \nHosted by Matheus Pagani & 3 others
+LOCATION:https://luma.com/event/evt-Cin9SpgVPtWen3P
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260115T180000Z
+DTEND:20260115T200000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-x4ncK2Uctb50x0j@events.lu.ma
+SUMMARY:Vibe Awards 2025
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-awards-20
+ 25\n\nAddress:\nOnline\n\nHosted by Matheus Pagani & Augusto
+LOCATION:Online
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260115T230000Z
+DTEND:20260116T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Nir Naamani":MAILTO:redigido@exemplo.invalid
+UID:evt-3iaCCHcNHpwhFVQ@events.lu.ma
+SUMMARY:Plug & Play Hackathon | Flowglad x Lovable
+DESCRIPTION:Get up-to-date information at: https://luma.com/FlowgladxLovab
+ lexLeverage\n\nAddress:\nCheck event page for more details.\n\nHosted by N
+ ir Naamani & 5 others
+LOCATION:https://luma.com/event/evt-3iaCCHcNHpwhFVQ
+GEO:40.74228674049769;-74.00110722920596
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260124T003000Z
+DTEND:20260125T013000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Radion kks":MAILTO:redigido@exemplo.invalid
+UID:evt-wgD7yzEzYdxYNmP@events.lu.ma
+SUMMARY:Radiothon 2026 — Global Hybrid Hackathon + Career Fair [ New Yor
+ k , USA X India ] - Powered by InterConnect and Lovable
+DESCRIPTION:Get up-to-date information at: https://luma.com/fvwupoak\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Radion kks & 16 ot
+ hers
+LOCATION:https://luma.com/event/evt-wgD7yzEzYdxYNmP
+GEO:40.681482572632255;-73.96695590187423
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260129T220000Z
+DTEND:20260130T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Alexandre Mandl":MAILTO:redigido@exemplo.invalid
+UID:evt-MV415tnzwEv2vDA@events.lu.ma
+SUMMARY:Cognition Meetup with AI Collective São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/aic-cognition-
+ sp\n\nAddress:\nCheck event page for more details.\n\nHosted by Alexandre 
+ Mandl & 4 others
+LOCATION:https://luma.com/event/evt-MV415tnzwEv2vDA
+GEO:-23.600429503232178;-46.67695247542558
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260130T200000Z
+DTEND:20260131T040000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Frontier Tower":MAILTO:redigido@exemplo.invalid
+UID:evt-9fQDHXHpNG5sQiu@events.lu.ma
+SUMMARY:Learn to Prompt Hackathon | Lovable x Humanic x Leverage and more
+DESCRIPTION:Get up-to-date information at: https://luma.com/1-to-10-gtm-fo
+ r-your-startup-workshop-ha\n\nAddress:\nCheck event page for more details.
+ \n\nHosted by Frontier Tower & 6 others
+LOCATION:https://luma.com/event/evt-9fQDHXHpNG5sQiu
+GEO:37.78319964413453;-122.4079034525356
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260131T013000Z
+DTEND:20260131T033000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="AI Valley":MAILTO:redigido@exemplo.invalid
+UID:evt-54j0t57qK8rtGtr@events.lu.ma
+SUMMARY:Demo Day - A showcase of exceptional founders and builders from AI
+  Valley
+DESCRIPTION:Get up-to-date information at: https://luma.com/a5ahy6a1\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by AI Valley & 7 othe
+ rs
+LOCATION:https://luma.com/event/evt-54j0t57qK8rtGtr
+GEO:37.45038767633331;-122.1584368079582
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260131T190000Z
+DTEND:20260131T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-CwLoWY9HJqEtVHJ@events.lu.ma
+SUMMARY:AI Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-demo-day\n
+ \nHosted by Matheus Pagani & 3 others
+LOCATION:https://luma.com/event/evt-CwLoWY9HJqEtVHJ
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260207T190000Z
+DTEND:20260207T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-jtS3gKrBrLVarv9@events.lu.ma
+SUMMARY:v0 Prompt to Production — São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/v0-prompt-to-p
+ roduction-sp\n\nAddress:\nCheck event page for more details.\n\nHosted by 
+ Matheus Pagani, TakeCarbon & Rodrigo
+LOCATION:https://luma.com/event/evt-jtS3gKrBrLVarv9
+GEO:-23.571786670300245;-46.69102395403268
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260210T010000Z
+DTEND:20260210T050000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Nir Naamani":MAILTO:redigido@exemplo.invalid
+UID:evt-vwI2PSKBqgXAX8l@events.lu.ma
+SUMMARY:Vapi AI x Lovable x Hathora | Build & Deploy Your Voice Agent Work
+ shop + Hackathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/build-voice-ag
+ ent-for-your-startup-works\n\nAddress:\nCheck event page for more details.
+ \n\nHosted by Nir Naamani, Matheus Pagani & Vapi Events
+LOCATION:https://luma.com/event/evt-vwI2PSKBqgXAX8l
+GEO:37.78625824717373;-122.4046034907997
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260210T220000Z
+DTEND:20260210T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-yr3TyYBDrgGY1k6@events.lu.ma
+SUMMARY:Vibe Space Interview
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-interview
+ -renny\n\nHosted by Matheus Pagani, Augusto & Renny Chan
+LOCATION:https://luma.com/event/evt-yr3TyYBDrgGY1k6
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260212T223000Z
+DTEND:20260213T013000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Gabe Einhorn":MAILTO:redigido@exemplo.invalid
+UID:evt-LBCXqvqKF9IHBAz@events.lu.ma
+SUMMARY:From LinkedIn to Real Life: Outside NYC Edition
+DESCRIPTION:Get up-to-date information at: https://luma.com/7mcqork9\n\nAd
+ dress:\n220 Passaic St\nPassaic, New Jersey\nUnited States\n\nHosted by Ga
+ be Einhorn & 3 others
+LOCATION:220 Passaic St, Passaic, NJ 07055, USA
+GEO:40.8621602;-74.11820569999999
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260212T230000Z
+DTEND:20260213T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-mv9fsCSUpELBih4@events.lu.ma
+SUMMARY:Vibe Space Interview
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-interview
+ -axel\n\nHosted by Matheus Pagani, Augusto & Axel Kloth
+LOCATION:https://luma.com/event/evt-mv9fsCSUpELBih4
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260219T230000Z
+DTEND:20260220T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-wjfTD1FK2an4952@events.lu.ma
+SUMMARY:Vibe Space Interview
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-interview
+ -ioanna\n\nHosted by Matheus Pagani, Augusto & Ioanna Mantzouridou Onasi
+LOCATION:https://luma.com/event/evt-wjfTD1FK2an4952
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260220T230000Z
+DTEND:20260221T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-deGDYmZliDbgbIj@events.lu.ma
+SUMMARY:Vibe Space Interview
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-interview
+ -anthony\n\nHosted by Matheus Pagani & 3 others
+LOCATION:https://luma.com/event/evt-deGDYmZliDbgbIj
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260221T190000Z
+DTEND:20260221T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ddonWR6KgsQZwBN@events.lu.ma
+SUMMARY:AI Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-demo-day-2
+ \n\nHosted by Matheus Pagani & 3 others
+LOCATION:https://luma.com/event/evt-ddonWR6KgsQZwBN
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260224T230000Z
+DTEND:20260225T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-jVtnwAvVCuEeOVX@events.lu.ma
+SUMMARY:Vibe Space Interview
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-interview
+ -yan\n\nHosted by Matheus Pagani, Grinshtein Yan & Augusto
+LOCATION:https://luma.com/event/evt-jVtnwAvVCuEeOVX
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260225T200000Z
+DTEND:20260225T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-5yABCDdxijuRWty@events.lu.ma
+SUMMARY:Vibe Space Interview
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-interview
+ -ammon\n\nHosted by Matheus Pagani & 4 others
+LOCATION:https://luma.com/event/evt-5yABCDdxijuRWty
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260227T213000Z
+DTEND:20260227T233000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-nTrYLTDzM2jW239@events.lu.ma
+SUMMARY:Windsurf & Devin Meetup São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-sp-f
+ iap\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus P
+ agani & 3 others
+LOCATION:https://luma.com/event/evt-nTrYLTDzM2jW239
+GEO:-23.565072194827376;-46.65383032020402
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260228T200000Z
+DTEND:20260301T030000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Frontier Tower":MAILTO:redigido@exemplo.invalid
+UID:evt-ukQn4ZyZl75XtRT@events.lu.ma
+SUMMARY:🦞 OpenClaw Hack - Win Mac Minis (Event Starts At 1pm)
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibecode-build
+ -ai-agents-on-bitcoin-with-c866\n\nAddress:\nFrontier Tower @ Spaceship 99
+ 5 Market Street, San Francisco\n\nHosted by Frontier Tower & 4 others
+LOCATION:Frontier Tower @ Spaceship 995 Market Street, San Francisco
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260301T010000Z
+DTEND:20260301T020000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-mszicJ4dJZzwLdm@events.lu.ma
+SUMMARY:Vibe Awards February
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-awards-fe
+ b\n\nAddress:\nOnline - Asynchronous Judging\n\nHosted by Augusto & Matheu
+ s Pagani
+LOCATION:Online - Asynchronous Judging
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260304T220000Z
+DTEND:20260305T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-m3UNvZcGpTa0biz@events.lu.ma
+SUMMARY:Windsurf & Devin Virtual Workshop - Brasil
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-virt
+ ual-workshop\n\nHosted by Matheus Pagani, Matt Bergland & Guilherme Duarte
+  de Barros
+LOCATION:https://luma.com/event/evt-m3UNvZcGpTa0biz
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260312T220000Z
+DTEND:20260313T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-GSd1u2ZwLMh7pMT@events.lu.ma
+SUMMARY:Windsurf & Devin Meetup São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/amo-cognition-
+ sp\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pa
+ gani, Matt Bergland & Guilherme Duarte de Barros
+LOCATION:https://luma.com/event/evt-GSd1u2ZwLMh7pMT
+GEO:-23.56032364111214;-46.659700279788076
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260319T210000Z
+DTEND:20260319T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-7iuXrGWwYfyGwCr@events.lu.ma
+SUMMARY:Windsurf & Devin Meetup Vitória
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-vix
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Paga
+ ni & Matt Bergland
+LOCATION:https://luma.com/event/evt-7iuXrGWwYfyGwCr
+GEO:-20.279225474912963;-40.305541342652205
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260320T000000Z
+DTEND:20260320T030000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Nir Naamani":MAILTO:redigido@exemplo.invalid
+UID:evt-f2gArtbGnwxUgs4@events.lu.ma
+SUMMARY:GTC Happy Hour | Palo Alto
+DESCRIPTION:Get up-to-date information at: https://luma.com/GTC-Mixer\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by Nir Naamani, Math
+ eus Pagani & Colton Kaplan
+LOCATION:https://luma.com/event/evt-f2gArtbGnwxUgs4
+GEO:37.45040149757353;-122.15785251407932
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260324T210000Z
+DTEND:20260325T013000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Nir Naamani":MAILTO:redigido@exemplo.invalid
+UID:evt-tw90jDLrrrhLv0Z@events.lu.ma
+SUMMARY:Build & Deploy Voice Agent Workshop + Hackathon (Vapi AI x Cartesi
+ a)
+DESCRIPTION:Get up-to-date information at: https://luma.com/Voice-AI-NYC\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Nir Naamani & 
+ Vapi Events
+LOCATION:https://luma.com/event/evt-tw90jDLrrrhLv0Z
+GEO:40.71991178426725;-74.00362031641403
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260325T230000Z
+DTEND:20260326T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-p6Xwvx1Q99QMe7r@events.lu.ma
+SUMMARY:Windsurf & Devin Virtual Workshop - Brasil
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-virt
+ ual-workshop-2\n\nHosted by Matheus Pagani, Matt Bergland & Guilherme Duar
+ te de Barros
+LOCATION:https://luma.com/event/evt-p6Xwvx1Q99QMe7r
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260326T003000Z
+DTEND:20260326T043000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Nir Naamani":MAILTO:redigido@exemplo.invalid
+UID:evt-XGy2FE2fITXG1Kd@events.lu.ma
+SUMMARY:Build & Deploy Voice Agent Workshop + Hackathon (Vapi AI x Cartesi
+ a)
+DESCRIPTION:Get up-to-date information at: https://luma.com/Build-Deploy-V
+ oiceAI\n\nAddress:\nCheck event page for more details.\n\nHosted by Nir Na
+ amani & Vapi Events
+LOCATION:https://luma.com/event/evt-XGy2FE2fITXG1Kd
+GEO:37.76450413573766;-122.42054713904194
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260327T220000Z
+DTEND:20260328T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-MowstOZDjNREasO@events.lu.ma
+SUMMARY:Windsurf & Devin Meetup São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-sp-4
+ 2\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pag
+ ani & 4 others
+LOCATION:https://luma.com/event/evt-MowstOZDjNREasO
+GEO:-23.55771180063754;-46.69194852005265
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260328T180000Z
+DTEND:20260328T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-rXPnboATG66rAPO@events.lu.ma
+SUMMARY:AI Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-demo-day-3
+ \n\nHosted by Matheus Pagani, AJ Green & Jason Cheung
+LOCATION:https://luma.com/event/evt-rXPnboATG66rAPO
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260328T230000Z
+DTEND:20260329T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-nDmzxXm5CL4g9nm@events.lu.ma
+SUMMARY:Vibe Coding 101 with V0
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_v0\n\nHosted
+  by Matheus Pagani & Ilias Anwar
+LOCATION:https://luma.com/event/evt-nDmzxXm5CL4g9nm
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260330T220000Z
+DTEND:20260331T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-pBQari4q9F1wUo7@events.lu.ma
+SUMMARY:Lovable Meetup with Oracle São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/lovable-sp\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani &
+  FILIPE DOS SANTOS
+LOCATION:https://luma.com/event/evt-pBQari4q9F1wUo7
+GEO:-23.62413552792408;-46.69922156580235
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260331T130000Z
+DTEND:20260331T140000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-meUHxu9No6SaHj2@events.lu.ma
+SUMMARY:Vibe Awards March
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-awards-3
+ \n\nAddress:\nOnline - Asynchronous Judging\n\nHosted by Augusto
+LOCATION:Online - Asynchronous Judging
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260331T230000Z
+DTEND:20260401T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-zebTIzNi36rLkMU@events.lu.ma
+SUMMARY:Vibe Space Interview with DROdio from Storytell AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_drodio\n\nHo
+ sted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-zebTIzNi36rLkMU
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260407T230000Z
+DTEND:20260408T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-r8Kf40sUWXLyYM1@events.lu.ma
+SUMMARY:Vibe Space NYC Launch
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_ilias\n\nHos
+ ted by Matheus Pagani & Ilias Anwar
+LOCATION:https://luma.com/event/evt-r8Kf40sUWXLyYM1
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260409T230000Z
+DTEND:20260409T233000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-unsBPMjFd821Ayo@events.lu.ma
+SUMMARY:S.P.I.D.E.R AI Agents Bootcamp
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ bootcamp\n\nHosted by Matheus Pagani, Kevin Jones & Fabriziogianni7
+LOCATION:https://luma.com/event/evt-unsBPMjFd821Ayo
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260412T190000Z
+DTEND:20260412T233000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Nir Naamani":MAILTO:redigido@exemplo.invalid
+UID:evt-oqsJSUDCHfRRyvi@events.lu.ma
+SUMMARY:ElevenLabs x Lovable Workshop + Hackathon | 33M Credits + 12 month
+ s Free for Winning Team
+DESCRIPTION:Get up-to-date information at: https://luma.com/ElevenLabsHack
+ athon\n\nAddress:\nCheck event page for more details.\n\nHosted by Nir Naa
+ mani & Jonathan Chang
+LOCATION:https://luma.com/event/evt-oqsJSUDCHfRRyvi
+GEO:37.76445694404723;-122.42017920031462
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260414T110000Z
+DTEND:20260414T153000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Oracle Startup Growth Engine":MAILTO:redigido@exemplo.invalid
+UID:evt-JdQtKtuorFMSMIf@events.lu.ma
+SUMMARY:Build AI-First Applications: Fast, Scalable & Autonomous
+DESCRIPTION:Get up-to-date information at: https://luma.com/oracle-cubo\n
+ \nAddress:\nCubo Itaú\nSão Paulo, São Paulo\nBrazil\n\nHosted by Oracle
+  Startup Growth Engine & 5 others
+LOCATION:Cubo Itaú, Alameda Vicente Pinzon, 54 - Vila Olímpia, São Paul
+ o - SP, 04547-130, Brazil
+GEO:-23.596645199999998;-46.6869082
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260414T230000Z
+DTEND:20260415T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-igA5ECkcN6M3IiR@events.lu.ma
+SUMMARY:Interview: How to Fundraise w/ Michael Carapellotti from 165 Globa
+ l
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_165\n\nHoste
+ d by Matheus Pagani & Ilias Anwar
+LOCATION:https://luma.com/event/evt-igA5ECkcN6M3IiR
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260416T160000Z
+DTEND:20260416T180000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-N8ekTRZg0MHffGR@events.lu.ma
+SUMMARY:Workshop: Build AI Agents with the SPIDER Standard
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 01\n\nHosted by Matheus Pagani, Kevin Jones & Fabriziogianni7
+LOCATION:https://luma.com/event/evt-N8ekTRZg0MHffGR
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260416T160000Z
+DTEND:20260417T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="ClawCamp Community":MAILTO:redigido@exemplo.invalid
+UID:evt-JvwDRsKsH8SCHPi@events.lu.ma
+SUMMARY:ClawCamp: Get Started & Up-level Your OpenClaw Personal Agent Supe
+ rpowers
+DESCRIPTION:Get up-to-date information at: https://luma.com/egopgzac\n\nAd
+ dress:\nSTAK Space - 1920 Broadway\nOakland, California\nUnited States\n\n
+ Hosted by ClawCamp Community & Fetch.ai Innovation Lab
+LOCATION:STAK Space - 1920 Broadway, 1920 Broadway, Oakland, CA 94612, USA
+GEO:37.8080791;-122.2686869
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260417T230000Z
+DTEND:20260418T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-VWzT2UflDkKqsUf@events.lu.ma
+SUMMARY:Workshop: AI Coding Agents with Nader Dabit from Cognition
+DESCRIPTION:Get up-to-date information at: https://luma.com/devin-coding-a
+ gent\n\nHosted by Matheus Pagani, nader dabit & Kevin Jones
+LOCATION:https://luma.com/event/evt-VWzT2UflDkKqsUf
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260420T220000Z
+DTEND:20260420T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-6K1r6a4WyoVRbqm@events.lu.ma
+SUMMARY:Vibe Space Interview with Titus Capilnean from Civic
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_titus\n\nHos
+ ted by Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-6K1r6a4WyoVRbqm
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260422T213000Z
+DTEND:20260423T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-U4NTvcU0bfRQKJI@events.lu.ma
+SUMMARY:Windsurf & Devin Meetup with Oracle São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-orac
+ le-sp\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus
+  Pagani, Matt Bergland & FILIPE DOS SANTOS
+LOCATION:https://luma.com/event/evt-U4NTvcU0bfRQKJI
+GEO:-23.62589249791267;-46.6992044433782
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260423T230000Z
+DTEND:20260424T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-qn44TP2pgeMfnL6@events.lu.ma
+SUMMARY:Workshop: Building Agents Securely
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 02\n\nHosted by Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-qn44TP2pgeMfnL6
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260424T220000Z
+DTEND:20260425T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-f9XEoGSKZnRvxFa@events.lu.ma
+SUMMARY:Zero to Agent: São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/02ASP\n\nAddre
+ ss:\nCheck event page for more details.\n\nHosted by Matheus Pagani & FILI
+ PE DOS SANTOS
+LOCATION:https://luma.com/event/evt-f9XEoGSKZnRvxFa
+GEO:-23.626592698645773;-46.69841217123947
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260425T130000Z
+DTEND:20260425T200000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-xRADM320zkqzDDc@events.lu.ma
+SUMMARY:Hackathon Cognition São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-hack
+ -sp\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus P
+ agani & 4 others
+LOCATION:https://luma.com/event/evt-xRADM320zkqzDDc
+GEO:-23.55239822157527;-46.61276025028316
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260426T180000Z
+DTEND:20260426T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-LXrySw7audtqGTj@events.lu.ma
+SUMMARY:AI Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-demo-day-4
+ \n\nHosted by Matheus Pagani & AJ Green
+LOCATION:https://luma.com/event/evt-LXrySw7audtqGTj
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260427T160000Z
+DTEND:20260427T180000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ArCCAYOc0GSwnYc@events.lu.ma
+SUMMARY:Workshop: Agentic Payments
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 03\n\nHosted by Matheus Pagani, Kevin Jones & Fabriziogianni7
+LOCATION:https://luma.com/event/evt-ArCCAYOc0GSwnYc
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260428T120000Z
+DTEND:20260428T160000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-2u1uqCe6yjZOdns@events.lu.ma
+SUMMARY:Lovable Brunch with Founder Haus
+DESCRIPTION:Get up-to-date information at: https://luma.com/lovable-brunch
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus Paga
+ ni & 3 others
+LOCATION:https://luma.com/event/evt-2u1uqCe6yjZOdns
+GEO:-27.4375382206371;-48.49850234383331
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260428T210000Z
+DTEND:20260429T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Ta5VgDN3RxgwEeI@events.lu.ma
+SUMMARY:Zero to Agent: Florianópolis
+DESCRIPTION:Get up-to-date information at: https://luma.com/02AFLORIPA\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani, 
+ Founder Haus & Ipê City
+LOCATION:https://luma.com/event/evt-Ta5VgDN3RxgwEeI
+GEO:-27.438829472651417;-48.501135003361554
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260429T220000Z
+DTEND:20260430T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Uu65oLyMwWEOMve@events.lu.ma
+SUMMARY:Windsurf & Devin Meetup Florianópolis
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-flor
+ ipa\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus P
+ agani & 4 others
+LOCATION:https://luma.com/event/evt-Uu65oLyMwWEOMve
+GEO:-27.435862389094897;-48.50166184578459
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260430T170000Z
+DTEND:20260430T180000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-XyNGTqlrZATRMci@events.lu.ma
+SUMMARY:Vibe Awards April
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-awards-4
+ \n\nAddress:\nOnline - Asynchronous Judging\n\nHosted by Augusto
+LOCATION:Online - Asynchronous Judging
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260430T230000Z
+DTEND:20260501T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-O051MjwIcGCiIsm@events.lu.ma
+SUMMARY:Vibe Space Interview with Vivek Pandit from Biz Rizz
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_vivek\n\nHos
+ ted by Matheus Pagani, Vivek Pandit & Ilias Anwar
+LOCATION:https://luma.com/event/evt-O051MjwIcGCiIsm
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260501T160000Z
+DTEND:20260502T030000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Bill Barry":MAILTO:redigido@exemplo.invalid
+UID:evt-jxg6tE82ygmtG04@events.lu.ma
+SUMMARY:AI INFRA SUMMIT 5
+DESCRIPTION:Get up-to-date information at: https://luma.com/aiinfra5\n\nAd
+ dress:\nPlug and Play Tech Center\nSunnyvale, CA\nUnited States\n\nHosted 
+ by Bill Barry & 5 others
+LOCATION:Plug and Play Tech Center, 440 N Wolfe Rd, Sunnyvale, CA 94085, U
+ SA
+GEO:37.3835677;-122.01303329999999
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260504T210000Z
+DTEND:20260504T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-fE9Ngp9ZF188NHB@events.lu.ma
+SUMMARY:Vibe Space Interview with Colton Kaplan from Founder Social Club
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_fsc\n\nHoste
+ d by Matheus Pagani, Colton Kaplan & Ilias Anwar
+LOCATION:https://luma.com/event/evt-fE9Ngp9ZF188NHB
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260505T210000Z
+DTEND:20260505T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-XWCnvUkuY7Pvr3m@events.lu.ma
+SUMMARY:Vibe Space Interview with Borce Manev from Sellton.ai
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_sellton\n\nH
+ osted by Matheus Pagani & Borce Manev
+LOCATION:https://luma.com/event/evt-XWCnvUkuY7Pvr3m
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260506T170000Z
+DTEND:20260506T190000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-z8tjKg1LTVfZxAV@events.lu.ma
+SUMMARY:Workshop: Agentic Commerce and X402 - Building Without API Keys
+DESCRIPTION:Get up-to-date information at: https://luma.com/agentic-commer
+ ce\n\nHosted by Augusto & 4 others
+LOCATION:https://luma.com/event/evt-z8tjKg1LTVfZxAV
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260507T220000Z
+DTEND:20260508T000000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-BUS7UtEwh05NHU4@events.lu.ma
+SUMMARY:Windsurf & Devin Meetup Rio de Janeiro
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-rj\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+  & 4 others
+LOCATION:https://luma.com/event/evt-BUS7UtEwh05NHU4
+GEO:-22.941968452602897;-43.18223134733207
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260507T230000Z
+DTEND:20260508T010000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-eeVPpbAQtbZJ3nE@events.lu.ma
+SUMMARY:Workshop: Giving Your Agents Wallet Guardrails with ampersend
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 04\n\nHosted by Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-eeVPpbAQtbZJ3nE
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260508T170000Z
+DTEND:20260508T190000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-RtVQU7IZ5xFbbgy@events.lu.ma
+SUMMARY:Workshop: Agent-to-Agent Payments
+DESCRIPTION:Get up-to-date information at: https://luma.com/agent-to-agent
+ \n\nHosted by Augusto & 3 others
+LOCATION:https://luma.com/event/evt-RtVQU7IZ5xFbbgy
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260512T220000Z
+DTEND:20260512T230000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-uffaIRZyRYHshVs@events.lu.ma
+SUMMARY:Vibe Space Interview with Lou Kerner from DAIAA
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_lou\n\nHoste
+ d by Matheus Pagani, Kevin Jones & Lou Kerner
+LOCATION:https://luma.com/event/evt-uffaIRZyRYHshVs
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260513T200000Z
+DTEND:20260513T210000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-HYVwUJMomJQ1WpH@events.lu.ma
+SUMMARY:Vibe Space Interview with Victoria D'Hondt from Xpertise Lab Advis
+ ory
+DESCRIPTION:Get up-to-date information at: https://luma.com/victoria-exper
+ tise-lab\n\nHosted by Augusto & 3 others
+LOCATION:https://luma.com/event/evt-HYVwUJMomJQ1WpH
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260515T190000Z
+DTEND:20260515T200000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-6b8C0667JGPeyEr@events.lu.ma
+SUMMARY:Vibe Space Interview with Juan Manuel Barrero from Lazo
+DESCRIPTION:Get up-to-date information at: https://luma.com/juan-manuel\n
+ \nHosted by Augusto & 3 others
+LOCATION:https://luma.com/event/evt-6b8C0667JGPeyEr
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260519T170000Z
+DTEND:20260519T180000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-VKO5s2vy9tkbHPG@events.lu.ma
+SUMMARY:Workshop: Confidential AI Agent and Payment
+DESCRIPTION:Get up-to-date information at: https://luma.com/confidential-a
+ i\n\nHosted by Augusto, Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-VKO5s2vy9tkbHPG
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260520T160000Z
+DTEND:20260520T170000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-Q1kGGeyFCfRYBLN@events.lu.ma
+SUMMARY:Podcast: Roasting Agents - Aurey Product Analysis & GTM Brainstorm
+DESCRIPTION:Get up-to-date information at: https://luma.com/roasting-agent
+ s\n\nHosted by Augusto & 3 others
+LOCATION:https://luma.com/event/evt-Q1kGGeyFCfRYBLN
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260521T210000Z
+DTEND:20260521T220000Z
+DTSTAMP:20261125T173858Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-739gxZknfIAWti9@events.lu.ma
+SUMMARY:Workshop: AI Agents Discovery
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 06\n\nHosted by Matheus Pagani & 3 others
+LOCATION:https://luma.com/event/evt-739gxZknfIAWti9
+SEQUENCE:217791538
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260522T200000Z
+DTEND:20260522T220000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-UQe8aT35G74MCqN@events.lu.ma
+SUMMARY:Workshop: Identity for AI Agents
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 05\n\nHosted by Matheus Pagani, Kevin Jones & Kevin
+LOCATION:https://luma.com/event/evt-UQe8aT35G74MCqN
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260527T230000Z
+DTEND:20260528T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-1KpCGtq8R4FHC6a@events.lu.ma
+SUMMARY:Vibe Space Interview with Artin Bogdanov from SUN
+DESCRIPTION:Get up-to-date information at: https://luma.com/artin\n\nHoste
+ d by Matheus Pagani, Ilias Anwar & SUN
+LOCATION:https://luma.com/event/evt-1KpCGtq8R4FHC6a
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260528T220000Z
+DTEND:20260528T233000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Supermoon":MAILTO:redigido@exemplo.invalid
+UID:evt-lumkABpqHupOcZC@events.lu.ma
+SUMMARY:The Corporate VC Playbook: Capital One Ventures | Workshop
+DESCRIPTION:Get up-to-date information at: https://luma.com/2e44x68k\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Supermoon & 3 othe
+ rs
+LOCATION:https://luma.com/event/evt-lumkABpqHupOcZC
+GEO:40.74701236456135;-73.9906131091104
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260528T230000Z
+DTEND:20260529T010000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="austin":MAILTO:redigido@exemplo.invalid
+UID:evt-oRMGhmlyDwjJqfX@events.lu.ma
+SUMMARY:Workshop: AI Agents on Ethereum
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 07\n\nHosted by austin, Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-oRMGhmlyDwjJqfX
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260529T220000Z
+DTEND:20260530T020000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Us21mICfLuLsYEQ@events.lu.ma
+SUMMARY:AI Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-demo-day-5
+ \n\nHosted by Matheus Pagani & AJ Green
+LOCATION:https://luma.com/event/evt-Us21mICfLuLsYEQ
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260531T190000Z
+DTEND:20260531T200000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-XkEF8yugtt9ByVn@events.lu.ma
+SUMMARY:Vibe Awards May
+DESCRIPTION:Get up-to-date information at: https://luma.com/vibe-awards-5
+ \n\nAddress:\nOnline - Asynchronous Judging\n\nHosted by Augusto & Matheus
+  Pagani
+LOCATION:Online - Asynchronous Judging
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260601T210000Z
+DTEND:20260602T010000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-3cj1k5N5Ge9vPfO@events.lu.ma
+SUMMARY:Vibe Space VIP Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_mixer\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by Matheus Pagani & Il
+ ias Anwar
+LOCATION:https://luma.com/event/evt-3cj1k5N5Ge9vPfO
+GEO:40.71424897821032;-74.00944623027502
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260602T000000Z
+DTEND:20260602T020000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Stephen Michael":MAILTO:redigido@exemplo.invalid
+UID:evt-lrbf7Ki1p7FpeND@events.lu.ma
+SUMMARY:Steak Dinner at the Harvard Club
+DESCRIPTION:Get up-to-date information at: https://luma.com/harvardclubdin
+ ner\n\nAddress:\nHarvard Club of New York City\nNew York, NY\nUnited State
+ s\n\nHosted by Stephen Michael & 5 others
+LOCATION:Harvard Club of New York City, 35 W 44th St, New York, NY 10036, 
+ USA
+GEO:40.755532099999996;-73.9814629
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260604T210000Z
+DTEND:20260605T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-4NlRPfc1UaK20bO@events.lu.ma
+SUMMARY:The Oasis @ NY Tech Week Day 4 - Creating with Flow
+DESCRIPTION:Get up-to-date information at: https://luma.com/ny-ai-automati
+ ons\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus P
+ agani & 6 others
+LOCATION:https://luma.com/event/evt-4NlRPfc1UaK20bO
+GEO:40.7567474208503;-73.99068737911001
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260605T210000Z
+DTEND:20260606T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-z6uTRZDp5OQzNCI@events.lu.ma
+SUMMARY:New York | Lovable Build Session with Datadog and Firecrawl
+DESCRIPTION:Get up-to-date information at: https://luma.com/lovable-ny\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani &
+  7 others
+LOCATION:https://luma.com/event/evt-z6uTRZDp5OQzNCI
+GEO:40.753584896192216;-73.98978437250327
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260608T203000Z
+DTEND:20260608T230000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Pqt7QY0K6ZSaFAj@events.lu.ma
+SUMMARY:Brazil Consulate Panel: Accelerating Innovation with AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/br-consulate-p
+ anel\n\nAddress:\nCheck event page for more details.\n\nHosted by Matheus 
+ Pagani & 3 others
+LOCATION:https://luma.com/event/evt-Pqt7QY0K6ZSaFAj
+GEO:40.75155808492608;-73.9749361738674
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260608T220000Z
+DTEND:20260609T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-qya3XmIB4JoQi5t@events.lu.ma
+SUMMARY:Workshop: Agent Abstracted Environments on Ethereum by EVVM Team
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ evvm\n\nHosted by Matheus Pagani & 3 others
+LOCATION:https://luma.com/event/evt-qya3XmIB4JoQi5t
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260609T130000Z
+DTEND:20260610T020000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Monad Foundation":MAILTO:redigido@exemplo.invalid
+UID:evt-6lJrx4JNbDpWmXg@events.lu.ma
+SUMMARY:Monad Blitz NYC Hackathon @perfil-redigido
+DESCRIPTION:Get up-to-date information at: https://luma.com/blitz-nyc-june
+ -2026\n\nAddress:\nCheck event page for more details.\n\nHosted by Monad F
+ oundation & 3 others
+LOCATION:https://luma.com/event/evt-6lJrx4JNbDpWmXg
+GEO:40.74426883016967;-73.99081955799343
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260609T203000Z
+DTEND:20260609T230000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-sbEdm5lUpdW5VVa@events.lu.ma
+SUMMARY:Brazil Consulate Workshop: Accelerating Innovation with AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/br-consulate-w
+ orkshop\n\nAddress:\nCheck event page for more details.\n\nHosted by Mathe
+ us Pagani & 5 others
+LOCATION:https://luma.com/event/evt-sbEdm5lUpdW5VVa
+GEO:40.75124761852904;-73.97203979078641
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260611T230000Z
+DTEND:20260612T010000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-qKFc4F95z4Wy7eG@events.lu.ma
+SUMMARY:Workshop: Scaffold Agents
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 09\n\nHosted by Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-qKFc4F95z4Wy7eG
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260616T230000Z
+DTEND:20260617T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-kH69wT7irzyyWpo@events.lu.ma
+SUMMARY:Vibe Space Interview with Marc E. Moglen from MFT.Agency
+DESCRIPTION:Get up-to-date information at: https://luma.com/marc-mft\n\nHo
+ sted by Augusto & 3 others
+LOCATION:https://luma.com/event/evt-kH69wT7irzyyWpo
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260618T230000Z
+DTEND:20260619T010000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-KEs1wlZMHtL4bDG@events.lu.ma
+SUMMARY:Workshop: AI Agents Infra
+DESCRIPTION:Get up-to-date information at: https://luma.com/spider-agents-
+ 08\n\nHosted by Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-KEs1wlZMHtL4bDG
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260624T210000Z
+DTEND:20260625T010000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-7zLeLF1rb7CvrYO@events.lu.ma
+SUMMARY:Vibe Space World Cup Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_mixer2\n\nAd
+ dress:\nHard Rock Cafe\nNew York, NY\nUnited States\n\nHosted by Matheus P
+ agani
+LOCATION:Hard Rock Cafe, 1501 Broadway, New York, NY 10036, USA
+GEO:40.7570352;-73.9866112
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260707T230000Z
+DTEND:20260708T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Augusto":MAILTO:redigido@exemplo.invalid
+UID:evt-pIaZcsIwFJw5NT1@events.lu.ma
+SUMMARY:Workshop: AI Agents on Chainlink
+DESCRIPTION:Get up-to-date information at: https://luma.com/chainlink-agen
+ ts\n\nHosted by Augusto, Matheus Pagani & Kevin Jones
+LOCATION:https://luma.com/event/evt-pIaZcsIwFJw5NT1
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260713T210000Z
+DTEND:20260714T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-687UCWeJcHo5hTR@events.lu.ma
+SUMMARY:Learn to Build with AI
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_coding\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-687UCWeJcHo5hTR
+GEO:40.70679863829868;-74.01374445433194
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260714T190000Z
+DTEND:20260714T210000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-OxD8sys57ToD55A@events.lu.ma
+SUMMARY:Panel: Unlocking Early Stage Funding
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_funding\n\nA
+ ddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-OxD8sys57ToD55A
+GEO:40.72391127972401;-73.99897132030888
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260714T210000Z
+DTEND:20260715T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-VNw16EY9P55eUIr@events.lu.ma
+SUMMARY:Legal Tech Meetup with Vibe Space and Jumpstart
+DESCRIPTION:Get up-to-date information at: https://luma.com/legaltech-ny\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+  & Beatriz
+LOCATION:https://luma.com/event/evt-VNw16EY9P55eUIr
+GEO:40.72398161945332;-73.99884555297615
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260715T210000Z
+DTEND:20260716T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-4IcZtMfHCCZOwJe@events.lu.ma
+SUMMARY:AI GTM Meetup
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_sales\n\nAdd
+ ress:\nCheck event page for more details.\n\nHosted by Matheus Pagani & El
+ lie Li
+LOCATION:https://luma.com/event/evt-4IcZtMfHCCZOwJe
+GEO:40.704712202714624;-74.01140793186235
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260716T210000Z
+DTEND:20260717T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-5vqxsLEonmiIxVC@events.lu.ma
+SUMMARY:AI GTM Roundtable
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_gtm\n\nAddre
+ ss:\nCheck event page for more details.\n\nHosted by Matheus Pagani, Chris
+ topher Edwards & Ellie Li
+LOCATION:https://luma.com/event/evt-5vqxsLEonmiIxVC
+GEO:40.75762614216722;-73.97111866396062
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260717T200000Z
+DTEND:20260717T230000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-glA0uwJM7QsFKyy@events.lu.ma
+SUMMARY:GTM Happy Hour
+DESCRIPTION:Get up-to-date information at: https://luma.com/gtm-drinks\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani &
+  Ellie Li
+LOCATION:https://luma.com/event/evt-glA0uwJM7QsFKyy
+GEO:40.76915426511509;-73.99593226122103
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260724T000000Z
+DTEND:20260724T040000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Nir Naamani":MAILTO:redigido@exemplo.invalid
+UID:evt-pTsgHGwk0VC10uQ@events.lu.ma
+SUMMARY:The Inference Layer w/ A16z & Dell Ventures Fireside Chat @perfil-redigido |
+  Panel + Chat for AI Infrastructure Builders
+DESCRIPTION:Get up-to-date information at: https://luma.com/A16z-Dell-AI-I
+ nfra\n\nAddress:\nCheck event page for more details.\n\nHosted by Nir Naam
+ ani
+LOCATION:https://luma.com/event/evt-pTsgHGwk0VC10uQ
+GEO:37.78592210283281;-122.42320402222047
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260731T230000Z
+DTEND:20260801T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-wWM6FISa82gHQdJ@events.lu.ma
+SUMMARY:Community Call - July
+DESCRIPTION:Get up-to-date information at: https://luma.com/community-call
+ -jul\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-wWM6FISa82gHQdJ
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260817T210000Z
+DTEND:20260818T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-GlwRrWUtBZKE0qh@events.lu.ma
+SUMMARY:Lovable Meetup with Oracle São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/lovable-sp-2\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+ , HumaSynk & FILIPE DOS SANTOS
+LOCATION:https://luma.com/event/evt-GlwRrWUtBZKE0qh
+GEO:-23.625628940625198;-46.69933924788333
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260818T210000Z
+DTEND:20260819T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-HmSwjHU5PgotGEN@events.lu.ma
+SUMMARY:Devin Meetup São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/devin-sp\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Matheus Pagani & 3
+  others
+LOCATION:https://luma.com/event/evt-HmSwjHU5PgotGEN
+GEO:-23.62224865683215;-46.69641890256413
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260825T220000Z
+DTEND:20260826T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-54eORxHxJfK2B8W@events.lu.ma
+SUMMARY:Devin Virtual Workshop - Brasil
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-virt
+ ual-workshop-3\n\nHosted by Matheus Pagani, Cognition & nader dabit
+LOCATION:https://luma.com/event/evt-54eORxHxJfK2B8W
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260826T200000Z
+DTEND:20260826T210000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-0zLd8b4vxLbos3F@events.lu.ma
+SUMMARY:Vibe Space Interview with Nimrod Kramer from daily.dev
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_nimrod\n\nHo
+ sted by Matheus Pagani & daily dev
+LOCATION:https://luma.com/event/evt-0zLd8b4vxLbos3F
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260831T230000Z
+DTEND:20260901T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-MEI8FFPIYGZmTRm@events.lu.ma
+SUMMARY:Community Call - August
+DESCRIPTION:Get up-to-date information at: https://luma.com/community-call
+ -aug\n\nHosted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-MEI8FFPIYGZmTRm
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260902T130000Z
+DTEND:20260902T140000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Xk9Efll0kKM4y56@events.lu.ma
+SUMMARY:Vibe Space Interview with Raffi Krikorian from Mozilla
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_raffi\n\nHos
+ ted by Matheus Pagani, Alia Sharif & Marcus Rein
+LOCATION:https://luma.com/event/evt-Xk9Efll0kKM4y56
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260905T113000Z
+DTEND:20260905T223000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="HumaSynk":MAILTO:redigido@exemplo.invalid
+UID:evt-IEYn9wcNbifCUEs@events.lu.ma
+SUMMARY:DevConverge 2026 SP – O Futuro do Código: Devs + IAs
+DESCRIPTION:Get up-to-date information at: https://luma.com/gmrjgn41\n\nAd
+ dress:\nAv. Manuel Bandeira, 346\nSão Paulo, SP\nBrazil\n\nHosted by Huma
+ Synk
+LOCATION:Av. Manuel Bandeira, 346 - Vila Leopoldina, São Paulo - SP, 0531
+ 7-020, Brazil
+GEO:-23.540387499999998;-46.7338765
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260912T120000Z
+DTEND:20260912T200000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="AJ Green":MAILTO:redigido@exemplo.invalid
+UID:evt-XlL1yRpCtA1uGTs@events.lu.ma
+SUMMARY:Hack for Humanity: São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/h4h-sao-paulo
+ \n\nAddress:\nAnhembi Morumbi University - Vila Olímpia Campus\nSala Harv
+ ard\nSão Paulo, SP\nBrazil\n\nHosted by AJ Green & 4 others
+LOCATION:Anhembi Morumbi University - Vila Olímpia Campus, R. Casa do Ato
+ r, 294 - Vila Olímpia, São Paulo - SP, 04546-001, Brazil
+GEO:-23.600238299999997;-46.6766337
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260914T210000Z
+DTEND:20260915T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-ztXa6AWLWXd9pmx@events.lu.ma
+SUMMARY:Lovable Meetup with Oracle São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/lovable-sp-3\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+ , HumaSynk & Hyanka Coelho
+LOCATION:https://luma.com/event/evt-ztXa6AWLWXd9pmx
+GEO:-23.623589365088048;-46.698717978457175
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20261023
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="BuilderBase":MAILTO:redigido@exemplo.invalid
+UID:evt-vQvylQdWNuzmJHA@events.lu.ma
+SUMMARY:Build Something Real: The Serverpod Hackathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/builde-mked\n
+ \nHosted by BuilderBase & Alexander Sandor
+LOCATION:https://luma.com/event/evt-vQvylQdWNuzmJHA
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260915T210000Z
+DTEND:20260916T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-3TLeusrjCA8a7w6@events.lu.ma
+SUMMARY:Devin Meetup São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/devin-sp-2\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani &
+  3 others
+LOCATION:https://luma.com/event/evt-3TLeusrjCA8a7w6
+GEO:-23.62463588663688;-46.695791468931866
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260922T220000Z
+DTEND:20260923T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-6A5IGnO9Ly3B3Mm@events.lu.ma
+SUMMARY:Devin Virtual Workshop - Brasil
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-virt
+ ual-workshop-4\n\nHosted by Matheus Pagani, Cognition & nader dabit
+LOCATION:https://luma.com/event/evt-6A5IGnO9Ly3B3Mm
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260924T220000Z
+DTEND:20260924T230000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-yr5R0EFFJVG6SAX@events.lu.ma
+SUMMARY:Vibe Space Interview with Jenna Reback from Blueberry Creative Stu
+ dios
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_jenna\n\nHos
+ ted by Matheus Pagani & Jenna Reback
+LOCATION:https://luma.com/event/evt-yr5R0EFFJVG6SAX
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260926T113000Z
+DTEND:20260926T150000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Emerson Delatorre":MAILTO:redigido@exemplo.invalid
+UID:evt-1WxhYnDQWUJFOAl@events.lu.ma
+SUMMARY:Devin Meetup Rio de Janeiro
+DESCRIPTION:Get up-to-date information at: https://luma.com/l2f11j2p\n\nAd
+ dress:\nFIAP - Rio de Janeiro\n3º andar\nRio de Janeiro, RJ\nBrazil\n\nHo
+ sted by Emerson Delatorre & 3 others
+LOCATION:FIAP - Rio de Janeiro, Centro Empresarial Botafogo - Praia de Bot
+ afogo, 300 - Conjuntos 33 e 34 - Botafogo, Rio de Janeiro - RJ, 22250-040,
+  Brazil
+GEO:-22.9441605;-43.182562
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260929T190000Z
+DTEND:20260929T200000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-MUFhBQDaJv9t2CB@events.lu.ma
+SUMMARY:Vibe Space Interview with Daniel Faloppa from Equidam
+DESCRIPTION:Get up-to-date information at: https://luma.com/v_equidam\n\nH
+ osted by Matheus Pagani
+LOCATION:https://luma.com/event/evt-MUFhBQDaJv9t2CB
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261001T210000Z
+DTEND:20261002T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Clerk":MAILTO:redigido@exemplo.invalid
+UID:evt-asCHnEaFDmHVowv@events.lu.ma
+SUMMARY:From Prompt to Login: Building Auth with Clerk in São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/devin-clerk-sp
+ \n\nAddress:\nCheck event page for more details.\n\nHosted by Clerk & 3 ot
+ hers
+LOCATION:https://luma.com/event/evt-asCHnEaFDmHVowv
+GEO:-23.562437832527444;-46.65115791498758
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261023T110000Z
+DTEND:20261023T210000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Marcelo Okano":MAILTO:redigido@exemplo.invalid
+UID:evt-HAPDQwO0rqtJsTt@events.lu.ma
+SUMMARY:DevDay Exchange Community Hackathon: São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/openai-hackath
+ on-sp\n\nAddress:\nAnhembi Morumbi University\nSão Paulo, SP\nBrazil\n\nH
+ osted by Marcelo Okano, Matheus Pagani & Laura Napoles
+LOCATION:Anhembi Morumbi University, R. Dr. Almeida Lima, 1134 - Mooca, S
+ ão Paulo - SP, 03101-001, Brazil
+GEO:-23.5512801;-46.610849699999996
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261025T160000Z
+DTEND:20261026T033000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="BuilderBase":MAILTO:redigido@exemplo.invalid
+UID:evt-EPctbaOL4vaLwLI@events.lu.ma
+SUMMARY:Dell x NVIDIA AI Hackathon, San Francisco
+DESCRIPTION:Get up-to-date information at: https://luma.com/builde-ixyz\n
+ \nAddress:\nFrontier Tower 🧑‍🚀\nSan Francisco, CA\nUnited States\n
+ \nHosted by BuilderBase & 3 others
+LOCATION:Frontier Tower 🧑‍🚀, 995 Market St, San Francisco, CA 9410
+ 3, USA
+GEO:37.7822672;-122.4099607
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261026T210000Z
+DTEND:20261027T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-tTtr6y0bkacZcDs@events.lu.ma
+SUMMARY:Lovable Meetup with Oracle São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/lovable-sp-4\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+  & HumaSynk
+LOCATION:https://luma.com/event/evt-tTtr6y0bkacZcDs
+GEO:-23.623901004262212;-46.69594590632913
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261028T210000Z
+DTEND:20261029T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-Cz2kSCKDzCBK5tf@events.lu.ma
+SUMMARY:Devin Meetup São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/devin-sp-3\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani &
+  5 others
+LOCATION:https://luma.com/event/evt-Cz2kSCKDzCBK5tf
+GEO:-23.62261804494768;-46.69902563552167
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261030T220000Z
+DTEND:20261030T230000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-M7pgf8BiZszfUdx@events.lu.ma
+SUMMARY:Devin Virtual Workshop - Brasil
+DESCRIPTION:Get up-to-date information at: https://luma.com/cognition-virt
+ ual-workshop-5\n\nHosted by Matheus Pagani & 4 others
+LOCATION:https://luma.com/event/evt-M7pgf8BiZszfUdx
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261031T123000Z
+DTEND:20261031T160000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Emerson Delatorre":MAILTO:redigido@exemplo.invalid
+UID:evt-iEhqS70C9lWsfUk@events.lu.ma
+SUMMARY:Devin Meetup Manaus #1
+DESCRIPTION:Get up-to-date information at: https://luma.com/yeajl4kq\n\nAd
+ dress:\nMercure Manaus\nCobertura\nManaus, AM\nBrazil\n\nHosted by Emerson
+  Delatorre & 4 others
+LOCATION:Mercure Manaus, Ave. Mário Ypiranga Monteiro - Nº 1000 - Adrian
+ ópolis, Manaus - AM, 69057-000, Brazil
+GEO:-3.107026;-60.012796599999994
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261110T210000Z
+DTEND:20261111T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Clerk":MAILTO:redigido@exemplo.invalid
+UID:evt-zx7EyIXZIJoXYro@events.lu.ma
+SUMMARY:From Prompt to Login: Building Auth with Clerk in Vitória
+DESCRIPTION:Get up-to-date information at: https://luma.com/devin-clerk-vi
+ x\n\nAddress:\nUniversity Vila Velha\nAnfiteatro da UVV\nVila Velha, ES\nB
+ razil\n\nHosted by Clerk & 5 others
+LOCATION:University Vila Velha, Avenida Comissário José Dantas de Melo, 
+ 21 - Boa Vista II, Vila Velha - ES, 29102-920, Brazil
+GEO:-20.3541156;-40.2992142
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261123T210000Z
+DTEND:20261124T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-kA7qxsD4MU4VJ1M@events.lu.ma
+SUMMARY:Lovable AI Panel with Oracle São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/lovable-sp-5\n
+ \nAddress:\nCheck event page for more details.\n\nHosted by Matheus Pagani
+  & HumaSynk
+LOCATION:https://luma.com/event/evt-kA7qxsD4MU4VJ1M
+GEO:-23.626560102284337;-46.69652302056647
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261125T210000Z
+DTEND:20261126T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Matheus Pagani":MAILTO:redigido@exemplo.invalid
+UID:evt-YEkDcmJq3cWyjK5@events.lu.ma
+SUMMARY:Devin Meetup São Paulo
+DESCRIPTION:Get up-to-date information at: https://luma.com/devin-sp-4\n\n
+ Address:\nCheck event page for more details.\n\nHosted by Matheus Pagani &
+  5 others
+LOCATION:https://luma.com/event/evt-YEkDcmJq3cWyjK5
+GEO:-23.599598324175613;-46.678163236002376
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261128T120000Z
+DTEND:20261128T150000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Emerson Delatorre":MAILTO:redigido@exemplo.invalid
+UID:evt-w9OfmBnSYAWFIoG@events.lu.ma
+SUMMARY:Devin Meetup Rio de Janeiro
+DESCRIPTION:Get up-to-date information at: https://luma.com/12gt4jis\n\nAd
+ dress:\nUnidade Ibmec\nRio de Janeiro, RJ\nBrazil\n\nHosted by Emerson Del
+ atorre & 4 others
+LOCATION:Unidade Ibmec, Av. Armando Lombardi, 940 - Barra da Tijuca, Rio d
+ e Janeiro - RJ, 22640-000, Brazil
+GEO:-23.006206376021744;-43.313724487087114
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261205T110000Z
+DTEND:20261205T223000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="SANFRAN ILAB":MAILTO:redigido@exemplo.invalid
+UID:evt-apRLffhin0OjbP3@events.lu.ma
+SUMMARY:Hackathon BLIS II — Building the Brazilian Ontology for Law
+DESCRIPTION:Get up-to-date information at: https://luma.com/jq77w76b\n\nAd
+ dress:\nUSP\nSão Paulo, SP\nBrazil\n\nHosted by SANFRAN ILAB & Devin
+LOCATION:USP, Pte. da Cidade Universitária - Alto de Pinheiros, São Paul
+ o - SP, 05672-130, Brazil
+GEO:-23.5581335;-46.7113492
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261208T210000Z
+DTEND:20261209T000000Z
+DTSTAMP:20261125T173859Z
+ORGANIZER;CN="Hackathon Brasil":MAILTO:redigido@exemplo.invalid
+UID:evt-0DMyzR6x4RRBRvd@events.lu.ma
+SUMMARY:Devin Meetup Florianópolis
+DESCRIPTION:Get up-to-date information at: https://luma.com/5169cgz4\n\nAd
+ dress:\nFounder Haus, Av. dos Merlins, 156 - Jurerê Internacional, Floria
+ nópolis - SC, 88053-370\n\nHosted by Hackathon Brasil & 4 others
+LOCATION:Founder Haus, Av. dos Merlins, 156 - Jurerê Internacional, Flori
+ anópolis - SC, 88053-370
+SEQUENCE:217791539
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR
