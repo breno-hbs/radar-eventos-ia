@@ -31,6 +31,6 @@ Sem descrições nem dados pessoais aqui: só ids e rótulos. A avaliação cham
 verdade e roda só pelo workflow manual **Avaliar classificador** (`.github/workflows/avaliar.yml`):
 
 ```bash
-python -m radar.avaliacao --conjunto teste --saida docs/avaliacao/teste-classificador_v1.md \
+python -m radar.avaliacao --conjunto teste --saida docs/avaliacao/teste-classificador_v2.md \
   --diagnostico diagnostico-avaliacao   # opcional: resposta bruta dos erros de saída (D15)
 ```

@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.5 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.6 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -36,7 +36,8 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
    - **Geográfico:** coordenadas na caixa da Grande SP → local textual (UF, país estrangeiro, CEP 01000-000 a 09999-999, "São Paulo") → modalidade online (plataforma de transmissão na URL do local ou "online" no texto). Só é descartado o evento com evidência de estar fora da Grande SP; sem coordenada e sem local conclusivo, segue para o classificador como `indefinida` e nunca é descartado só por isso (D6, D11).
    - **Horizonte:** descarta o que já terminou e o que começa depois de 90 dias; o corte de 30 dias por tipo (§2) é aplicado depois da classificação (D11).
 4. **Deduplicação** entre fontes.
-5. **Classificação com LLM** (só eventos novos ou alterados; detalhes na D13):
+5. **Classificação com LLM** (só eventos novos ou alterados; detalhes na D13 e na D16):
+   - prompt atual `classificador_v2` (v1 mantido como histórico): termos de IA no título contam (vibe coding, agentes, LLM, ferramentas como Copilot, Cursor, ChatGPT, Claude…), na dúvida o evento é tratado como IA (prioridade de recall), idioma só com declaração explícita e trechos de até 120 caracteres; thinking desligado em toda chamada, para custo e tamanho de resposta previsíveis (D16);
    - responde: é IA, categoria, tópicos, tipo de evento, modalidade, idioma, tradução, estado de preço, localização (só quando o filtro deixou `indefinida`; nos demais casos, resposta diferente de `nao_se_aplica` é erro), resumo de 1 linha e trecho de evidência;
    - todo campo conhecido traz um trecho copiado literalmente do texto do evento, conferido pelo código; sem evidência, "desconhecido". Trecho literal não garante interpretação correta: a avaliação do §8 continua;
    - saída JSON estruturada, validada com Pydantic e contra o texto do evento; conteúdo externo vai delimitado como dado não confiável, sem link de inscrição, coordenadas nem identificadores, e toda URL dos textos reduzida ao host (o LLM não tem ferramentas);
