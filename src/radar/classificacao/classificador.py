@@ -37,6 +37,7 @@ from radar.config import Configuracao
 MAX_TOKENS_SAIDA = 1024
 MAX_FALHAS_API_SEGUIDAS = 3
 CATEGORIAS_QUE_INTERROMPEM = ("autenticacao", "rate_limit")
+FILTRO_INDEFINIDO = "indefinida"
 CAMPOS_TRECHO = (
     "trecho_modalidade",
     "trecho_idioma",
@@ -79,15 +80,18 @@ def _sem_reticencias_nas_pontas(trecho: str) -> str:
 def validar_contra_evento(
     saida: SaidaClassificador, texto_fonte: str, localizacao_filtro: str
 ) -> str | None:
-    """None se a saída é coerente com o evento; senão o motivo do erro (código fechado)."""
-    if localizacao_filtro == "indefinida":
-        if saida.localizacao == "nao_se_aplica":
-            return "saida_localizacao_ausente"
-    elif saida.localizacao != "nao_se_aplica":
-        # O filtro já decidiu a localização; o LLM não pode contradizê-lo.
-        return "saida_localizacao_indevida"
+    """None se a saída é coerente com o evento; senão o motivo do erro (código fechado).
+
+    Quando o filtro decidiu a localização (≠ "indefinida"), a localização do LLM não é
+    conferida: ela é descartada em `_interpretar` antes do Pydantic (D17).
+    """
+    filtro_decidiu = localizacao_filtro != FILTRO_INDEFINIDO
+    if not filtro_decidiu and saida.localizacao == "nao_se_aplica":
+        return "saida_localizacao_ausente"
     fonte = _normalizar(texto_fonte)
     for campo in CAMPOS_TRECHO:
+        if filtro_decidiu and campo == "trecho_localizacao":
+            continue
         trecho: str = getattr(saida, campo)
         if not trecho:
             continue
@@ -119,6 +123,10 @@ def _interpretar(
         return None, "saida_json_invalido"
     if not isinstance(dados, dict):
         return None, "saida_schema_invalido"
+    if localizacao_filtro != FILTRO_INDEFINIDO:
+        # O filtro geográfico já decidiu e a localização do LLM nunca é usada: descartar em
+        # vez de transformar em erro (D17). Os demais campos seguem validados.
+        dados = {**dados, "localizacao": "nao_se_aplica", "trecho_localizacao": ""}
     try:
         saida = SaidaClassificador.model_validate(dados, strict=True)
     except ValidationError as erro:

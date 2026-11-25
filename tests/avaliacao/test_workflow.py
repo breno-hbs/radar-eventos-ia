@@ -3,7 +3,7 @@
 Regras do workflow: só `workflow_dispatch` (input `conjunto`, choice teste|dev), nunca em
 pull_request; `permissions: contents: write`; o secret ANTHROPIC_API_KEY aparece uma única
 vez, no `env` do passo que roda `python -m radar.avaliacao` (nunca em `run`, nem no env do
-job/workflow); grava `docs/avaliacao/<conjunto>-classificador_v2.md` (sufixo fixo, igual
+job/workflow); grava `docs/avaliacao/<conjunto>-classificador_v3.md` (sufixo fixo, igual
 ao VERSAO_PROMPT atual) e publica num branch novo
 `fase-1/f1-07-avaliacao-${{ github.run_number }}`, sem push na main e sem forçar.
 
@@ -99,9 +99,10 @@ def test_grava_relatorio_e_publica_em_branch_novo(workflow: dict[Any, Any], text
     assert "docs/avaliacao/" in texto
     prompt = importlib.import_module("radar.classificacao.prompt")
     versao = prompt.VERSAO_PROMPT
-    assert versao == "classificador_v2"
+    assert versao == "classificador_v3"
     assert f"-{versao}.md" in texto
     assert "classificador_v1" not in texto
+    assert "classificador_v2" not in texto
     passo = _passo_avaliacao(workflow)
     assert f"-{versao}.md" in passo["run"]
     runs = "\n".join(str(p.get("run", "")) for p in _passos(workflow))
