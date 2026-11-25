@@ -173,3 +173,44 @@ def test_calendario_luma_rejeita_campo_extra(calendarios_mod: ModuleType) -> Non
             id="cal-HtbK5aYvR5B2WAu",
             url="https://api.lu.ma/ics/get",
         )
+
+
+# --- comunidade_ia (F1-07b) --------------------------------------------------------------
+#
+# `CalendarioLuma.comunidade_ia: bool = False` (bool estrito): eventos de calendários que são
+# comunidades de IA contam como IA.
+
+COMUNIDADES_IA = {"ai-collective", "vibe-space", "codex-sp", "womakerscode"}
+
+
+def test_config_real_marca_as_comunidades_de_ia(calendarios_mod: ModuleType) -> None:
+    calendarios = calendarios_mod.carregar_calendarios(CONFIG)
+    assert {c.slug for c in calendarios if c.comunidade_ia} == COMUNIDADES_IA
+    assert {c.slug for c in calendarios if not c.comunidade_ia} == {"mug-sp", "cidade-sp"}
+
+
+def test_comunidade_ia_padrao_false(calendarios_mod: ModuleType) -> None:
+    calendario = calendarios_mod.CalendarioLuma(
+        slug="mug-sp", nome="MUG São Paulo", entidade="calendar", id="cal-HtbK5aYvR5B2WAu"
+    )
+    assert calendario.comunidade_ia is False
+
+
+@pytest.mark.parametrize("valor", ["true", "sim", 1, 0, None])
+def test_comunidade_ia_nao_bool_e_erro(calendarios_mod: ModuleType, valor: Any) -> None:
+    with pytest.raises(ValidationError):
+        calendarios_mod.CalendarioLuma(
+            slug="mug-sp",
+            nome="MUG São Paulo",
+            entidade="calendar",
+            id="cal-HtbK5aYvR5B2WAu",
+            comunidade_ia=valor,
+        )
+
+
+def test_comunidade_ia_texto_no_yaml_e_erro(calendarios_mod: ModuleType, tmp_path: Path) -> None:
+    def mudar(entradas: list[dict[str, Any]]) -> None:
+        entradas[0]["comunidade_ia"] = "yes-please"
+
+    with pytest.raises((ValueError, ValidationError)):
+        calendarios_mod.carregar_calendarios(_gravar_variacao(tmp_path, mudar))

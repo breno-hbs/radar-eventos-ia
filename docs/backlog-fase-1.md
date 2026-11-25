@@ -21,6 +21,7 @@
 | F1-05 | Banco: modelo, migrations e ciclo de vida | AFK | F1-03 |
 | F1-06 | Classificador com LLM | AFK | F1-05 |
 | F1-07 | Dataset de avaliação e métricas | HITL | F1-06 |
+| F1-07b | Ajustes após a 1ª avaliação (diagnóstico, comunidades, prompt v2) | HITL | F1-07 |
 | F1-08 | Enriquecimento de preço da Luma | AFK | F1-05 |
 | F1-09 | Notificador Telegram | HITL | F1-05 |
 | F1-10 | Orquestração, agendamento e alertas | HITL | F1-04, F1-06, F1-08, F1-09 |
@@ -76,13 +77,18 @@
 ### F1-07 — Dataset de avaliação e métricas
 - `avaliacao/dev.jsonl` e `avaliacao/teste.jsonl` separados; Vector Search e Grok Bot só no `dev` (D7).
 - `python -m radar.avaliacao --conjunto teste|dev --saida <arquivo.md>`: precision, recall e F1 no conjunto escolhido, com a lista de erros.
-- `python -m radar.avaliacao --conjunto teste|dev`; workflow manual `avaliar.yml` publica o relatório em `docs/avaliacao/` num branch novo (D14).
+- Workflow manual `avaliar.yml` publica o relatório em `docs/avaliacao/` num branch novo (D14).
 - **Sua parte:**
   - [x] criar a workspace na Anthropic com limite de US$ 5 e cadastrar `ANTHROPIC_API_KEY` nos Secrets;
-  - [ ] rotular os 40 eventos da planilha (é IA / não é, e o idioma), D14;
-  - [ ] gerar `avaliacao/teste.jsonl` (30) e `avaliacao/dev.jsonl` (10) a partir da planilha;
-  - [ ] rodar **Avaliar classificador** com `teste` e revisar o relatório.
+  - [x] rotular os 40 eventos da planilha (é IA / não é, e o idioma), D14;
+  - [x] gerar `avaliacao/teste.jsonl` (30) e `avaliacao/dev.jsonl` (10) a partir da planilha;
+  - [x] rodar **Avaliar classificador** com `teste` e revisar o relatório (`docs/avaliacao/teste-classificador_v1.md`, recall 0,41 → F1-07b).
 - **Aceite:** primeiro relatório de métricas do prompt v1 no conjunto de teste, salvo em `docs/avaliacao/`.
+
+### F1-07b — Ajustes após a 1ª avaliação
+- **Parte A — diagnóstico, comunidades e rótulos (D15):** `comunidade_ia` em `config/fontes.yaml` (AI Collective, Vibe Space, Codex SP, WoMakersCode) conta como IA depois do LLM, só com saída válida — aplicado na avaliação (`classificar_evento`); no radar fica para a leitura no F1-10, sem gravar no banco; `--diagnostico` grava a resposta bruta dos erros `saida_*`, publicada como artifact (7 dias), nunca no banco nem no repositório; rótulos de idioma corrigidos mecanicamente (idioma só onde o texto declara).
+- **Parte B — prompt v2:** termos do título (vibe coding, agentes/agents, LLM etc.) contam como IA; corrigir o corte das respostas (`saida_truncada` etc.) depois de ler o diagnóstico; nova avaliação comparada com a v1 (o teste já foi visto: comparação, não medida independente).
+- **Aceite:** parte A com testes e `verificar.sh` verde; parte B com relatório da v2 em `docs/avaliacao/`.
 
 ### F1-08 — Enriquecimento de preço da Luma
 - Implementa a D4: só eventos novos aprovados, limite por execução (padrão 10), cache por `id_fonte`, nenhuma repetição após erro, regras de moeda e oferta.
@@ -105,6 +111,7 @@
 - Alertas no Telegram: falha de extração; fonte vazia por várias execuções; inatividade perto do dia 50.
 - Horizonte por tipo depois da classificação: conferência e hackathon 90 dias; demais tipos (inclusive `outro`) 30 dias, independentemente de preço e modalidade (D13).
 - Encaminhamento por idioma (D13): pt / bilíngue / com tradução → aviso; `desconhecido` → aviso com "idioma não confirmado"; estrangeiro confirmado sem tradução → resumo semanal se presencial, descartado se exclusivamente online.
+- Regra de comunidade de IA na decisão do aviso (D15): evento com algum calendário (`eventos.calendarios`) marcado `comunidade_ia` no `config/fontes.yaml` vigente conta como IA quando a classificação é `ok`; aplicada na leitura, nunca gravada, para que mudança de calendário ou de marcação valha sem reclassificar.
 - Eventos em falha de classificação (`eventos_com_falha_classificacao`) → resumo semanal como "Não classificado — confira manualmente"; aviso excepcional se o evento acontecer antes do próximo resumo (D13).
 - Commit depois da classificação (o classificador só faz `flush`) e registro do `ResumoClassificacao` (interrupções, restantes, custo estimado).
 - **Sua parte:** criar o banco gratuito (Neon ou Supabase), cadastrar `DATABASE_URL` e `ANTHROPIC_API_KEY` nos Secrets e definir o limite mensal de gasto no console da Anthropic.

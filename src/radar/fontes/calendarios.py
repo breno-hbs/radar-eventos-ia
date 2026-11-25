@@ -1,7 +1,8 @@
 """Lista versionada de calendários da Luma (`config/fontes.yaml`).
 
-O arquivo guarda só slug, nome, entidade e ID; a URL do feed é montada pelo coletor
-(`radar.fontes.luma.url_ical`), o que impede apontar a coleta para outro host.
+O arquivo guarda só slug, nome, entidade, ID e se o calendário é de uma comunidade de IA
+(`comunidade_ia`, D15: seus eventos contam como IA depois do LLM); a URL do feed é montada
+pelo coletor (`radar.fontes.luma.url_ical`), o que impede apontar a coleta para outro host.
 """
 
 from __future__ import annotations
@@ -25,6 +26,8 @@ class CalendarioLuma(BaseModel):
     nome: str = Field(pattern=r"\S")
     entidade: Literal["calendar", "discover"]
     id: str = Field(pattern=r"^(cal|discplace)-[A-Za-z0-9]+$")
+    # Comunidade de IA: eventos contam como IA mesmo que o LLM diga que não (D15).
+    comunidade_ia: bool = Field(default=False, strict=True)
 
     @model_validator(mode="after")
     def _prefixo_combina_com_entidade(self) -> Self:

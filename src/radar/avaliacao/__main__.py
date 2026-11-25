@@ -21,6 +21,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--saida", required=True, type=Path, help="relatório Markdown")
     parser.add_argument("--dir-avaliacao", type=Path, default=Path("avaliacao"))
     parser.add_argument("--dir-fixtures", type=Path, default=Path("tests/fixtures/luma"))
+    parser.add_argument(
+        "--fontes", type=Path, default=Path("config/fontes.yaml"), help="calendários (D15)"
+    )
+    parser.add_argument(
+        "--diagnostico",
+        type=Path,
+        default=None,
+        help="diretório para a resposta bruta dos erros de saída (só artifact, D15)",
+    )
     args = parser.parse_args(argv)
 
     try:
@@ -31,6 +40,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             cliente=None,
             dir_avaliacao=args.dir_avaliacao,
             dir_fixtures=args.dir_fixtures,
+            arquivo_fontes=args.fontes,
+            dir_diagnostico=args.diagnostico,
             agora=datetime.now(ZoneInfo(FUSO)),
         )
     except (ValueError, RuntimeError, OSError) as erro:

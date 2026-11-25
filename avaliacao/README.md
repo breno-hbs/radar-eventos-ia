@@ -20,12 +20,17 @@ Um evento por linha, em JSON:
 - `calendario`: slug do calendário; o evento é lido de `tests/fixtures/luma/<calendario>.ics`.
 - `id_fonte`: id `evt-…` do evento no feed; não pode se repetir nem aparecer nos dois conjuntos.
 - `e_ia`: a verdade sobre o evento (o autor pode abrir o link para decidir).
-- `idioma`: `pt`, `en`, `bilingue`, `outro` ou `desconhecido` — o que o texto mostra; sem
-  menção explícita, `desconhecido`.
+- `idioma`: `pt`, `en`, `bilingue`, `outro` ou `desconhecido` — só o que o texto **declara**
+  sobre o idioma das apresentações; texto escrito em português não basta (D15). Sem menção
+  explícita, `desconhecido`.
+
+Eventos de calendários com `comunidade_ia: true` em `config/fontes.yaml` contam como IA
+depois do LLM, também na avaliação (D15).
 
 Sem descrições nem dados pessoais aqui: só ids e rótulos. A avaliação chama a API de
 verdade e roda só pelo workflow manual **Avaliar classificador** (`.github/workflows/avaliar.yml`):
 
 ```bash
-python -m radar.avaliacao --conjunto teste --saida docs/avaliacao/teste-classificador_v1.md
+python -m radar.avaliacao --conjunto teste --saida docs/avaliacao/teste-classificador_v1.md \
+  --diagnostico diagnostico-avaliacao   # opcional: resposta bruta dos erros de saída (D15)
 ```

@@ -135,6 +135,10 @@ class ResultadoEvento:
 
     Erro de API não é levantado: vira `erro_api` e `motivo_erro="api_<categoria>"`, sem tokens
     nem custo. Erro de saída traz `motivo_erro`, tokens e custo.
+
+    `texto_resposta` é o texto bruto do LLM: só em memória (diagnóstico da avaliação, D15),
+    nunca gravado no banco nem em log. `e_ia_por_comunidade` = o LLM disse não IA e a
+    comunidade do calendário virou o resultado para IA.
     """
 
     saida: SaidaClassificador | None
@@ -143,14 +147,19 @@ class ResultadoEvento:
     tokens_saida: int | None
     custo_usd: Decimal | None
     erro_api: ErroAPI | None
+    texto_resposta: str | None = field(default=None, repr=False)
+    stop_reason: str | None = None
+    e_ia_por_comunidade: bool = False
 
 
 def classificar_evento(
-    evento: Evento, localizacao_filtro: str, cliente: ClienteLLM
+    evento: Evento, localizacao_filtro: str, cliente: ClienteLLM, *, comunidade_ia: bool = False
 ) -> ResultadoEvento:
     """Uma chamada ao LLM para `evento`, conferindo a localização contra `localizacao_filtro`.
 
     Usada pelo radar (`classificar_pendentes`) e pela avaliação (F1-07); não toca no banco.
+    Com `comunidade_ia` (D15), uma saída VÁLIDA passa a `e_ia=True`; erro continua erro. Só a
+    avaliação usa esse parâmetro; no radar a regra é aplicada na leitura (F1-10).
     """
     modelo = modelos.MODELO
     mensagem, texto_fonte = prompt.montar_mensagem(evento, localizacao_filtro)
@@ -176,6 +185,10 @@ def classificar_evento(
             modelo, resposta.tokens_entrada or 0, resposta.tokens_saida or 0
         )
     saida, motivo_erro = _interpretar(resposta, texto_fonte, localizacao_filtro)
+    por_comunidade = False
+    if saida is not None and comunidade_ia and not saida.e_ia:
+        saida = saida.model_copy(update={"e_ia": True})
+        por_comunidade = True
     return ResultadoEvento(
         saida=saida,
         motivo_erro=motivo_erro,
@@ -183,6 +196,9 @@ def classificar_evento(
         tokens_saida=resposta.tokens_saida,
         custo_usd=custo,
         erro_api=None,
+        texto_resposta=resposta.texto,
+        stop_reason=resposta.stop_reason,
+        e_ia_por_comunidade=por_comunidade,
     )
 
 
@@ -194,7 +210,11 @@ def classificar_pendentes(
     rodada: uuid.UUID,
     relogio: Callable[[], float] = time.monotonic,
 ) -> ResumoClassificacao:
-    """Classifica a fila (por início) até o limite de chamadas ou uma interrupção."""
+    """Classifica a fila (por início) até o limite de chamadas ou uma interrupção.
+
+    Grava a saída do LLM sem alteração: a regra de comunidade de IA (D15) não é gravada, é
+    aplicada na leitura/decisão do aviso (F1-10). O texto bruto do LLM nunca é gravado.
+    """
     if agora.tzinfo is None or agora.utcoffset() is None:
         raise ValueError("agora precisa ter fuso horário")
     versao_prompt = prompt.VERSAO_PROMPT

@@ -11,3 +11,6 @@ venv/
 *.egg-info/
 dist/
 build/
+
+# Diagnóstico da avaliação (resposta bruta do LLM): só artifact do Actions, nunca no repositório (D15).
+diagnostico-avaliacao/

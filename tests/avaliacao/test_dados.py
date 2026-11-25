@@ -2,12 +2,16 @@
 
 Assinaturas fixadas (radar.avaliacao.dados):
 - `RotuloAvaliacao` (Pydantic, extra="forbid", frozen): calendario: str, id_fonte: str,
-  e_ia: bool, idioma: Literal["pt", "en", "bilingue", "outro", "desconhecido"];
+  e_ia: bool, idioma: Literal["pt", "en", "bilingue", "outro", "desconhecido"]; id_fonte
+  só com [A-Za-z0-9_-]+ (vira nome de arquivo no diagnóstico do F1-07b);
 - `carregar_rotulos(caminho: Path) -> list[RotuloAvaliacao]`, na ordem do arquivo. Linha
   inválida ou id_fonte repetido → ValueError com "linha N" (1-based) na mensagem e sem o
   conteúdo da linha;
-- `carregar_eventos(rotulos, dir_fixtures: Path) -> list[tuple[RotuloAvaliacao, Evento,
-  str]]` (rótulo, `Evento` ORM em memória, localizacao_filtro), na ordem dos rótulos; lê
+- `carregar_eventos(rotulos, dir_fixtures: Path, *, comunidades_ia: frozenset[str] =
+  frozenset()) -> list[ItemAvaliacao]`; `ItemAvaliacao` é um NamedTuple
+  (rotulo, evento, localizacao_filtro, comunidade_ia: bool) — `Evento` ORM em memória;
+  comunidade_ia = calendário do rótulo está em `comunidades_ia` (F1-07b). Na ordem dos
+  rótulos; lê
   `<dir>/<calendario>.ics` com `ler_ical`; id ausente no feed → ValueError;
 - `validar_conjuntos(teste, dev) -> None`, ambos no formato devolvido por
   `carregar_eventos` (o título vem do evento): ValueError se um id_fonte está nos dois ou se
@@ -17,6 +21,7 @@ Assinaturas fixadas (radar.avaliacao.dados):
 from __future__ import annotations
 
 import importlib
+import json
 from pathlib import Path
 from types import ModuleType
 from typing import Any
@@ -134,7 +139,8 @@ def test_carregar_eventos_da_fixture_real(dados: ModuleType) -> None:
     from radar.banco.modelos import Evento
 
     rotulos = [_rotulo(dados, calendario="codex-sp", id_fonte=ID_CODEX)]
-    [(item, evento, filtro)] = dados.carregar_eventos(rotulos, FIXTURES_LUMA)
+    [(item, evento, filtro, comunidade)] = dados.carregar_eventos(rotulos, FIXTURES_LUMA)
+    assert comunidade is False
     assert item == rotulos[0]
     assert isinstance(evento, Evento)
     assert evento.id_fonte == ID_CODEX
@@ -147,7 +153,7 @@ def test_carregar_eventos_da_fixture_real(dados: ModuleType) -> None:
 def test_evento_carregado_serve_para_montar_mensagem(dados: ModuleType, tmp_path: Path) -> None:
     prompt = importlib.import_module("radar.classificacao.prompt")
     escrever_ics(tmp_path, CALENDARIO, [vevento("evt-Sint1", "Meetup Sintético")])
-    [(_, evento, filtro)] = dados.carregar_eventos([_rotulo(dados)], tmp_path)
+    [(_, evento, filtro, _)] = dados.carregar_eventos([_rotulo(dados)], tmp_path)
     assert evento.descricoes == {CALENDARIO: DESCRICAO_SINTETICA}
     mensagem, texto_fonte = prompt.montar_mensagem(evento, filtro)
     assert "Meetup Sintético" in mensagem
@@ -160,13 +166,43 @@ def test_carregar_eventos_mantem_ordem_dos_rotulos(dados: ModuleType, tmp_path: 
     )
     rotulos = [_rotulo(dados, id_fonte="evt-Sint2"), _rotulo(dados, id_fonte="evt-Sint1")]
     itens = dados.carregar_eventos(rotulos, tmp_path)
-    assert [evento.titulo for _, evento, _ in itens] == ["Segundo", "Primeiro"]
+    assert [item.evento.titulo for item in itens] == ["Segundo", "Primeiro"]
 
 
 def test_id_ausente_no_feed_e_erro(dados: ModuleType, tmp_path: Path) -> None:
     escrever_ics(tmp_path, CALENDARIO, [vevento("evt-Sint1", "Primeiro")])
     with pytest.raises(ValueError):
         dados.carregar_eventos([_rotulo(dados, id_fonte="evt-NaoExiste9")], tmp_path)
+
+
+def test_carregar_eventos_marca_comunidade_ia(dados: ModuleType, tmp_path: Path) -> None:
+    escrever_ics(tmp_path, CALENDARIO, [vevento("evt-Sint1", "Primeiro")])
+    escrever_ics(tmp_path, "cal-outro", [vevento("evt-Outro1", "Segundo")])
+    rotulos = [_rotulo(dados), _rotulo(dados, calendario="cal-outro", id_fonte="evt-Outro1")]
+    itens = dados.carregar_eventos(rotulos, tmp_path, comunidades_ia=frozenset({CALENDARIO}))
+    assert isinstance(itens[0], dados.ItemAvaliacao)
+    assert [(i.rotulo.id_fonte, i.comunidade_ia) for i in itens] == [
+        ("evt-Sint1", True),
+        ("evt-Outro1", False),
+    ]
+    assert itens[0].localizacao_filtro == "sp"
+    assert itens[0].evento.id_fonte == "evt-Sint1"
+
+
+def test_carregar_eventos_sem_comunidades_por_padrao(dados: ModuleType, tmp_path: Path) -> None:
+    escrever_ics(tmp_path, CALENDARIO, [vevento("evt-Sint1", "Primeiro")])
+    [item] = dados.carregar_eventos([_rotulo(dados)], tmp_path)
+    assert item.comunidade_ia is False
+
+
+@pytest.mark.parametrize("id_fonte", ["../evt-X", "evt/X", "evt X", "evt.X", ""])
+def test_id_fonte_fora_do_padrao_e_erro(dados: ModuleType, tmp_path: Path, id_fonte: str) -> None:
+    # vira nome de arquivo no diagnóstico (F1-07b): só [A-Za-z0-9_-]+
+    linha = json.dumps(rotulo(id_fonte))
+    caminho = escrever_jsonl(tmp_path / "teste.jsonl", [rotulo("evt-Um1"), linha])
+    with pytest.raises(ValueError) as info:
+        dados.carregar_rotulos(caminho)
+    assert "linha 2" in str(info.value)
 
 
 # --- validar_conjuntos ---------------------------------------------------------------------
