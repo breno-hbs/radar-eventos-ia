@@ -43,3 +43,7 @@ Formato curto: contexto, decisão, motivo. Decisões novas entram no fim, com da
 
 ## D7 — Separação dos conjuntos de avaliação (2026-11-25)
 **Decisão:** os casos "MUG São Paulo — Vector Search na Prática" e "Grok Bot Workshop", achados na Fase 0, serão usados no desenvolvimento do prompt e por isso ficam **só no conjunto de desenvolvimento**, nunca no conjunto de teste independente.
+
+## D8 — Configuração só por variáveis de ambiente (2026-11-25)
+**Decisão:** `radar.config.Configuracao` (Pydantic Settings) lê apenas o ambiente, sem prefixo e sem carregar `.env` automaticamente. Segredos (`DATABASE_URL`, `ANTHROPIC_API_KEY`, `TELEGRAM_TOKEN`) são `SecretStr`; variável exportada vazia equivale a não configurada. `TELEGRAM_CHAT_ID` é dado pessoal: fica fora do `repr` para não aparecer em log. `FUSO_HORARIO` precisa ser um fuso IANA válido (padrão America/Sao_Paulo); `LIMITE_CHAMADAS_LLM_POR_EXECUCAO` ≥ 1 (padrão 50); `LIMITE_PAGINAS_ENRIQUECIMENTO_POR_EXECUCAO` ≥ 0 (padrão 10; 0 desliga o enriquecimento).
+**Motivo:** no CI os valores vêm do GitHub Secrets; não ler arquivo evita carregar segredos por acidente e mantém os testes isolados.

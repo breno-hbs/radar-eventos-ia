@@ -18,6 +18,7 @@ Leia antes de qualquer tarefa: [docs/spec.md](docs/spec.md), [docs/decisoes.md](
 
 ## Testes
 - pytest. Testes antes do código.
+- O testador roda `ruff format` e `ruff check` nos testes antes de entregar (o implementador não altera testes, nem para formatar).
 - Nenhum teste acessa a internet nem a API do Claude: usar fixtures em `tests/fixtures/` e clientes falsos.
 - Banco de testes: Postgres (container de serviço no CI).
 

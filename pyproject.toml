@@ -1,0 +1,38 @@
+[project]
+name = "radar-eventos-ia"
+version = "0.1.0"
+description = "Radar de eventos de IA em São Paulo: coleta, classifica e avisa no Telegram."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic==2.14.4",
+    "pydantic-settings==2.16.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.2.0",
+    "ruff==0.17.6",
+    "pyyaml==6.0.4",
+]
+
+[build-system]
+requires = ["hatchling==1.33.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/radar"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["diagnostico"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.format]
