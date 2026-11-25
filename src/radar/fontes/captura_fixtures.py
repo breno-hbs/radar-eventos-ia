@@ -6,7 +6,8 @@ Baixa os feeds iCal dos calendários curados e da cidade de São Paulo e no máx
 - só `https` nos hosts `api.lu.ma` e `luma.com`, sem seguir redirecionamentos;
 - robots.txt de cada host lido antes da primeira requisição a ele (falha segura);
 - pausa de `PAUSA_SEGUNDOS` antes de cada requisição; nada que falhou é repetido;
-- páginas reduzidas ao JSON-LD do Event por lista de permissão; e-mails redigidos;
+- páginas reduzidas ao JSON-LD do Event por lista de permissão; e-mails redigidos e
+  menções `@perfil` trocadas por `@perfil-redigido`; qualquer outra arroba descarta o arquivo;
 - texto livre que sobra (iCal e campos de texto das páginas) passa por revisão humana.
 
 Uso:
@@ -46,6 +47,7 @@ USER_AGENT = "radar-eventos-ia/0.1 (+https://github.com/breno-hbs/radar-eventos-
 
 EMAIL_REDIGIDO = "redigido@exemplo.invalid"
 EMAIL_REDIGIDO_URL = "redigido%40exemplo.invalid"
+PERFIL_REDIGIDO = "@perfil-redigido"
 
 # Endereço de e-mail, inclusive a forma codificada em URL (`%40`). O começo é amplo de
 # propósito (qualquer posição); o escape `\n`/`\N` do iCal é tratado em `_dividir`.
@@ -54,6 +56,18 @@ _PADRAO_EMAIL = re.compile(r"[\w.%+-]+(@|%40)[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+")
 _UID_LUMA = re.compile(r"evt-[A-Za-z0-9]+@events\.lu\.ma")
 # Escapes do iCal que terminam em letra (`\n`, `\N`, `\t`) e podem colar no endereço.
 _ESCAPES_COM_LETRA = "nNt"
+# Menção de rede social (`@perfil`, não e-mail): o `@` vem no início, depois de espaço, de um
+# escape do iCal (`\n`, `\N`, `\t`, `\\`, `\;`, `\,`; um `\` solto não conta) ou de
+# `/ ( [ { " ' > , ; :`; o perfil tem 1 a 30 de `[A-Za-z0-9_.]`, sem começar nem terminar em
+# ponto, e não pode continuar com outro caractere de palavra (inclusive acentuado) nem `·`.
+# As chaves JSON-LD `"@context"`/`"@type"` não são menções.
+_PADRAO_MENCAO = re.compile(
+    r"(?:(?<=\\[nNt])|(?<=\\\\)|(?<=[\s/(\[{\"'>,;:])|^)"
+    r"@(?!(?:context|type)\")"
+    r"[A-Za-z0-9_](?:[A-Za-z0-9_.]{0,28}[A-Za-z0-9_])?"
+    # Continuação com `\w` Unicode (letra acentuada etc.) ou `·` impede a redação parcial.
+    r"(?![\w@%·-]|\.[\w·])"
+)
 
 # Checagem bruta (independente de `_PADRAO_EMAIL`): qualquer forma de arroba é suspeita.
 _FORMAS_DE_ARROBA = re.compile(r"%2540|%40|&#64;|&#x40;|\uff20|@", re.IGNORECASE)
@@ -64,6 +78,8 @@ _EXCECOES_CHECAGEM = re.compile(
     _INICIO_ISOLADO
     + r"(?:evt-[A-Za-z0-9]+@events\.lu\.ma|redigido@exemplo\.invalid|redigido%40exemplo\.invalid)"
     + r"|\"@context\"|\"@type\""
+    + r"|(?:(?<=\\[nNt;,])|(?<=\\\\)|(?<![\w.%+\\·-]))@perfil-redigido"
+    + r"(?![\w·-]|\.[\w·])"
 )
 _TRECHO = 20
 # Link canônico de evento: `https://luma.com/<slug>` sem subcaminho.
@@ -134,27 +150,32 @@ def _dividir(texto: str, achado: re.Match[str]) -> tuple[str, str]:
 
 
 def redigir_emails(texto: str) -> str:
-    """Troca todo e-mail por `EMAIL_REDIGIDO` (ou `EMAIL_REDIGIDO_URL`, se codificado).
+    """Troca e-mails e menções de rede social por marcadores.
 
-    A única exceção é o UID `evt-<id>@events.lu.ma` da Luma (D4).
+    E-mail vira `EMAIL_REDIGIDO` (ou `EMAIL_REDIGIDO_URL`, se codificado), exceto o UID
+    `evt-<id>@events.lu.ma` da Luma (D4). Depois, menção `@perfil` vira `PERFIL_REDIGIDO`.
     """
 
     def _trocar(achado: re.Match[str]) -> str:
         escape, email = _dividir(texto, achado)
-        if _UID_LUMA.fullmatch(email):
+        if _UID_LUMA.fullmatch(email) or email.startswith(("@", "%40")):
+            # UID preservado; `\n@perfil` não é e-mail (o `n` é do escape) e fica para a
+            # redação de menções.
             return achado.group(0)
         marcador = EMAIL_REDIGIDO if achado.group(1) == "@" else EMAIL_REDIGIDO_URL
         return escape + marcador
 
-    return _PADRAO_EMAIL.sub(_trocar, texto)
+    sem_emails = _PADRAO_EMAIL.sub(_trocar, texto)
+    return _PADRAO_MENCAO.sub(PERFIL_REDIGIDO, sem_emails)
 
 
 def encontrar_emails(texto: str) -> list[str]:
     """Checagem bruta: um trecho por arroba suspeita que sobrou no texto.
 
     Independente da regex de redação: conta `@`, `%40`, `%2540`, `&#64;`, `&#x40;` e `＠`
-    (inclusive menções `@perfil`), exceto o UID `evt-<id>@events.lu.ma`, os marcadores de
-    redação e as chaves `"@context"`/`"@type"`. Os trechos nunca devem ir para log público.
+    (inclusive menções `@perfil` não redigidas), exceto o UID `evt-<id>@events.lu.ma`, os
+    marcadores de redação (inclusive `@perfil-redigido` solto) e as chaves
+    `"@context"`/`"@type"`. Os trechos nunca devem ir para log público.
     """
     limpo = _EXCECOES_CHECAGEM.sub(lambda achado: " " * len(achado.group(0)), texto)
     return [

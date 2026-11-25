@@ -96,8 +96,25 @@ EVENTO_MINIMIZADO = {
     ],
 }
 
+HANDLES_FEED_MENCOES = (
+    "aicollective_sp",
+    "joao.silva",
+    "vibe.space",
+    "ciclana_dev",
+    "fulano",
+    "beltrana",
+    "perfil_x",
+    "autor_medium",
+    "radar_ia",
+)
+
 FIXTURES_COM_EMAIL = ["feed_a.ics", "feed_b.ics", "pagina_evento.html", "nao_ical.html"]
-TODAS_AS_FIXTURES = [*FIXTURES_COM_EMAIL, "feed_hosts_estranhos.ics", "feed_sem_links.ics"]
+TODAS_AS_FIXTURES = [
+    *FIXTURES_COM_EMAIL,
+    "feed_hosts_estranhos.ics",
+    "feed_sem_links.ics",
+    "feed_mencoes.ics",
+]
 
 
 # --- Detector independente de e-mail ---------------------------------------------
@@ -142,17 +159,24 @@ def test_detector_dos_testes_e_amplo() -> None:
     assert not _vazamentos(f"Contato:\\n{REDIGIDO} e {REDIGIDO_URL}")
 
 
+PERFIL_REDIGIDO = "@perfil-redigido"
+
 # Checagem bruta, independente de qualquer regex de e-mail: qualquer forma de arroba conta,
-# exceto o UID da Luma, os marcadores de redação e as chaves JSON-LD `"@context"`/`"@type"`
-# (que a página minimizada sempre contém).
+# exceto o UID da Luma, os marcadores de redação, as chaves JSON-LD `"@context"`/`"@type"`
+# (que a página minimizada sempre contém) e o marcador de menção `@perfil-redigido` quando
+# não está colado a resto de identificador.
 _FORMAS_DE_ARROBA = re.compile(r"@|%40|%2540|&#64;|&#x40;|\uff20", re.IGNORECASE)
 _EXCECOES_LITERAIS = (REDIGIDO, REDIGIDO_URL, '"@context"', '"@type"')
+_PERFIL_SOLTO = re.compile(
+    r"(?:(?<=\\[nNt\\;,])|(?<![\w.%+\-\\·]))@perfil-redigido(?![\w\-·]|\.\w)"
+)
 
 
 def _arrobas_suspeitas(texto: str) -> list[str]:
     limpo = _EXCECAO_UID_LUMA.sub(" ", texto)
     for excecao in _EXCECOES_LITERAIS:
         limpo = limpo.replace(excecao, " ")
+    limpo = _PERFIL_SOLTO.sub(" ", limpo)
     return _FORMAS_DE_ARROBA.findall(limpo)
 
 
@@ -160,7 +184,14 @@ def test_checagem_bruta_dos_testes() -> None:
     assert _arrobas_suspeitas("@usuario")
     assert _arrobas_suspeitas("joao&#X40;example.com")
     assert _arrobas_suspeitas("joao\uff20example.com")
+    assert _arrobas_suspeitas("@perfil-redigidox")
+    assert _arrobas_suspeitas("x@perfil-redigido")
+    assert _arrobas_suspeitas("@perfil-redigidoé")
+    assert _arrobas_suspeitas("@perfil-redigido·x")
+    assert _arrobas_suspeitas("a\\@perfil-redigido")
     assert not _arrobas_suspeitas(f'UID:evt-A1@events.lu.ma {REDIGIDO} {{"@type":"Event"}}')
+    assert not _arrobas_suspeitas("siga @perfil-redigido. (@perfil-redigido)")
+    assert not _arrobas_suspeitas("Hosted by\\n@perfil-redigido https://x.com/@perfil-redigido")
 
 
 # --- Utilitários ------------------------------------------------------------------
@@ -343,6 +374,129 @@ def test_redigir_emails_redige_events_lu_ma_que_nao_e_uid(email: str) -> None:
     assert _modulo().redigir_emails(f"mailto:{email}") == f"mailto:{REDIGIDO}"
 
 
+# --- redigir_emails: menções de rede social ----------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("antes", "depois"),
+    [
+        ("siga @radar_ia.", "siga @perfil-redigido."),
+        ("(@aicollective)", "(@perfil-redigido)"),
+        ("Hosted by\\n@joao.silva", "Hosted by\\n@perfil-redigido"),
+        ("Hosted by\n@joao.silva", "Hosted by\n@perfil-redigido"),
+        ("w/ @fulano, @ciclana", "w/ @perfil-redigido, @perfil-redigido"),
+        ("https://x.com/@fulano", "https://x.com/@perfil-redigido"),
+        ("https://medium.com/@autor/post", "https://medium.com/@perfil-redigido/post"),
+        ("@inicio do texto", "@perfil-redigido do texto"),
+        ("fim com reticencias @fulano...", "fim com reticencias @perfil-redigido..."),
+        ("\t@tab_real", "\t@perfil-redigido"),
+        ("[@colchete]", "[@perfil-redigido]"),
+        ("{@chave}", "{@perfil-redigido}"),
+        ('"@aspas"', '"@perfil-redigido"'),
+        ("'@apostrofo'", "'@perfil-redigido'"),
+        ("<b>@negrito</b>", "<b>@perfil-redigido</b>"),
+        ("a,@virgula", "a,@perfil-redigido"),
+        ("a;@ponto_e_virgula", "a;@perfil-redigido"),
+        ("Instagram:@dois_pontos", "Instagram:@perfil-redigido"),
+        ("Co-host:\\t@escape_t", "Co-host:\\t@perfil-redigido"),
+        ("Co-host:\\N@escape_n", "Co-host:\\N@perfil-redigido"),
+        ("barra\\\\@escape_barra", "barra\\\\@perfil-redigido"),
+        ("a\\;@escape_ponto_e_virgula", "a\\;@perfil-redigido"),
+        ("a\\,@escape_virgula", "a\\,@perfil-redigido"),
+        ("@a", "@perfil-redigido"),
+        ("@" + "x" * 30, "@perfil-redigido"),
+    ],
+)
+def test_redigir_emails_redige_mencoes(antes: str, depois: str) -> None:
+    assert _modulo().redigir_emails(antes) == depois
+
+
+@pytest.mark.parametrize(
+    ("antes", "depois"),
+    [
+        ("fale com fulano@example.com", f"fale com {REDIGIDO}"),
+        ("(fulano@example.com)", f"({REDIGIDO})"),
+        ("Hosted by\\nfulano@example.com", f"Hosted by\\n{REDIGIDO}"),
+        ("https://x.com/?e=fulano%40example.com", f"https://x.com/?e={REDIGIDO_URL}"),
+    ],
+)
+def test_redigir_emails_email_continua_virando_marcador_de_email(antes: str, depois: str) -> None:
+    """Quando o `@` forma um e-mail, vale a redação de e-mail, não a de menção."""
+    assert _modulo().redigir_emails(antes) == depois
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "UID:evt-AAAA1111@events.lu.ma",
+        '{"@context":"https://schema.org","@type":"Event","name":"X"}',
+        REDIGIDO,
+        REDIGIDO_URL,
+        PERFIL_REDIGIDO,
+        f"siga {PERFIL_REDIGIDO}. ({PERFIL_REDIGIDO})",
+        "https://medium.com/@perfil-redigido/post",
+        "e-mail @ empresa",
+        "so arroba @",
+        "@. nada",
+        "joao&#64;example.com",
+    ],
+)
+def test_redigir_emails_nao_altera_o_que_nao_e_mencao(texto: str) -> None:
+    assert _modulo().redigir_emails(texto) == texto
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "joao @exémplo.com",
+        "@josé.silva",
+        "@joão_silva",
+        "@ana·silva",
+        "Hosted by @josé.silva\\n",
+        "(@élan)",
+    ],
+)
+def test_redigir_emails_nao_redige_mencao_pela_metade_com_unicode(texto: str) -> None:
+    """Se o handle continua com caractere de palavra Unicode (ou `·`), não há redação parcial:
+    o texto fica como está e a checagem bruta acusa."""
+    modulo = _modulo()
+    resultado = modulo.redigir_emails(texto)
+    assert resultado == texto
+    assert PERFIL_REDIGIDO not in resultado
+    assert modulo.encontrar_emails(resultado) != []
+
+
+def test_redigir_emails_barra_que_nao_e_escape_nao_inicia_mencao() -> None:
+    """`\\@` (barra que não é escape do iCal) não conta como início de menção."""
+    modulo = _modulo()
+    texto = "@joao.silva\\@ex.com"
+    resultado = modulo.redigir_emails(texto)
+    assert resultado != f"{PERFIL_REDIGIDO}\\{PERFIL_REDIGIDO}"
+    assert resultado.endswith("\\@ex.com")
+    assert modulo.encontrar_emails(resultado) != []
+
+
+def test_redigir_emails_mencoes_e_idempotente() -> None:
+    redigir = _modulo().redigir_emails
+    texto = "siga @radar_ia. (@vibe.space) https://x.com/@fulano fulano@example.com"
+    uma_vez = redigir(texto)
+    assert redigir(uma_vez) == uma_vez
+    assert uma_vez == (
+        f"siga {PERFIL_REDIGIDO}. ({PERFIL_REDIGIDO}) https://x.com/{PERFIL_REDIGIDO} {REDIGIDO}"
+    )
+
+
+def test_redigir_emails_feed_de_mencoes() -> None:
+    original = _fixture("feed_mencoes.ics")
+    resultado = _modulo().redigir_emails(original)
+    for perfil in HANDLES_FEED_MENCOES:
+        assert perfil not in resultado, perfil
+    assert "UID:evt-JJJJ9999@events.lu.ma" in resultado
+    assert f"Hosted by\\n{PERFIL_REDIGIDO}" in resultado
+    assert f"https://medium.com/{PERFIL_REDIGIDO}/post-sobre-ia" in resultado
+    assert _arrobas_suspeitas(resultado) == []
+
+
 def test_redigir_emails_nao_altera_texto_sem_email() -> None:
     texto = "DESCRIPTION:Get up-to-date information at: https://luma.com/meetup-ia-sp\r\n"
     assert _modulo().redigir_emails(texto) == texto
@@ -431,6 +585,11 @@ def test_encontrar_emails_ignora_uid_ao_lado_de_arroba_suspeita() -> None:
         f"Contato:\\n{REDIGIDO}",
         f"mailto:{REDIGIDO}, ?e={REDIGIDO_URL}",
         '{"@context":"https://schema.org","@type":"Event","name":"X"}',
+        PERFIL_REDIGIDO,
+        f"siga {PERFIL_REDIGIDO}. ({PERFIL_REDIGIDO})",
+        f"Hosted by\\n{PERFIL_REDIGIDO}\\, {PERFIL_REDIGIDO}",
+        f"https://medium.com/{PERFIL_REDIGIDO}/post",
+        f"Instagram:{PERFIL_REDIGIDO}",
     ],
 )
 def test_encontrar_emails_ignora_uid_marcadores_e_chaves_json_ld(texto: str) -> None:
@@ -456,7 +615,25 @@ def test_encontrar_emails_concorda_com_checagem_bruta(texto: str) -> None:
     assert bool(_modulo().encontrar_emails(texto)) == bool(_arrobas_suspeitas(texto))
 
 
-@pytest.mark.parametrize("nome", ["feed_a.ics", "feed_b.ics", "nao_ical.html"])
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "@perfil-redigidox",
+        "x@perfil-redigido",
+        "@perfil-redigido_extra",
+        "@perfil-redigido-extra",
+        f"{PERFIL_REDIGIDO} e @outro_perfil",
+        "@perfil-redigidoé",
+        "@perfil-redigido·silva",
+        "@perfil-redigidoão",
+        "a\\@perfil-redigido",
+    ],
+)
+def test_encontrar_emails_reporta_marcador_de_perfil_colado(texto: str) -> None:
+    assert _modulo().encontrar_emails(texto) != []
+
+
+@pytest.mark.parametrize("nome", ["feed_a.ics", "feed_b.ics", "nao_ical.html", "feed_mencoes.ics"])
 def test_encontrar_emails_nas_fixtures_antes_e_depois_da_redacao(nome: str) -> None:
     texto = _fixture(nome)
     assert _modulo().encontrar_emails(texto) != []
@@ -980,6 +1157,45 @@ def test_capturar_pagina_com_email_ofuscado_nao_e_salva_nem_listada(
     assert re.fullmatch(r"pagina_\d+\.html", descartado)
     for arquivo in paginas_salvas:
         assert "&#64;" not in arquivo.read_text(encoding="utf-8")
+
+
+def test_capturar_feed_com_mencoes_e_salvo_redigido(tmp_path: Path, executar: Executar) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_mencoes.ics")
+    relatorio, _ = executar(respostas)
+    arquivo = _pasta(tmp_path) / "vibe-space.ics"
+    assert arquivo.is_file()
+    assert "vibe-space" in relatorio.feeds_ok
+    assert relatorio.descartados_por_dados_pessoais == []
+    salvo = arquivo.read_text(encoding="utf-8")
+    for perfil in HANDLES_FEED_MENCOES:
+        assert perfil not in salvo, perfil
+    assert "organizadora.mencao@example.com" not in salvo
+    assert PERFIL_REDIGIDO in salvo
+    assert "UID:evt-JJJJ9999@events.lu.ma" in salvo
+    assert _arrobas_suspeitas(salvo) == []
+
+
+def test_capturar_mencoes_salvas_e_email_ofuscado_descartado(
+    tmp_path: Path, executar: Executar
+) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_mencoes.ics")
+    respostas[_url_do_feed("mug-sp")] = _ical("feed_email_ofuscado.ics")
+    relatorio, _ = executar(respostas)
+    assert (_pasta(tmp_path) / "vibe-space.ics").is_file()
+    assert not (_pasta(tmp_path) / "mug-sp.ics").exists()
+    assert relatorio.descartados_por_dados_pessoais == ["mug-sp.ics"]
+
+
+def test_capturar_feed_com_mencao_unicode_e_descartado(tmp_path: Path, executar: Executar) -> None:
+    respostas = _respostas_base()
+    respostas[_url_do_feed("vibe-space")] = _ical("feed_mencao_unicode.ics")
+    relatorio, _ = executar(respostas)
+    assert not (_pasta(tmp_path) / "vibe-space.ics").exists()
+    assert relatorio.descartados_por_dados_pessoais == ["vibe-space.ics"]
+    for arquivo in _pasta(tmp_path).iterdir():
+        assert "josé" not in arquivo.read_text(encoding="utf-8"), arquivo.name
 
 
 def test_capturar_descarte_aparece_no_captura_json(tmp_path: Path, executar: Executar) -> None:
