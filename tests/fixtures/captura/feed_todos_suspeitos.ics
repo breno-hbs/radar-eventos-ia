@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico so com suspeitos
+BEGIN:VEVENT
+UID:evt-SUSP0001@events.lu.ma
+SUMMARY:Evento com contato ofuscado
+DTSTART:20270201T220000Z
+DTEND:20270202T010000Z
+DESCRIPTION:Contato: joao&#64;example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-SUSP0002@events.lu.ma
+SUMMARY:Evento com arroba fullwidth
+DTSTART:20270201T220000Z
+DTEND:20270202T010000Z
+DESCRIPTION:Contato: maria＠example.org
+END:VEVENT
+END:VCALENDAR

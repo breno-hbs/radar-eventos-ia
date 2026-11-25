@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico
+X-WR-CALDESC:Fale com joao&#64;example.com
+BEGIN:VEVENT
+UID:evt-OK000003@events.lu.ma
+SUMMARY:Workshop simples
+DTSTART:20270201T220000Z
+DTEND:20270202T010000Z
+DESCRIPTION:Traga seu notebook.
+END:VEVENT
+END:VCALENDAR
