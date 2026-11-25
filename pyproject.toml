@@ -5,11 +5,14 @@ description = "Radar de eventos de IA em São Paulo: coleta, classifica e avisa 
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "alembic==1.20.1",
     "httpx==0.28.1",
     "icalendar==7.3.2",
+    "psycopg[binary]==3.3.9",
     "pydantic==2.14.4",
     "pydantic-settings==2.16.3",
     "pyyaml==6.0.4",
+    "sqlalchemy==2.0.58",
 ]
 
 [dependency-groups]

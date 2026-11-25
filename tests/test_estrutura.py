@@ -37,7 +37,12 @@ VARIAVEIS_DE_AMBIENTE = (
     "FUSO_HORARIO",
     "LIMITE_CHAMADAS_LLM_POR_EXECUCAO",
     "LIMITE_PAGINAS_ENRIQUECIMENTO_POR_EXECUCAO",
+    "LIMITE_AUSENCIAS_NAO_ENCONTRADO",
+    "TEST_DATABASE_URL",
 )
+
+# Variáveis do `.env.exemplo` que não são campos da `Configuracao` (só usadas pelos testes).
+VARIAVEIS_SO_DE_TESTE = frozenset({"TEST_DATABASE_URL"})
 
 
 # --- Pacote ---------------------------------------------------------------
@@ -112,7 +117,19 @@ def test_pyproject_tem_dependencias_fixadas() -> None:
     assert nao_fixadas == [], f"dependências sem versão fixada (==): {nao_fixadas}"
 
 
-@pytest.mark.parametrize("pacote", ["pydantic", "pydantic-settings", "pytest", "ruff", "pyyaml"])
+@pytest.mark.parametrize(
+    "pacote",
+    [
+        "pydantic",
+        "pydantic-settings",
+        "pytest",
+        "ruff",
+        "pyyaml",
+        "sqlalchemy",
+        "alembic",
+        "psycopg",
+    ],
+)
 def test_pyproject_declara_dependencia_essencial(pacote: str) -> None:
     nomes = {_nome_dependencia(d) for d in _todas_dependencias(_ler_pyproject())}
     assert pacote in nomes
@@ -268,4 +285,54 @@ def test_env_exemplo_bate_com_campos_da_configuracao() -> None:
     from radar.config import Configuracao
 
     campos = {nome.upper() for nome in Configuracao.model_fields}
-    assert campos == set(_ler_env_exemplo())
+    assert campos == set(_ler_env_exemplo()) - VARIAVEIS_SO_DE_TESTE
+    assert not VARIAVEIS_SO_DE_TESTE & campos
+
+
+@pytest.mark.parametrize("variavel", ["LIMITE_AUSENCIAS_NAO_ENCONTRADO", "TEST_DATABASE_URL"])
+def test_env_exemplo_deixa_variavel_do_f1_05_vazia(variavel: str) -> None:
+    assert _ler_env_exemplo()[variavel].strip("'\"") == ""
+
+
+# --- Postgres de teste no CI (F1-05) ---------------------------------------------------------
+
+
+def _job_de_testes() -> dict:
+    workflow = _ler_workflow()
+    jobs = [
+        job
+        for job in workflow["jobs"].values()
+        if any("scripts/verificar.sh" in p.get("run", "") for p in job.get("steps", []))
+    ]
+    assert len(jobs) == 1, "esperado um único job que roda scripts/verificar.sh"
+    return jobs[0]
+
+
+def test_workflow_testes_tem_servico_postgres_16() -> None:
+    servicos = _job_de_testes().get("services", {})
+    imagens = [str(s.get("image", "")) for s in servicos.values()]
+    assert any(re.fullmatch(r"postgres:16(\.\d+)?(-[a-z0-9]+)?", i) for i in imagens), imagens
+
+
+def test_workflow_testes_postgres_sem_senha_no_yaml() -> None:
+    servicos = _job_de_testes().get("services", {})
+    for servico in servicos.values():
+        ambiente = servico.get("env", {}) or {}
+        senha = str(ambiente.get("POSTGRES_PASSWORD", ""))
+        assert senha == "" or senha.startswith("${{ secrets."), "senha literal no workflow"
+
+
+def _valor_test_database_url() -> str:
+    job = _job_de_testes()
+    ambientes = [job.get("env", {}) or {}] + [p.get("env", {}) or {} for p in job["steps"]]
+    valores = [str(a["TEST_DATABASE_URL"]) for a in ambientes if "TEST_DATABASE_URL" in a]
+    assert valores, "TEST_DATABASE_URL não definida no job de testes"
+    return valores[0]
+
+
+def test_workflow_testes_define_test_database_url() -> None:
+    valor = _valor_test_database_url()
+    assert re.fullmatch(
+        r"postgresql(\+psycopg)?://[A-Za-z0-9_]+@(localhost|127\.0\.0\.1):\d+/[a-z0-9_]+_teste",
+        valor,
+    ), "TEST_DATABASE_URL deve apontar para o serviço local, sem senha, banco *_teste"

@@ -12,6 +12,7 @@ from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 FUSO_PADRAO = "America/Sao_Paulo"
+LIMITE_AUSENCIAS_PADRAO = 3
 
 
 class Configuracao(BaseSettings):
@@ -27,6 +28,8 @@ class Configuracao(BaseSettings):
     fuso_horario: str = FUSO_PADRAO
     limite_chamadas_llm_por_execucao: int = Field(default=50, ge=1)
     limite_paginas_enriquecimento_por_execucao: int = Field(default=10, ge=0)
+    # Ausências contáveis seguidas até o evento virar "nao_encontrado" (D12).
+    limite_ausencias_nao_encontrado: int = Field(default=LIMITE_AUSENCIAS_PADRAO, ge=1)
 
     @field_validator(
         "database_url", "anthropic_api_key", "telegram_token", "telegram_chat_id", mode="before"
@@ -36,6 +39,13 @@ class Configuracao(BaseSettings):
         """Variável exportada vazia (como no `.env.exemplo`) equivale a não configurada."""
         if isinstance(valor, str) and valor.strip() == "":
             return None
+        return valor
+
+    @field_validator("limite_ausencias_nao_encontrado", mode="before")
+    @classmethod
+    def _limite_ausencias_vazio_usa_padrao(cls, valor: object) -> object:
+        if isinstance(valor, str) and valor.strip() == "":
+            return LIMITE_AUSENCIAS_PADRAO
         return valor
 
     @field_validator("fuso_horario")

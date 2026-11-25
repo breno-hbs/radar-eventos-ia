@@ -44,7 +44,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
    - registro por chamada: versão do prompt, modelo, tokens, latência, custo; limite de chamadas por execução.
 6. **Enriquecimento de preço (Luma):** página do evento, só eventos novos aprovados nos filtros, com limite por execução, cache e sem contorno de bloqueio (D4).
 7. **Estados de preço:** gratuito confirmado, pago com valor, pago sem valor conhecido, preço variável, preço desconhecido.
-8. **Estados do evento:** ativo, alterado, cancelado (só quando a fonte diz), encerrado, não encontrado (some por várias execuções; não gera aviso).
+8. **Estados do evento:** ativo, alterado, cancelado (só quando a fonte diz), encerrado, não encontrado (some por N execuções seguidas com todos os seus calendários lidos com sucesso; padrão 3; não gera aviso). Só eventos aprovados nos filtros entram no banco; regras de hash e transições na D12.
 9. **Agenda (Fase 3):** Google Calendar só com escopo FreeBusy; margem de deslocamento configurável para presenciais.
 10. **Avisos no Telegram:**
     - na próxima execução: evento de IA que cabe na agenda, com estado de preço e link;
