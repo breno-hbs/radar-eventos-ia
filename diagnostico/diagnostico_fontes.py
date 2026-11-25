@@ -163,6 +163,9 @@ def analisar_ics(texto: str) -> dict[str, Any]:
                         "url": str(ev.get("URL", "")),
                         "tamanho_descricao": len(descricao),
                         "parece_ia": e_ia,
+                        # Rodada 2: como chegar à página do evento a partir do feed?
+                        "uid": str(ev.get("UID", "")),
+                        "urls_na_descricao": sorted(set(re.findall(r"https?://[^\s\"'<>]+", descricao)))[:5],
                     }
                 )
     return {
@@ -222,6 +225,21 @@ def main() -> None:
             else:
                 item["inicio_resposta"] = r["texto"][:200]
             res["luma_ics"].append(item)
+
+        # 3b. Rodada 2: a URL vinda do feed leva à página do evento com JSON-LD?
+        # No máximo 3 páginas, uma vez cada, sem contornar nada.
+        candidatas: list[str] = []
+        for item in res["luma_ics"]:
+            for ev in (item.get("analise") or {}).get("amostra", []):
+                for u in ev["urls_na_descricao"] + [ev["local"]]:
+                    if re.match(r"https://(luma\.com|lu\.ma)/", u) and u not in candidatas:
+                        candidatas.append(u)
+        res["luma_enriquecimento"] = []
+        for url in candidatas[:3]:
+            r = baixar(c, url)
+            res["luma_enriquecimento"].append(
+                {**sem_texto(r), "json_ld": resumo_json_ld(json_ld(r["texto"]))}
+            )
 
         # 4. Meetup: iCal funciona sem login?
         res["meetup_ics"] = []
