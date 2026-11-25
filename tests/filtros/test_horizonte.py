@@ -285,3 +285,25 @@ def test_sem_fim_e_inicio_exatamente_igual_a_agora_e_passado(
 ) -> None:
     item = _localizado(geo, inicio=AGORA, fim=None)
     assert _situacao(horizonte, item) == "passado"
+
+
+# --- calcular_termino (F1-05: usado também no encerramento de eventos do banco) ---------------
+
+
+def test_calcular_termino_usa_o_fim(horizonte: ModuleType) -> None:
+    inicio = AGORA + timedelta(days=1)
+    fim = inicio + timedelta(hours=3)
+    assert horizonte.calcular_termino(inicio, fim, False) == fim
+    assert horizonte.calcular_termino(inicio, fim, True) == fim
+
+
+def test_calcular_termino_dia_inteiro_sem_fim_e_meia_noite_seguinte(
+    horizonte: ModuleType,
+) -> None:
+    inicio = datetime(2026, 12, 5, 0, 0, tzinfo=SP)
+    assert horizonte.calcular_termino(inicio, None, True) == inicio + timedelta(days=1)
+
+
+def test_calcular_termino_com_hora_sem_fim_e_o_inicio(horizonte: ModuleType) -> None:
+    inicio = AGORA + timedelta(days=1)
+    assert horizonte.calcular_termino(inicio, None, False) == inicio

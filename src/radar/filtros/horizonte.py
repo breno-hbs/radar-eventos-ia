@@ -38,7 +38,7 @@ class ResultadoHorizonte(BaseModel):
     descartados: list[DescartadoHorizonte]
 
 
-def _termino(inicio: datetime, fim: datetime | None, dia_inteiro: bool) -> datetime:
+def calcular_termino(inicio: datetime, fim: datetime | None, dia_inteiro: bool) -> datetime:
     """`fim`; sem ele, dia inteiro dura até `inicio + 1 dia` e evento com hora usa `inicio`."""
     if fim is not None:
         return fim
@@ -60,7 +60,7 @@ def filtrar_por_horizonte(itens: Iterable[EventoLocalizado], agora: datetime) ->
     descartados: list[DescartadoHorizonte] = []
     for item in itens:
         evento = item.evento
-        termino = _termino(evento.inicio, evento.fim, evento.dia_inteiro)
+        termino = calcular_termino(evento.inicio, evento.fim, evento.dia_inteiro)
         motivo: MotivoDescarteHorizonte | None = None
         if termino <= agora:
             motivo = "passado"

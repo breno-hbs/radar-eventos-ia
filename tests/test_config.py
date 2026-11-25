@@ -21,6 +21,7 @@ VARIAVEIS = (
     "FUSO_HORARIO",
     "LIMITE_CHAMADAS_LLM_POR_EXECUCAO",
     "LIMITE_PAGINAS_ENRIQUECIMENTO_POR_EXECUCAO",
+    "LIMITE_AUSENCIAS_NAO_ENCONTRADO",
 )
 
 # Valores falsos, só para teste. Nunca usar credenciais reais aqui.
@@ -251,5 +252,33 @@ def test_inteiro_invalido_levanta_validation_error(
     monkeypatch: pytest.MonkeyPatch, variavel: str, valor: str
 ) -> None:
     monkeypatch.setenv(variavel, valor)
+    with pytest.raises(ValidationError):
+        _carregar()
+
+
+# --- Limite de ausências (F1-05) ---------------------------------------------------------
+
+
+def test_limite_ausencias_padrao_e_3() -> None:
+    assert _carregar().limite_ausencias_nao_encontrado == 3
+
+
+def test_limite_ausencias_vazio_usa_o_padrao(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Como no `.env.exemplo`, variável exportada vazia equivale a não configurada."""
+    monkeypatch.setenv("LIMITE_AUSENCIAS_NAO_ENCONTRADO", "")
+    assert _carregar().limite_ausencias_nao_encontrado == 3
+
+
+@pytest.mark.parametrize(("valor", "esperado"), [("1", 1), ("5", 5)])
+def test_limite_ausencias_lido_do_ambiente(
+    monkeypatch: pytest.MonkeyPatch, valor: str, esperado: int
+) -> None:
+    monkeypatch.setenv("LIMITE_AUSENCIAS_NAO_ENCONTRADO", valor)
+    assert _carregar().limite_ausencias_nao_encontrado == esperado
+
+
+@pytest.mark.parametrize("valor", ["0", "-1", "tres"])
+def test_limite_ausencias_invalido_e_rejeitado(monkeypatch: pytest.MonkeyPatch, valor: str) -> None:
+    monkeypatch.setenv("LIMITE_AUSENCIAS_NAO_ENCONTRADO", valor)
     with pytest.raises(ValidationError):
         _carregar()

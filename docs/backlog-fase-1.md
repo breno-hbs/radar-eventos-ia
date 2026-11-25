@@ -87,6 +87,8 @@
 - Mensagem: título, data e hora, local ou "online", estado de preço, link de inscrição, resumo, etiquetas de idioma.
 - Tabela de notificações com chave única (evento, tipo); "enviando" → envia → "enviado".
 - Envio só para o `chat_id` configurado.
+- Nunca notificar evento com `localizacao='fora'`, mesmo que esteja `ativo`/`alterado` no banco (revisão do F1-05).
+- Antes de exibir `link_inscricao`/`local_url`: recusar URL com usuário/senha (`https://user:senha@…`) e remover caracteres invisíveis de formatação (categoria Cf, ex.: U+202E) (revisão do F1-03).
 - **Sua parte:** criar o bot no @BotFather, mandar uma mensagem para ele e cadastrar `TELEGRAM_TOKEN` e `TELEGRAM_CHAT_ID` nos Secrets (eu passo o passo a passo).
 - **Aceite:** testes com cliente falso; nenhuma notificação duplicada ao rodar duas vezes.
 
