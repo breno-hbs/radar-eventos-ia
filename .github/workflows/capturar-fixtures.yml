@@ -1,8 +1,9 @@
 name: Capturar fixtures da Luma
 
 # Captura única e manual (D9): baixa os feeds iCal e 2 páginas de evento, redige e-mails
-# e publica o resultado no branch de dados para revisão. Nunca faz push na main nem força
-# o push: para refazer a captura, apague antes o branch de dados.
+# e publica o resultado num branch novo por execução
+# (fase-1/f1-02-fixtures-dados-${{ github.run_number }}) para revisão. Nunca faz push na main
+# nem força o push.
 on:
   workflow_dispatch:
 
@@ -33,10 +34,10 @@ jobs:
 
       - name: Publicar no branch de dados
         run: |
-          git checkout -B fase-1/f1-02-fixtures-dados
+          git checkout -B fase-1/f1-02-fixtures-dados-${{ github.run_number }}
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add tests/fixtures/luma
           git diff --cached --quiet && { echo "Nada novo capturado."; exit 0; }
           git commit -m "F1-02: fixtures reais da Luma"
-          git push origin fase-1/f1-02-fixtures-dados
+          git push origin fase-1/f1-02-fixtures-dados-${{ github.run_number }}
