@@ -63,6 +63,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 
 ## 6. Confiabilidade e observabilidade
 - **Falha de extração** (rede, formato inesperado, campos obrigatórios ausentes): alerta imediato.
+- **Evento com campo obrigatório ausente** (UID, título, início) ou início sem fuso ou malformado: descartado sozinho, sem derrubar o feed; entra em `eventos_invalidos` e conta como falha de extração para o alerta. Feed em que todos os eventos são inválidos vira falha de formato (D10).
 - **Zero eventos com leitura normal:** não é falha; aviso só após várias execuções vazias numa fonte que costuma ter eventos.
 - **Tabela de execuções:** fonte, horário, status, quantidade de eventos, erro.
 - **Notificações:** tabela com chave única (evento, tipo); grava "enviando" → envia → grava "enviado". Entrega "pelo menos uma vez"; duplicata rara aceita.
