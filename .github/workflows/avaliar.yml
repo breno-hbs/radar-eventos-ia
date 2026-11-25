@@ -1,6 +1,6 @@
 name: Avaliar classificador
 
-# ATENÇÃO: o sufixo `classificador_v1` do arquivo de relatório e da mensagem de commit é fixo.
+# ATENÇÃO: o sufixo `classificador_v2` do arquivo de relatório e da mensagem de commit é fixo.
 # Ao trocar `VERSAO_PROMPT` (src/radar/classificacao/prompt.py), atualize-o aqui também —
 # ele não é derivado automaticamente.
 
@@ -48,7 +48,7 @@ jobs:
           CONJUNTO: ${{ inputs.conjunto }}
         run: >-
           python -m radar.avaliacao --conjunto "$CONJUNTO"
-          --saida "docs/avaliacao/${CONJUNTO}-classificador_v1.md"
+          --saida "docs/avaliacao/${CONJUNTO}-classificador_v2.md"
           --diagnostico diagnostico-avaliacao
 
       # Resposta bruta do LLM nos erros de saída (D15): só como artifact, retenção curta,
@@ -69,7 +69,7 @@ jobs:
           git checkout -B fase-1/f1-07-avaliacao-${{ github.run_number }}
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "docs/avaliacao/${CONJUNTO}-classificador_v1.md"
+          git add "docs/avaliacao/${CONJUNTO}-classificador_v2.md"
           git diff --cached --quiet && { echo "Relatório sem mudanças."; exit 0; }
-          git commit -m "F1-07: avaliação do classificador_v1 (${CONJUNTO})"
+          git commit -m "F1-07: avaliação do classificador_v2 (${CONJUNTO})"
           git push origin fase-1/f1-07-avaliacao-${{ github.run_number }}

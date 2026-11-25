@@ -3,8 +3,9 @@
 Regras do workflow: só `workflow_dispatch` (input `conjunto`, choice teste|dev), nunca em
 pull_request; `permissions: contents: write`; o secret ANTHROPIC_API_KEY aparece uma única
 vez, no `env` do passo que roda `python -m radar.avaliacao` (nunca em `run`, nem no env do
-job/workflow); grava `docs/avaliacao/<conjunto>-classificador_v1.md` e publica num branch
-novo `fase-1/f1-07-avaliacao-${{ github.run_number }}`, sem push na main e sem forçar.
+job/workflow); grava `docs/avaliacao/<conjunto>-classificador_v2.md` (sufixo fixo, igual
+ao VERSAO_PROMPT atual) e publica num branch novo
+`fase-1/f1-07-avaliacao-${{ github.run_number }}`, sem push na main e sem forçar.
 
 F1-07b: o passo da avaliação usa `--diagnostico diagnostico-avaliacao`; um passo
 `actions/upload-artifact@v4` com `if: always()`, path diagnostico-avaliacao,
@@ -13,6 +14,7 @@ retention-days 7 e if-no-files-found: ignore publica o diagnóstico, sem o secre
 
 from __future__ import annotations
 
+import importlib
 import re
 from pathlib import Path
 from typing import Any
@@ -95,9 +97,18 @@ def test_secret_so_no_env_do_passo_de_avaliacao(workflow: dict[Any, Any], texto:
 
 def test_grava_relatorio_e_publica_em_branch_novo(workflow: dict[Any, Any], texto: str) -> None:
     assert "docs/avaliacao/" in texto
-    assert "-classificador_v1.md" in texto
+    prompt = importlib.import_module("radar.classificacao.prompt")
+    versao = prompt.VERSAO_PROMPT
+    assert versao == "classificador_v2"
+    assert f"-{versao}.md" in texto
+    assert "classificador_v1" not in texto
+    passo = _passo_avaliacao(workflow)
+    assert f"-{versao}.md" in passo["run"]
     runs = "\n".join(str(p.get("run", "")) for p in _passos(workflow))
     assert "fase-1/f1-07-avaliacao-${{ github.run_number }}" in runs
+    commits = [linha for linha in runs.splitlines() if "git commit" in linha]
+    assert commits
+    assert all(versao in linha for linha in commits)
     assert "git push" in runs
     assert "--force" not in runs
     assert not re.search(r"git push\s+(-f|origin\s+main\b|origin\s+HEAD:main)", runs)

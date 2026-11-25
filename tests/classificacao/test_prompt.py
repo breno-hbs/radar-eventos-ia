@@ -1,9 +1,10 @@
 """Testes do F1-06 — prompt versionado e montagem da mensagem (conteúdo externo como dado).
 
 Assinaturas fixadas (radar.classificacao.prompt):
-- `VERSAO_PROMPT = "classificador_v1"`; o texto fica em `prompts/classificador_v1.md` (raiz
-  do repositório) e `SHA256_PROMPT_V1` é o sha256 dos bytes desse arquivo;
-- `carregar_prompt() -> str`: o conteúdo do arquivo (UTF-8);
+- `VERSAO_PROMPT = "classificador_v2"` (F1-07b); o texto fica em `prompts/classificador_v2.md`
+  (raiz do repositório) e `SHA256_PROMPT_V2` é o sha256 dos bytes desse arquivo. O v1 fica no
+  repositório como histórico: `prompts/classificador_v1.md` com `SHA256_PROMPT_V1`;
+- `carregar_prompt() -> str`: o conteúdo do arquivo da versão atual (v2, UTF-8);
 - `montar_mensagem(evento: Evento, localizacao_filtro: str) -> tuple[str, str]`
   → (mensagem, texto_fonte). `texto_fonte` é o texto contra o qual as evidências são
   conferidas.
@@ -43,7 +44,8 @@ from .fabricas import DESCRICAO, LOCAL_TEXTO, evento_orm
 
 RAIZ = Path(__file__).resolve().parents[2]
 FIXTURE_CODEX = RAIZ / "tests" / "fixtures" / "luma" / "codex-sp.ics"
-ARQUIVO_PROMPT = RAIZ / "prompts" / "classificador_v1.md"
+ARQUIVO_PROMPT = RAIZ / "prompts" / "classificador_v2.md"
+ARQUIVO_PROMPT_V1 = RAIZ / "prompts" / "classificador_v1.md"
 ABRE = "<evento_nao_confiavel>"
 FECHA = "</evento_nao_confiavel>"
 MARCA_CORTE = "[descrição truncada]"
@@ -75,12 +77,23 @@ def _montar(prompt: ModuleType, localizacao: str = "sp", **campos: Any) -> tuple
 
 
 def test_versao_do_prompt(prompt: ModuleType) -> None:
-    assert prompt.VERSAO_PROMPT == "classificador_v1"
+    assert prompt.VERSAO_PROMPT == "classificador_v2"
 
 
 def test_arquivo_do_prompt_existe_e_bate_com_o_hash(prompt: ModuleType) -> None:
     assert ARQUIVO_PROMPT.is_file()
-    assert hashlib.sha256(ARQUIVO_PROMPT.read_bytes()).hexdigest() == prompt.SHA256_PROMPT_V1
+    assert hashlib.sha256(ARQUIVO_PROMPT.read_bytes()).hexdigest() == prompt.SHA256_PROMPT_V2
+
+
+def test_prompt_v1_continua_no_repositorio(prompt: ModuleType) -> None:
+    assert ARQUIVO_PROMPT_V1.is_file()
+    assert hashlib.sha256(ARQUIVO_PROMPT_V1.read_bytes()).hexdigest() == prompt.SHA256_PROMPT_V1
+    assert prompt.SHA256_PROMPT_V1 != prompt.SHA256_PROMPT_V2
+
+
+def test_schema_nao_muda_no_prompt_v2() -> None:
+    modelos = importlib.import_module("radar.classificacao.modelos")
+    assert modelos.VERSAO_SCHEMA == "1"
 
 
 def test_carregar_prompt_devolve_o_arquivo(prompt: ModuleType) -> None:
@@ -91,6 +104,54 @@ def test_carregar_prompt_devolve_o_arquivo(prompt: ModuleType) -> None:
 
 def test_prompt_explica_o_delimitador_de_dado_nao_confiavel(prompt: ModuleType) -> None:
     assert "evento_nao_confiavel" in prompt.carregar_prompt()
+
+
+# --- Regras do prompt v2 (presença, por casefold) ------------------------------------------
+
+
+@pytest.fixture
+def texto_v2(prompt: ModuleType) -> str:
+    return prompt.carregar_prompt().casefold()
+
+
+@pytest.mark.parametrize(
+    "termo",
+    [
+        "vibe coding",
+        "agentes",
+        "agents",
+        "llm",
+        "genai",
+        "machine learning",
+        "copilot",
+        "devin",
+        "codex",
+        "cursor",
+        "lovable",
+        "v0",
+        "grok",
+        "chatgpt",
+        "claude",
+    ],
+)
+def test_v2_lista_termos_que_indicam_ia(texto_v2: str, termo: str) -> None:
+    assert termo in texto_v2
+
+
+def test_v2_prioriza_recall_na_duvida(texto_v2: str) -> None:
+    assert "na dúvida" in texto_v2
+    assert "e_ia" in texto_v2
+    assert "true" in texto_v2
+    assert "recall" in texto_v2
+
+
+def test_v2_idioma_so_com_declaracao_explicita(texto_v2: str) -> None:
+    assert "explicitamente" in texto_v2
+    assert "texto em português não é evidência" in texto_v2
+
+
+def test_v2_pede_trechos_curtos(texto_v2: str) -> None:
+    assert "120 caracteres" in texto_v2
 
 
 # --- Mensagem ------------------------------------------------------------------------------

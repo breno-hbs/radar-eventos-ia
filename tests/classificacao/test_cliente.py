@@ -151,6 +151,21 @@ def test_sem_novas_tentativas(cliente_mod: ModuleType, status: int) -> None:
     assert len(transporte.requisicoes) == 1
 
 
+def test_thinking_desligado_e_sem_parametros_de_amostragem(cliente_mod: ModuleType) -> None:
+    # Haiku 5.5 usa thinking adaptativo sem o campo `thinking`; os tokens de thinking contam
+    # no max_tokens e cortavam a resposta (F1-07b).
+    cliente, transporte = _cliente(cliente_mod, lambda _: _resposta_ok())
+    _classificar(cliente)
+    _classificar(cliente)
+    for requisicao in transporte.requisicoes:
+        corpo = json.loads(requisicao.content)
+        assert corpo["thinking"] == {"type": "disabled"}
+        assert "effort" not in corpo.get("output_config", {})
+        assert "effort" not in corpo
+        for campo in ("temperature", "top_p", "top_k"):
+            assert campo not in corpo
+
+
 # --- Resposta ------------------------------------------------------------------------------
 
 
@@ -180,6 +195,15 @@ def test_resposta_sem_bloco_de_texto(cliente_mod: ModuleType) -> None:
     resposta = _classificar(cliente)
     assert resposta.texto == ""
     assert resposta.stop_reason == "refusal"
+
+
+def test_bloco_de_thinking_e_ignorado(cliente_mod: ModuleType) -> None:
+    conteudo = [
+        {"type": "thinking", "thinking": "", "signature": "x"},
+        {"type": "text", "text": '{"e_ia": true}'},
+    ]
+    cliente, _ = _cliente(cliente_mod, lambda _: _resposta_ok(conteudo=conteudo))
+    assert _classificar(cliente).texto == '{"e_ia": true}'
 
 
 # --- Erros ---------------------------------------------------------------------------------

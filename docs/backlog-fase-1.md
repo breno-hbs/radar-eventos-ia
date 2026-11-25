@@ -87,7 +87,7 @@
 
 ### F1-07b — Ajustes após a 1ª avaliação
 - **Parte A — diagnóstico, comunidades e rótulos (D15):** `comunidade_ia` em `config/fontes.yaml` (AI Collective, Vibe Space, Codex SP, WoMakersCode) conta como IA depois do LLM, só com saída válida — aplicado na avaliação (`classificar_evento`); no radar fica para a leitura no F1-10, sem gravar no banco; `--diagnostico` grava a resposta bruta dos erros `saida_*`, publicada como artifact (7 dias), nunca no banco nem no repositório; rótulos de idioma corrigidos mecanicamente (idioma só onde o texto declara).
-- **Parte B — prompt v2:** termos do título (vibe coding, agentes/agents, LLM etc.) contam como IA; corrigir o corte das respostas (`saida_truncada` etc.) depois de ler o diagnóstico; nova avaliação comparada com a v1 (o teste já foi visto: comparação, não medida independente).
+- **Parte B — prompt v2 (D16):** causa das respostas cortadas era o thinking adaptativo do Haiku 5.5 (tokens de thinking no `max_tokens`) → `thinking: disabled` em toda chamada; `prompts/classificador_v2.md` com termos que contam como IA (vibe coding, agentes/agents, LLM, GenAI, ferramentas), "na dúvida, e_ia true", idioma só com declaração explícita e trechos de até 120 caracteres; v1 mantido como histórico; workflow com sufixo `classificador_v2`; nova avaliação comparada com a v1 (o teste já foi visto: comparação, não medida independente).
 - **Aceite:** parte A com testes e `verificar.sh` verde; parte B com relatório da v2 em `docs/avaliacao/`.
 
 ### F1-08 — Enriquecimento de preço da Luma

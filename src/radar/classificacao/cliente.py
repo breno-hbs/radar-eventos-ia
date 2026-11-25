@@ -1,4 +1,5 @@
-"""Adaptador do SDK da Anthropic (D13): uma requisição por chamada, sem retries do SDK.
+"""Adaptador do SDK da Anthropic (D13, D16): uma chamada por requisição, sem retries do SDK e
+com thinking desligado.
 
 Os erros do SDK viram `ErroAPI` com uma categoria fechada; a mensagem nunca carrega a chave
 nem o corpo da resposta.
@@ -77,6 +78,9 @@ class ClienteAnthropic:
                 system=system,
                 messages=[{"role": "user", "content": mensagem}],
                 output_config={"format": {"type": "json_schema", "schema": schema}},
+                # Sem o campo, o Haiku 5.5 usa thinking adaptativo: os tokens de thinking contam
+                # no max_tokens e cortavam a resposta (D16). Sem effort nem amostragem.
+                thinking={"type": "disabled"},
             )
         except anthropic.APITimeoutError:
             raise ErroAPI(categoria="timeout") from None

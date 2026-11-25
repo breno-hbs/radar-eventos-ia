@@ -286,7 +286,7 @@ def test_evento_alterado_e_reclassificado(
 @pytest.mark.parametrize(
     ("modulo", "atributo", "valor", "coluna"),
     [
-        ("radar.classificacao.prompt", "VERSAO_PROMPT", "classificador_v2", "versao_prompt"),
+        ("radar.classificacao.prompt", "VERSAO_PROMPT", "classificador_v99", "versao_prompt"),
         ("radar.classificacao.modelos", "MODELO", "modelo-novo", "modelo"),
         ("radar.classificacao.modelos", "VERSAO_SCHEMA", "2", "versao_schema"),
     ],
