@@ -129,6 +129,63 @@ def _interpretar(
     return saida, None
 
 
+@dataclass(frozen=True)
+class ResultadoEvento:
+    """Resultado de uma chamada para um evento (sem banco).
+
+    Erro de API não é levantado: vira `erro_api` e `motivo_erro="api_<categoria>"`, sem tokens
+    nem custo. Erro de saída traz `motivo_erro`, tokens e custo.
+    """
+
+    saida: SaidaClassificador | None
+    motivo_erro: str | None
+    tokens_entrada: int | None
+    tokens_saida: int | None
+    custo_usd: Decimal | None
+    erro_api: ErroAPI | None
+
+
+def classificar_evento(
+    evento: Evento, localizacao_filtro: str, cliente: ClienteLLM
+) -> ResultadoEvento:
+    """Uma chamada ao LLM para `evento`, conferindo a localização contra `localizacao_filtro`.
+
+    Usada pelo radar (`classificar_pendentes`) e pela avaliação (F1-07); não toca no banco.
+    """
+    modelo = modelos.MODELO
+    mensagem, texto_fonte = prompt.montar_mensagem(evento, localizacao_filtro)
+    try:
+        resposta = cliente.classificar(
+            system=prompt.carregar_prompt(),
+            mensagem=mensagem,
+            schema=modelos.SCHEMA_SAIDA,
+            max_tokens=MAX_TOKENS_SAIDA,
+        )
+    except ErroAPI as erro:
+        return ResultadoEvento(
+            saida=None,
+            motivo_erro=f"api_{erro.categoria}",
+            tokens_entrada=None,
+            tokens_saida=None,
+            custo_usd=None,
+            erro_api=erro,
+        )
+    custo: Decimal | None = None
+    if resposta.tokens_entrada is not None or resposta.tokens_saida is not None:
+        custo = precos.calcular_custo(
+            modelo, resposta.tokens_entrada or 0, resposta.tokens_saida or 0
+        )
+    saida, motivo_erro = _interpretar(resposta, texto_fonte, localizacao_filtro)
+    return ResultadoEvento(
+        saida=saida,
+        motivo_erro=motivo_erro,
+        tokens_entrada=resposta.tokens_entrada,
+        tokens_saida=resposta.tokens_saida,
+        custo_usd=custo,
+        erro_api=None,
+    )
+
+
 def classificar_pendentes(
     sessao: Session,
     cliente: ClienteLLM,
@@ -145,8 +202,7 @@ def classificar_pendentes(
     versao_schema = modelos.VERSAO_SCHEMA
     if modelo not in precos.TABELA_PRECOS:
         raise ValueError(f"modelo sem preço na tabela: {modelo!r}")
-    system = prompt.carregar_prompt()
-    schema = modelos.SCHEMA_SAIDA
+    prompt.carregar_prompt()  # prompt alterado sem nova versão falha antes de consultar a fila
     limite = config.limite_chamadas_llm_por_execucao
 
     # Um a mais que o limite, só para saber se sobram pendentes.
@@ -164,21 +220,6 @@ def classificar_pendentes(
     falhas_api_seguidas = 0
     tentados = 0
 
-    def registrar(evento: Evento, **campos: object) -> None:
-        sessao.add(
-            Classificacao(
-                evento_id=evento.id,
-                rodada=rodada,
-                criada_em=agora,
-                hash_conteudo=evento.hash_conteudo,
-                versao_prompt=versao_prompt,
-                modelo=modelo,
-                versao_schema=versao_schema,
-                **campos,
-            )
-        )
-        sessao.flush()
-
     for evento in fila:
         if resumo.chamadas >= limite:
             break
@@ -189,64 +230,54 @@ def classificar_pendentes(
             resumo.interrompido_por = "limite_tokens"
             break
 
-        localizacao_filtro = evento.localizacao
-        mensagem, texto_fonte = prompt.montar_mensagem(evento, localizacao_filtro)
         tentados += 1
         resumo.chamadas += 1
         inicio = relogio()
-        try:
-            resposta = cliente.classificar(
-                system=system, mensagem=mensagem, schema=schema, max_tokens=MAX_TOKENS_SAIDA
-            )
-        except ErroAPI as erro:
-            latencia_ms = round((relogio() - inicio) * 1000)
-            motivo = f"api_{erro.categoria}"
-            registrar(
-                evento,
-                situacao="erro",
-                resultado=None,
-                motivo_erro=motivo,
-                tokens_entrada=None,
-                tokens_saida=None,
-                latencia_ms=latencia_ms,
-                custo_usd=None,
-            )
-            resumo.erros.append((evento.id, motivo))
-            falhas_api_seguidas += 1
-            if erro.categoria in CATEGORIAS_QUE_INTERROMPEM:
-                resumo.interrompido_por = erro.categoria  # type: ignore[assignment]
-                break
-            if falhas_api_seguidas >= MAX_FALHAS_API_SEGUIDAS:
-                resumo.interrompido_por = "falhas_api_seguidas"
-                break
-            continue
-
+        resultado = classificar_evento(evento, evento.localizacao, cliente)
         latencia_ms = round((relogio() - inicio) * 1000)
-        falhas_api_seguidas = 0
-        tokens_entrada += resposta.tokens_entrada or 0
-        tokens_saida += resposta.tokens_saida or 0
-        custo: Decimal | None = None
-        if resposta.tokens_entrada is not None or resposta.tokens_saida is not None:
-            custo = precos.calcular_custo(
-                modelo, resposta.tokens_entrada or 0, resposta.tokens_saida or 0
-            )
-            resumo.custo_total_usd += custo
 
-        saida, motivo_erro = _interpretar(resposta, texto_fonte, localizacao_filtro)
-        registrar(
-            evento,
-            situacao="ok" if saida is not None else "erro",
-            resultado=None if saida is None else saida.model_dump(mode="json"),
-            motivo_erro=motivo_erro,
-            tokens_entrada=resposta.tokens_entrada,
-            tokens_saida=resposta.tokens_saida,
-            latencia_ms=latencia_ms,
-            custo_usd=custo,
+        sessao.add(
+            Classificacao(
+                evento_id=evento.id,
+                rodada=rodada,
+                criada_em=agora,
+                hash_conteudo=evento.hash_conteudo,
+                versao_prompt=versao_prompt,
+                modelo=modelo,
+                versao_schema=versao_schema,
+                situacao="ok" if resultado.saida is not None else "erro",
+                resultado=None
+                if resultado.saida is None
+                else resultado.saida.model_dump(mode="json"),
+                motivo_erro=resultado.motivo_erro,
+                tokens_entrada=resultado.tokens_entrada,
+                tokens_saida=resultado.tokens_saida,
+                latencia_ms=latencia_ms,
+                custo_usd=resultado.custo_usd,
+            )
         )
-        if saida is not None:
+        sessao.flush()
+        tokens_entrada += resultado.tokens_entrada or 0
+        tokens_saida += resultado.tokens_saida or 0
+        if resultado.custo_usd is not None:
+            resumo.custo_total_usd += resultado.custo_usd
+
+        if resultado.saida is not None:
             resumo.ok.append(evento.id)
         else:
-            resumo.erros.append((evento.id, motivo_erro or "saida_invalida"))
+            resumo.erros.append((evento.id, resultado.motivo_erro or "saida_invalida"))
+
+        if resultado.erro_api is None:
+            falhas_api_seguidas = 0
+            continue
+        falhas_api_seguidas += 1
+        categoria = resultado.erro_api.categoria
+        if categoria in CATEGORIAS_QUE_INTERROMPEM:
+            resumo.interrompido_por = categoria  # type: ignore[assignment]
+            break
+        if falhas_api_seguidas >= MAX_FALHAS_API_SEGUIDAS:
+            resumo.interrompido_por = "falhas_api_seguidas"
+            break
 
     resumo.restantes = len(fila) > tentados
     return resumo
