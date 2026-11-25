@@ -4,7 +4,7 @@ Radar pessoal que coleta eventos de Inteligência Artificial em São Paulo (pres
 
 > Status: **Fase 0 concluída.** Próximo passo: Fase 1 (fluxo completo com a Luma).
 >
-> Documentação: [especificação](docs/spec.md) · [decisões](docs/decisoes.md) · [viabilidade das fontes](docs/fase-0-viabilidade.md)
+> Documentação: [especificação](docs/spec.md) · [decisões](docs/decisoes.md) · [viabilidade das fontes](docs/fase-0-viabilidade.md) · [backlog da Fase 1](docs/backlog-fase-1.md)
 
 ## Fases
 

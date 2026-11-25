@@ -1,6 +1,6 @@
 # Fase 0 — Viabilidade das fontes
 
-Executada em 2026-11-25. O script e o resultado bruto estão no branch `fase-0/diagnostico-fontes` (não será integrado à `main`, é código descartável).
+Executada em 2026-11-25. O script e o resultado bruto estão em `diagnostico/`, guardados como histórico. É código descartável: nada dali é reaproveitado no radar sem reescrita e testes.
 
 ## Resumo
 
