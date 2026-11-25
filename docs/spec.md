@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.7 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.8 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -45,7 +45,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
    - registro por chamada (inclusive erros): versão do prompt, modelo, tokens, latência e custo estimado; por execução, até 50 chamadas, 200 mil tokens de entrada e 40 mil de saída; uma chamada por evento, sem repetição;
    - a classificação grava a saída do LLM sem alteração e nunca o texto bruto da resposta. A regra de comunidade de IA (evento de calendário marcado `comunidade_ia` conta como IA, só com saída válida) não é gravada: é aplicada na decisão do aviso (F1-10), a partir dos calendários do evento e do `fontes.yaml` vigente, e na avaliação (D15);
    - saída inválida vira erro registrado, nunca evento aprovado; após 3 erros de saída para a mesma chave o evento fica em "falha de classificação" até a chave mudar, e entra no resumo semanal como "Não classificado — confira manualmente" (com aviso excepcional se acontecer antes do próximo resumo).
-6. **Enriquecimento de preço (Luma):** página do evento, só eventos novos aprovados nos filtros, com limite por execução, cache e sem contorno de bloqueio (D4).
+6. **Enriquecimento de preço (Luma):** página `https://luma.com/<slug>` do evento, lida do JSON-LD (`offers`) só para eventos classificados como IA (ou de comunidade de IA) e sem enriquecimento para o hash atual; até 10 eventos por execução, robots.txt respeitado (ilegível → nada é lido), sem redirecionamento nem repetição: todo resultado, inclusive erro, é gravado e só se repete quando o conteúdo mudar. Na decisão do aviso, a página conclusiva prevalece sobre o LLM, exceto página grátis com LLM pago (vale o LLM) (D4, D18).
 7. **Estados de preço:** gratuito confirmado, pago com valor, pago sem valor conhecido, preço variável, preço desconhecido.
 8. **Estados do evento:** ativo, alterado, cancelado (só quando a fonte diz), encerrado, não encontrado (some por N execuções seguidas com todos os seus calendários lidos com sucesso; padrão 3; não gera aviso). Só eventos aprovados nos filtros entram no banco; regras de hash e transições na D12.
 9. **Agenda (Fase 3):** Google Calendar só com escopo FreeBusy; margem de deslocamento configurável para presenciais.
@@ -96,7 +96,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 - Relatório final gerado pelo sistema, publicado no README.
 
 ## 10. Stack
-Python (monólito modular), httpx, icalendar, Pydantic, SQLAlchemy, Alembic, BeautifulSoup (só para o enriquecimento), PostgreSQL gratuito hospedado (Supabase ou Neon), API do Claude (modelo mais barato), python-telegram-bot, API do Google Calendar (FreeBusy), pytest com feeds e páginas de exemplo salvos, GitHub Actions. Fora: LangChain, LangGraph, Redis, banco vetorial, Kubernetes.
+Python (monólito modular), httpx, icalendar, Pydantic, SQLAlchemy, Alembic, PostgreSQL gratuito hospedado (Supabase ou Neon), API do Claude (modelo mais barato), python-telegram-bot, API do Google Calendar (FreeBusy), pytest com feeds e páginas de exemplo salvos, GitHub Actions. Fora: LangChain, LangGraph, Redis, banco vetorial, Kubernetes.
 
 ## 11. Desenvolvimento
 Claude Code com CLAUDE.md de regras e subagentes: planejador, implementador (um módulo por vez), testador (testes antes do código) e revisor (contexto limpo). Código em branches; o merge é sempre do autor.

@@ -94,7 +94,8 @@
 - **Pendências registradas (fora do F1-07b):** `categoria` passou de 40 caracteres uma vez — o schema não expressa o limite ao modelo; em produção o evento é tentado de novo até 3 vezes e depois vai ao resumo semanal (D13), então decidir no F1-10 se vale cortar a categoria no código; conjunto de teste já visto (D15) e com poucos negativos — renovar com uma captura nova antes da próxima versão do prompt.
 
 ### F1-08 — Enriquecimento de preço da Luma
-- Implementa a D4: só eventos novos aprovados, limite por execução (padrão 10), cache por `id_fonte`, nenhuma repetição após erro, regras de moeda e oferta.
+- Implementa a D4, detalhada na D18: só eventos classificados como IA (ou de comunidade de IA) sem enriquecimento para o hash atual, limite por execução (padrão 10) contando eventos processados, nenhuma repetição após erro, regras de moeda e oferta, combinação com o preço do LLM (`estado_preco_efetivo`). Sem BeautifulSoup (`html.parser`).
+- Testes com fixtures sintéticas em `tests/fixtures/enriquecimento/` (no formato do JSON-LD real de `tests/fixtures/luma/pagina_1.html`) e `httpx.MockTransport`.
 - **Aceite:** testes com as páginas das fixtures (gratuito, sem offers, resposta 403/429 → "preço desconhecido").
 
 ### F1-09 — Notificador Telegram
@@ -116,6 +117,8 @@
 - Encaminhamento por idioma (D13): pt / bilíngue / com tradução → aviso; `desconhecido` → aviso com "idioma não confirmado"; estrangeiro confirmado sem tradução → resumo semanal se presencial, descartado se exclusivamente online.
 - Regra de comunidade de IA na decisão do aviso (D15): evento com algum calendário (`eventos.calendarios`) marcado `comunidade_ia` no `config/fontes.yaml` vigente conta como IA quando a classificação é `ok`; aplicada na leitura, nunca gravada, para que mudança de calendário ou de marcação valha sem reclassificar.
 - Eventos em falha de classificação (`eventos_com_falha_classificacao`) → resumo semanal como "Não classificado — confira manualmente"; aviso excepcional se o evento acontecer antes do próximo resumo (D13).
+- Chamar `enriquecer_precos` depois do commit da classificação (a fila depende da classificação `ok`) e commitar em seguida; alertar `robots_bloqueado` e erros sistemáticos de enriquecimento (muitos `status_http`/`rede`/`sem_json_ld`), Plano B da D4 (D18).
+- Usar `estado_preco_efetivo` (página × LLM) na decisão do aviso (D18).
 - Commit depois da classificação (o classificador só faz `flush`) e registro do `ResumoClassificacao` (interrupções, restantes, custo estimado).
 - **Sua parte:** criar o banco gratuito (Neon ou Supabase), cadastrar `DATABASE_URL` e `ANTHROPIC_API_KEY` nos Secrets e definir o limite mensal de gasto no console da Anthropic.
 - **Aceite:** uma execução manual completa ponta a ponta com aviso real no seu Telegram.

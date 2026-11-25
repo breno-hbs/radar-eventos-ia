@@ -47,6 +47,11 @@ class RobotsTxt:
             # Qualquer erro (rede, decodificação, parse) bloqueia o host.
             return cls(None, liberado=False)
 
+    @property
+    def ilegivel(self) -> bool:
+        """robots.txt não pôde ser lido (resposta ≠ 200/404/410 ou erro): bloqueia tudo."""
+        return not self._liberado and self._regras is None
+
     def permite(self, url: str) -> bool:
         if self._liberado:
             return True
