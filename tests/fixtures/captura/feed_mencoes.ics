@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico com mencoes de rede social
+BEGIN:VEVENT
+UID:evt-JJJJ9999@events.lu.ma
+SUMMARY:Meetup com mencoes (@aicollective_sp)
+DTSTART:20261228T220000Z
+DTEND:20261229T010000Z
+LOCATION:https://luma.com/event/evt-JJJJ9999
+ORGANIZER;CN=Organizadora Mencao:mailto:organizadora.mencao@example.com
+DESCRIPTION:Hosted by\n@joao.silva e (@vibe.space)\nCo-host:@ciclana_dev\, apoio @fulano\, @beltrana.\n\nSiga https://x.com/@perfil_x e leia https://medium.com/@autor_medium/post-sobre-ia\nInstagram: @radar_ia.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Radar//Fixture sintetica F1-02//PT
+X-WR-CALNAME:Calendario sintetico com mencao com acento
+BEGIN:VEVENT
+UID:evt-KKKK0000@events.lu.ma
+SUMMARY:Meetup com mencao acentuada
+DTSTART:20261230T220000Z
+DTEND:20261231T010000Z
+LOCATION:https://luma.com/event/evt-KKKK0000
+DESCRIPTION:Hosted by @josé.silva\n\nMais detalhes em breve.
+END:VEVENT
+END:VCALENDAR
