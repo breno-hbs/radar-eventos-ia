@@ -367,3 +367,32 @@ def test_qualquer_httpx_http_error_vira_falha_de_rede(
     assert servidor.feeds_pedidos().count(luma.url_ical(escolhido)) == 1
     for calendario in calendarios[1:]:
         assert por_slug[calendario.slug].situacao == "ok", calendario.slug
+
+
+# --- RobotsTxt.ilegivel (F1-08) -------------------------------------------------------
+
+
+def _robots(rede: ModuleType, resposta: Any) -> Any:
+    def tratador(requisicao: httpx.Request) -> httpx.Response:
+        if isinstance(resposta, Exception):
+            raise resposta
+        return resposta
+
+    with httpx.Client(transport=httpx.MockTransport(tratador)) as cliente:
+        return rede.RobotsTxt.ler(cliente, "https://luma.com")
+
+
+@pytest.mark.parametrize(
+    ("resposta", "esperado"),
+    [
+        (httpx.Response(200, text="User-agent: *\nDisallow: /x\n"), False),
+        (httpx.Response(404), False),
+        (httpx.Response(410), False),
+        (httpx.Response(500), True),
+        (httpx.Response(403), True),
+        (httpx.ConnectError("sem rede"), True),
+    ],
+    ids=["200", "404", "410", "500", "403", "erro"],
+)
+def test_robots_ilegivel(rede: ModuleType, resposta: Any, esperado: bool) -> None:
+    assert _robots(rede, resposta).ilegivel is esperado

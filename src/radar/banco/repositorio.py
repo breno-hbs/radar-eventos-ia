@@ -12,12 +12,12 @@ from datetime import datetime
 from typing import Any
 
 from pydantic import BaseModel, ConfigDict
-from sqlalchemy import and_, exists, func, select
+from sqlalchemy import and_, exists, false, func, or_, select
 from sqlalchemy.orm import Session
 
 from radar.banco.ciclo_vida import EstadoEvento, Observacao, transicionar
 from radar.banco.conteudo import EventoConsolidado, consolidar_observacoes, hash_conteudo
-from radar.banco.modelos import Classificacao, Evento, Execucao
+from radar.banco.modelos import Classificacao, Enriquecimento, Evento, Execucao
 from radar.filtros.geografico import EventoLocalizado, classificar_localizacao
 from radar.filtros.horizonte import calcular_termino
 from radar.fontes.modelos import EventoNormalizado, ResultadoCalendario
@@ -441,5 +441,57 @@ def eventos_com_falha_classificacao(
             _erros_de_saida_da_chave(versao_prompt, modelo, versao_schema) >= max_erros_saida,
         )
         .order_by(Evento.inicio, Evento.id)
+    )
+    return list(sessao.scalars(consulta))
+
+
+def eventos_para_enriquecer(
+    sessao: Session,
+    *,
+    versao_prompt: str,
+    modelo: str,
+    versao_schema: str,
+    slugs_comunidade_ia: frozenset[str],
+    limite: int,
+) -> list[Evento]:
+    """Fila do enriquecimento de preço (D18), por início.
+
+    Evento `ativo`/`alterado`, fora de `localizacao='fora'`, da Luma (`evt-…`) e com link de
+    inscrição; com classificação `ok` para a chave atual que diga `e_ia` ou cujo evento seja de
+    calendário de comunidade de IA (D15, aplicada aqui na leitura); sem enriquecimento para o
+    hash atual (todo resultado, inclusive erro, conta: nada se repete até o hash mudar).
+    """
+    comunidade = (
+        Evento.calendarios.overlap(sorted(slugs_comunidade_ia)) if slugs_comunidade_ia else false()
+    )
+    classificado_ia = exists().where(
+        and_(
+            Classificacao.evento_id == Evento.id,
+            Classificacao.situacao == "ok",
+            Classificacao.hash_conteudo == Evento.hash_conteudo,
+            Classificacao.versao_prompt == versao_prompt,
+            Classificacao.modelo == modelo,
+            Classificacao.versao_schema == versao_schema,
+            or_(Classificacao.resultado["e_ia"].as_boolean().is_(True), comunidade),
+        )
+    )
+    enriquecido = exists().where(
+        and_(
+            Enriquecimento.evento_id == Evento.id,
+            Enriquecimento.hash_conteudo == Evento.hash_conteudo,
+        )
+    )
+    consulta = (
+        select(Evento)
+        .where(
+            Evento.estado.in_([_E.ATIVO.value, _E.ALTERADO.value]),
+            Evento.localizacao != "fora",
+            Evento.id_fonte.startswith("evt-", autoescape=True),
+            Evento.link_inscricao.is_not(None),
+            classificado_ia,
+            ~enriquecido,
+        )
+        .order_by(Evento.inicio, Evento.id)
+        .limit(limite)
     )
     return list(sessao.scalars(consulta))
