@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.9 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.10 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -21,6 +21,8 @@ Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro
 | Idioma não informado (`desconhecido`) | Aviso com etiqueta "idioma não confirmado" |
 | Estrangeiro confirmado (`en` ou `outro`), sem tradução, presencial | Resumo semanal, etiqueta com o idioma |
 | Estrangeiro confirmado, sem tradução, exclusivamente online | Descartado |
+
+"Exclusivamente online" = local efetivo online com modalidade online ou desconhecida, ou local indefinido com modalidade online declarada; na dúvida, vai para o resumo semanal. A decisão de destino completa, com a ordem das regras, está na D20.
 
 Página em inglês não implica evento em inglês; o classificador procura sinais explícitos e guarda o trecho de evidência. Estrangeiro confirmado exige trecho explícito; sem ele o idioma é `desconhecido` e o evento é avisado (D13).
 
@@ -96,7 +98,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 - Relatório final gerado pelo sistema, publicado no README.
 
 ## 10. Stack
-Python (monólito modular), httpx, icalendar, Pydantic, SQLAlchemy, Alembic, PostgreSQL gratuito hospedado (Supabase ou Neon), API do Claude (modelo mais barato), httpx para a Bot API do Telegram na Fase 1 (sem python-telegram-bot; mensagens até 4096 unidades UTF-16, D19), API do Google Calendar (FreeBusy), pytest com feeds e páginas de exemplo salvos, GitHub Actions. Fora: LangChain, LangGraph, Redis, banco vetorial, Kubernetes.
+Python (monólito modular), httpx, icalendar, Pydantic, SQLAlchemy, Alembic, PostgreSQL gratuito hospedado (Neon, URL direta com `sslmode=require`, D20), API do Claude (modelo mais barato), httpx para a Bot API do Telegram na Fase 1 (sem python-telegram-bot; mensagens até 4096 unidades UTF-16, D19), API do Google Calendar (FreeBusy), pytest com feeds e páginas de exemplo salvos, GitHub Actions. Fora: LangChain, LangGraph, Redis, banco vetorial, Kubernetes.
 
 ## 11. Desenvolvimento
 Claude Code com CLAUDE.md de regras e subagentes: planejador, implementador (um módulo por vez), testador (testes antes do código) e revisor (contexto limpo). Código em branches; o merge é sempre do autor.
