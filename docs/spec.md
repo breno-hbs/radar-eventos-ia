@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.10 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.11 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -69,6 +69,9 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 - Alerta de inatividade por volta do dia 50 (o GitHub desliga workflows agendados após 60 dias sem atividade em repositório público) e procedimento de reativação no README. Sem commits artificiais.
 
 ## 6. Confiabilidade e observabilidade
+- **Log e saída do comando:** só contagens, códigos, slugs de calendário e o uuid da rodada; nunca título, URL, mensagem de exceção, token, chat_id ou URL do banco (repositório e log do Actions são públicos) (D21).
+- **Códigos de saída de `radar executar`:** 0 concluída (inclusive com falhas parciais e Telegram interrompido por rate limit ou falhas seguidas); 1 erro inesperado ou de etapa; 2 configuração; 3 Telegram recusou o bot (autenticação/proibido), para o GitHub avisar por e-mail (D21).
+- **Falha de etapa:** rollback só da etapa; as anteriores ficam commitadas, nada é notificado e a próxima execução retoma (D21).
 - **Falha de extração** (rede, formato inesperado, campos obrigatórios ausentes): alerta imediato.
 - **Evento com campo obrigatório ausente** (UID, título, início) ou início sem fuso ou malformado: descartado sozinho, sem derrubar o feed; entra em `eventos_invalidos` e conta como falha de extração para o alerta. Feed em que todos os eventos são inválidos vira falha de formato (D10).
 - **Zero eventos com leitura normal:** não é falha; aviso só após várias execuções vazias numa fonte que costuma ter eventos.

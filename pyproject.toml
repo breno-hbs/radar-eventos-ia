@@ -16,6 +16,9 @@ dependencies = [
     "sqlalchemy==2.0.58",
 ]
 
+[project.scripts]
+radar = "radar.cli:main"
+
 [dependency-groups]
 dev = [
     "pytest==9.2.0",

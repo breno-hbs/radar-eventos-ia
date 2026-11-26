@@ -68,6 +68,10 @@ class ClienteAnthropic:
     def __repr__(self) -> str:
         return "ClienteAnthropic()"
 
+    def close(self) -> None:
+        """Fecha o cliente HTTP do SDK."""
+        self._sdk.close()
+
     def classificar(
         self, system: str, mensagem: str, schema: dict[str, Any], max_tokens: int
     ) -> RespostaLLM:
