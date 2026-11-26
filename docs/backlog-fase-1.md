@@ -24,8 +24,11 @@
 | F1-07b | Ajustes após a 1ª avaliação (diagnóstico, comunidades, prompt v2) | HITL | F1-07 |
 | F1-08 | Enriquecimento de preço da Luma | AFK | F1-05 |
 | F1-09 | Notificador Telegram | HITL | F1-05 |
-| F1-10 | Orquestração, agendamento e alertas | HITL | F1-04, F1-06, F1-08, F1-09 |
-| F1-11 | Primeira semana real | HITL | F1-10 |
+| F1-10a | Decisão de destino | AFK | F1-06, F1-08 |
+| F1-10b | Orquestração e CLI | AFK | F1-04, F1-06, F1-08, F1-09, F1-10a |
+| F1-10c | Resumo semanal e alertas | AFK | F1-10b |
+| F1-10d | Agendamento, banco real e aceite ponta a ponta | HITL | F1-10c |
+| F1-11 | Primeira semana real | HITL | F1-10d |
 
 ---
 
@@ -91,7 +94,7 @@
 - **Parte C — localização e prompt v3 (D17):** avaliação do v2 (teste P 0,905 / R 0,864 / F1 0,884; dev R 0,700) sem truncamentos; os 10 erros restantes eram do campo localização com filtro decidido → a localização do LLM é descartada antes da validação quando o filtro decidiu (fim de `saida_localizacao_indevida`); `prompts/classificador_v3.md` com "título em inglês não é evidência" de idioma; workflow com sufixo `classificador_v3`; nova avaliação do v3.
 - **Aceite:** parte A com testes e `verificar.sh` verde; parte B com relatório da v2 em `docs/avaliacao/`.
 - **Resultado final (v3, 2026-11-25):** teste P 0,909 / R 0,909 / F1 0,909 (20 de 22 eventos de IA; perdas: "Revenue Summit", sem IA no texto, e 1 `saida_schema_invalido:categoria` em "Hack for Humanity"); dev P 1,0 / R 1,0. Custo do teste US$ 0,016. Relatórios v1, v2 e v3 em `docs/avaliacao/`. Concluído.
-- **Pendências registradas (fora do F1-07b):** `categoria` passou de 40 caracteres uma vez — o schema não expressa o limite ao modelo; em produção o evento é tentado de novo até 3 vezes e depois vai ao resumo semanal (D13), então decidir no F1-10 se vale cortar a categoria no código; conjunto de teste já visto (D15) e com poucos negativos — renovar com uma captura nova antes da próxima versão do prompt.
+- **Pendências registradas (fora do F1-07b):** `categoria` passou de 40 caracteres uma vez — o schema não expressa o limite ao modelo; em produção o evento é tentado de novo até 3 vezes e depois vai ao resumo semanal (D13), então decidir no F1-10 se vale cortar a categoria no código (resolvido na D20: não cortar, mantém o erro de schema); conjunto de teste já visto (D15) e com poucos negativos — renovar com uma captura nova antes da próxima versão do prompt.
 
 ### F1-08 — Enriquecimento de preço da Luma
 - Implementa a D4, detalhada na D18: só eventos classificados como IA (ou de comunidade de IA) sem enriquecimento para o hash atual, limite por execução (padrão 10) contando eventos processados, nenhuma repetição após erro, regras de moeda e oferta, combinação com o preço do LLM (`estado_preco_efetivo`). Sem BeautifulSoup (`html.parser`).
@@ -110,23 +113,31 @@
 - Mensagens do resumo semanal para eventos em falha de classificação ("Não classificado — confira manualmente") e do aviso excepcional (D13).
 - **Aceite:** testes com cliente falso; nenhuma notificação duplicada ao rodar duas vezes.
 
-### F1-10 — Orquestração, agendamento e alertas
-- Comando `radar executar`: coleta → filtro → banco → classificação → enriquecimento → avisos.
-- Workflow agendado: 7h40, 12h40 e 19h40 (horário de SP), com grupo de concorrência.
-- Alertas no Telegram: falha de extração; fonte vazia por várias execuções; inatividade perto do dia 50.
-- Horizonte por tipo depois da classificação: conferência e hackathon 90 dias; demais tipos (inclusive `outro`) 30 dias, independentemente de preço e modalidade (D13).
-- Encaminhamento por idioma (D13): pt / bilíngue / com tradução → aviso; `desconhecido` → aviso com "idioma não confirmado"; estrangeiro confirmado sem tradução → resumo semanal se presencial, descartado se exclusivamente online.
-- Commitar classificação, enriquecimento e estado dos eventos antes de chamar `notificar` (ele recusa transação com escritas pendentes, D19).
-- Enviar o resumo semanal (`notificar` com tipo `resumo_semanal`) na 1ª execução de segunda-feira (D19).
-- Em toda execução, pedir de novo as `notificacoes_pendentes` ('enviando' de execuções anteriores), inclusive partes do resumo semanal, sem esperar segunda (D19).
-- Deduplicação própria dos alertas sem evento (falha de extração, robots bloqueado etc.), que não cabem em `notificacoes` (D19).
-- Barrar o aviso de evento `indefinida` cuja localização do LLM é `fora` (D19).
-- Regra de comunidade de IA na decisão do aviso (D15): evento com algum calendário (`eventos.calendarios`) marcado `comunidade_ia` no `config/fontes.yaml` vigente conta como IA quando a classificação é `ok`; aplicada na leitura, nunca gravada, para que mudança de calendário ou de marcação valha sem reclassificar.
-- Eventos em falha de classificação (`eventos_com_falha_classificacao`) → resumo semanal como "Não classificado — confira manualmente"; aviso excepcional se o evento acontecer antes do próximo resumo (D13).
-- Chamar `enriquecer_precos` depois do commit da classificação (a fila depende da classificação `ok`) e commitar em seguida; alertar `robots_bloqueado` e erros sistemáticos de enriquecimento (muitos `status_http`/`rede`/`sem_json_ld`), Plano B da D4 (D18).
-- Usar `estado_preco_efetivo` (página × LLM) na decisão do aviso (D18).
+### F1-10a — Decisão de destino
+- Função pura `radar.orquestracao.destino.decidir_destino` com as regras e a ordem da D20: estado, `fora`, terminou, falha de classificação (aviso excepcional antes do próximo resumo, senão resumo semanal), sem classificação, não IA com exceção da comunidade de IA (D15, aplicada na leitura, nunca gravada), `indefinida` com LLM `fora` descartado (D19), horizonte por tipo (conferência e hackathon 90 dias; demais 30, limite inclusivo, D13), encaminhamento por idioma (D13) com "exclusivamente online" da D20. Preço nunca muda o destino.
+- **Aceite:** testes da função pura; nada de banco nem rede.
+
+### F1-10b — Orquestração e CLI
+- Comando `radar executar`: coleta → filtro → banco → classificação → enriquecimento → decisão de destino → avisos; e `radar migrar`.
+- Leituras de repositório para a decisão (saída `ok` da chave atual, enriquecimento do hash atual, `eventos_com_falha_classificacao`).
 - Commit depois da classificação (o classificador só faz `flush`) e registro do `ResumoClassificacao` (interrupções, restantes, custo estimado).
-- **Sua parte:** criar o banco gratuito (Neon ou Supabase), cadastrar `DATABASE_URL` e `ANTHROPIC_API_KEY` nos Secrets e definir o limite mensal de gasto no console da Anthropic.
+- Chamar `enriquecer_precos` depois do commit da classificação (a fila depende da classificação `ok`) e commitar em seguida (D18).
+- Commitar classificação, enriquecimento e estado dos eventos antes de chamar `notificar` (ele recusa transação com escritas pendentes, D19).
+- Usar `estado_preco_efetivo` (página × LLM) na mensagem (D18).
+- Em toda execução, pedir de novo as `notificacoes_pendentes` ('enviando' de execuções anteriores), inclusive partes do resumo semanal, sem esperar segunda (D19).
+- **Aceite:** execução completa com fontes, LLM e Telegram falsos e Postgres de teste.
+
+### F1-10c — Resumo semanal e alertas
+- `proximo_resumo` (D20): na 1ª execução de segunda sem marco semanal, `agora`; senão, a próxima segunda 00:00 em SP. Validar `proximo_resumo >= agora` em `decidir_destino` (pré-condição com `ValueError`, revisão do F1-10a).
+- Migração `0002`: registro de envios sem evento (alertas), com deduplicação própria — não cabem em `notificacoes` (D19).
+- Resumo semanal na 1ª execução de segunda-feira (D19), com marco semanal; eventos em falha de classificação entram como "Não classificado — confira manualmente" e aviso excepcional se acontecerem antes do próximo resumo (D13).
+- Alertas no Telegram (regras da D20, seção F1-10c): falha de extração; fonte vazia (6 execuções `vazio` seguidas num calendário que já teve `ok`); `robots_bloqueado` e erros sistemáticos do enriquecimento (Plano B da D4, D18); inatividade a partir de 50 dias sem commit na `main`. No máximo 1 alerta por (tipo, alvo) por dia de SP.
+- **Aceite:** testes de deduplicação e dos gatilhos de cada alerta.
+
+### F1-10d — Agendamento, banco real e aceite ponta a ponta (HITL)
+- Workflow agendado `40 10,15,22 * * *` (UTC = 7h40, 12h40 e 19h40 de SP), com grupo de concorrência; README com o procedimento de reativação após inatividade.
+- Banco Neon com URL direta (sem pooler) e `sslmode=require` (D20).
+- **Sua parte:** criar o banco no Neon, cadastrar `DATABASE_URL` e `ANTHROPIC_API_KEY` nos Secrets e definir o limite mensal de gasto no console da Anthropic.
 - **Aceite:** uma execução manual completa ponta a ponta com aviso real no seu Telegram.
 
 ### F1-11 — Primeira semana real

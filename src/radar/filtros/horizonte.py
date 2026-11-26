@@ -1,8 +1,9 @@
 """Filtro de horizonte, aplicado antes do LLM (spec §2; D11).
 
 Antes da classificação o tipo do evento não é conhecido, então todos usam o horizonte maior
-(90 dias). O corte de 30 dias para meetups, palestras, workshops e online é aplicado depois
-da classificação.
+(90 dias). O corte por tipo (conferência e hackathon 90 dias; demais 30, independentemente
+de preço e modalidade) é aplicado depois da classificação, em
+`radar.orquestracao.destino` (D13, D20).
 """
 
 from __future__ import annotations

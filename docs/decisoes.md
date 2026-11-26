@@ -236,3 +236,30 @@ Formato curto: contexto, decisão, motivo. Decisões novas entram no fim, com da
 - **Fronteira:** o F1-09 formata, envia e registra; o F1-10 decide quais eventos e qual tipo (elegibilidade, horizonte, idioma, comunidade, preço efetivo).
 - **Riscos aceitos:** um erro 400 permanente (ex.: mensagem recusada) fica em `enviando` e é tentado de novo a cada execução (até 3 por dia). Alertas sem evento (falha de extração, robots bloqueado) não cabem em `notificacoes` (que exige evento) e terão deduplicação própria no F1-10. O F1-10 deve barrar evento `indefinida` que o LLM classificou como `fora`.
 **Motivo:** envio simples e auditável, sem dependência nova, sem markup vindo de terceiros, sem vazar o token e com entrega "pelo menos uma vez".
+
+## D20 — Decisão de destino (2026-11-25)
+**Contexto:** o F1-10a decide, para cada evento, o que fazer na execução: avisar, aviso excepcional, resumo semanal, aguardar ou descartar. Regras aprovadas pelo autor; implementação em `radar.orquestracao.destino.decidir_destino` (função pura, sem banco nem rede).
+**Decisão:**
+- **Ordem das regras** (a primeira que se aplica decide):
+  1. pré-condições: `agora` e `proximo_resumo` com fuso (`proximo_resumo` é `agora` na 1ª execução de segunda sem marco semanal e, nas demais, a próxima segunda 00:00 em SP — calculado no F1-10c, que também passa a validar `proximo_resumo >= agora`); evento em falha de classificação não pode ter saída `ok` (senão `ValueError`);
+  2. estado diferente de `ativo`/`alterado` → **descartar** (`estado_inativo`);
+  3. filtro geográfico `fora` → **descartar** (`fora_de_sp`), inclusive comunidade de IA;
+  4. já terminou (término de `calcular_termino` ≤ agora, mesma regra da D11/D12) → **descartar** (`terminou`);
+  5. falha de classificação (D13): usa o horizonte de **30 dias**; além dele → **aguardar**; começa antes do próximo resumo semanal → **aviso excepcional** (`falha_antes_do_resumo`), senão → **resumo semanal** (`falha_classificacao`). Comunidade não muda isso;
+  6. sem classificação `ok` para a chave atual → **aguardar** (`sem_classificacao`);
+  7. `e_ia` falso → **descartar** (`nao_ia`), exceto evento de calendário de comunidade de IA (D15), que segue como IA com `e_ia_por_comunidade` (só quando o LLM disse não IA). Comunidade só vale com classificação `ok`;
+  8. filtro `indefinida` e LLM afirmando `fora` → **descartar** (`localizacao_llm_fora`), inclusive comunidade. Com o filtro decidido, a localização do LLM é ignorada (D17);
+  9. **horizonte por tipo** (D13): conferência e hackathon 90 dias; demais tipos (inclusive `outro`) 30 dias; **limite inclusivo** (início ≤ agora + N dias); além → **aguardar** (`alem_do_horizonte_do_tipo`). Preço e modalidade não mudam o horizonte;
+  10. **idioma** (D13): `pt`, `bilingue` ou com tradução para português → **aviso** (`idioma_ok`); `desconhecido` → **aviso** com etiqueta "idioma não confirmado" (`idioma_nao_confirmado`); estrangeiro confirmado (`en` ou `outro`) sem tradução → **descartar** se exclusivamente online (`estrangeiro_online`), senão **resumo semanal** (`estrangeiro_presencial`).
+- **"Exclusivamente online"** = (local efetivo `online` e modalidade `online` ou `desconhecida`) ou (local efetivo `indefinida` e modalidade `online`). Local efetivo = o do filtro quando ele decidiu; com `indefinida`, o que o LLM afirmou (`sp`/`online`/`fora`), senão `indefinida`. Só descarta com evidência; na dúvida, o evento estrangeiro vai para o resumo semanal.
+- **Preço nunca muda o destino:** só aparece na mensagem (`estado_preco_efetivo`, D18).
+- **Recalculada, nunca gravada:** a decisão é refeita a cada execução a partir do banco; um evento que hoje "aguarda" vira aviso quando entra no horizonte do seu tipo. O registro do que foi enviado é o de `notificacoes` (D19).
+- **Categoria acima de 40 caracteres** continua sendo erro de schema, sem corte no código (spec §4.5: a saída do LLM é gravada sem alteração). Pendência do F1-07b resolvida assim.
+**Motivo:** regras explícitas, numa ordem só, testáveis sem banco, que só descartam com evidência e mantêm a prioridade de não perder evento de IA.
+
+### Decisões aprovadas para o F1-10c (alertas)
+- **Deduplicação:** no máximo 1 alerta por (tipo, alvo) por dia de São Paulo; o primeiro é enviado na hora.
+- **Fonte vazia:** 6 execuções seguidas com situação `vazio` num calendário que já teve `ok` alguma vez.
+- **Erros sistemáticos do enriquecimento:** numa execução, ≥ 3 eventos com motivo em {`status_http`, `rede`, `redirecionamento`, `sem_json_ld`, `json_ld_invalido`, `bloqueado_robots`} e nenhum resultado conclusivo. `robots_bloqueado` sempre alerta.
+- **Inatividade:** ≥ 50 dias desde o último commit da `main` (o GitHub desliga workflows agendados após 60 dias), 1 alerta por dia.
+- **Banco de produção:** Neon, com URL direta (sem pooler) e `sslmode=require`.
