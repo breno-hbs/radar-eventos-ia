@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.8 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.9 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -49,7 +49,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 7. **Estados de preço:** gratuito confirmado, pago com valor, pago sem valor conhecido, preço variável, preço desconhecido.
 8. **Estados do evento:** ativo, alterado, cancelado (só quando a fonte diz), encerrado, não encontrado (some por N execuções seguidas com todos os seus calendários lidos com sucesso; padrão 3; não gera aviso). Só eventos aprovados nos filtros entram no banco; regras de hash e transições na D12.
 9. **Agenda (Fase 3):** Google Calendar só com escopo FreeBusy; margem de deslocamento configurável para presenciais.
-10. **Avisos no Telegram:**
+10. **Avisos no Telegram** (texto puro, sem prévia de link, mensagens até 4096 unidades UTF-16; D19):
     - na próxima execução: evento de IA que cabe na agenda, com estado de preço e link;
     - resumo semanal: conflitos de agenda, presenciais em idioma estrangeiro, pendentes, eventos não classificados (D13);
     - Fase 3: botões "Vou" e "Não tenho interesse" (via webhook serverless), lembrete na véspera (confere a agenda de novo) e aviso de mudança para eventos com "Vou".
@@ -60,7 +60,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 |---|---|
 | Coleta, classificação e avisos | 7h40, 12h40 e 19h40 |
 | Lembrete da véspera (Fase 3) | 17h50 |
-| Resumo semanal (Fase 3) | Segunda 7h50 |
+| Resumo semanal | Fase 1: na 1ª execução de segunda-feira (F1-10, D19); Fase 3: segunda 7h50 |
 
 - Aviso "na próxima execução", não "na hora".
 - Grupo de concorrência: nunca duas execuções simultâneas.
@@ -71,7 +71,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 - **Evento com campo obrigatório ausente** (UID, título, início) ou início sem fuso ou malformado: descartado sozinho, sem derrubar o feed; entra em `eventos_invalidos` e conta como falha de extração para o alerta. Feed em que todos os eventos são inválidos vira falha de formato (D10).
 - **Zero eventos com leitura normal:** não é falha; aviso só após várias execuções vazias numa fonte que costuma ter eventos.
 - **Tabela de execuções:** fonte, horário, status, quantidade de eventos, erro.
-- **Notificações:** tabela com chave única (evento, tipo); grava "enviando" → envia → grava "enviado". Entrega "pelo menos uma vez"; duplicata rara aceita.
+- **Notificações:** tabela com chave única (evento, tipo); grava "enviando" (commit) → envia → grava "enviado" (commit logo após cada mensagem). "Enviando" que sobrou de uma execução anterior é reenviado na seguinte (o F1-10 pede as pendentes em toda execução); os commits do envio usam uma sessão própria, nunca a do chamador. Entrega "pelo menos uma vez"; duplicata rara aceita, perda nunca (D19).
 
 ## 7. Segurança e privacidade
 - Bot responde só ao user_id e chat_id do autor.
@@ -96,7 +96,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 - Relatório final gerado pelo sistema, publicado no README.
 
 ## 10. Stack
-Python (monólito modular), httpx, icalendar, Pydantic, SQLAlchemy, Alembic, PostgreSQL gratuito hospedado (Supabase ou Neon), API do Claude (modelo mais barato), python-telegram-bot, API do Google Calendar (FreeBusy), pytest com feeds e páginas de exemplo salvos, GitHub Actions. Fora: LangChain, LangGraph, Redis, banco vetorial, Kubernetes.
+Python (monólito modular), httpx, icalendar, Pydantic, SQLAlchemy, Alembic, PostgreSQL gratuito hospedado (Supabase ou Neon), API do Claude (modelo mais barato), httpx para a Bot API do Telegram na Fase 1 (sem python-telegram-bot; mensagens até 4096 unidades UTF-16, D19), API do Google Calendar (FreeBusy), pytest com feeds e páginas de exemplo salvos, GitHub Actions. Fora: LangChain, LangGraph, Redis, banco vetorial, Kubernetes.
 
 ## 11. Desenvolvimento
 Claude Code com CLAUDE.md de regras e subagentes: planejador, implementador (um módulo por vez), testador (testes antes do código) e revisor (contexto limpo). Código em branches; o merge é sempre do autor.

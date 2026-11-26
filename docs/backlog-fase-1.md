@@ -99,6 +99,7 @@
 - **Aceite:** testes com as páginas das fixtures (gratuito, sem offers, resposta 403/429 → "preço desconhecido").
 
 ### F1-09 — Notificador Telegram
+- Implementa a D19: httpx (sem python-telegram-bot), texto puro sem prévia de link, cortes por campo e resumo semanal em partes, sanitização de URL e texto, token protegido, `enviando`/`enviado` com commit por mensagem.
 - Mensagem: título, data e hora, local ou "online", estado de preço, link de inscrição, resumo, etiquetas de idioma.
 - Tabela de notificações com chave única (evento, tipo); "enviando" → envia → "enviado".
 - Envio só para o `chat_id` configurado.
@@ -115,6 +116,11 @@
 - Alertas no Telegram: falha de extração; fonte vazia por várias execuções; inatividade perto do dia 50.
 - Horizonte por tipo depois da classificação: conferência e hackathon 90 dias; demais tipos (inclusive `outro`) 30 dias, independentemente de preço e modalidade (D13).
 - Encaminhamento por idioma (D13): pt / bilíngue / com tradução → aviso; `desconhecido` → aviso com "idioma não confirmado"; estrangeiro confirmado sem tradução → resumo semanal se presencial, descartado se exclusivamente online.
+- Commitar classificação, enriquecimento e estado dos eventos antes de chamar `notificar` (ele recusa transação com escritas pendentes, D19).
+- Enviar o resumo semanal (`notificar` com tipo `resumo_semanal`) na 1ª execução de segunda-feira (D19).
+- Em toda execução, pedir de novo as `notificacoes_pendentes` ('enviando' de execuções anteriores), inclusive partes do resumo semanal, sem esperar segunda (D19).
+- Deduplicação própria dos alertas sem evento (falha de extração, robots bloqueado etc.), que não cabem em `notificacoes` (D19).
+- Barrar o aviso de evento `indefinida` cuja localização do LLM é `fora` (D19).
 - Regra de comunidade de IA na decisão do aviso (D15): evento com algum calendário (`eventos.calendarios`) marcado `comunidade_ia` no `config/fontes.yaml` vigente conta como IA quando a classificação é `ok`; aplicada na leitura, nunca gravada, para que mudança de calendário ou de marcação valha sem reclassificar.
 - Eventos em falha de classificação (`eventos_com_falha_classificacao`) → resumo semanal como "Não classificado — confira manualmente"; aviso excepcional se o evento acontecer antes do próximo resumo (D13).
 - Chamar `enriquecer_precos` depois do commit da classificação (a fila depende da classificação `ok`) e commitar em seguida; alertar `robots_bloqueado` e erros sistemáticos de enriquecimento (muitos `status_http`/`rede`/`sem_json_ld`), Plano B da D4 (D18).
