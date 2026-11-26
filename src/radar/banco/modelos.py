@@ -217,3 +217,43 @@ class Notificacao(Base):
     estado: Mapped[str] = mapped_column(Text)
     criada_em: Mapped[datetime] = mapped_column(TIMESTAMPTZ)
     enviada_em: Mapped[datetime | None] = mapped_column(TIMESTAMPTZ)
+
+
+TIPOS_ENVIO_SEM_EVENTO = (
+    "falha_extracao",
+    "fonte_vazia",
+    "inatividade",
+    "robots_bloqueado",
+    "enriquecimento_sistematico",
+    "classificador_interrompido",
+    "resumo_semanal",
+)
+
+
+class EnvioSemEvento(Base):
+    """Envio que não pertence a um evento (alertas e o marco do resumo semanal, D22).
+
+    `chave` única: "<tipo>:<alvo>:<data de SP>" nos alertas e "resumo_semanal:<ano>-W<ss>"
+    no marco semanal. Mesmo ciclo de `notificacoes`: 'enviando' → 'enviado'.
+    """
+
+    __tablename__ = "envios_sem_evento"
+    __table_args__ = (
+        UniqueConstraint("chave"),
+        CheckConstraint(
+            "tipo IN ('falha_extracao', 'fonte_vazia', 'inatividade', 'robots_bloqueado', "
+            "'enriquecimento_sistematico', 'classificador_interrompido', 'resumo_semanal')",
+            name="tipo",
+        ),
+        CheckConstraint("estado IN ('enviando', 'enviado')", name="estado"),
+        CheckConstraint(
+            "(estado = 'enviado') = (enviado_em IS NOT NULL)", name="enviado_tem_horario"
+        ),
+    )
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    chave: Mapped[str] = mapped_column(Text)
+    tipo: Mapped[str] = mapped_column(Text)
+    estado: Mapped[str] = mapped_column(Text)
+    criado_em: Mapped[datetime] = mapped_column(TIMESTAMPTZ)
+    enviado_em: Mapped[datetime | None] = mapped_column(TIMESTAMPTZ)

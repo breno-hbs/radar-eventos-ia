@@ -23,7 +23,7 @@ import httpx
 from sqlalchemy.orm import Session
 
 from radar.banco import leituras
-from radar.banco.modelos import Enriquecimento, Evento
+from radar.banco.modelos import Enriquecimento, EnvioSemEvento, Evento
 from radar.banco.repositorio import (
     ResumoRodada,
     eventos_com_falha_classificacao,
@@ -40,6 +40,7 @@ from radar.filtros.horizonte import calcular_termino, filtrar_por_horizonte
 from radar.fontes.calendarios import CalendarioLuma
 from radar.fontes.luma import coletar_luma
 from radar.fontes.modelos import ResultadoCalendario
+from radar.notificacao.alertas import Alerta, ResumoAlertas, enviar_alertas
 from radar.notificacao.envio import (
     PedidoNotificacao,
     ResumoNotificacao,
@@ -47,13 +48,23 @@ from radar.notificacao.envio import (
     notificar,
 )
 from radar.notificacao.telegram import EnviadorMensagens
+from radar.orquestracao.alertas import detectar_alertas
 from radar.orquestracao.destino import decidir_destino, slugs_comunidade_ia
 
 Etapa = Literal[
-    "coleta", "filtros", "banco", "classificacao", "enriquecimento", "decisao", "notificacao"
+    "coleta",
+    "filtros",
+    "banco",
+    "classificacao",
+    "enriquecimento",
+    "decisao",
+    "notificacao",
+    "alertas",
 ]
 FUSO_RESUMO = ZoneInfo("America/Sao_Paulo")
 INTERRUPCOES_GRAVES = ("autenticacao", "proibido")
+# Notificação interrompida por estes motivos: alertas ficam para a próxima execução (D22).
+INTERRUPCOES_SEM_ALERTA = ("autenticacao", "proibido", "rate_limit")
 
 
 class ErroEtapa(Exception):
@@ -83,14 +94,20 @@ class ResultadoExecucao:
     pendentes_inativas: int = 0
     pendentes_sem_aviso: int = 0
     resumo_semanal_adiado: int = 0
+    resumo_agora: bool = False
+    resumo_semanal_pedidos: int = 0
+    ja_em_resumo: int = 0
+    marco_gravado: bool = False
+    alertas: list[Alerta] = field(default_factory=list)
+    alertas_envio: ResumoAlertas | None = None
 
     @property
     def codigo_saida(self) -> int:
-        """3 se o Telegram recusou o bot (autenticação/proibido); senão 0 (D21)."""
-        if self.notificacao is not None and self.notificacao.interrompido_por in (
-            INTERRUPCOES_GRAVES
-        ):
-            return 3
+        """3 se o Telegram recusou o bot (autenticação/proibido), nos eventos ou nos
+        alertas; senão 0 (D21, D22)."""
+        for resumo in (self.notificacao, self.alertas_envio):
+            if resumo is not None and resumo.interrompido_por in INTERRUPCOES_GRAVES:
+                return 3
         return 0
 
 
@@ -102,6 +119,31 @@ def proximo_resumo_provisorio(agora: datetime) -> datetime:
     local = agora.astimezone(FUSO_RESUMO)
     dias = (7 - local.weekday()) % 7 or 7
     return datetime.combine(local.date() + timedelta(days=dias), time(0), tzinfo=FUSO_RESUMO)
+
+
+def semana_iso_sp(agora: datetime) -> tuple[int, int]:
+    """(ano ISO, semana ISO) de `agora` em São Paulo."""
+    if agora.tzinfo is None or agora.utcoffset() is None:
+        raise ValueError("agora precisa ter fuso horário")
+    ano, semana, _ = agora.astimezone(FUSO_RESUMO).isocalendar()
+    return ano, semana
+
+
+def chave_marco_resumo(agora: datetime) -> str:
+    ano, semana = semana_iso_sp(agora)
+    return f"resumo_semanal:{ano}-W{semana:02d}"
+
+
+def calcular_proximo_resumo(agora: datetime, *, resumo_agora: bool) -> datetime:
+    """Próximo resumo para a decisão (D22): `agora` se o resumo sai nesta execução; senão a
+    terça 00:00 de SP seguinte à próxima segunda 00:00 (cobre a segunda inteira, já que o
+    resumo pode sair em qualquer execução da segunda)."""
+    if agora.tzinfo is None or agora.utcoffset() is None:
+        raise ValueError("agora precisa ter fuso horário")
+    if resumo_agora:
+        return agora
+    segunda = proximo_resumo_provisorio(agora)
+    return datetime.combine(segunda.date() + timedelta(days=1), time(0), tzinfo=FUSO_RESUMO)
 
 
 @contextmanager
@@ -137,10 +179,14 @@ def montar_pedidos(
     agora: datetime,
     proximo_resumo: datetime,
     resultado: ResultadoExecucao,
+    resumo_agora: bool = False,
 ) -> list[PedidoNotificacao]:
-    """Pendentes ('enviando') primeiro, depois as decisões novas. Só leitura."""
+    """Pendentes ('enviando') primeiro, depois as decisões novas. Só leitura.
+
+    Com `resumo_agora`, o destino resumo semanal gera pedido para quem ainda não foi avisado
+    nem incluído num resumo (`resumo_semanal_pedidos`, só pedidos novos); senão é adiado."""
     with _etapa("decisao"):
-        return _montar(sessao, slugs_comunidade, agora, proximo_resumo, resultado)
+        return _montar(sessao, slugs_comunidade, agora, proximo_resumo, resultado, resumo_agora)
 
 
 def _montar(
@@ -149,6 +195,7 @@ def _montar(
     agora: datetime,
     proximo_resumo: datetime,
     resultado: ResultadoExecucao,
+    resumo_agora: bool,
 ) -> list[PedidoNotificacao]:
     chave = {
         "versao_prompt": prompt.VERSAO_PROMPT,
@@ -167,6 +214,18 @@ def _montar(
 
     pedidos: list[PedidoNotificacao] = []
     pedidas: set[tuple[int, str]] = set()
+    em_resumo: set[int] = set()
+
+    def ja_em_resumo(evento_id: int) -> bool:
+        """Evento que já saiu num resumo semanal, ou cujo resumo pendente já foi pedido nesta
+        execução, não recebe aviso (D22)."""
+        chave_resumo = (evento_id, "resumo_semanal")
+        if chave_resumo not in enviadas and chave_resumo not in pedidas:
+            return False
+        if evento_id not in em_resumo:
+            em_resumo.add(evento_id)
+            resultado.ja_em_resumo += 1
+        return True
 
     def pedir(evento: Evento, tipo: str, saida: SaidaClassificador | None) -> None:
         pedidos.append(
@@ -179,6 +238,8 @@ def _montar(
         )
         pedidas.add((evento.id, tipo))
 
+    # resumos pendentes primeiro: um aviso pendente do mesmo evento é bloqueado por eles
+    pendentes = sorted(pendentes, key=lambda par: par[1] != "resumo_semanal")
     for evento_id, tipo in pendentes:
         evento = por_id.get(evento_id)
         if evento is None:
@@ -207,6 +268,8 @@ def _montar(
                 # a decisão mudou (ex.: reclassificado): fica 'enviando', sem reenvio
                 resultado.pendentes_sem_aviso += 1
                 continue
+            if ja_em_resumo(evento_id):
+                continue
         pedir(evento, tipo, None if tipo == "aviso_excepcional" else saida)
         resultado.pendentes_pedidas += 1
 
@@ -223,12 +286,23 @@ def _montar(
         resultado.destinos[decisao.destino] += 1
         resultado.motivos[decisao.motivo] += 1
         if decisao.destino == "resumo_semanal":
-            resultado.resumo_semanal_adiado += 1  # envio no F1-10c
+            if not resumo_agora:
+                resultado.resumo_semanal_adiado += 1
+                continue
+            ja_saiu = any(
+                (evento.id, tipo) in enviadas
+                for tipo in ("aviso", "aviso_excepcional", "resumo_semanal")
+            )
+            if not ja_saiu and (evento.id, "resumo_semanal") not in pedidas:
+                pedir(evento, "resumo_semanal", saida)
+                resultado.resumo_semanal_pedidos += 1
             continue
         if decisao.destino not in ("aviso", "aviso_excepcional"):
             continue
         chave_envio = (evento.id, decisao.destino)
         if chave_envio in enviadas or chave_envio in pedidas:
+            continue
+        if decisao.destino == "aviso" and ja_em_resumo(evento.id):
             continue
         pedir(evento, decisao.destino, saida if decisao.destino == "aviso" else None)
     return pedidos
@@ -245,11 +319,14 @@ def executar(
     agora: datetime,
     rodada: uuid.UUID,
     proximo_resumo: datetime | None = None,
+    ultimo_commit_em: datetime | None = None,
 ) -> ResultadoExecucao:
-    """Uma execução completa. Um único cliente HTTP serve à coleta e ao enriquecimento."""
+    """Uma execução completa. Um único cliente HTTP serve à coleta e ao enriquecimento.
+
+    Depois dos eventos: marco do resumo semanal (se o resumo saiu sem interrupção) e, por
+    último, os alertas (D22)."""
     if agora.tzinfo is None or agora.utcoffset() is None:
         raise ValueError("agora precisa ter fuso horário")
-    proximo = proximo_resumo or proximo_resumo_provisorio(agora)
     fuso = ZoneInfo(config.fuso_horario)
     slugs = slugs_comunidade_ia(calendarios)
     resultado = ResultadoExecucao(rodada=rodada)
@@ -284,11 +361,43 @@ def executar(
         lambda: enriquecer_precos(sessao, http, config, agora, rodada, slugs),
     )
 
+    chave_marco = chave_marco_resumo(agora)
+    with _etapa("decisao"):
+        resultado.resumo_agora = not leituras.marco_resumo_existe(sessao, chave_marco)
+    proximo = proximo_resumo or calcular_proximo_resumo(agora, resumo_agora=resultado.resumo_agora)
     pedidos = montar_pedidos(
-        sessao, slugs_comunidade=slugs, agora=agora, proximo_resumo=proximo, resultado=resultado
+        sessao,
+        slugs_comunidade=slugs,
+        agora=agora,
+        proximo_resumo=proximo,
+        resultado=resultado,
+        resumo_agora=resultado.resumo_agora,
     )
     with _etapa("notificacao", sessao):
-        resultado.notificacao = notificar(sessao, telegram, pedidos, agora, fuso)
+        notificacao = notificar(sessao, telegram, pedidos, agora, fuso)
+        resultado.notificacao = notificacao
+        if resultado.resumo_agora and notificacao.interrompido_por is None:
+            # marco também com resumo vazio; commitado antes dos alertas
+            sessao.add(
+                EnvioSemEvento(
+                    chave=chave_marco,
+                    tipo="resumo_semanal",
+                    estado="enviado",
+                    criado_em=agora,
+                    enviado_em=agora,
+                )
+            )
+            sessao.commit()
+            resultado.marco_gravado = True
+
+    with _etapa("alertas", sessao):
+        resultado.alertas = detectar_alertas(
+            sessao, resultado, calendarios, agora, ultimo_commit_em
+        )
+        if notificacao.interrompido_por in INTERRUPCOES_SEM_ALERTA:
+            resultado.alertas_envio = ResumoAlertas(nao_enviados=list(resultado.alertas))
+        else:
+            resultado.alertas_envio = enviar_alertas(sessao, telegram, resultado.alertas, agora)
     return resultado
 
 
@@ -339,6 +448,20 @@ def linhas_resumo(resultado: ResultadoExecucao) -> list[str]:
         f"pendentes_inativas={resultado.pendentes_inativas}",
         f"pendentes_sem_aviso={resultado.pendentes_sem_aviso}",
         f"resumo_semanal_adiado={resultado.resumo_semanal_adiado}",
+        f"resumo_semanal_agora={'sim' if resultado.resumo_agora else 'nao'}",
+        f"resumo_semanal_pedidos={resultado.resumo_semanal_pedidos}",
+        f"ja_em_resumo={resultado.ja_em_resumo}",
+        f"resumo_semanal_marco={'sim' if resultado.marco_gravado else 'nao'}",
+        f"alertas_detectados={len(resultado.alertas)}",
+    ]
+    linhas += _linhas_contador("alerta", Counter(a.tipo for a in resultado.alertas))
+    a = resultado.alertas_envio
+    linhas += [
+        f"alertas_enviados={0 if a is None else len(a.enviados)}",
+        f"alertas_ja_enviados={0 if a is None else len(a.ja_enviados)}",
+        f"alertas_falhas={0 if a is None else len(a.falhas)}",
+        f"alertas_nao_enviados={0 if a is None else len(a.nao_enviados)}",
+        f"alertas_interrompidos={(a.interrompido_por if a else None) or 'nao'}",
     ]
     n = resultado.notificacao
     if n is not None:

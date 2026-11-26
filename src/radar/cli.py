@@ -164,7 +164,25 @@ def _migrar(config: Configuracao, fabricas: Fabricas) -> int:
     return 0
 
 
-def _executar(config: Configuracao, fontes: Path, fabricas: Fabricas) -> int:
+def _data_com_fuso(valor: str | None) -> datetime | None:
+    """ISO 8601 com fuso; inválido ou sem fuso → ValueError (sem repetir o valor)."""
+    if valor is None:
+        return None
+    try:
+        momento = datetime.fromisoformat(valor)
+    except ValueError:
+        raise ValueError("data inválida") from None
+    if momento.tzinfo is None or momento.utcoffset() is None:
+        raise ValueError("data sem fuso")
+    return momento
+
+
+def _executar(
+    config: Configuracao,
+    fontes: Path,
+    fabricas: Fabricas,
+    ultimo_commit_em: datetime | None = None,
+) -> int:
     ausentes = variaveis_ausentes(config, OBRIGATORIAS_EXECUTAR)
     if ausentes:
         return _faltando(ausentes)
@@ -199,6 +217,7 @@ def _executar(config: Configuracao, fontes: Path, fabricas: Fabricas) -> int:
                 telegram=telegram,
                 agora=fabricas.relogio(),
                 rodada=fabricas.nova_rodada(),
+                ultimo_commit_em=ultimo_commit_em,
             )
     except ErroEtapa as erro:
         print(f"erro na etapa {erro.etapa}: {erro.tipo}", file=sys.stderr)
@@ -220,13 +239,25 @@ def main(argv: Sequence[str] | None = None, *, fabricas: Fabricas | None = None)
     comandos = parser.add_subparsers(dest="comando", required=True)
     executar_cmd = comandos.add_parser("executar", help="uma execução completa")
     executar_cmd.add_argument("--fontes", type=Path, default=FONTES_PADRAO)
+    executar_cmd.add_argument(
+        "--ultimo-commit-em",
+        default=None,
+        help="data ISO 8601 com fuso do último commit da main (alerta de inatividade)",
+    )
     comandos.add_parser("migrar", help="aplica as migrations do banco")
     args = parser.parse_args(argv)
 
     configurar_logs()
+    ultimo_commit_em: datetime | None = None
+    if args.comando == "executar":
+        try:
+            ultimo_commit_em = _data_com_fuso(args.ultimo_commit_em)
+        except ValueError:
+            _erro("argumento --ultimo-commit-em inválido (use ISO 8601 com fuso)")
+            return 2
     config = carregar_configuracao_segura()
     if isinstance(config, list):
         return _faltando(config)
     if args.comando == "migrar":
         return _migrar(config, fabricas)
-    return _executar(config, args.fontes, fabricas)
+    return _executar(config, args.fontes, fabricas, ultimo_commit_em)

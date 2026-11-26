@@ -29,7 +29,14 @@ from .conftest import linhas
 from .fabricas import AGORA
 from .seguranca import recriar_schema
 
-TABELAS = {"eventos", "execucoes", "classificacoes", "enriquecimentos", "notificacoes"}
+TABELAS = {
+    "eventos",
+    "execucoes",
+    "classificacoes",
+    "enriquecimentos",
+    "notificacoes",
+    "envios_sem_evento",  # F1-10c, migração 0002
+}
 
 
 @pytest.fixture
@@ -80,11 +87,19 @@ def test_migrations_descem_para_base_e_sobem_de_novo(
     assert _tabelas(banco_migravel) >= TABELAS
 
 
-def test_existe_uma_unica_head_e_a_revisao_inicial(engine: Engine) -> None:
+def test_existe_uma_unica_head(engine: Engine) -> None:
+    from alembic.config import Config
+    from alembic.script import ScriptDirectory
+
+    from radar.banco.migrar import PASTA_MIGRACOES
+
+    configuracao = Config()
+    configuracao.set_main_option("script_location", str(PASTA_MIGRACOES))
+    heads = ScriptDirectory.from_config(configuracao).get_heads()
+    assert len(heads) == 1
     with engine.connect() as conexao:
         versoes = conexao.execute(text("SELECT version_num FROM alembic_version")).scalars().all()
-    assert len(versoes) == 1
-    assert versoes[0].startswith("0001")
+    assert versoes == heads
 
 
 def test_modelos_batem_com_as_migrations(engine: Engine) -> None:
@@ -98,7 +113,7 @@ def test_modelos_batem_com_as_migrations(engine: Engine) -> None:
     assert diferencas == []
 
 
-def test_metadata_tem_as_cinco_tabelas() -> None:
+def test_metadata_tem_as_tabelas() -> None:
     from radar.banco.modelos import Base
 
     assert set(Base.metadata.tables) == TABELAS
@@ -476,3 +491,119 @@ def test_check_de_estado_da_notificacao(sessao: Session) -> None:
 def test_notificacao_exige_evento_existente(sessao: Session) -> None:
     with pytest.raises(IntegrityError):
         _inserir_notificacao(sessao, 999_999_999)
+
+
+# --- F1-10c: envios_sem_evento (migração 0002) ---------------------------------------------
+
+TIPOS_SEM_EVENTO = (
+    "falha_extracao",
+    "fonte_vazia",
+    "inatividade",
+    "robots_bloqueado",
+    "enriquecimento_sistematico",
+    "classificador_interrompido",
+    "resumo_semanal",
+)
+
+
+def _alembic(url: SecretStr, alvo: str, subir: bool) -> None:
+    from alembic import command
+    from alembic.config import Config
+
+    from radar.banco.migrar import PASTA_MIGRACOES
+    from radar.banco.sessao import criar_engine
+
+    configuracao = Config()
+    configuracao.set_main_option("script_location", str(PASTA_MIGRACOES))
+    motor = criar_engine(url)
+    try:
+        with motor.begin() as conexao:
+            configuracao.attributes["connection"] = conexao
+            if subir:
+                command.upgrade(configuracao, alvo)
+            else:
+                command.downgrade(configuracao, alvo)
+    finally:
+        motor.dispose()
+
+
+def test_0002_sobe_e_desce_para_0001(banco_migravel: Engine, url_teste: SecretStr) -> None:
+    from radar.banco.migrar import migrar_para_head
+
+    _alembic(url_teste, "0001_esquema_inicial", subir=True)
+    assert "envios_sem_evento" not in _tabelas(banco_migravel)
+    _alembic(url_teste, "0002_envios_sem_evento", subir=True)
+    assert "envios_sem_evento" in _tabelas(banco_migravel)
+    with banco_migravel.connect() as conexao:
+        versao = conexao.execute(text("SELECT version_num FROM alembic_version")).scalar()
+    assert versao == "0002_envios_sem_evento"
+    _alembic(url_teste, "0001_esquema_inicial", subir=False)
+    assert "envios_sem_evento" not in _tabelas(banco_migravel)
+    assert _tabelas(banco_migravel) >= TABELAS - {"envios_sem_evento"}
+    migrar_para_head(url_teste)
+    assert "envios_sem_evento" in _tabelas(banco_migravel)
+
+
+def test_colunas_de_envios_sem_evento(engine: Engine) -> None:
+    colunas = _colunas(engine, "envios_sem_evento")
+    assert set(colunas) == {"id", "chave", "tipo", "estado", "criado_em", "enviado_em"}
+    for nome in ("criado_em", "enviado_em"):
+        assert isinstance(colunas[nome]["type"], postgresql.TIMESTAMP)
+        assert colunas[nome]["type"].timezone is True
+    assert colunas["enviado_em"]["nullable"] is True
+    for nome in ("chave", "tipo", "estado", "criado_em"):
+        assert colunas[nome]["nullable"] is False
+
+
+def _inserir_envio(sessao: Session, **campos: Any) -> None:
+    valores: dict[str, Any] = {
+        "chave": "falha_extracao:mug-sp:2026-11-25",
+        "tipo": "falha_extracao",
+        "estado": "enviado",
+        "criado_em": AGORA,
+        "enviado_em": AGORA,
+    }
+    valores.update(campos)
+    colunas = ", ".join(valores)
+    marcadores = ", ".join(f":{c}" for c in valores)
+    sessao.execute(
+        text(f"INSERT INTO envios_sem_evento ({colunas}) VALUES ({marcadores})"), valores
+    )
+    sessao.flush()
+
+
+@pytest.mark.parametrize("tipo", TIPOS_SEM_EVENTO)
+def test_envio_sem_evento_tipos_validos(sessao: Session, tipo: str) -> None:
+    _inserir_envio(sessao, tipo=tipo, chave=f"{tipo}:x:2026-11-25")
+    assert linhas(sessao, "SELECT tipo FROM envios_sem_evento") == [{"tipo": tipo}]
+
+
+@pytest.mark.parametrize(
+    "campos",
+    [
+        {"tipo": "aviso"},
+        {"estado": "pendente"},
+        {"estado": "enviado", "enviado_em": None},
+        {"estado": "enviando", "enviado_em": AGORA},
+    ],
+)
+def test_envio_sem_evento_checks(sessao: Session, campos: dict[str, Any]) -> None:
+    with pytest.raises(IntegrityError):
+        _inserir_envio(sessao, **campos)
+
+
+def test_envio_sem_evento_enviando_sem_horario(sessao: Session) -> None:
+    _inserir_envio(sessao, estado="enviando", enviado_em=None)
+    assert linhas(sessao, "SELECT estado FROM envios_sem_evento") == [{"estado": "enviando"}]
+
+
+def test_envio_sem_evento_chave_unica(sessao: Session) -> None:
+    _inserir_envio(sessao)
+    with pytest.raises(IntegrityError):
+        _inserir_envio(sessao, tipo="fonte_vazia")
+
+
+def test_modelo_envio_sem_evento() -> None:
+    from radar.banco.modelos import EnvioSemEvento
+
+    assert EnvioSemEvento.__tablename__ == "envios_sem_evento"

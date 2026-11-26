@@ -14,6 +14,9 @@ from enriquecimento.dados_banco import (
 from sqlalchemy.orm import Session
 
 __all__ = [
+    "chave_semana",
+    "gravar_marco",
+    "tabela_existe",
     "chave_atual",
     "classificar",
     "classificar_saida",
@@ -64,5 +67,37 @@ def notificacao(sessao: Session, evento: Any, tipo: str, estado: str) -> None:
             criada_em=AGORA,
             enviada_em=AGORA if estado == "enviado" else None,
         )
+    )
+    sessao.flush()
+
+
+def chave_semana(agora: Any) -> str:
+    """`resumo_semanal:<ano ISO>-W<semana ISO com 2 dígitos>` no fuso de São Paulo."""
+    from zoneinfo import ZoneInfo
+
+    ano, semana, _ = agora.astimezone(ZoneInfo("America/Sao_Paulo")).isocalendar()
+    return f"resumo_semanal:{ano}-W{semana:02d}"
+
+
+def tabela_existe(sessao: Session, nome: str) -> bool:
+    from sqlalchemy import text
+
+    return bool(sessao.execute(text("SELECT to_regclass(:t) IS NOT NULL"), {"t": nome}).scalar())
+
+
+def gravar_marco(sessao: Session, agora: Any) -> None:
+    """Marco do resumo semanal da semana de `agora`, gravado como enviado (F1-10c).
+
+    Antes da migração 0002 a tabela não existe: não faz nada."""
+    from sqlalchemy import text
+
+    if not tabela_existe(sessao, "envios_sem_evento"):
+        return
+    sessao.execute(
+        text(
+            "INSERT INTO envios_sem_evento (chave, tipo, estado, criado_em, enviado_em) "
+            "VALUES (:c, 'resumo_semanal', 'enviado', :a, :a)"
+        ),
+        {"c": chave_semana(agora), "a": agora},
     )
     sessao.flush()

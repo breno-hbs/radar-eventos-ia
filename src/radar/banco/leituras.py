@@ -8,7 +8,14 @@ from typing import Any
 from sqlalchemy import and_, select
 from sqlalchemy.orm import Session
 
-from radar.banco.modelos import Classificacao, Enriquecimento, Evento, Notificacao
+from radar.banco.modelos import (
+    Classificacao,
+    Enriquecimento,
+    EnvioSemEvento,
+    Evento,
+    Execucao,
+    Notificacao,
+)
 
 ESTADOS_ATIVOS = ("ativo", "alterado")
 
@@ -81,3 +88,41 @@ def eventos_por_id(sessao: Session, ids: Sequence[int]) -> dict[int, Evento]:
     if not ids:
         return {}
     return {e.id: e for e in sessao.scalars(select(Evento).where(Evento.id.in_(ids)))}
+
+
+def calendarios_vazios_seguidos(
+    sessao: Session, fonte: str, slugs: Sequence[str], n: int
+) -> list[str]:
+    """Slugs (dentre os pedidos) cujas `n` execuções mais recentes são todas 'vazio' e que
+    tiveram um 'ok' antes delas (D20, F1-10c)."""
+    achados: list[str] = []
+    for slug in slugs:
+        recentes = list(
+            sessao.execute(
+                select(Execucao.situacao, Execucao.executada_em)
+                .where(Execucao.fonte == fonte, Execucao.calendario == slug)
+                .order_by(Execucao.executada_em.desc(), Execucao.id.desc())
+                .limit(n)
+            )
+        )
+        if len(recentes) < n or any(situacao != "vazio" for situacao, _ in recentes):
+            continue
+        mais_antiga = recentes[-1][1]
+        teve_ok = sessao.scalar(
+            select(Execucao.id)
+            .where(
+                Execucao.fonte == fonte,
+                Execucao.calendario == slug,
+                Execucao.situacao == "ok",
+                Execucao.executada_em < mais_antiga,
+            )
+            .limit(1)
+        )
+        if teve_ok is not None:
+            achados.append(slug)
+    return achados
+
+
+def marco_resumo_existe(sessao: Session, chave: str) -> bool:
+    """O resumo semanal desta chave (semana ISO em SP) já saiu."""
+    return sessao.scalar(select(EnvioSemEvento.id).where(EnvioSemEvento.chave == chave)) is not None

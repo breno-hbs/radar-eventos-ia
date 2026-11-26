@@ -12,6 +12,9 @@ Assinaturas fixadas (radar.orquestracao.destino):
 - `exclusivamente_online(local_efetivo: str, modalidade: str) -> bool`;
 - `decidir_destino(evento, saida, *, em_falha_classificacao, slugs_comunidade_ia, agora,
   proximo_resumo) -> Decisao`, regras na ordem do plano. Preço nunca muda o destino.
+- F1-10c (decisão do autor): estrangeiro sem tradução e NÃO exclusivamente online com
+  `inicio < proximo_resumo` → "aviso"/"estrangeiro_antes_do_resumo"; senão
+  "resumo_semanal"/"estrangeiro_presencial". Exclusivamente online continua descartado.
 """
 
 from __future__ import annotations
@@ -46,6 +49,7 @@ MOTIVOS = {
     "idioma_nao_confirmado",
     "estrangeiro_presencial",
     "estrangeiro_online",
+    "estrangeiro_antes_do_resumo",
     "falha_classificacao",
     "falha_antes_do_resumo",
 }
@@ -509,3 +513,35 @@ def test_decisao_e_sempre_do_tipo_decisao(destino: ModuleType) -> None:
     assert isinstance(d, destino.Decisao)
     assert d.destino in DESTINOS
     assert d.motivo in MOTIVOS
+
+
+# --- F1-10c: estrangeiro antes do próximo resumo -------------------------------------------
+
+
+@pytest.mark.parametrize("idioma", ["en", "outro"])
+@pytest.mark.parametrize("modalidade", ["presencial", "hibrido", "desconhecida"])
+def test_estrangeiro_antes_do_resumo_vira_aviso(
+    destino: ModuleType, idioma: str, modalidade: str
+) -> None:
+    s = saida(idioma=idioma, tem_traducao=False, modalidade=modalidade)
+    ev = evento(dias=2)  # antes de PROXIMO_RESUMO (agora + 5 dias)
+    assert _par(decidir(destino, ev, s)) == ("aviso", "estrangeiro_antes_do_resumo")
+
+
+def test_estrangeiro_no_horario_do_resumo_vai_ao_resumo(destino: ModuleType) -> None:
+    s = saida(idioma="en", tem_traducao=False, modalidade="presencial")
+    ev = evento(inicio=PROXIMO_RESUMO)
+    assert _par(decidir(destino, ev, s)) == ("resumo_semanal", "estrangeiro_presencial")
+
+
+def test_estrangeiro_online_antes_do_resumo_continua_descartado(destino: ModuleType) -> None:
+    s = saida(idioma="en", tem_traducao=False, modalidade="online")
+    ev = evento(dias=2, localizacao="online")
+    assert _par(decidir(destino, ev, s)) == ("descartar", "estrangeiro_online")
+
+
+def test_estrangeiro_antes_do_resumo_com_proximo_igual_a_agora(destino: ModuleType) -> None:
+    # resumo saindo agora: nada começa antes de `agora` sem ter terminado → resumo
+    s = saida(idioma="en", tem_traducao=False, modalidade="presencial")
+    d = decidir(destino, evento(dias=2), s, proximo=AGORA)
+    assert _par(d) == ("resumo_semanal", "estrangeiro_presencial")

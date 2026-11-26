@@ -15,7 +15,8 @@ conexão, escrita não commitada causa ForeignKeyViolation ou espera infinita de
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Iterator, Sequence
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Literal, get_args
@@ -157,6 +158,31 @@ def _enviar(
         falhas_seguidas = 0
 
 
+def exigir_transacao_limpa(sessao: Session) -> None:
+    """ValueError se a sessão do chamador tem alterações sem flush ou, com conexão separada
+    (bind = Engine), escritas pendentes na transação (D19)."""
+    if sessao.new or sessao.dirty or sessao.deleted:
+        raise ValueError("sessão com alterações pendentes: faça commit antes de notificar")
+    # Só com conexão separada: na mesma conexão a sessão própria enxerga tudo.
+    if isinstance(sessao.get_bind(), Engine):
+        xid = sessao.execute(text("SELECT pg_current_xact_id_if_assigned()")).scalar()
+        if xid is not None:
+            raise ValueError(
+                "transação do chamador com escritas pendentes: faça commit antes de notificar"
+            )
+
+
+@contextmanager
+def sessao_propria(sessao: Session) -> Iterator[Session]:
+    """Sessão diferente, no mesmo bind, para gravar e commitar os registros de envio."""
+    with Session(
+        bind=sessao.get_bind(),
+        join_transaction_mode="create_savepoint",
+        expire_on_commit=False,
+    ) as propria:
+        yield propria
+
+
 def notificacoes_pendentes(sessao: Session) -> list[tuple[int, str]]:
     """(evento_id, tipo) em 'enviando' — reservados e não confirmados —, para o F1-10 pedir
     de novo em toda execução."""
@@ -178,15 +204,7 @@ def notificar(
     """Envia os pedidos, sem repetir o que já foi entregue (único por evento + tipo)."""
     if agora.tzinfo is None or agora.utcoffset() is None:
         raise ValueError("agora precisa ter fuso horário")
-    if sessao.new or sessao.dirty or sessao.deleted:
-        raise ValueError("sessão com alterações pendentes: faça commit antes de notificar")
-    # Só com conexão separada (bind = Engine): na mesma conexão a sessão própria enxerga tudo.
-    if isinstance(sessao.get_bind(), Engine):
-        xid = sessao.execute(text("SELECT pg_current_xact_id_if_assigned()")).scalar()
-        if xid is not None:
-            raise ValueError(
-                "transação do chamador com escritas pendentes: faça commit antes de notificar"
-            )
+    exigir_transacao_limpa(sessao)
 
     resumo = ResumoNotificacao()
     vistos: set[tuple[int, str]] = set()
@@ -203,10 +221,6 @@ def notificar(
         unicos.append(pedido)
 
     ids = sorted({p.evento.id for p in unicos})
-    with Session(
-        bind=sessao.get_bind(),
-        join_transaction_mode="create_savepoint",
-        expire_on_commit=False,
-    ) as propria:
+    with sessao_propria(sessao) as propria:
         _enviar(propria, cliente, unicos, ids, agora, fuso, resumo)
     return resumo
