@@ -118,6 +118,7 @@
 - **Aceite:** testes da função pura; nada de banco nem rede.
 
 ### F1-10b — Orquestração e CLI
+- Implementa a D21: ordem e commits entre etapas, `ErroEtapa` com rollback só da etapa, `radar executar` e `radar migrar` separados, reenvio das pendentes antes dos pedidos novos, resumo semanal e próximo resumo provisórios até o F1-10c, log só com contagens e códigos, códigos de saída 0/1/2/3, um único cliente HTTP para coleta e enriquecimento.
 - Comando `radar executar`: coleta → filtro → banco → classificação → enriquecimento → decisão de destino → avisos; e `radar migrar`.
 - Leituras de repositório para a decisão (saída `ok` da chave atual, enriquecimento do hash atual, `eventos_com_falha_classificacao`).
 - Commit depois da classificação (o classificador só faz `flush`) e registro do `ResumoClassificacao` (interrupções, restantes, custo estimado).
