@@ -295,3 +295,18 @@ Formato curto: contexto, decisão, motivo. Decisões novas entram no fim, com da
 - **Evento já em resumo não recebe aviso depois:** "já em resumo" = `resumo_semanal` enviado **ou** já pedido nesta execução (pendente `enviando` montado antes); aviso novo ou pendente desse evento é pulado e contado em `ja_em_resumo`, uma vez por evento.
 - **`limite_tokens` não alerta:** o alerta de classificador interrompido vale só para `autenticacao`, `rate_limit` e `falhas_api_seguidas`; parar no limite de tokens é o orçamento por execução funcionando (D13).
 **Motivo:** um resumo por semana sem depender de a execução de segunda dar certo, alertas sem repetição diária e sem vazar dados, e o mesmo registro de entrega "pelo menos uma vez" dos avisos.
+
+## D23 — Agendamento e banco de produção (2026-11-26)
+**Contexto:** o F1-10d põe o radar para rodar sozinho no GitHub Actions (`.github/workflows/radar.yml`).
+**Decisão:**
+- **Horários:** cron `40 10,15,22 * * *` em UTC = 7h40, 12h40 e 19h40 em São Paulo (UTC−3 o ano todo; o Brasil não tem horário de verão). Também `workflow_dispatch` para disparo manual.
+- **Atraso do cron:** o GitHub pode atrasar (ou, em picos, pular) execuções agendadas. Nada depende do horário exato: o marco do resumo semanal é por semana ISO (D22) e os alertas por dia de SP.
+- **Concorrência:** grupo `radar-executar` com `cancel-in-progress: false` — uma execução nunca corre junto com outra nem é cancelada no meio (as notificações já reservadas terminariam `enviando`).
+- **Migração a cada execução:** passo `radar migrar` antes de `radar executar` (D21); idempotente quando o banco já está na head.
+- **Secrets só nos passos que os usam:** `DATABASE_URL` no `Migrar` e no `Executar`; `ANTHROPIC_API_KEY`, `TELEGRAM_TOKEN` e `TELEGRAM_CHAT_ID` só no `Executar`. Nada de `set -x`, `env`/`printenv`, artefatos ou push.
+- **Permissões mínimas:** `contents: read`.
+- **Banco de produção:** Neon com URL direta (sem pooler) e `sslmode=require` (D20).
+- **Inatividade:** a data do último commit vem de `git log -1 --format=%cI` no checkout e é passada em `--ultimo-commit-em` (alerta a partir de 50 dias, D22). Procedimento de reativação no README.
+**Motivo:** execução previsível e barata, sem sobreposição, com o mínimo de permissões e de exposição dos segredos.
+
+- **Riscos aceitos (revisão do F1-10d):** as ações `actions/checkout` e `actions/setup-python` são fixadas por tag de versão, não por SHA; só as dependências diretas têm versão fixa (sem lock das transitivas). Um comprometimento de uma ação ou dependência rodaria com os secrets no ambiente — risco aceito num projeto pessoal; fixar por SHA e travar com hashes fica como pendência. O checkout usa `persist-credentials: false`. Primeira execução real: fila do classificador leva alguns dias para esvaziar (50 chamadas por execução, ordem por início); custo no teto ≈ US$ 0,04 por execução, dentro do limite de US$ 5/mês do workspace; rajada de avisos pode receber 429 do Telegram (nada se perde, D19/D22); o primeiro resumo semanal sai na primeira execução, qualquer que seja o dia.
