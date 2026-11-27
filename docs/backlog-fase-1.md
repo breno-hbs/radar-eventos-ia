@@ -137,6 +137,7 @@
 - **Aceite:** testes de deduplicação e dos gatilhos de cada alerta.
 
 ### F1-10d — Agendamento, banco real e aceite ponta a ponta (HITL)
+- Implementa a D23: `.github/workflows/radar.yml` (cron em UTC, disparo manual, concorrência sem cancelar, `radar migrar` antes de `radar executar`, secrets só nos passos que os usam, `contents: read`, `--ultimo-commit-em` via `git log`); README com "Execução" e "Reativação".
 - Workflow agendado `40 10,15,22 * * *` (UTC = 7h40, 12h40 e 19h40 de SP), com grupo de concorrência; README com o procedimento de reativação após inatividade.
 - Banco Neon com URL direta (sem pooler) e `sslmode=require` (D20).
 - **Sua parte:** criar o banco no Neon, cadastrar `DATABASE_URL` e `ANTHROPIC_API_KEY` nos Secrets e definir o limite mensal de gasto no console da Anthropic.

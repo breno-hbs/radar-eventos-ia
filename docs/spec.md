@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.13 (2026-11-26). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.14 (2026-11-26). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -66,7 +66,8 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 | Resumo semanal | Fase 1: na 1ª execução bem-sucedida da semana a partir de segunda (marco por semana ISO em SP; para decidir o que entra, o próximo resumo é a terça 00:00 de SP seguinte; evento que já saiu num resumo não recebe aviso depois, D22); Fase 3: segunda 7h50 |
 
 - Aviso "na próxima execução", não "na hora".
-- Grupo de concorrência: nunca duas execuções simultâneas.
+- Grupo de concorrência: nunca duas execuções simultâneas, e nenhuma cancelada no meio (D23).
+- Cron em UTC (`40 10,15,22 * * *`); o atraso possível do GitHub não afeta o resumo semanal nem os alertas, que não dependem do horário exato (D23).
 - Alerta de inatividade por volta do dia 50 (o GitHub desliga workflows agendados após 60 dias sem atividade em repositório público) e procedimento de reativação no README. Sem commits artificiais.
 
 ## 6. Confiabilidade e observabilidade
