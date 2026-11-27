@@ -1,6 +1,6 @@
 # Especificação — Radar de Eventos de IA (SP)
 
-Versão 2.11 (2026-11-25). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
+Versão 2.13 (2026-11-26). Aprovada. Decisões detalhadas em [decisoes.md](decisoes.md); viabilidade em [fase-0-viabilidade.md](fase-0-viabilidade.md).
 
 ## 1. Problema e objetivo
 Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro de IA, sem deduplicação e sem cruzamento com a agenda. O radar coleta, classifica, cruza com a agenda e avisa no Telegram.
@@ -19,7 +19,8 @@ Eventos de IA em São Paulo ficam espalhados por várias plataformas, sem filtro
 |---|---|
 | Português, bilíngue com português ou com tradução para português | Aviso |
 | Idioma não informado (`desconhecido`) | Aviso com etiqueta "idioma não confirmado" |
-| Estrangeiro confirmado (`en` ou `outro`), sem tradução, presencial | Resumo semanal, etiqueta com o idioma |
+| Estrangeiro confirmado (`en` ou `outro`), sem tradução, presencial, começando antes do próximo resumo | Aviso, etiqueta com o idioma (D22) |
+| Estrangeiro confirmado (`en` ou `outro`), sem tradução, presencial, começando depois do próximo resumo | Resumo semanal, etiqueta com o idioma |
 | Estrangeiro confirmado, sem tradução, exclusivamente online | Descartado |
 
 "Exclusivamente online" = local efetivo online com modalidade online ou desconhecida, ou local indefinido com modalidade online declarada; na dúvida, vai para o resumo semanal. A decisão de destino completa, com a ordem das regras, está na D20.
@@ -62,7 +63,7 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 |---|---|
 | Coleta, classificação e avisos | 7h40, 12h40 e 19h40 |
 | Lembrete da véspera (Fase 3) | 17h50 |
-| Resumo semanal | Fase 1: na 1ª execução de segunda-feira (F1-10, D19); Fase 3: segunda 7h50 |
+| Resumo semanal | Fase 1: na 1ª execução bem-sucedida da semana a partir de segunda (marco por semana ISO em SP; para decidir o que entra, o próximo resumo é a terça 00:00 de SP seguinte; evento que já saiu num resumo não recebe aviso depois, D22); Fase 3: segunda 7h50 |
 
 - Aviso "na próxima execução", não "na hora".
 - Grupo de concorrência: nunca duas execuções simultâneas.
@@ -72,9 +73,10 @@ Página em inglês não implica evento em inglês; o classificador procura sinai
 - **Log e saída do comando:** só contagens, códigos, slugs de calendário e o uuid da rodada; nunca título, URL, mensagem de exceção, token, chat_id ou URL do banco (repositório e log do Actions são públicos) (D21).
 - **Códigos de saída de `radar executar`:** 0 concluída (inclusive com falhas parciais e Telegram interrompido por rate limit ou falhas seguidas); 1 erro inesperado ou de etapa; 2 configuração; 3 Telegram recusou o bot (autenticação/proibido), para o GitHub avisar por e-mail (D21).
 - **Falha de etapa:** rollback só da etapa; as anteriores ficam commitadas, nada é notificado e a próxima execução retoma (D21).
-- **Falha de extração** (rede, formato inesperado, campos obrigatórios ausentes): alerta imediato.
+- **Falha de extração** (rede, formato inesperado, campos obrigatórios ausentes, eventos inválidos): alerta na execução, no máximo 1 por calendário por dia de SP (D22).
+- **Alertas** (D20, D22): falha de extração, fonte vazia, robots bloqueado, erros sistemáticos do enriquecimento, classificador interrompido e inatividade (≥ 50 dias sem commit); texto sem conteúdo de evento nem URL; enviados depois dos eventos e do marco do resumo semanal; nenhum com etapa falhando (e-mail do GitHub) nem com o Telegram interrompido nos eventos; código de saída 3 também se o Telegram recusar o bot nos alertas.
 - **Evento com campo obrigatório ausente** (UID, título, início) ou início sem fuso ou malformado: descartado sozinho, sem derrubar o feed; entra em `eventos_invalidos` e conta como falha de extração para o alerta. Feed em que todos os eventos são inválidos vira falha de formato (D10).
-- **Zero eventos com leitura normal:** não é falha; aviso só após várias execuções vazias numa fonte que costuma ter eventos.
+- **Zero eventos com leitura normal:** não é falha; alerta só após 6 execuções vazias seguidas numa fonte que já teve eventos (D20, D22).
 - **Tabela de execuções:** fonte, horário, status, quantidade de eventos, erro.
 - **Notificações:** tabela com chave única (evento, tipo); grava "enviando" (commit) → envia → grava "enviado" (commit logo após cada mensagem). "Enviando" que sobrou de uma execução anterior é reenviado na seguinte (o F1-10 pede as pendentes em toda execução); os commits do envio usam uma sessão própria, nunca a do chamador. Entrega "pelo menos uma vez"; duplicata rara aceita, perda nunca (D19).
 

@@ -28,6 +28,7 @@ import warnings
 from collections.abc import Iterator
 from contextlib import contextmanager
 from dataclasses import dataclass
+from datetime import timedelta
 from pathlib import Path
 from types import ModuleType
 from typing import Any
@@ -496,3 +497,44 @@ def test_close_que_falha_nao_vaza(
     assert sorted(fechados) == ["llm", "luma", "telegram"]
     assert "dado-sensivel" not in out + err
     assert "Traceback" not in out + err
+
+
+# --- F1-10c: --ultimo-commit-em ------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "valor", ["abc-segredo", "2026-10-01T00:00:00", "2026-13-01T00:00:00-03:00", ""]
+)
+def test_ultimo_commit_em_invalido(
+    cli: ModuleType, capsys: pytest.CaptureFixture[str], valor: str
+) -> None:
+    codigo = cli.main(
+        ["executar", "--fontes", str(FONTES), "--ultimo-commit-em", valor],
+        fabricas=_fabricas(cli),
+    )
+    out, err = _saidas(capsys)
+    assert codigo == 2
+    assert "erro: argumento --ultimo-commit-em inválido" in err
+    if valor:
+        assert valor not in out + err
+    _sem_segredos(out, err)
+
+
+def test_ultimo_commit_em_antigo_gera_alerta(
+    cli: ModuleType, sessao: Session, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from .dados_banco import gravar_marco
+
+    gravar_marco(sessao, AGORA)
+    sessao.commit()
+    telegram = RedeTelegram()
+    antigo = (AGORA - timedelta(days=55)).isoformat()
+    codigo = cli.main(
+        ["executar", "--fontes", str(FONTES), "--ultimo-commit-em", antigo],
+        fabricas=_fabricas(cli, sessao, telegram=telegram),
+    )
+    out, err = _saidas(capsys)
+    assert codigo == 0
+    assert any("Reativação" in c["text"] for c in telegram.corpos)
+    assert "alerta_inatividade=1" in out
+    _sem_segredos(out, err)

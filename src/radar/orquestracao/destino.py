@@ -15,7 +15,8 @@ do horizonte do seu tipo) vira aviso quando entra no horizonte. Regras, nesta or
 9. além do horizonte do tipo (conferência/hackathon 90 dias, demais 30; limite inclusivo) →
    aguardar;
 10. idioma (D13): pt, bilíngue ou com tradução → aviso; desconhecido → aviso com etiqueta;
-    estrangeiro confirmado → descartado se exclusivamente online, senão resumo semanal.
+    estrangeiro confirmado → descartado se exclusivamente online; senão aviso se começa
+    antes do próximo resumo (D22), resumo semanal se depois.
 
 Preço nunca muda o destino (só aparece na mensagem).
 """
@@ -46,6 +47,7 @@ MotivoDestino = Literal[
     "idioma_nao_confirmado",
     "estrangeiro_presencial",
     "estrangeiro_online",
+    "estrangeiro_antes_do_resumo",
     "falha_classificacao",
     "falha_antes_do_resumo",
 ]
@@ -116,6 +118,8 @@ def decidir_destino(
 ) -> Decisao:
     if not _com_fuso(agora) or not _com_fuso(proximo_resumo):
         raise ValueError("agora e proximo_resumo precisam ter fuso horário")
+    if proximo_resumo < agora:
+        raise ValueError("proximo_resumo não pode ser anterior a agora")
     if em_falha_classificacao and saida is not None:
         raise ValueError("evento em falha de classificação não tem saída ok")
 
@@ -156,6 +160,11 @@ def decidir_destino(
     local = localizacao_efetiva(evento.localizacao, saida)
     if exclusivamente_online(local, saida.modalidade):
         return Decisao(destino="descartar", motivo="estrangeiro_online", e_ia_por_comunidade=flag)
+    if evento.inicio < proximo_resumo:
+        # decisão do autor (D22): adiado, poderia acontecer antes do resumo e se perder
+        return Decisao(
+            destino="aviso", motivo="estrangeiro_antes_do_resumo", e_ia_por_comunidade=flag
+        )
     return Decisao(
         destino="resumo_semanal", motivo="estrangeiro_presencial", e_ia_por_comunidade=flag
     )

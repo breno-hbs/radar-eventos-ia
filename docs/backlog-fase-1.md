@@ -129,9 +129,10 @@
 - **Aceite:** execução completa com fontes, LLM e Telegram falsos e Postgres de teste.
 
 ### F1-10c — Resumo semanal e alertas
-- `proximo_resumo` (D20): na 1ª execução de segunda sem marco semanal, `agora`; senão, a próxima segunda 00:00 em SP. Validar `proximo_resumo >= agora` em `decidir_destino` (pré-condição com `ValueError`, revisão do F1-10a).
+- Implementa a D22: tabela `envios_sem_evento` (migração 0002), chaves `tipo:alvo:data-SP` e `resumo_semanal:<ano>-W<ss>`, resumo semanal na 1ª execução bem-sucedida da semana a partir de segunda (marco também com resumo vazio), alertas no padrão D19 depois dos eventos, `--ultimo-commit-em` para a inatividade.
+- `proximo_resumo` (D20): na 1ª execução de segunda sem marco semanal, `agora`; senão, a próxima segunda 00:00 em SP. *(Substituído pela D22: 1ª execução bem-sucedida da semana a partir de segunda; senão terça 00:00 de SP.)* Validar `proximo_resumo >= agora` em `decidir_destino` (pré-condição com `ValueError`, revisão do F1-10a).
 - Migração `0002`: registro de envios sem evento (alertas), com deduplicação própria — não cabem em `notificacoes` (D19).
-- Resumo semanal na 1ª execução de segunda-feira (D19), com marco semanal; eventos em falha de classificação entram como "Não classificado — confira manualmente" e aviso excepcional se acontecerem antes do próximo resumo (D13).
+- Resumo semanal na 1ª execução de segunda-feira (D19) *(substituído: 1ª execução bem-sucedida da semana a partir de segunda, D22)*, com marco semanal; eventos em falha de classificação entram como "Não classificado — confira manualmente" e aviso excepcional se acontecerem antes do próximo resumo (D13).
 - Alertas no Telegram (regras da D20, seção F1-10c): falha de extração; fonte vazia (6 execuções `vazio` seguidas num calendário que já teve `ok`); `robots_bloqueado` e erros sistemáticos do enriquecimento (Plano B da D4, D18); inatividade a partir de 50 dias sem commit na `main`. No máximo 1 alerta por (tipo, alvo) por dia de SP.
 - **Aceite:** testes de deduplicação e dos gatilhos de cada alerta.
 

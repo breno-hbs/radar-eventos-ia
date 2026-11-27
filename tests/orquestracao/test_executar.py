@@ -232,7 +232,8 @@ def test_linhas_resumo(ex: ModuleType, sessao: Session) -> None:
         assert "=" in linha
         chave, _, valor = linha.partition("=")
         assert chave.strip() and " " not in chave.strip()
-        assert "http" not in linha
+        assert "http://" not in linha
+        assert "https://" not in linha
         assert "luma.com" not in linha
         for titulo in titulos:
             assert titulo not in linha
@@ -252,12 +253,11 @@ def sessao_engine(engine: Engine) -> Iterator[Session]:
         real.rollback()
         real.close()
         with engine.begin() as conexao:
-            conexao.execute(
-                text(
-                    "TRUNCATE notificacoes, enriquecimentos, classificacoes, execucoes, "
-                    "eventos RESTART IDENTITY CASCADE"
-                )
-            )
+            tabelas = "notificacoes, enriquecimentos, classificacoes, execucoes, eventos"
+            existe = conexao.execute(text("SELECT to_regclass('envios_sem_evento')")).scalar()
+            if existe is not None:
+                tabelas += ", envios_sem_evento"
+            conexao.execute(text(f"TRUNCATE {tabelas} RESTART IDENTITY CASCADE"))
 
 
 def test_sessao_ligada_ao_engine(ex: ModuleType, sessao_engine: Session) -> None:

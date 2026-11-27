@@ -520,3 +520,46 @@ def test_chat_id_so_da_configuracao(envio: ModuleType, tg: ModuleType, sessao: S
     _rodar(envio, sessao, cliente, pedidos)
     assert len(corpos) == 3
     assert {c["chat_id"] for c in corpos} == {CHAT}
+
+
+# --- F1-10c: auxiliares extraídos (sem mudar comportamento) -------------------------------
+#
+# `exigir_transacao_limpa(sessao) -> None` (ValueError com alteração pendente sem flush, ou
+# com bind = Engine e escrita pendente na transação) e `sessao_propria(sessao)` (context
+# manager que entrega uma Session diferente, com o mesmo bind, para gravar e commitar).
+
+
+def test_exigir_transacao_limpa(envio: ModuleType, sessao: Session) -> None:
+    ev = _inserir(sessao)
+    assert envio.exigir_transacao_limpa(sessao) is None
+    ev.titulo = "alterado sem flush"
+    with pytest.raises(ValueError):
+        envio.exigir_transacao_limpa(sessao)
+
+
+def test_exigir_transacao_limpa_com_escrita_pendente_no_engine(
+    envio: ModuleType, sessao_real: tuple[Session, list[int]]
+) -> None:
+    real, criados = sessao_real
+    ev = evento(titulo="Do chamador, pendente")
+    real.add(ev)
+    real.flush()
+    with pytest.raises(ValueError):
+        envio.exigir_transacao_limpa(real)
+
+
+def test_sessao_propria(envio: ModuleType, sessao: Session) -> None:
+    ev = _inserir(sessao)
+    with envio.sessao_propria(sessao) as propria:
+        assert isinstance(propria, Session)
+        assert propria is not sessao
+        assert propria.get_bind() is sessao.get_bind()
+        propria.execute(
+            text(
+                "INSERT INTO notificacoes (evento_id, tipo, estado, criada_em) "
+                "VALUES (:e, 'aviso', 'enviando', :a)"
+            ),
+            {"e": ev.id, "a": AGORA},
+        )
+        propria.commit()
+    assert _estado(sessao, ev.id) == "enviando"

@@ -47,13 +47,14 @@ class RedeLuma:
     """api.lu.ma (feeds das fixtures reais) e luma.com (páginas); robots 404 nos dois."""
 
     status_por_slug: dict[str, int] = field(default_factory=dict)
+    robots_luma_com: int = 404  # status do robots.txt de luma.com (enriquecimento)
     requisicoes: list[httpx.Request] = field(default_factory=list)
 
     def __call__(self, requisicao: httpx.Request) -> httpx.Response:
         self.requisicoes.append(requisicao)
         url = requisicao.url
         if url.path == "/robots.txt":
-            return httpx.Response(404)
+            return httpx.Response(self.robots_luma_com if url.host == "luma.com" else 404)
         if url.host == "api.lu.ma" and url.path == "/ics/get":
             slug = _slug_por_id().get(url.params.get("id", ""))
             if slug is None:
@@ -110,10 +111,13 @@ class RedeTelegram:
 class LLMFalso:
     """Lê o JSON do delimitador e devolve uma saída válida com trecho = título.
 
-    `e_ia(titulo)` decide e_ia (padrão: sempre True); `erro` é levantado em toda chamada.
+    `e_ia(titulo)` decide e_ia (padrão: sempre True); `estrangeiro(titulo)` responde idioma
+    "en" sem tradução e modalidade presencial (vai ao resumo semanal); `erro` é levantado em
+    toda chamada.
     """
 
     e_ia: Callable[[str], bool] = field(default=lambda _titulo: True)
+    estrangeiro: Callable[[str], bool] = field(default=lambda _titulo: False)
     erro: Exception | None = None
     chamadas: list[str] = field(default_factory=list)
 
@@ -129,22 +133,24 @@ class LLMFalso:
         self.chamadas.append(titulo)
         filtro = re.search(r"localizacao_filtro: (\w+)", mensagem)
         indefinida = filtro is not None and filtro.group(1) == "indefinida"
+        trecho = titulo[:80].strip(" …")
+        estrangeiro = self.estrangeiro(titulo)
         saida = {
             "e_ia": self.e_ia(titulo),
             "categoria": "IA",
             "topicos": [],
             "tipo_evento": "meetup",
-            "modalidade": "desconhecida",
-            "trecho_modalidade": "",
-            "idioma": "desconhecido",
+            "modalidade": "presencial" if estrangeiro else "desconhecida",
+            "trecho_modalidade": trecho if estrangeiro else "",
+            "idioma": "en" if estrangeiro else "desconhecido",
             "tem_traducao": False,
-            "trecho_idioma": "",
+            "trecho_idioma": trecho if estrangeiro else "",
             "estado_preco": "preco_desconhecido",
             "trecho_preco": "",
             "localizacao": "desconhecida" if indefinida else "nao_se_aplica",
             "trecho_localizacao": "",
             "resumo": "Resumo sintético.",
-            "trecho_evidencia": titulo[:80].strip(" …"),
+            "trecho_evidencia": trecho,
         }
         return cliente.RespostaLLM(
             texto=json.dumps(saida, ensure_ascii=False),
